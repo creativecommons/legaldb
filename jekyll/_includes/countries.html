@@ -1,0 +1,41 @@
+<div id="world-map" style="width: 600px; height: 400px"></div>
+<br />
+<ul>
+{% for country in site.data.countries %}
+<li><a href="{{ country.country | sanitize_filename | prepend: "/country/" | relative_url}}">{{country.country}}</a></li>
+{% endfor %}
+</li>
+
+<script>
+  var totCountries = {
+  {% for country in site.data.countries %}
+    '{{country.code}}': '{{country.country | sanitize_filename | prepend: "/country/" | relative_url}}',
+  {% endfor %}
+  };
+
+  var totDataAvailable = {
+  {% for country in site.data.countries %}
+    '{{country.code}}': 1,
+  {% endfor %}
+  };
+
+  var totHandleRegionClick = function(event, country) {
+    if (totDataAvailable[country]) {
+      var win = window.open(totCountries[country], '_blank');
+      win.focus();
+    }
+  };
+
+  $(function(){
+    $('#world-map').vectorMap({
+      map: 'world_mill',
+      series: {
+        regions: [{
+          values: totDataAvailable,
+          scale: ['#C8EEFF', '#0071A4']
+        }]
+      },
+      onRegionClick: totHandleRegionClick
+    });
+  });
+</script>

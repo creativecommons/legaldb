@@ -1,0 +1,49 @@
+---
+title: "Laws"
+permalink: law/index.html
+layout: default
+---
+
+<h1 class="post-title">Laws</h1>
+
+<p>Legislation passed.</p>
+
+<p>To sort the list of laws by one of its columns, click on the column header.</p>
+
+<table id="laws" class="tablesorter">
+  <thead align="left">
+    <th>Name</th>
+    <th>Law Number</th>
+    <th>Jurisdiction</th>
+  </thead>
+  <tbody>
+    {% for law in site.data.laws %}
+    <tr>
+      <td><a href="{{ law.name | sanitize_filename }}.html"
+             >{{ law.name }}</a></td>
+      <td>{{ law.number }}</td>
+      <td>{{ law.country }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2>Search Laws</h2>
+Start typing for instant search results: <input type="text" id="search-input" placeholder="search posts..">
+<br/>
+<div id="results-container"></div>
+
+<script>
+  $(document).ready(function() {
+    $("#laws").tablesorter();
+  });
+</script>
+
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ site.url }}/search.json',
+    searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
+  })
+</script>

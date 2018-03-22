@@ -1,0 +1,92 @@
+---
+layout: default
+exclude: true
+---
+<h1>{{page.country}}</h1>
+
+<p>{{page.notes}}</p>
+
+<h2>Legislation</h2>
+<table><thead></thead>
+  <tbody>
+    {% for legislation in site.data.legislation %}
+      {% if legislation.country == page.country %}
+        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/legislation/{{ legislation.title | sanitize_filename }}">{{legislation.title}}</a></td><td>{{ legislation.number }}</td></tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Bills</h2>
+<table><thead></thead>
+  <tbody>
+    {% for bill in site.data.bills %}
+      {% if bill.country == page.country %}
+        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/bill/{{ bill.title | sanitize_filename }}">{{bill.title}}</a></td><td>{{ bill.number }}</td></tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Decisions</h2>
+<table><thead></thead>
+  <tbody>
+    {% for decision in site.data.decisions %}
+      {% if decision.country == page.country %}
+        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/decision/{{ decision.case | sanitize_filename }}">{{decision.case}}</a></td><td>{{ decision.number }}</td></tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Resources</h2>
+<table><thead></thead>
+  <tbody>
+    {% for resource in site.data.resources %}
+      {% if resource.country == page.country %}
+        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/resource/{{ resource.title | sanitize_filename }}">{{resource.title}}</a></td></tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+{% assign contributors = '' %}
+{% for legislation in site.data.legislation %}
+  {% if legislation.country == page.country %}
+    {% assign contributors = contributors
+                             | append: "\n"
+                             | append: legislation.contributor %}
+  {% endif %}
+{% endfor %}
+{% for bill in site.data.bills %}
+  {% if bill.country == page.country %}
+    {% assign contributors = contributors
+                             | append: "\n"
+                             | append: bill.contributor %}
+  {% endif %}
+{% endfor %}
+{% for decision in site.data.decisions %}
+  {% if decision.country == page.country %}
+    {% assign contributors = contributors
+                             | append: "\n"
+                             | append: decision.contributor %}
+  {% endif %}
+{% endfor %}
+{% for resource in site.data.resources %}
+  {% if resource.country == page.country %}
+    {% assign contributors = contributors
+                             | append: "\n"
+                             | append: resource.contributor %}
+  {% endif %}
+{% endfor %}
+{% comment %}
+APPEND MORE CONTRIBUTORS HERE
+Split contributors string to array, remove duplicates, sort alphabetically,
+join with commas, then remove first comma because we have an extra separator
+at the start of the string.
+{% endcomment %}
+<h3>Contributors</h3>
+<p>
+  {{ contributors | split: "\n" | uniq | sort | join: ', '
+     | remove_first: ', '}}.
+</p>
