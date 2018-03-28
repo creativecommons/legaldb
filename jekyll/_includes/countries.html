@@ -1,10 +1,14 @@
 <div id="world-map" style="width: 600px; height: 400px"></div>
 <br />
-<ul>
-{% for country in site.data.countries %}
-<li><a href="{{ country.country | sanitize_filename | prepend: "/country/" | relative_url}}">{{country.country}}</a></li>
-{% endfor %}
-</li>
+<p>Select a country on the map above, or:
+  <select class="country-select"
+          onchange="if (this.value) window.location.href=this.value">
+    <option value="" selected="true">pick a country</option>
+    {% for country in site.data.countries %}
+    <option value="{{country.country | sanitize_filename | prepend: "/country/" | relative_url}}">{{country.country}}</option>
+    {% endfor %}
+  </select>
+</p>
 
 <script>
   var totCountries = {
