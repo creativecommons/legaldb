@@ -19,3 +19,8 @@
 }
 
 /* End From. */
+
+.site-title:after {
+    color: lightgrey;
+    content: " [BETA]";
+}
