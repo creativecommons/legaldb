@@ -4,6 +4,7 @@
 # This hardcodes a lot of assumptions.
 
 RRDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
 pushd "${RRDIR}"
 git pull
 pushd jekyll
