@@ -28,3 +28,15 @@
 .banner-image {
     border: lightblue solid 1px;
 }
+
+#world-map-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+}
+
+#world-map {
+   position: absolute;
+   top: 0; bottom: 0; left: 0; right: 0;
+
+}
