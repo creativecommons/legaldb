@@ -6,60 +6,31 @@ exclude: true
 
 <p>{{page.notes}}</p>
 
-<h2>Legislation</h2>
+<h2>Cases</h2>
 <table>
   <thead>
-    <th>Title</th>
-    <th>Number</th>
+    <th>Case Name</th>
+    <th>Case Number</th>
   </thead>
   <tbody>
-    {% for legislation in site.data.legislation %}
-      {% if legislation.country == page.country %}
-        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/legislation/{{ legislation.title | sanitize_filename }}">{{legislation.title}}</a></td><td>{{ legislation.number }}</td></tr>
+    {% for case in site.data.cases %}
+    {% if case.Jurisdiction == page.country %}
+      <tr><td><a href="{{page.title | sanitize_filename | prepend: '/country/' | relative_url}}/case/{{case['Case Name'] | sanitize_filename}}">{{case['Case Name']}}</a></td>
+          <td>{{case['Case #']}}</td></tr>
       {% endif %}
     {% endfor %}
   </tbody>
 </table>
 
-<h2>Bills</h2>
-<table>
-  <thead>
-    <th>Title</th>
-    <th>Number</th>
-  </thead>
-  <tbody>
-    {% for bill in site.data.bills %}
-      {% if bill.country == page.country %}
-        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/bill/{{ bill.title | sanitize_filename }}">{{bill.title}}</a></td><td>{{ bill.number }}</td></tr>
-      {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-<h2>Decisions</h2>
-<table>
-  <thead>
-    <th>Title</th>
-    <th>Number</th>
-  </thead>
-  <tbody>
-    {% for decision in site.data.decisions %}
-      {% if decision.country == page.country %}
-        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/decision/{{ decision.case | sanitize_filename }}">{{decision.case}}</a></td><td>{{ decision.number }}</td></tr>
-      {% endif %}
-    {% endfor %}
-  </tbody>
-</table>
-
-<h2>Resources</h2>
+<h2>Scholarship</h2>
 <table>
   <thead>
     <th>Title</th>
   </thead>
   <tbody>
-    {% for resource in site.data.resources %}
-      {% if resource.country == page.country %}
-        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/resource/{{ resource.title | sanitize_filename }}">{{resource.title}}</a></td></tr>
+    {% for scholarship in site.data.scholarship %}
+      {% if scholarship['Country'] == page.country %}
+        <tr><td><a href="{{page.title | sanitize_filename | prepend: "/country/" | relative_url}}/scholarship/{{ scholarship['Title'] | sanitize_filename }}">{{scholarship['Title']}}</a></td></tr>
       {% endif %}
     {% endfor %}
   </tbody>
@@ -68,51 +39,6 @@ exclude: true
 <h2>Contribute a New Entry</h2>
 <p>If you know of an entry we should add to this page, you can select one of the links here to go to the form for doing so:</p>
 <ul>
-  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScEDf_VZhVuq-QRQCI4sJXObScBFIwoGJxmDcbZI9wImeGH0Q/viewform?usp=pp_url&entry.673077429={{page.country | url_encode}}">Add new legislation</a></li>
-  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeM4_UtKeHT73XICbXrZAHB5bcSSkwLZjeIKfYdvHK6rnaiew/viewform?usp=pp_url&entry.673077429={{page.country | url_encode}}">Add a new bill</a></li>
-  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScgCzuAX1jJ8U2X6d_-_Xoa2Nl92lYjvBo2FVHACQ7NHMLKiQ/viewform?usp=pp_url&entry.673077429={{page.country | url_encode}}">Add a new legal decision</a></li>
-  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd1-ZnxC_YfAo8awSv2u276zppMwXcRFvBurvY0d373Yf6GBA/viewform?usp=pp_urlentry.673077429={{page.country | url_encode}}">Add a new other resource</a></li>
+  <li><a href="https://docs.google.com/forms/d/e/XXXXXXXX/viewform?usp=pp_url&entry.673077429={{page.country | url_encode}}">Add new case</a></li>
+  <li><a href="https://docs.google.com/forms/d/e/XXXXXXXX/viewform?usp=pp_url&entry.673077429={{page.country | url_encode}}">Add new scholarship</a></li>
 </ul>
-
-{% assign contributors = '' %}
-{% for legislation in site.data.legislation %}
-  {% if legislation.country == page.country %}
-    {% assign contributors = contributors
-                             | append: "\n"
-                             | append: legislation.contributor %}
-  {% endif %}
-{% endfor %}
-{% for bill in site.data.bills %}
-  {% if bill.country == page.country %}
-    {% assign contributors = contributors
-                             | append: "\n"
-                             | append: bill.contributor %}
-  {% endif %}
-{% endfor %}
-{% for decision in site.data.decisions %}
-  {% if decision.country == page.country %}
-    {% assign contributors = contributors
-                             | append: "\n"
-                             | append: decision.contributor %}
-  {% endif %}
-{% endfor %}
-{% for resource in site.data.resources %}
-  {% if resource.country == page.country %}
-    {% assign contributors = contributors
-                             | append: "\n"
-                             | append: resource.contributor %}
-  {% endif %}
-{% endfor %}
-{% comment %}
-APPEND MORE CONTRIBUTORS HERE
-Split contributors string to array, remove duplicates, sort alphabetically,
-join with commas, then remove first comma because we have an extra separator
-at the start of the string.
-{% endcomment %}
-{% if contributors %}
-<h2>Contributors</h2>
-<p>
-  {{ contributors | split: "\n" | uniq | sort | join: ', '
-     | remove_first: ', '}}.
-</p>
-{% endif %}

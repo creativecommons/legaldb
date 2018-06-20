@@ -1,0 +1,25 @@
+---
+layout: default
+exclude: true
+---
+
+<h1>{{page['Title']}}</h1>
+
+<!--<h2>Country</h2>
+<p><a href="{{ page['Country'] | sanitize_filename | prepend: '/country/' | relative_url }}">{{page['Country']}}"</a></p>-->
+
+{% if page['Author (s)'] %}
+<h2>Author</h2>
+<p>{{page['Author (s)']}}</p>
+{% endif %}
+
+<h2>Link</h2>
+<p><a href="{{page['Link']}}">{{page['Link']}}</a></p>
+
+<h2>Summary</h2>
+<p>{{page.summary}}</p>
+
+{% if page.contributor %}
+<h2>Contributed By</h2>
+<p>{{page.contributor}}</p>
+{% endif %}

@@ -1,0 +1,29 @@
+---
+layout: default
+exclude: true
+---
+
+<h1>{{page.title}}</h1>
+
+<h2>Country</h2>
+<p><a href="{{ page.Jurisdiction | sanitize_filename | prepend: '/country/' | relative_url }}">{{page.Jurisdiction}}</a></p>
+
+{% if page['Case #'] %}
+<h2>Case #</h2>
+<p>{{page['Case #']}}</p>
+{% endif %}
+
+{% if page["District (plus level/it's hierarchy)"] %}
+<h2>District</h2>
+<p>{{page["District (plus level/it's hierarchy)"]}}</p>
+{% endif %}
+
+{% if page['License (if any)'] %}
+<h2>District</h2>
+<p>{{page['License (if any)']}} {{page['Version']}} {{page['Ported or generic']}}</p>
+{% endif %}
+
+{% if page.contributor %}
+<h2>Contributed By</h2>
+<p>{{page.contributor}}</p>
+{% endif %}
