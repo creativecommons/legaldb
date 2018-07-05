@@ -7,20 +7,15 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <img src="{{site.baseurl}}/images/logo-small.png" class="img-fluid" />
+        <img src="{{site.baseurl}}/images/logo-small.png" class="img-fluid"
+             style="padding-bottom: 8px;"/>
         <br />
         <a href="https://creativecommons.org/privacy">Privacy</a> |
         <a href="https://creativecommons.org/policies/">Policies</a> |
         <a href="https://creativecommons.org/terms">Terms</a>
         <br />
         <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-          </li>
+          <li class="p-name">Contact us:</li>
           {%- if site.email -%}
           <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
           {%- endif -%}

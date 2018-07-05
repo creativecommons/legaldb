@@ -4,23 +4,45 @@ exclude: true
 ---
 
 <h1>{{page.title}}</h1>
+{% if page["District (plus level/it's hierarchy)"] %}
+<p><strong>({{page["District (plus level/it's hierarchy)"]}}
+{% if page['Case #'] %}, <span style="white-space: nowrap">{{page['Case #']}}{% endif %})</span></strong></p>
+{% endif %}
 
 <h2>Country</h2>
 <p><a href="{{ page.Jurisdiction | sanitize_filename | prepend: '/country/' | relative_url }}">{{page.Jurisdiction}}</a></p>
 
-{% if page['Case #'] %}
-<h2>Case #</h2>
-<p>{{page['Case #']}}</p>
-{% endif %}
-
-{% if page["District (plus level/it's hierarchy)"] %}
-<h2>District</h2>
-<p>{{page["District (plus level/it's hierarchy)"]}}</p>
-{% endif %}
-
 {% if page['License (if any)'] %}
-<h2>District</h2>
+<h2>License</h2>
 <p>{{page['License (if any)']}} {{page['Version']}} {{page['Ported or generic']}}</p>
+{% endif %}
+
+{% if page['Background'] %}
+<h2>Background</h2>
+<p>{{page['Background'] | strip | newline_to_br}}</p>
+{% endif %}
+
+{% if page['Summary'] %}
+<h2>Case Summary</h2>
+<p>{{page['Summary'] | strip | newline_to_br}}</p>
+{% endif %}
+
+{% if page['Result'] %}
+<h2>Final Decision</h2>
+<p>{{page['Result'] | strip | newline_to_br}}</p>
+{% endif %}
+
+{% if page['CC Implication'] %}
+<h2>Implications For Creative Commons</h2>
+<p>{{page['CC Implication'] | strip | newline_to_br}}</p>
+{% endif %}
+
+{% if page['Links'] %}
+<h2>Hyperlink(s) To Case Decision</h2>
+{% assign links = page['Links'] | strip | newline_to_br | split: '<br />' %}
+{% for link in links %}
+<p><a href="{{link | strip}}">{{link | strip}}</a></p>
+{% endfor %}
 {% endif %}
 
 {% if page.contributor %}

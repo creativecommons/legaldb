@@ -14,7 +14,7 @@ exclude: true
   </thead>
   <tbody>
     {% for case in site.data.cases %}
-    {% if case.Jurisdiction == page.country %}
+    {% if case['Country'] == page.country %}
       <tr><td><a href="{{page.title | sanitize_filename | prepend: '/country/' | relative_url}}/case/{{case['Case Name'] | sanitize_filename}}">{{case['Case Name']}}</a></td>
           <td>{{case['Case #']}}</td></tr>
       {% endif %}
