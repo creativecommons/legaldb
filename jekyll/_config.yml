@@ -52,7 +52,7 @@ page_gen:
   - data: 'cases'
     template: 'case'
     name: 'Case Name'
-    dir: 'country/#{sanitize_filename(data["Jurisdiction"])}/case'
+    dir: 'country/#{sanitize_filename(data["Country"])}/case'
   - data: 'scholarship'
     template: 'scholarship'
     name: 'Title'
