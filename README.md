@@ -3,8 +3,8 @@
 1. Gather information via Google Forms.
 2. Review and copy-edit that information in the "Master Spreadsheet" Google Sheet.
 3. Note the Google Sheets Document ID. for the Master Spreadsheet. e.g. for the sheet: `https://docs.google.com/spreadsheets/d/`1436GBvNkSCQ3uRR7ZLPUDEZH2rknvuD7ZJ7vFGhWgoM/edit` the id is `1436GBvNkSCQ3uRR7ZLPUDEZH2rknvuD7ZJ7vFGhWgoM`.
-4. Update the data in jekyll/_data by running scripts/overwrite-data.sh with the sheet ID as its argument. e.g. `./scripts/overwrite-data.sh 1436GBvNkSCQ3uRR7ZLPUDEZH2rknvuD7ZJ7vFGhWgoM`
-5. Commit the resulting changes to git, e.g. `git commit -a -m "Latest changes"` . Then push them, e.g.  `git push origin master` .
+4. Update the data in jekyll/_data by running `./scripts/overwrite-data.sh` with the sheet ID as its argument. e.g. `./scripts/overwrite-data.sh 1436GBvNkSCQ3uRR7ZLPUDEZH2rknvuD7ZJ7vFGhWgoM` .
+5. Commit the resulting changes to git, e.g. `git commit -a -m "Latest changes"` . Then push them, e.g. `git push origin master` .
 6. On the server, fetch the latest changes using `git pull`.
 7. Build the site and copy it into place by running `./scripts/build.sh` . This will ask for your password in order to run `sudo` when copying the built files into position.
 
@@ -37,7 +37,7 @@ These are the CSV (Comma Separated Values) format spreadsheets in `jekyll/_data`
 that we use to build the pages.
 
 Apart from countries.csv, do not edit the content of these files, rather edit
-the Google Sheet then run overwrite-data.sh .
+the Google Sheet then run `./scripts/overwrite-data.sh` .
 
 ## countries.csv
 
