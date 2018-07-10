@@ -16,6 +16,11 @@ exclude: true
 <p>{{page['Journal or Publisher']}}</p>
 {% endif %}
 
+{% if page['License on the Article'] %}
+<h2>License on Article</h2>
+<p>{{page['License on the Article']}}</p>
+{% endif %}
+
 <h2>Link</h2>
 <p><a href="{{page['Link'] | strip}}">{{page['Link'] | strip}}</a></p>
 
