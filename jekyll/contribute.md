@@ -13,11 +13,13 @@ Legal Decisions
 ===============
 
 Information regarding court rulings and other legal decisions that affect or involve Creative Commons licenses and legal tools. 
-[google form for legal decision information]
+
+<a href="https://docs.google.com/forms/d/1Ne1sh09XDZP7yVAOz3nvlylnhECaHn84fJ00pp0PwiI/viewform">https://docs.google.com/forms/d/1Ne1sh09XDZP7yVAOz3nvlylnhECaHn84fJ00pp0PwiI/viewform</a>
 
 Legal Scholarship
 =================
 
 Information regarding legal scholarship about Creative Commons licenses and legal tools.
 
-[google form for legal scholarship information]
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfxxk5FWZCl3QURJqF42-FtMoWrwj1PMsdOyk2hUayU7FPB7w/viewform">https://docs.google.com/forms/d/e/1FAIpQLSfxxk5FWZCl3QURJqF42-FtMoWrwj1PMsdOyk2hUayU7FPB7w/viewform</a>
