@@ -62,6 +62,14 @@ See http://jvectormap.com/maps/world/world/ .
 
 Optional text to be included in the country page.
 
+# Errors
+
+## caselaw/jekyll/_plugins/data_page_generator.rb:45:in `eval': undefined method `tr' for nil:NilClass (NoMethodError)
+
+You have probably missed out the 'Country' entry for one of the rows in the spreadsheet.
+
+(This error indicates that a value being used in a `dir:` entry for `page_gen:` in `_config_yml` cannot be found. As we use `data["Country"]` in these, if it cannot be found this will fail.)
+
 # Used Software
 
 https://jekyllrb.com/
