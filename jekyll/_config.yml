@@ -29,6 +29,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -57,3 +58,4 @@ page_gen:
     template: 'scholarship'
     name: 'Title'
     dir: 'country/#{sanitize_filename(data["Country"])}/scholarship'
+
