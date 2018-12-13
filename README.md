@@ -136,7 +136,12 @@ Notes:
 ## Errors
 
 
-### caselaw/jekyll/_plugins/data_page_generator.rb:45:in `eval': undefined method `tr' for nil:NilClass (NoMethodError)
+### NoMethodError
+
+Error text:
+```
+caselaw/jekyll/_plugins/data_page_generator.rb:45:in `eval': undefined method `tr' for nil:NilClass (NoMethodError)
+```
 
 You have probably missed out the 'Country' entry for one of the rows in the
 spreadsheet.
