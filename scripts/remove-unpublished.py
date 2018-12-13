@@ -13,8 +13,8 @@ import tempfile
 
 
 infilename = sys.argv[1]
-
 countries = set()
+yes_publish = ("Publish", "publish", "Yes", "yes", "Y", "y")
 
 with open(infilename, newline="") as infile:
     csvreader = csv.DictReader(infile)
@@ -24,7 +24,7 @@ with open(infilename, newline="") as infile:
                                    lineterminator="\n")
         csvwriter.writeheader()
         for row in csvreader:
-            if row["Publish"].strip() in ["Y", "y", "Publish", "publish"]:
+            if row["Publish"].strip() in yes_publish:
                 # Strip leading/trailing whitespace from all columns. This is
                 # especially important for the country column, as we use the
                 # country value as a key.
