@@ -33,11 +33,11 @@ echo "# SCHOLARSHIP sheet GID: ${GID}"
 curl "${EXPORT_URL}?gid=${GID}&exportFormat=csv" > ${DATA_DIR}/scholarship.csv
 echo
 
-echo '# Removing Publish: N rows from cases.csv'
+echo '# Cleaning-up cases.csv'
 ${RRDIR}/scripts/remove-unpublished.py ${DATA_DIR}/cases.csv
 echo
 
-echo '# Removing Publish: N rows from cases.csv'
+echo '# Cleaning-up scholarship.csv'
 ${RRDIR}/scripts/remove-unpublished.py ${DATA_DIR}/scholarship.csv
 echo
 
