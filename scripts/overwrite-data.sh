@@ -1,4 +1,7 @@
 #!/bin/bash
+set -o errexit
+set -o errtrace
+set -o nounset
 
 # Fetch the latest data from Google Docs and overwrite the versions
 
@@ -14,14 +17,25 @@ fi
 
 SHEETID="${1}"
 
-echo $SHEETID
-
+echo
+echo "Sheet ID: ${SHEETID}"
+echo
+echo 'Downloading Caselaw - Primary Data: CASES sheet to cases.csv'
 curl "https://docs.google.com/spreadsheets/d/${SHEETID}/export?exportFormat=csv" \
      > "${RRDIR}/jekyll/_data/cases.csv"
-
+echo 'Done.'
+echo
+echo 'Downloading Caselaw - Primary Data: SCHOLARSHIP sheet to scholarship.csv'
 curl "https://docs.google.com/spreadsheets/d/${SHEETID}/export?gid=1441455659&exportFormat=csv" \
      > "${RRDIR}/jekyll/_data/scholarship.csv"
-
+echo 'Done.'
+echo
+echo 'Removing Publish: N rows from cases.csv'
 "${RRDIR}/scripts/remove-unpublished.py" "${RRDIR}/jekyll/_data/cases.csv"
-
+echo 'Done.'
+echo
+echo 'Removing Publish: N rows from cases.csv'
 "${RRDIR}/scripts/remove-unpublished.py" "${RRDIR}/jekyll/_data/scholarship.csv"
+echo Done.
+echo
+echo All processes completed successfully.
