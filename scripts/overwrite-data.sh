@@ -4,18 +4,14 @@ set -o errtrace
 set -o nounset
 
 # Fetch the latest data from Google Docs and overwrite the current versions
+#
+# SHEETID is the Google Sheets identifier for Master Spreadsheet. It can be
+# found after "/d/" in the sheet URL and before "/edit"
+SHEET_ID='1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo'
+
 
 RRDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-
-if [[ $# -ne 1 ]]; then
-    echo 'Usage: overwrite-data.sh SHEETID'
-    echo '  Where SHEETID is the Google Sheets identifier for Master Spreadsheet.'
-    echo '  This can be found after "/d/" in the sheet URL and before "/edit".'
-    echo '  ex. 1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo'
-    exit 2
-fi
-
-SHEET_ID="${1}"
+SHEEET_ID="${1:-${SHEET_ID}}" # Use SHEET_ID from CLI argument (if present)
 EXPORT_URL="https://docs.google.com/spreadsheets/d/${SHEET_ID}/export"
 DATA_DIR=${RRDIR}/jekyll/_data
 
