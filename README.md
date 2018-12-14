@@ -4,6 +4,13 @@ Creates a static website of Case Law and Scholarship data frm around the world
 based on Google Form responses and manually curated.
 
 
+## Code of Conduct
+
+Please note that this project is released with a Contributor Code of Conduct
+([`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)). By participating in this
+project you agree to abide by its terms.
+
+
 ## Workflow
 
 1. Gather information via Google Forms.
