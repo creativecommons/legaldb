@@ -13,7 +13,7 @@ based on Google Form responses and manually curated.
    Sheet
 4. Update the Repository CSVs - Generated CSVs by running:
     ```shell
-    ./scripts/overwrite-data.sh 1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo
+    ./scripts/overwrite-data.sh
     ```
 5. Commit and push the resulting changes. For example:
     ```shell
@@ -86,7 +86,8 @@ Notes:
   option to receive credit.
 - When a given entry is ready to be published, set the value of the "Publish"
   column to "Publish" for it. Otherwise leave it blank or set it to "N".
-- The Sheet ID is `1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo`
+- The Sheet ID is `1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo`. If this
+  changes, update the `SHEET_ID` in `./scripts/overwrite-data.sh`.
 
 [primarysheet]: https://docs.google.com/spreadsheets/d/1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo/edit#
 
