@@ -1,5 +1,6 @@
+*.swp
 *~
 .\#*
-_site
-.sass-cache
 .jekyll-metadata
+.sass-cache
+_site
