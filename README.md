@@ -170,6 +170,7 @@ cannot be found this will fail.
 
 ## License
 
-- [`LICENSE`](LICENSE) (Expat/[MIT License][MIT])
+- [`LICENSE`](LICENSE) (Expat/[MIT][mit] License)
 
-[MIT]: http://www.opensource.org/licenses/MIT "The MIT License (MIT)"
+
+[mit]: http://www.opensource.org/licenses/MIT "The MIT License | Open Source Initiative"
