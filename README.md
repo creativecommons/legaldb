@@ -47,7 +47,7 @@ for example, we must use "United Kingdom" rather than "Scotland" or "Wales".
 "Jurisdiction" is an option this can be used to more accurately describe th
 resource's origin. I (RobM) apologize for this.
 
-[jvectorwolrd]: http://jvectormap.com/maps/world/world
+[jvectorworld]: http://jvectormap.com/maps/world/world
 
 
 ## Website
