@@ -1,7 +1,11 @@
 # caselaw
 
-Creates a static website of Case Law and Scholarship data frm around the world
-based on Google Form responses and manually curated.
+Creates a static website of Case Law and Scholarship data from around the world
+based on Google Form responses and manually curated:
+- **[CC Case Law Database [Beta]][website]**
+
+
+[website]: https://labs.creativecommons.org/caselaw/
 
 
 ## Code of Conduct
@@ -53,8 +57,6 @@ resource's origin. I (RobM) apologize for this.
 ## Website
 
 - **[CC Case Law Database [Beta]][website]**
-
-[website]: https://labs.creativecommons.org/caselaw/
 
 
 ## Spreadsheets
