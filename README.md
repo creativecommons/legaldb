@@ -171,10 +171,19 @@ cannot be found this will fail.
 ## Future Work
 
 The following potential work has been identified:
-1. Remove the Caselaw - Primary Data Google Sheet cut and paste process. Instead
-   manipulate the data in the Google Form Responses Google Sheets.
+1. Remove the *Caselaw - Primary Data Google Sheet* cut and paste process.
+   Instead manipulate the data in the *Google Form Responses Google Sheets*.
 2. Schedule updates so that a tech person does not need to be wrangled to apply
-   updates.
+   them.
+
+
+## Sister Project
+
+- [creativecommons/reversionary-rights: International reversionary rights
+  resources site][reversionary]
+
+
+[reversionary]:https://github.com/creativecommons/reversionary-rights
 
 
 ## License
