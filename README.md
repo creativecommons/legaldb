@@ -168,6 +168,15 @@ cannot be found this will fail.
 - [jVectorMap](http://jvectormap.com/)
 
 
+## Future Work
+
+The following potential work has been identified:
+1. Remove the Caselaw - Primary Data Google Sheet cut and paste process. Instead
+   manipulate the data in the Google Form Responses Google Sheets.
+2. Schedule updates so that a tech person does not need to be wrangled to apply
+   updates.
+
+
 ## License
 
 - [`LICENSE`](LICENSE) (Expat/[MIT][mit] License)
