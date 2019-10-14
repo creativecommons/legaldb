@@ -2,7 +2,7 @@
 
 Creates a static website of Case Law and Scholarship data from around the world
 based on Google Form responses and manually curated:
-- **[CC Case Law Database [Beta]][website]**
+- **[CC Legal Database [Beta]][website]**
 
 
 [website]: https://labs.creativecommons.org/caselaw/
@@ -56,7 +56,7 @@ resource's origin. I (RobM) apologize for this.
 
 ## Website
 
-- **[CC Case Law Database [Beta]][website]**
+- **[CC Legal Database [Beta]][website]**
 
 
 ## Spreadsheets
@@ -136,8 +136,8 @@ Notes:
 
 ## Forms
 
-- [Creative Commons Case Law Database [beta] - Cases][formcases]
-- [Creative Commons Case Law Database [beta] - Scholarship][formscholar]
+- [Creative Commons Legal Database -- Cases][formcases]
+- [Creative Commons Legal Database -- Scholarship][formscholar]
 
 [formcases]: https://docs.google.com/forms/d/e/1FAIpQLSdyhi06rJzP3fnyCfv-d40Q5ucaWRRsaC74G8qlY23xDhspwA/viewform
 [formscholar]: https://docs.google.com/forms/d/e/1FAIpQLSfxxk5FWZCl3QURJqF42-FtMoWrwj1PMsdOyk2hUayU7FPB7w/viewform
