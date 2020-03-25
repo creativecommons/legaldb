@@ -120,7 +120,7 @@ Notes:
 #### Manually Managed CSV
 
 Manually Managed CSV:
-- [`jekyll/_data/country.csv`][datacountry]
+- [`jekyll/_data/countries.csv`][datacountry]
 
 Notes:
 - This is the list of countries we have data for. If a country is not listed
@@ -131,7 +131,7 @@ Notes:
    from [World - jVectorMap][jvectorworld]
 - `notes` column contains optional text to be included in the country page.
 
-[datacountry]: jekyll/_data/country.csv
+[datacountry]: jekyll/_data/countries.csv
 
 
 ## Forms
