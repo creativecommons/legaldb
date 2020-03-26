@@ -104,8 +104,8 @@ Notes:
 ### Google Form Responses Google Sheets
 
 Google Sheets:
-- [Caselaw - Cases Form Responses (for copying from, do not edit)][sheetcases]
-- [Caselaw - Scholarship Form Responses (for copying from, do not edit)][sheetscholar]
+- [Caselaw - Cases Form Responses (for copying from, do not edit; Restricted Access)][sheetcases]
+- [Caselaw - Scholarship Form Responses (for copying from, do not edit; Restricted Access)][sheetscholar]
 
 Notes:
 - These Google Sheets are the results of people completing the Google Forms.
