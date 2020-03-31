@@ -4,8 +4,14 @@ Creates a static website of Case Law and Scholarship data from around the world
 based on Google Form responses and manually curated:
 - **[CC Legal Database [Beta]][website]**
 
-
 [website]: https://labs.creativecommons.org/caselaw/
+
+:warning: **This project is a potential internship project. It may be
+completely reimplemented soon (for more information, see [Reimplement CC’s
+Legal Database using WordPress or Django — Open Source Internships: Project
+Ideas — Creative Commons on GitHub][project-ideas]).**
+
+[project-ideas]: https://opensource.creativecommons.org/internships/project-ideas/#legal-database
 
 
 ## Code of Conduct
@@ -194,5 +200,3 @@ The following potential work has been identified:
 
 
 [mit]: http://www.opensource.org/licenses/MIT "The MIT License | Open Source Initiative"
-
-### Soon to be re-implemented
