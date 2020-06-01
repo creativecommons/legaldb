@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class LegalDBConfig(AppConfig):
-    name = 'legal_db'
+    name = "legal_db"
