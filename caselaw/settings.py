@@ -21,9 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get(
-    "DJANGO_SECRET_KEY", "o#-@3p*_2*#jf=cut@f5@3yy*m!*loiuc)7r)%w+nec5dg+ne@"
-)
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG_ENABLED", default=False)
@@ -82,7 +80,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": os.environ.get("DJANGO_DATABASE_NAME", "postgres"),
         "USER": os.environ.get("DJANGO_DATABASE_USER", "postgres"),
-        "PASSWORD": os.environ.get("DJANGO_DATABASE_PASSWORD", "secret"),
+        "PASSWORD": os.environ.get("DJANGO_DATABASE_PASSWORD"),
         "HOST": os.environ.get("DJANGO_DATABASE_HOST", "127.0.0.1"),
         "PORT": os.environ.get("DJANGO_DATABASE_PORT", "5432"),
     }
