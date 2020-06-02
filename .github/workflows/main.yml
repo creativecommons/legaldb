@@ -1,0 +1,41 @@
+name: Caselaw CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+      
+    - name: Install pipenv
+      uses: dschep/install-pipenv-action@v1
+
+    - name: Install Dependencies
+      run: |
+        pipenv install --dev
+    
+    - name: Run Black check
+      uses: jpetrucciani/black-check@master
+    
+    - name: Run Flake8 check
+      run: |
+        mkdir test-reports
+        pipenv run flake8 ./ --output-file test-reports/flake8
+    
+    - name: Upload flake test results
+      uses: actions/upload-artifact@master
+      with:
+          name: flake8-report
+          path: test-reports/flake8
+      # Use failure() to upload only if failure occurs
+      if: failure()
