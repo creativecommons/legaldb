@@ -32,9 +32,7 @@ class Case(LegalResource):
     )
     language = models.CharField(max_length=50, blank=True, null=True)
     decided_at = models.DateField(blank=True, null=True)
-    en_translation_link = models.URLField(
-        max_length=2000, blank=True, null=True
-    )
+    en_translation_link = models.URLField(max_length=2000, blank=True, null=True)
     cc_involvement = models.CharField(max_length=100, blank=True, null=True)
     cc_implication = models.TextField(blank=True, null=True)
     work_type = models.CharField(max_length=100, blank=True, null=True)
@@ -55,15 +53,9 @@ class Scholarship(LegalResource):
     title = models.CharField(max_length=250, blank=True, null=True)
     authors = models.CharField(max_length=250, blank=True, null=True)
     published_at = models.DateField(blank=True, null=True)
-    elements_discussing = models.CharField(
-        max_length=250, blank=True, null=True
-    )
-    journal_or_publisher = models.CharField(
-        max_length=256, blank=True, null=True
-    )
-    categories = ArrayField(
-        models.CharField(max_length=100), blank=True, null=True
-    )
+    elements_discussing = models.CharField(max_length=250, blank=True, null=True)
+    journal_or_publisher = models.CharField(max_length=256, blank=True, null=True)
+    categories = ArrayField(models.CharField(max_length=100), blank=True, null=True)
 
     def __str__(self):
         return "(Scholarship) " + self.title
