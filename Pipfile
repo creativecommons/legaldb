@@ -4,8 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-# See https://github.com/pypa/pipenv/issues/1760
-black = {ref = "19.10b0",git = "https://github.com/python/black.git"}
+black = "==19.10b0"
 flake8 = "*"
 
 [packages]
@@ -15,6 +14,7 @@ django-heroku = "*"
 gunicorn = "*"
 psycopg2 = "*"
 django-ordered-model = "*"
+django-taggit = "*"
 
 [requires]
 python_version = "3.7"

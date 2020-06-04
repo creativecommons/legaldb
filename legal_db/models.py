@@ -1,8 +1,8 @@
-from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
 from ordered_model.models import OrderedModel
+from taggit.managers import TaggableManager
 
 
 class BaseModel(models.Model):
@@ -26,19 +26,13 @@ class LegalResource(BaseModel):
         max_length=50,
         blank=True,
         null=True,
-        help_text="The Creative Commons licence associated to the case.",
+        help_text="The Creative Commons licence associated to the legal resource.",
     )
     contributor_name = models.CharField(max_length=120)
     contributor_email = models.EmailField()
-    contribution_credit_requested = models.BooleanField(
-        help_text="Whether or not show credit to contributor by name on the site."
-    )
-    link = models.URLField(
-        max_length=2000,
-        help_text="Link to the Original Version of Decision (for Case) or the Article (for Scholarship).",
-    )
-    country = CountryField()
+    country = CountryField(blank=True, null=True)
     summary = models.TextField(blank=True, null=True)
+    tags = TaggableManager()
 
     class Status(models.IntegerChoices):
         UNREVIEWED = 1, _("Unreviewed")
@@ -57,26 +51,34 @@ class LegalResource(BaseModel):
         abstract = True
 
 
+class Link(BaseModel):
+    url = models.URLField(max_length=2000)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    label = models.CharField(max_length=255, blank=True, null=True)
+
+
 class Case(LegalResource):
     name = models.CharField(max_length=200, blank=True, null=True)
     case_no = models.CharField(
         max_length=50, blank=True, null=True, help_text="The number of the case."
     )
-    jurisdiction = models.CharField(
-        max_length=255, blank=True, null=True, help_text="Jurisdiction Within country."
+    court_names = models.CharField(
+        max_length=255,
+        help_text="The original court name and/or English translation. If the lawsuit "
+        "was filed in one court and then went to another court on appeal, please note all relevant courts here.",
     )
-    court_name = models.CharField(
-        max_length=255, help_text="The original court name and/or English translation."
+    jurisdiction = models.CharField(
+        max_length=255, blank=True, null=True, help_text="Jurisdiction within country."
     )
     decision_locality = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text="The District/City/Circuit of decision.",
+        help_text="The district, city or circuit of decision.",
     )
     language = models.CharField(max_length=50, blank=True, null=True)
-    decided_at = models.DateField(
-        blank=True, null=True, help_text="The decision date of the case."
+    decision_year = models.PositiveSmallIntegerField(
+        blank=True, null=True, help_text="The decision year of the case."
     )
     en_translation_link = models.URLField(
         max_length=2000,
@@ -84,24 +86,30 @@ class Case(LegalResource):
         null=True,
         help_text="Link to the English translation.",
     )
+    related_cases = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="If there are multiple lawsuits between the parties in this dispute,"
+        " please note additional cases here.",
+    )
+    links = models.ManyToManyField(Link)
     cc_involvement = models.CharField(
         max_length=100,
         blank=True,
         null=True,
         help_text="Creative Commons involvement, if any.",
     )
-
-    # TODO: Add help_text for these fields
     cc_implication = models.TextField(blank=True, null=True)
-    work_type = models.CharField(max_length=100, blank=True, null=True)
-
-    # TODO: Check if it these fields are actually used
-    issue = models.CharField(max_length=200, blank=True, null=True)
-    blurb = models.TextField(blank=True, null=True)
-    original_blurb = models.TextField(blank=True, null=True)
-
-    background = models.TextField(blank=True, null=True)
-    result = models.TextField(blank=True, null=True)
+    background = models.TextField(
+        blank=True,
+        null=True,
+        help_text="Describe the factual information that led to the lawsuit "
+        "being filed, and explain what claims were filed in the lawsuit.",
+    )
+    result = models.TextField(
+        blank=True, null=True, help_text="The resolution of the case."
+    )
 
     def __str__(self):
         return self.name
@@ -110,14 +118,10 @@ class Case(LegalResource):
 class Scholarship(LegalResource):
     title = models.CharField(max_length=255, blank=True, null=True)
     authors = models.CharField(max_length=255, blank=True, null=True)
-    published_at = models.DateField(blank=True, null=True)
-    elements_discussing = models.CharField(max_length=255, blank=True, null=True)
+    publication_year = models.PositiveSmallIntegerField(blank=True, null=True)
     journal_or_publisher = models.CharField(max_length=255, blank=True, null=True)
-    categories = ArrayField(
-        models.CharField(max_length=100),
-        blank=True,
-        null=True,
-        help_text="Categories or keywords associated with the scholarship.",
+    link = models.ForeignKey(
+        Link, on_delete=models.CASCADE, help_text="The link to the article."
     )
 
     def __str__(self):

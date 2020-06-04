@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django_countries",
     "legal_db.apps.LegalDBConfig",
     "ordered_model",
+    "taggit",
 ]
 
 MIDDLEWARE = [
