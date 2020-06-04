@@ -32,14 +32,15 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
-    "legal_db.apps.LegalDBConfig",
-    "django_countries",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_countries",
+    "legal_db.apps.LegalDBConfig",
+    "ordered_model",
 ]
 
 MIDDLEWARE = [
