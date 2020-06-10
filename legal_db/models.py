@@ -36,10 +36,9 @@ class LegalResource(BaseModel):
 
     class Status(models.IntegerChoices):
         UNREVIEWED = 1, _("Unreviewed")
-        REVIEW = 2, _("Review")
-        IN_PROGRESS = 3, _("In progress")
-        PUBLISHED = 4, _("Published")
-        REJECTED = 5, _("Rejected")
+        REVIEW_IN_PROGRESS = 2, _("Review in Progress")
+        PUBLISHED = 3, _("Published")
+        REJECTED = 4, _("Rejected")
 
     status = models.PositiveSmallIntegerField(
         choices=Status.choices,
@@ -58,57 +57,40 @@ class Link(BaseModel):
 
 
 class Case(LegalResource):
-    name = models.CharField(max_length=200, blank=True, null=True)
-    case_no = models.CharField(
-        max_length=50, blank=True, null=True, help_text="The number of the case."
-    )
-    court_names = models.CharField(
-        max_length=255,
-        help_text="The original court name and/or English translation. If the lawsuit "
-        "was filed in one court and then went to another court on appeal, please note all relevant courts here.",
-    )
-    jurisdiction = models.CharField(
-        max_length=255, blank=True, null=True, help_text="Jurisdiction within country."
-    )
-    decision_locality = models.CharField(
-        max_length=255,
+    name = models.CharField(
+        max_length=200,
         blank=True,
         null=True,
-        help_text="The district, city or circuit of decision.",
-    )
-    language = models.CharField(max_length=50, blank=True, null=True)
-    decision_year = models.PositiveSmallIntegerField(
-        blank=True, null=True, help_text="The decision year of the case."
-    )
-    en_translation_link = models.URLField(
-        max_length=2000,
-        blank=True,
-        null=True,
-        help_text="Link to the English translation.",
+        help_text="If there are multiple lawsuits between the parties, please just "
+        "include one here and note the others in the related cases field.",
     )
     related_cases = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text="If there are multiple lawsuits between the parties in this dispute,"
-        " please note additional cases here.",
+        help_text="If there are multiple lawsuits between the parties in this dispute, "
+        "please note additional cases here.",
     )
-    links = models.ManyToManyField(Link)
-    cc_involvement = models.CharField(
-        max_length=100,
-        blank=True,
-        null=True,
-        help_text="Creative Commons involvement, if any.",
+    courts = models.CharField(
+        max_length=255,
+        help_text="The original court name and/or English translation. If the lawsuit "
+        "was filed in one court and then went to another court on appeal, please note "
+        "all relevant courts here.",
     )
-    cc_implication = models.TextField(blank=True, null=True)
     background = models.TextField(
         blank=True,
         null=True,
         help_text="Describe the factual information that led to the lawsuit "
         "being filed, and explain what claims were filed in the lawsuit.",
     )
-    result = models.TextField(
-        blank=True, null=True, help_text="The resolution of the case."
+    decision_year = models.PositiveSmallIntegerField(
+        blank=True, null=True, help_text="Year of case resolution."
+    )
+    links = models.ManyToManyField(
+        Link,
+        help_text="Include any links to pleadings, briefs, and opinions in the "
+        "lawsuit, as well as blog posts, academic articles, or other relevant "
+        "materials.",
     )
 
     def __str__(self):
@@ -117,9 +99,9 @@ class Case(LegalResource):
 
 class Scholarship(LegalResource):
     title = models.CharField(max_length=255, blank=True, null=True)
-    authors = models.CharField(max_length=255, blank=True, null=True)
+    publication_name = models.CharField(max_length=255, blank=True, null=True)
     publication_year = models.PositiveSmallIntegerField(blank=True, null=True)
-    journal_or_publisher = models.CharField(max_length=255, blank=True, null=True)
+    authors = models.CharField(max_length=255, blank=True, null=True)
     link = models.ForeignKey(
         Link, on_delete=models.CASCADE, help_text="The link to the article."
     )
