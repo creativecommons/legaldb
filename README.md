@@ -1,18 +1,66 @@
 # caselaw [WIP]
 
-## Reimplementing CC’s Legal Database using Django
+<p align="center">
+    <a href="https://github.com/creativecommons/caselaw/blob/master/LICENSE"><img alt="MIT license" src="https://img.shields.io/github/license/creativecommons/vocabulary.svg?color=brightgreen"/></a>
+    <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p>
 
-Repository of Case Law and Scholarship data from around the world manually curated. Visit the current website: **[CC Legal Database [Beta]][website]**.
+> Repository of Case Law and Scholarship data from around the world manually curated. 
+
+:warning:  **This project, CC’s Legal Database, is undergoing a reimplementation using Django, you can see a preview running on [Heroku](https://cc-caselaw.herokuapp.com/).**
+
+Visit the current website: **[CC Legal Database [Beta]][website]**.
 
 [website]: https://labs.creativecommons.org/caselaw/
 
 
 ## Code of Conduct
 
-Please note that this project is released with a Contributor Code of Conduct
-([`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)). By participating in this
+Please note that this project is released with a Contributor [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this
 project you agree to abide by its terms.
 
+
+## Contributing
+
+Please read the general CC's [Contribution Guidelines](https://opensource.creativecommons.org/contributing-code/).
+
+### Development setup
+
+To follow these instructions, Python 3 and [Pipenv](https://pipenv.pypa.io/en/latest/) are required. 
+
+Install dependencies with pipenv.
+```bash
+pipenv install --dev
+```
+
+Copy `.env.template` and set environment variables (like  `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys in a `.env` file.
+```bash
+cp .env.template .env
+```
+
+After setting variables run the migrations to create the database (we use Postgresql in this case).
+```bash
+pipenv run python manage.py migrate
+```
+
+The next step is to create an admin account for for Django admin.
+```bash
+pipenv run python manage.py createsuperuser
+```
+
+Finally you can start a development server with:
+```bash
+pipenv run python manage.py runserver
+```
+and see a local version of the website following `http://127.0.0.1:8000/` on the browser.
+
+After made code changes and before commit, check code style.
+```bash
+pipenv run black .
+pipenv run flake8
+```
+
+---
 
 ## Spreadsheets
 
@@ -48,6 +96,5 @@ Note: These Google Sheets are the results of people completing the Google Forms.
 ## License
 
 - [`LICENSE`](LICENSE) (Expat/[MIT][mit] License)
-
 
 [mit]: http://www.opensource.org/licenses/MIT "The MIT License | Open Source Initiative"

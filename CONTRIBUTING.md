@@ -19,8 +19,7 @@ you'd like to see documented.
 
 ## How to Contribute
 
-Please follow the processes in our general [Contributing Code][contributing]
-guidelines on the Creative Common Open Source website.
+Please read the processes in our general [Contributing Code][contributing] guidelines on the Creative Common Open Source website.  It contains some general instructions that should be followed when contributing to any of the Creative Commons open-source repositories.
 
 [contributing]:https://creativecommons.github.io/contributing-code/
 
