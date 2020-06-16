@@ -22,40 +22,40 @@ project you agree to abide by its terms.
 
 ## Contributing
 
-Please read the general CC's [Contribution Guidelines](https://opensource.creativecommons.org/contributing-code/).
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). It contains some general instructions that should be followed when contributing to any of the Creative Commons open-source repositories.
 
 ### Development setup
 
 To follow these instructions, Python 3 and [Pipenv](https://pipenv.pypa.io/en/latest/) are required. 
 
 Install dependencies with pipenv.
-```bash
+```
 pipenv install --dev
 ```
 
 Copy `.env.template` and set environment variables (like  `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys in a `.env` file.
-```bash
+```
 cp .env.template .env
 ```
 
 After setting variables run the migrations to create the database (we use Postgresql in this case).
-```bash
+```
 pipenv run python manage.py migrate
 ```
 
-The next step is to create an admin account for for Django admin.
-```bash
+The next step is to create an admin account for Django admin.
+```
 pipenv run python manage.py createsuperuser
 ```
 
 Finally you can start a development server with:
-```bash
+```
 pipenv run python manage.py runserver
 ```
 and see a local version of the website following `http://127.0.0.1:8000/` on the browser.
 
 After made code changes and before commit, check code style.
-```bash
+```
 pipenv run black .
 pipenv run flake8
 ```
