@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. This is the CC Legal Database project index.")
+    return render(request, "legal_db/index.html")
+
