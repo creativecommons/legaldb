@@ -1,6 +1,7 @@
 *.swp
 *~
 .\#*
+.env
 .idea/
 .jekyll-metadata
 .sass-cache
