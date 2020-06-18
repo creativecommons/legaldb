@@ -1,11 +1,55 @@
-from django.shortcuts import render  # noqa
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
     return render(request, "legal_db/index.html")
 
-def detail(request):
+
+def case_index(request):
+    context = {
+        "cases": [
+            {
+                "country": "United States",
+                "name": "Wikimedia Foundation v Internet Brands",
+                "license": "CC BY-SA",
+                "year": 2020,
+            },
+            {
+                "country": "Belgium",
+                "name": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
+                "license": "CC BY-NC-ND",
+                "year": 2019
+            },
+            {
+                "country": "United States",
+                "name": "Wikimedia Foundation v Internet Brands",
+                "license": "CC BY-SA",
+                "year": 2020,
+            },
+            {
+                "country": "Belgium",
+                "name": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
+                "license": "CC BY-NC-ND",
+                "year": 2019
+            },
+            {
+                "country": "United States",
+                "name": "Wikimedia Foundation v Internet Brands",
+                "license": "CC BY-SA",
+                "year": 2020,
+            },
+            {
+                "country": "Belgium",
+                "name": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
+                "license": "CC BY-NC-ND",
+                "year": 2019
+            }
+        ],
+        "tags": ["art", "educational material", "musical work", "photograph"]
+    }
+    return render(request, "legal_db/case/index.html", context)
+
+def case_detail(request):
     context = {
         "case": {
             "name": "Wikimedia Foundation v Internet Brands",
@@ -29,4 +73,4 @@ def detail(request):
             "tags": ["education material", "open educational resources", "scientific research"]
         }
     }
-    return render(request, 'legal_db/case_detail.html', context)
+    return render(request, 'legal_db/case/detail.html', context)

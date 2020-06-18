@@ -1,0 +1,77 @@
+{% extends 'legal_db/base.html' %}
+
+{% block styles %}
+<style>
+  body {
+    color: #333333; /* Brand/DarkSlateGray */
+  }
+  .breadcrumb a, .breadcrumb a:hover {
+    color: #3C5C99; /* Brand/DarkSlateBlue */
+  }
+  .tags-filter {
+    color: #3C5C99; /* Brand/DarkSlateBlue */
+    cursor: pointer;
+  }
+  .hero {
+    background-color: #F5F5F5; /* Brand/LighterGray */
+    box-shadow: inset 0px 6px 0px #ED592F; /* Brand/Tomato */
+  }
+  .hero p {
+    max-width: 708px;
+  }
+  .button.tag:hover, .button.tag-selected {
+    color: white;
+    background-color: #ED592F; /* Brand/Tomato */
+    border-color: #ED592F; /* Brand/Tomato */
+  }
+</style>
+{% endblock %}
+
+{% block body_content %}
+<section class="hero padding-horizontal-xxl padding-vertical-large">
+  {% include "legal_db/partials/_breadcrumb.html" %}
+  <h2>Cases</h2>
+  <p class="padding-vertical-small body-big">Here you find all the cases of the CC Legal Database, information regarding court rulings and other legal decisions that affect or involve Creative Commons licenses and legal tools. See more details on the link to each case name.</p>
+</section>
+
+<div class="padding-horizontal-xxl padding-vertical-normal">
+
+  <section class="columns is-desktop is-vcentered margin-vertical-big padding-left-normal">
+    <input class="input column is-6" type="text" placeholder="Search for..."/>
+    <strong class="tags-filter margin-left-normal">
+      Show topic filters <i class="icon chevron-down"></i>
+    </strong>
+  </section>
+
+  <section id="tags">
+  {% for tag in tags %}
+    <button class="button tag margin-right-small">{{ tag }}</button>
+  {% endfor %}
+    <button class="button tag tag-selected">illustration</button>
+  </section>
+
+  <section class="margin-vertical-big table-container">
+    <table class="table is-bordered is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Case name</th>
+          <th>License</th>
+          <th>Year of resolution</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for case in cases %}
+        <tr>
+          <td>{{ case.country }}</td>
+          <td>{{ case.name }}</td>
+          <td>{{ case.license }}</td>
+          <td class="number-cell">{{ case.year }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+</div>
+{% endblock %}

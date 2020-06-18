@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>CC Legal Database</title>
+    <link rel="icon" href="favicon.ico"/>
     <link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary/css/vocabulary.css">
+    {% block styles %}{% endblock %}
   </head>
   <body>
     <script>
-    // This script load Vocabulary's assets
-    const getFullyQualifiedUrl = (path, version) => {
-      let baseUrl = "https://unpkg.com/@creativecommons/vocabulary"
-      if (version) { baseUrl = `${baseUrl}@${version}` }
-      return `${baseUrl}/${path}`
-    }
-
-    const patchAssetIntoDom = (asset, version=null) => {
-      const ajax = new XMLHttpRequest();
-      ajax.open("GET", getFullyQualifiedUrl(asset, version), true);
-      ajax.onload = () => {
-      var div = document.createElement("div");
-        // Render SVG in the page
-        div.innerHTML = ajax.responseText;
-        div.style.display = 'none';
-        document.body.insertBefore(div, document.body.childNodes[0]);
+      // This script load Vocabulary's assets
+      const getFullyQualifiedUrl = (path, version) => {
+        let baseUrl = "https://unpkg.com/@creativecommons/vocabulary"
+        if (version) { baseUrl = `${baseUrl}@${version}` }
+        return `${baseUrl}/${path}`
       }
 
-      ajax.send();
-    }
+      const patchAssetIntoDom = (asset, version=null) => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", getFullyQualifiedUrl(asset, version), true);
+        ajax.onload = () => {
+        var div = document.createElement("div");
+          // Render SVG in the page
+          div.innerHTML = ajax.responseText;
+          div.style.display = 'none';
+          document.body.insertBefore(div, document.body.childNodes[0]);
+        }
 
-    patchAssetIntoDom('assets/logos/cc/logomark.svg');
-    patchAssetIntoDom('assets/logos/products/legal_database.svg');
-  </script>
+        ajax.send();
+      }
+
+      patchAssetIntoDom('assets/logos/cc/logomark.svg');
+      patchAssetIntoDom('assets/logos/products/legal_database.svg');
+    </script>
 
     {% include 'legal_db/partials/_header.html' %}
-    {% block body_content %}
-    {% endblock %}
+    {% block body_content %}{% endblock %}
     {% include 'legal_db/partials/_footer.html' %}
   </body>
 </html>

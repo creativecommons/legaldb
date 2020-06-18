@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="home"),
-    path("case", views.detail),
+    path("case/", views.case_detail),   # Temporary route just to show the layout
+    path("cases/", views.case_index),
 ]
