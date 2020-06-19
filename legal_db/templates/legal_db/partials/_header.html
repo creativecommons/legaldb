@@ -18,9 +18,9 @@
     </div>
     <div class="navbar-menu is-active">
       <div class="navbar-end">
-        <a class="navbar-item" href="/cases">Cases</a>
-        <a class="navbar-item">Scholarships</a>
-        <a class="navbar-item">FAQ</a>
+        <a class="navbar-item" href="{% url 'case_index' %}">Cases</a>
+        <a class="navbar-item" href="{% url 'scholarship_index' %}">Scholarships</a>
+        <a class="navbar-item" href="{% url 'faq' %}">FAQ</a>
       </div>
     </div>
   </nav>

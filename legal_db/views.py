@@ -49,6 +49,7 @@ def case_index(request):
     }
     return render(request, "legal_db/case/index.html", context)
 
+
 def case_detail(request):
     context = {
         "case": {
@@ -74,3 +75,7 @@ def case_detail(request):
         }
     }
     return render(request, 'legal_db/case/detail.html', context)
+
+
+def temp(request):
+    return render(request, "legal_db/base.html")

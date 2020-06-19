@@ -35,10 +35,10 @@
           <div class="column is-full">
             <nav class="footer-navigation">
               <ul class="menu">
-                <li><a href="#" class="menu-item">Cases</a></li>
-                <li><a href="#" class="menu-item">Scholarships</a></li>
-                <li><a href="#" class="menu-item">FAQ</a></li>
-                <li><a href="/admin" class="menu-item">Login</a></li>
+                <li><a href="{% url 'case_index' %}" class="menu-item">Cases</a></li>
+                <li><a href="{% url 'scholarship_index' %}" class="menu-item">Scholarships</a></li>
+                <li><a href="{% url 'faq' %}" class="menu-item">FAQ</a></li>
+                <li><a href="{% url 'admin:login' %}" class="menu-item">Login</a></li>
               </ul>
             </nav>
           </div>
