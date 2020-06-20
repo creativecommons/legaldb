@@ -1,0 +1,62 @@
+$color-tomato: rgb(237, 89, 47);
+$color-dark-turquoise: rgb(5, 181, 218);
+$color-dark-slate-blue: rgb(60, 92, 153);
+$color-dark-slate-gray: rgb(51, 51, 51);
+$color-lighter-gray: rgb(245, 245, 245);
+
+body {
+    color: $color-dark-slate-gray;
+}
+
+.breadcrumb {
+  a, a:hover {
+    color: $color-dark-slate-blue;
+  }
+}
+
+.button.tag {
+  &.case {
+    &:hover, &.tag-selected {
+      color: white;
+      background-color: $color-tomato;
+      border-color: $color-tomato;
+    }
+  }
+  &.scholarship {
+    &:hover, &.tag-selected {
+      color: white;
+      background-color: $color-dark-turquoise;
+      border-color: $color-dark-turquoise;
+    }
+  }
+}
+
+.card.entry-post.link a .card-content.has-bottom-link {
+  padding: 0 0 3rem 0;
+}
+
+.hero {
+  background-color: $color-lighter-gray;
+
+  &.case {
+    box-shadow: inset 0px 6px 0px $color-tomato;
+  }
+
+  &.scholarship {
+    box-shadow: inset 0px 6px 0px $color-dark-turquoise;
+  }
+
+  p {
+    max-width: 708px;
+  }
+}
+
+.contribute {
+  float: right;
+  max-width: 380px;
+}
+
+.tags-filter {
+  color: $color-dark-slate-blue;
+  cursor: pointer;
+}

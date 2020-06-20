@@ -9,8 +9,10 @@ flake8 = "*"
 
 [packages]
 django = "~=3.0"
+django_compressor = "*"
 django-countries = "*"
 django-heroku = "*"
+django-libsass = "*"
 gunicorn = "*"
 psycopg2 = "*"
 django-ordered-model = "*"

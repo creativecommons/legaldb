@@ -1,3 +1,4 @@
+{% load compress %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -8,7 +9,10 @@
     <meta name="description" content=""/>
     <title>CC Legal Database</title>
     <link rel="icon" href="{% static 'favicon.ico' %}"/>
-    <link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary/css/vocabulary.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@creativecommons/vocabulary/css/vocabulary.css">
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'style.scss' %}">
+    {% endcompress %}
     {% block styles %}{% endblock %}
   </head>
   <body>
