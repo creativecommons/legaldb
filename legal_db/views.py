@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse
 
 
 def index(request):
@@ -18,7 +19,7 @@ def case_index(request):
                 "country": "Belgium",
                 "name": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
                 "license": "CC BY-NC-ND",
-                "year": 2019
+                "year": 2019,
             },
             {
                 "country": "United States",
@@ -30,7 +31,7 @@ def case_index(request):
                 "country": "Belgium",
                 "name": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
                 "license": "CC BY-NC-ND",
-                "year": 2019
+                "year": 2019,
             },
             {
                 "country": "United States",
@@ -42,10 +43,11 @@ def case_index(request):
                 "country": "Belgium",
                 "name": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
                 "license": "CC BY-NC-ND",
-                "year": 2019
-            }
+                "year": 2019,
+            },
         ],
-        "tags": ["art", "educational material", "musical work", "photograph"]
+        "tags": ["art", "educational material", "musical work", "photograph"],
+        "breadcrumb_links": [("Cases", ""),],
     }
     return render(request, "legal_db/case/index.html", context)
 
@@ -61,20 +63,71 @@ def case_detail(request):
                 {
                     "url": "www.google.com",
                     "title": "WMF complaint for declaratory judgement September 2012",
-                    "label": "Brief"
+                    "label": "Brief",
                 },
                 {
                     "url": "www.twitter.com",
                     "title": "Another page linked here",
-                    "label": "Pleading"
-                }
+                    "label": "Pleading",
+                },
             ],
             "background": "Wikitravel was a wiki founded in 2003, allowing volunteer authors to add and edit content related to worldwide travel and tourism. All content on the site was published under a Creative Commons ShareAlike license. In 2005, the domain name was purchased by Internet Brands, a for-profit company. In 2012, a group of volunteer site administrators and authors approached the Wikimedia Foundation about making a new travel-oriented wiki, which would incorporate some of the content from Wikitravel owned by contributors.",
             "summary": "Internet Brands filed a lawsuit against two of those Wikitravel editors, asserting trademark infringement, unfair competition, and civil conspiracy. The Wikimedia Foundation then filed this declaratory judgment action against Internet Brands in California state court, requesting a judicial determination that they have the right to start the proposed new travel wiki and incorporate content from Wikitravel under the terms of the CC license.",
-            "tags": ["education material", "open educational resources", "scientific research"]
-        }
+            "tags": [
+                "education material",
+                "open educational resources",
+                "scientific research",
+            ],
+        },
+        "breadcrumb_links": [("Cases", reverse("case_index")), ("Case", ""),],
     }
-    return render(request, 'legal_db/case/detail.html', context)
+    return render(request, "legal_db/case/detail.html", context)
+
+
+def scholarship_index(request):
+    context = {
+        "scholarships": [
+            {
+                "title": "United States",
+                "authors": "Wikimedia Foundation v Internet Brands",
+                "license": "CC BY-SA",
+                "publication_year": 2020,
+            },
+            {
+                "title": "Belgium",
+                "authors": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
+                "license": "CC BY-NC-ND",
+                "publication_year": 2019,
+            },
+            {
+                "title": "United States",
+                "authors": "Wikimedia Foundation v Internet Brands",
+                "license": "CC BY-SA",
+                "publication_year": 2020,
+            },
+            {
+                "title": "Belgium",
+                "authors": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
+                "license": "CC BY-NC-ND",
+                "publication_year": 2019,
+            },
+            {
+                "title": "United States",
+                "authors": "Wikimedia Foundation v Internet Brands",
+                "license": "CC BY-SA",
+                "publication_year": 2020,
+            },
+            {
+                "title": "Belgium",
+                "authors": "Linchôdmapwa v L'asbl Festival de Theatre de Spa",
+                "license": "CC BY-NC-ND",
+                "publication_year": 2019,
+            },
+        ],
+        "tags": ["art", "educational material", "musical work", "photograph"],
+        "breadcrumb_links": [("Scholarships", "")],
+    }
+    return render(request, "legal_db/scholarship/index.html", context)
 
 
 def temp(request):

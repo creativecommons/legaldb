@@ -1,53 +1,39 @@
 {% extends 'legal_db/base.html' %}
 
-{% block styles %}
-<style>
-  body {
-    color: #333333; /* Brand/DarkSlateGray */
-  }
-  .breadcrumb a, .breadcrumb a:hover {
-    color: #3C5C99; /* Brand/DarkSlateBlue */
-  }
-  .tags-filter {
-    color: #3C5C99; /* Brand/DarkSlateBlue */
-    cursor: pointer;
-  }
-  .hero {
-    background-color: #F5F5F5; /* Brand/LighterGray */
-    box-shadow: inset 0px 6px 0px #ED592F; /* Brand/Tomato */
-  }
-  .hero p {
-    max-width: 708px;
-  }
-  .button.tag:hover, .button.tag-selected {
-    color: white;
-    background-color: #ED592F; /* Brand/Tomato */
-    border-color: #ED592F; /* Brand/Tomato */
-  }
-</style>
-{% endblock %}
-
 {% block body_content %}
-<section class="hero padding-horizontal-xxl padding-vertical-large">
+<section class="hero case padding-horizontal-xxl padding-vertical-large">
   {% include "legal_db/partials/_breadcrumb.html" %}
   <h2>Cases</h2>
+  <div class="contribute">
+    <article class="card entry-post link no-border">
+      <a href="#" class="has-background-tomato">
+        <span class="card-content has-bottom-link">
+          <h2 class="card-title">Contribute</h2>
+          <span class="content">Do you have information regarding a legal case that you want to share?</span>
+          <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
+        </span>
+      </a>
+    </article>
+  </div>
   <p class="padding-vertical-small body-big">Here you find all the cases of the CC Legal Database, information regarding court rulings and other legal decisions that affect or involve Creative Commons licenses and legal tools. See more details on the link to each case name.</p>
 </section>
 
 <div class="padding-horizontal-xxl padding-vertical-normal">
 
   <section class="columns is-desktop is-vcentered margin-vertical-big padding-left-normal">
-    <input class="input column is-6" type="text" placeholder="Search for..."/>
-    <strong class="tags-filter margin-left-normal">
-      Show topic filters <i class="icon chevron-down"></i>
-    </strong>
+    <input class="input column is-8" type="text" placeholder="Search for..."/>
+    <div class="column">
+      <strong class="tags-filter margin-left-normal">
+        Show topic filters <i class="icon chevron-down"></i>
+      </strong>
+    </div>
   </section>
 
   <section id="tags">
   {% for tag in tags %}
-    <button class="button tag margin-right-small">{{ tag }}</button>
+    <button class="button tag case margin-right-small">{{ tag }}</button>
   {% endfor %}
-    <button class="button tag tag-selected">illustration</button>
+    <button class="button tag tag-selected case">illustration</button>
   </section>
 
   <section class="margin-vertical-big table-container">
@@ -64,7 +50,7 @@
       {% for case in cases %}
         <tr>
           <td>{{ case.country }}</td>
-          <td>{{ case.name }}</td>
+          <td><a href="{% url 'case_detail' %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
           <td>{{ case.license }}</td>
           <td class="number-cell">{{ case.year }}</td>
         </tr>
@@ -72,6 +58,5 @@
       </tbody>
     </table>
   </section>
-
 </div>
 {% endblock %}

@@ -1,7 +1,12 @@
 <nav class="breadcrumb caption bold" aria-label="breadcrumbs">
   <ul>
-    <li class="link"><a href="#">Home</a></li>
-    <li><a href="#">Cases</a></li>
-    <li class="is-active"><a href="#" aria-current="page displayed">Case</a></li>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    {% for text, link in breadcrumb_links %}
+      {% if forloop.last %}
+        <li class="is-active"><a href="">{{ text }}</a></li>
+      {% else %}
+        <li><a href="{{ link }}">{{ text }}</a></li>
+      {% endif %}
+    {% endfor %}
   </ul>
 </nav>
