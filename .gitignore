@@ -7,3 +7,4 @@
 .sass-cache
 _site
 __pycache__/
+staticfiles/
