@@ -30,7 +30,6 @@ class LegalResource(BaseModel):
     )
     contributor_name = models.CharField(max_length=120)
     contributor_email = models.EmailField()
-    country = CountryField(blank=True, null=True)
     summary = models.TextField(blank=True, null=True)
     tags = TaggableManager()
 
@@ -71,6 +70,7 @@ class Case(LegalResource):
         help_text="If there are multiple lawsuits between the parties in this dispute, "
         "please note additional cases here.",
     )
+    country = CountryField(blank=True, null=True)
     courts = models.CharField(
         max_length=255,
         help_text="The original court name and/or English translation. If the lawsuit "
