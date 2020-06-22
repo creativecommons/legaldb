@@ -23,8 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
+TRUE_VALUES = ["True", True]
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DJANGO_DEBUG_ENABLED", default=False) in ["True", True]
+DEBUG = os.environ.get("DJANGO_DEBUG_ENABLED", default=False) in TRUE_VALUES
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -53,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "caselaw.urls"
@@ -104,6 +107,40 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# See https://docs.djangoproject.com/en/3.0/topics/logging
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": (
+                "%(asctime)s [%(process)d] [%(levelname)s] "
+                "pathname=%(pathname)s lineno=%(lineno)s "
+                "funcname=%(funcName)s %(message)s"
+            ),
+            "datefmt": "%Y-%m-%d %H:%M:%S",
+        },
+        "simple": {"format": "%(levelname)s %(message)s"},
+    },
+    "handlers": {
+        "null": {"level": "DEBUG", "class": "logging.NullHandler"},
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django": {"handlers": ["console"], "level": "DEBUG", "propagate": True},
+        "django.request": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+    },
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -123,13 +160,24 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "compressor.finders.CompressorFinder",
 ]
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
+COMPRESS_ENABLED = os.environ.get("DJANGO_COMPRESS_ENABLED", True) in TRUE_VALUES
+
+COMPRESS_OFFLINE = os.environ.get("DJANGO_COMPRESS_OFFLINE", True) in TRUE_VALUES
+
+LIBSASS_OUTPUT_STYLE = os.environ.get("DJANGO_LIBSASS_STYLE", "compressed")
+
+
 # See https://devcenter.heroku.com/articles/deploying-python#python-deployment-flow
-django_heroku.settings(locals())
+django_heroku.settings(locals(), logging=False)

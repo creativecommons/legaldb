@@ -9,9 +9,9 @@
     <meta name="description" content=""/>
     <title>CC Legal Database</title>
     <link rel="icon" href="{% static 'favicon.ico' %}"/>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@creativecommons/vocabulary/css/vocabulary.css">
-    {% compress css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static 'style.scss' %}">
+    <link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary/css/vocabulary.css" type="text/css">
+    {% compress css file style %}
+    <link rel="stylesheet" href="{% static 'style.scss' %}" type="text/x-scss">
     {% endcompress %}
     {% block styles %}{% endblock %}
   </head>

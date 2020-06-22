@@ -17,6 +17,7 @@ gunicorn = "*"
 psycopg2 = "*"
 django-ordered-model = "*"
 django-taggit = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
