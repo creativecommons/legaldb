@@ -1,0 +1,29 @@
+{% extends 'legal_db/base.html' %}
+
+{% block body_content %}
+  <div class="hero padding-horizontal-xxl padding-vertical-large">
+    {% include "legal_db/partials/_breadcrumb.html" %}
+    <h1>Frequently Asked Questions</h1>
+  </div>
+  <div class="margin-horizontal-xxl margin-vertical-larger">
+    <div class="columns">
+      <section class="column is-9">
+        <input class="input" type="text" placeholder="Search for..." style="max-width: 450px"/>
+        <div class="padding-right-normal padding-top-big">
+          {% for faq in faqs %}
+          <article>
+            <h5>{{ faq.question }}</h5>
+            <p>{{ faq.answer }}</p>
+            <hr/>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      <aside class="column is-3">
+        <h3>Don't find an answer to your concern?</h3>
+        <b><a class="has-text-dark-slate-blue">Contact us</a></b>
+      </aside>
+  </div>
+
+  </div>
+{% endblock %}

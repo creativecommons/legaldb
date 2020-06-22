@@ -10,7 +10,7 @@ urlpatterns = [
     path("cases/", views.case_index, name="case_index"),
     path(
         "scholarship/", views.scholarship_detail, name="scholarship_detail"
-    ),  # !! Temporary routes just to show the layout
+    ),  # !! Temporary route just to show the layout
     path("scholarships/", views.scholarship_index, name="scholarship_index"),
-    path("faq/", views.temp, name="faq"),
+    path("faq/", views.faq, name="faq"),
 ]
