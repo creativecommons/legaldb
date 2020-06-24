@@ -2,6 +2,7 @@ $color-tomato: rgb(237, 89, 47);
 $color-dark-turquoise: rgb(5, 181, 218);
 $color-dark-slate-blue: rgb(60, 92, 153);
 $color-dark-slate-gray: rgb(51, 51, 51);
+$color-gray: rgb(176, 176, 176);
 $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
 
@@ -18,15 +19,18 @@ body {
 .button.tag {
   &.case {
     &:hover, &.tag-selected {
-      color: white;
       background-color: $color-tomato;
       border-color: $color-tomato;
+      color: white;
     }
   }
   &.scholarship {
-    &:hover, &.tag-selected {
-      color: white;
+    &:hover, &.selected {
       background-color: $color-dark-turquoise;
+      border-color: $color-dark-turquoise;
+      color: white;
+    }
+    &-clear {
       border-color: $color-dark-turquoise;
     }
   }
@@ -50,6 +54,17 @@ body {
   p {
     max-width: 708px;
   }
+}
+
+.input.search {
+  max-width: 450px;
+}
+
+.control.has-icons-left .icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  color: $color-light-gray;
 }
 
 .contribute {

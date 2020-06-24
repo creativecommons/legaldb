@@ -20,18 +20,26 @@
 
 <div class="padding-horizontal-xxl padding-vertical-normal">
 
-  <section class="columns is-desktop is-vcentered margin-vertical-big padding-left-normal">
-    <input class="input column is-8" type="text" placeholder="Search for..."/>
+  <section class="columns is-vcentered margin-vertical-big">
     <div class="column">
-      <strong class="tags-filter margin-left-normal">
-        Show topic filters <i class="icon chevron-down"></i>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Search for..."/>
+        <span class="icon is-left"><i class="icon search"></i></span>
+      </div>
+    </div>
+    <div class="column">
+      <strong id="tags-filter" class="tags-filter margin-left-normal">
+        <span id="tags-hide">Hide topic filters <i class="icon chevron-up"></i></span>
+        <span id="tags-show" class="is-hidden">Show topic filters <i class="icon chevron-down"></i></span>
       </strong>
     </div>
   </section>
 
-  <section id="tags">
+  <section id="tags" aria-expanded="true">
   {% for tag in tags %}
-    <button class="button tag scholarship margin-right-small margin-vertical-smaller">{{ tag }}</button>
+    <button class="button tag scholarship margin-right-small margin-vertical-smaller">
+      {{ tag }}
+    </button>
   {% endfor %}
   </section>
 
@@ -58,4 +66,32 @@
     </table>
   </section>
 </div>
+{% endblock %}
+
+{% block js_content %}
+<script>
+  const tagsToggle = document.getElementById('tags-filter'),
+        tagsSection = document.getElementById('tags'),
+        tagsShow = document.getElementById('tags-show'),
+        tagsHide = document.getElementById('tags-hide');
+
+  tagsToggle.addEventListener('click', () => {
+      tagsSection.classList.toggle('is-hidden');
+      tagsShow.classList.toggle('is-hidden');
+      tagsHide.classList.toggle('is-hidden');
+      if (tagsSection.classList.contains('is-hidden')) {
+          tagsSection.setAttribute('aria-expanded', false);
+
+      } else {
+          tagsSection.setAttribute('aria-expanded', true);
+      }
+  });
+
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+        tag.classList.toggle('selected');
+    })
+  });
+</script>
 {% endblock %}
