@@ -38,7 +38,11 @@
                 <li><a href="{% url 'case_index' %}" class="menu-item">Cases</a></li>
                 <li><a href="{% url 'scholarship_index' %}" class="menu-item">Scholarships</a></li>
                 <li><a href="{% url 'faq' %}" class="menu-item">FAQ</a></li>
-                <li><a href="{% url 'admin:login' %}" class="menu-item">Login</a></li>
+                {% if request.user.is_authenticated %}
+                  <li><a href="{% url 'admin:index' %}" class="menu-item">Admin</a></li>
+                {% else %}
+                  <li><a href="{% url 'admin:login' %}" class="menu-item">Login</a></li>
+                {% endif %}
               </ul>
             </nav>
           </div>
