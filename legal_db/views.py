@@ -12,9 +12,9 @@ def index(request):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
-    queryset = Case.objects \
-        .filter(status=Case.Status.PUBLISHED) \
-        .only("country", "name", "license", "decision_year")
+    queryset = Case.objects.filter(status=Case.Status.PUBLISHED).only(
+        "country", "name", "license", "decision_year"
+    )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -37,9 +37,9 @@ class CaseDetailView(DetailView):
 class ScholarshipListView(ListView):
     template_name = "legal_db/scholarship/index.html"
     context_object_name = "scholarships"
-    queryset = Scholarship.objects\
-        .filter(status=Scholarship.Status.PUBLISHED)\
-        .only("title", "authors", "license", "publication_year")
+    queryset = Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED).only(
+        "title", "authors", "license", "publication_year"
+    )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -61,4 +61,4 @@ class ScholarshipDetailView(DetailView):
 class FAQListView(ListView):
     model = FAQ
     template_name = "legal_db/faq.html"
-    context_object_name = 'faqs'
+    context_object_name = "faqs"
