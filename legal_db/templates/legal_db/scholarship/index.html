@@ -1,4 +1,9 @@
 {% extends 'legal_db/base.html' %}
+{% load static %}
+
+{% block js_content %}
+  <script src="{% static 'app.js' %}"></script>
+{% endblock %}
 
 {% block body_content %}
 <section class="hero scholarship padding-horizontal-xxl padding-vertical-large">
@@ -54,44 +59,16 @@
         </tr>
       </thead>
       <tbody>
-      {% for sch in scholarships %}
+      {% for scho in scholarships %}
         <tr>
-          <td><a href="{% url 'scholarship_detail' sch.id %}" class="has-text-dark-slate-blue">{{ sch.title }}</a></td>
-          <td>{{ sch.authors }}</td>
-          <td>{{ sch.license }}</td>
-          <td class="number-cell">{{ sch.publication_year }}</td>
+          <td><a href="{% url 'scholarship_detail' scho.id %}" class="has-text-dark-slate-blue">{{ scho.title }}</a></td>
+          <td>{{ scho.authors }}</td>
+          <td>{{ scho.license }}</td>
+          <td class="number-cell">{{ scho.publication_year }}</td>
         </tr>
       {% endfor %}
       </tbody>
     </table>
   </section>
 </div>
-{% endblock %}
-
-{% block js_content %}
-<script>
-  const tagsToggle = document.getElementById('tags-filter'),
-        tagsSection = document.getElementById('tags'),
-        tagsShow = document.getElementById('tags-show'),
-        tagsHide = document.getElementById('tags-hide');
-
-  tagsToggle.addEventListener('click', () => {
-      tagsSection.classList.toggle('is-hidden');
-      tagsShow.classList.toggle('is-hidden');
-      tagsHide.classList.toggle('is-hidden');
-      if (tagsSection.classList.contains('is-hidden')) {
-          tagsSection.setAttribute('aria-expanded', false);
-
-      } else {
-          tagsSection.setAttribute('aria-expanded', true);
-      }
-  });
-
-  const tags = document.querySelectorAll('.tag');
-  tags.forEach(tag => {
-    tag.addEventListener('click', () => {
-        tag.classList.toggle('selected');
-    })
-  });
-</script>
 {% endblock %}

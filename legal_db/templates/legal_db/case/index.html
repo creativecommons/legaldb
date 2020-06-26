@@ -1,4 +1,9 @@
 {% extends 'legal_db/base.html' %}
+{% load static %}
+
+{% block js_content %}
+  <script src="{% static 'app.js' %}"></script>
+{% endblock %}
 
 {% block body_content %}
 <section class="hero case padding-horizontal-xxl padding-vertical-large">
@@ -20,21 +25,27 @@
 
 <div class="padding-horizontal-xxl padding-vertical-normal">
 
-  <section class="columns is-desktop is-vcentered margin-vertical-big padding-left-normal">
-    <input class="input column is-8" type="text" placeholder="Search for..."/>
+  <section class="columns is-vcentered margin-vertical-big">
     <div class="column">
-      <strong class="tags-filter margin-left-normal margin-right-smaller">
-        Hide topic filters
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Search for..."/>
+        <span class="icon is-left"><i class="icon search"></i></span>
+      </div>
+    </div>
+    <div class="column">
+      <strong id="tags-filter" class="tags-filter margin-left-normal">
+        <span id="tags-hide">Hide topic filters <i class="icon chevron-up"></i></span>
+        <span id="tags-show" class="is-hidden">Show topic filters <i class="icon chevron-down"></i></span>
       </strong>
-      <i class="icon chevron-up has-text-dark-slate-blue"></i>
     </div>
   </section>
 
-  <section id="tags">
+  <section id="tags" aria-expanded="true">
   {% for tag in tags %}
-    <button class="button tag case margin-right-small">{{ tag }}</button>
+    <button class="button tag case margin-right-small margin-vertical-smaller">
+      {{ tag }}
+    </button>
   {% endfor %}
-    <button class="button tag tag-selected case">illustration</button>
   </section>
 
   <section class="margin-vertical-big table-container">
@@ -50,10 +61,10 @@
       <tbody>
       {% for case in cases %}
         <tr>
-          <td>{{ case.country }}</td>
-          <td><a href="{% url 'case_detail' %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
+          <td>{{ case.country.name }}</td>
+          <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
           <td>{{ case.license }}</td>
-          <td class="number-cell">{{ case.year }}</td>
+          <td class="number-cell">{{ case.decision_year }}</td>
         </tr>
       {% endfor %}
       </tbody>

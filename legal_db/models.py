@@ -54,6 +54,9 @@ class Link(BaseModel):
     title = models.CharField(max_length=255, blank=True, null=True)
     label = models.CharField(max_length=255, blank=True, null=True)
 
+    def __str__(self):
+        return self.url
+
 
 class Case(LegalResource):
     name = models.CharField(

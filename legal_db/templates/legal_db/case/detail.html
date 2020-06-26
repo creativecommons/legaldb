@@ -11,7 +11,7 @@
       <aside class="padding-horizontal-big padding-vertical-xl">
         <div class="margin-bottom-bigger">
           <h4 class="b-header">Country</h4>
-          <p>{{ case.country }}</p>
+          <p>{{ case.country.name }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
@@ -21,15 +21,20 @@
 
         <div class="margin-bottom-bigger">
           <h4 class="b-header">Year of resolution</h4>
-          <p>{{ case.year }}</p>
+          <p>{{ case.decision_year }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
           <h4 class="b-header">Relevant materials</h4>
           <ul style="list-style-type: circle;">
-          {% for link in case.links %}
+          {% for link in case.link_list %}
             <li class="margin-vertical-small">
-              <b>{{ link.label }}</b>: <a href="{{ link.url }}" class="has-text-dark-slate-blue">{{ link.title }}</a>
+              {% if link.label %}<b>{{ link.label }}</b>:{% endif %}
+              <a href="{{ link.url }}" class="has-text-dark-slate-blue">
+               {% if link.title %} {{ link.title }}
+               {% else %} {{ link.url }}
+               {% endif %}
+            </a>
             </li>
           {% endfor %}
           </ul>

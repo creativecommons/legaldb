@@ -18,7 +18,7 @@ body {
 
 .button.tag {
   &.case {
-    &:hover, &.tag-selected {
+    &:hover, &.selected {
       background-color: $color-tomato;
       border-color: $color-tomato;
       color: white;
@@ -75,6 +75,7 @@ body {
 .tags-filter {
   color: $color-dark-slate-blue;
   cursor: pointer;
+  user-select: none;
 }
 
 .faq {
