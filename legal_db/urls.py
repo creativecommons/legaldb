@@ -1,16 +1,23 @@
 from django.urls import path
 
-from . import views
+from .views import (
+    case_index,
+    case_detail,
+    faq,
+    index,
+    ScholarshipListView,
+    ScholarshipDetailView,
+)
 
 urlpatterns = [
-    path("", views.index, name="home"),
+    path("", index, name="home"),
+    path("cases/", case_index, name="case_index"),
+    path("cases/<int:case_id>", case_detail, name="case_detail"),
+    path("scholarship/", ScholarshipListView.as_view(), name="scholarship_index"),
     path(
-        "case/", views.case_detail, name="case_detail"
-    ),  # !! Temporary route just to show the layout
-    path("cases/", views.case_index, name="case_index"),
-    path(
-        "scholarship/", views.scholarship_detail, name="scholarship_detail"
-    ),  # !! Temporary route just to show the layout
-    path("scholarships/", views.scholarship_index, name="scholarship_index"),
-    path("faq/", views.faq, name="faq"),
+        "scholarship/<int:pk>",
+        ScholarshipDetailView.as_view(),
+        name="scholarship_detail",
+    ),
+    path("faq/", faq, name="faq"),
 ]

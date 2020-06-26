@@ -15,6 +15,10 @@
     {% endcompress %}
   </head>
   <body>
+    {% include 'legal_db/partials/_header.html' %}
+    {% block body_content %}{% endblock %}
+    {% include 'legal_db/partials/_footer.html' %}
+
     <script>
       // This script load Vocabulary's assets
       const getFullyQualifiedUrl = (path, version) => {
@@ -40,11 +44,6 @@
       patchAssetIntoDom('assets/logos/cc/logomark.svg');
       patchAssetIntoDom('assets/logos/products/legal_database.svg');
     </script>
-
-    {% include 'legal_db/partials/_header.html' %}
-    {% block body_content %}{% endblock %}
-    {% include 'legal_db/partials/_footer.html' %}
-
     {% block js_content %}{% endblock %}
   </body>
 </html>
