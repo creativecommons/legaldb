@@ -10,7 +10,10 @@ exclude = '''
   | buck-out
   | build
   | dist
-  | venv
   | migrations
+  | static
+  | staticfiles
+  | templates
+  | venv
 )/
 '''

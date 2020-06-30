@@ -1,0 +1,60 @@
+{% extends 'legal_db/base.html' %}
+
+{% block body_content %}
+<div class="hero case padding-horizontal-xxl padding-vertical-large">
+  {% include "legal_db/partials/_breadcrumb.html" %}
+  <h2 class="b-header">{{ case.name }}</h2>
+</div>
+<div class="container">
+  <div class="columns">
+    <div class="column is-one-third">
+      <aside class="padding-horizontal-big padding-vertical-xl">
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header">Country</h4>
+          <p>{{ case.country.name }}</p>
+        </div>
+
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header">Court(s)</h4>
+          <p>{{ case.courts }}</p>
+        </div>
+
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header">Year of resolution</h4>
+          <p>{{ case.decision_year }}</p>
+        </div>
+
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header">Relevant materials</h4>
+          <ul class="links-list">
+          {% for link in case.link_list %}
+            <li class="margin-vertical-small">
+              {% if link.label %}<b>{{ link.label }}</b>:{% endif %}
+              <a href="{{ link.url }}">
+               {% if link.title %} {{ link.title }}
+               {% else %} {{ link.url }}
+               {% endif %}
+            </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+    <div class="column is-two-thirds">
+      <article class="padding-horizontal-big padding-vertical-xl">
+        <h3 class="b-header">Background information</h3>
+        <p>{{ case.background }}</p>
+        <br/>
+        <h3 class="b-header">Case summary</h3>
+        <p>{{ case.summary }}</p>
+        <hr/>
+        {% for tag in case.tags %}
+          <a href="#" class="button tag case margin-horizontal-small">{{ tag }}</a>
+        {% endfor %}
+      </article>
+    </div>
+  </div>
+</div>
+{% endblock %}

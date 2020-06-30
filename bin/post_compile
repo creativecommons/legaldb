@@ -1,0 +1,2 @@
+echo "-----> Compressing static files"
+python manage.py compress
