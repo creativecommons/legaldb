@@ -49,7 +49,10 @@
         <tr>
           <td>{{ case.country.name }}</td>
           <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
-          <td>{{ case.license }}</td>
+          <td class="is-narrow">
+            {% if not case.license %} <span class="has-text-grey">Unknown</span>
+            {% else %} {{ case.license }} {% endif %}
+          </td>
           <td class="number-cell">{{ case.decision_year }}</td>
         </tr>
       {% endfor %}

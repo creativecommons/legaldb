@@ -40,24 +40,9 @@ body {
   padding: 0 0 3rem 0;
 }
 
-.hero {
-  background-color: $color-lighter-gray;
-
-  &.case {
-    box-shadow: inset 0px 6px 0px $color-tomato;
-  }
-
-  &.scholarship {
-    box-shadow: inset 0px 6px 0px $color-dark-turquoise;
-  }
-
-  p {
-    max-width: 708px;
-  }
-}
-
-.input.search {
-  max-width: 450px;
+.contribute {
+  float: right;
+  max-width: 380px;
 }
 
 .control.has-icons-left .icon {
@@ -65,17 +50,6 @@ body {
   display: inline-flex;
   justify-content: center;
   color: $color-light-gray;
-}
-
-.contribute {
-  float: right;
-  max-width: 380px;
-}
-
-.tags-filter {
-  color: $color-dark-slate-blue;
-  cursor: pointer;
-  user-select: none;
 }
 
 .faq {
@@ -108,4 +82,38 @@ body {
   &__body {
     padding-right: 1.5rem;
   }
+}
+
+.hero {
+  background-color: $color-lighter-gray;
+
+  &.case {
+    box-shadow: inset 0px 6px 0px $color-tomato;
+  }
+
+  &.scholarship {
+    box-shadow: inset 0px 6px 0px $color-dark-turquoise;
+  }
+
+  p {
+    max-width: 708px;
+  }
+}
+
+.input.search {
+  max-width: 450px;
+}
+
+.links-list {
+  list-style-type: circle;
+  overflow-wrap: break-word;
+  a {
+    color: $color-dark-slate-blue;
+  }
+}
+
+.tags-filter {
+  color: $color-dark-slate-blue;
+  cursor: pointer;
+  user-select: none;
 }

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+from distutils.util import strtobool
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,10 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
-TRUE_VALUES = ["True", True]
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DJANGO_DEBUG_ENABLED", default=False) in TRUE_VALUES
+DEBUG = bool(strtobool(str(os.environ.get("DJANGO_DEBUG_ENABLED", default=False))))
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -172,9 +171,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
-COMPRESS_ENABLED = os.environ.get("DJANGO_COMPRESS_ENABLED", True) in TRUE_VALUES
+COMPRESS_ENABLED = bool(strtobool(str(os.environ.get("DJANGO_COMPRESS_ENABLED", True))))
 
-COMPRESS_OFFLINE = os.environ.get("DJANGO_COMPRESS_OFFLINE", True) in TRUE_VALUES
+COMPRESS_OFFLINE = bool(strtobool(str(os.environ.get("DJANGO_COMPRESS_OFFLINE", True))))
 
 LIBSASS_OUTPUT_STYLE = os.environ.get("DJANGO_LIBSASS_STYLE", "compressed")
 

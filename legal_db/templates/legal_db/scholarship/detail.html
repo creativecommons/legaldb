@@ -11,7 +11,8 @@
       <aside class="padding-horizontal-big padding-vertical-xl">
         <div class="margin-bottom-bigger">
           <h4 class="b-header">License on article</h4>
-          <p>{{ scholarship.license }}</p>
+          {% if not case.license %} <p class="has-text-grey">Unknown</p>
+          {% else %} <p>{{ cholarship.license }}</p> {% endif %}
         </div>
 
         <div class="margin-bottom-bigger">

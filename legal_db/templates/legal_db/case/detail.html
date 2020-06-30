@@ -26,11 +26,11 @@
 
         <div class="margin-bottom-bigger">
           <h4 class="b-header">Relevant materials</h4>
-          <ul style="list-style-type: circle;">
+          <ul class="links-list">
           {% for link in case.link_list %}
             <li class="margin-vertical-small">
               {% if link.label %}<b>{{ link.label }}</b>:{% endif %}
-              <a href="{{ link.url }}" class="has-text-dark-slate-blue">
+              <a href="{{ link.url }}">
                {% if link.title %} {{ link.title }}
                {% else %} {{ link.url }}
                {% endif %}

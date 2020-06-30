@@ -49,7 +49,10 @@
         <tr>
           <td><a href="{% url 'scholarship_detail' scho.id %}" class="has-text-dark-slate-blue">{{ scho.title }}</a></td>
           <td>{{ scho.authors }}</td>
-          <td>{{ scho.license }}</td>
+          <td class="is-narrow">
+            {% if not scho.license %} <span class="has-text-grey">Unknown</span>
+            {% else %} {{ scho.license }} {% endif %}
+          </td>
           <td class="number-cell">{{ scho.publication_year }}</td>
         </tr>
       {% endfor %}
