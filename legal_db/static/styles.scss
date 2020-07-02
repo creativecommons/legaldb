@@ -16,8 +16,32 @@ body {
   }
 }
 
+.button {
+  &-case{
+    background-color: $color-tomato;
+    border-color: $color-tomato;
+    color: white;
+    &:hover {
+      background-color: $color-tomato;
+      border-color: $color-tomato;
+    }
+  }
+  &-scholarship {
+    background-color: $color-dark-turquoise;
+    border-color: $color-dark-turquoise;
+    color: white;
+    &:hover {
+      background-color: $color-dark-turquoise;
+      border-color: $color-dark-turquoise;
+    }
+  }
+}
+
 .button.tag {
   &.case {
+    &.outline {
+      border-color: $color-tomato;
+    }
     &:hover, &.selected {
       background-color: $color-tomato;
       border-color: $color-tomato;
@@ -25,6 +49,9 @@ body {
     }
   }
   &.scholarship {
+    &.outline {
+      border-color: $color-dark-turquoise;
+    }
     &:hover, &.selected {
       background-color: $color-dark-turquoise;
       border-color: $color-dark-turquoise;
@@ -67,7 +94,7 @@ body {
     &::after {
       font-family: "Vocabulary Icons";
       font-size: 1.5rem;
-      content: '\e906'; // angle-down
+      content: '\e906'; // angle-down icon
       color: $color-dark-slate-gray;
       margin: 0 1rem;
     }
@@ -75,12 +102,27 @@ body {
 
   &__head.expanded {
     &::after {
-      content: '\e904'; // angle-up
+      content: '\e904'; // angle-up icon
     }
   }
 
   &__body {
     padding-right: 1.5rem;
+  }
+
+  &__section {
+    position: relative;
+
+    &::before {
+      color: $color-lighter-gray;
+      content: "\ea0c";  // question-circle icon
+      font-family: "Vocabulary Icons";
+      position: absolute;
+      bottom: -1.5rem;
+      right: 3rem;
+      font-size: 7rem;
+      z-index: -1;
+    }
   }
 }
 

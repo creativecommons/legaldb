@@ -1,12 +1,16 @@
 from legal_db.models import Case, FAQ, Scholarship
+from django.views.generic import DetailView, ListView, TemplateView
 from taggit.models import Tag
 
-from django.shortcuts import render
-from django.views.generic import DetailView, ListView
 
+class HomeView(TemplateView):
+    template_name = "legal_db/index.html"
 
-def index(request):
-    return render(request, "legal_db/index.html")
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cases_tags"] = Tag.objects.exclude(case=None)[:12]
+        context["scholarship_tags"] = Tag.objects.exclude(scholarship=None)[:12]
+        return context
 
 
 class CaseListView(ListView):
