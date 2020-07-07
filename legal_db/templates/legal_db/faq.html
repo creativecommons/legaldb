@@ -10,7 +10,7 @@
     <section class="column is-9">
     <div class="control has-icons-left">
       <label for="search" class="is-sr-only">Search: </label>
-      <input id="search" class="input search" type="text" placeholder="Search for..." />
+      <input id="search" class="input search" type="text" onkeyup="search()" placeholder="Search for..." />
       <span class="icon is-left"><i class="icon search"></i></span>
     </div>
       <div class="padding-right-normal padding-top-big">
@@ -52,5 +52,26 @@
     });
   });
 
+  const searchInput = document.getElementById("search");
+
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") {
+      searchInput.value = "";
+    }
+  });
+
+  const search = () => {
+    const terms = searchInput.value.toLowerCase();
+    const faqContent = document.getElementsByClassName("faq__content");
+
+    for (let i = 0; i < faqContent.length; i++) {
+      const textValue = faqContent[i].textContent.toLowerCase();
+      if (textValue.includes(terms)) {
+	faqContent[i].style.display = "";
+      } else {
+       faqContent[i].style.display = "none";
+      }
+    }
+  };
 </script>
 {% endblock %}
