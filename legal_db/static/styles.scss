@@ -6,6 +6,8 @@ $color-gray: rgb(176, 176, 176);
 $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
 
+$hero-body-padding: 3rem 1.5rem !default;
+
 body {
     color: $color-dark-slate-gray;
 }
@@ -137,8 +139,16 @@ body {
     box-shadow: inset 0px 6px 0px $color-dark-turquoise;
   }
 
-  p {
-    max-width: 708px;
+  .hero-title-big {
+    font-size: 10rem;
+  }
+
+  .hero-body {
+    padding: $hero-body-padding;
+  }
+
+  .hero-p {
+    max-width: 800px;
   }
 }
 
