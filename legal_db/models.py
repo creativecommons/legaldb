@@ -22,6 +22,8 @@ class BaseModel(models.Model):
 
 
 class LegalResource(BaseModel):
+    """Abstract Class to contain the commons attributes of Cases and Scholarship"""
+
     license = models.CharField(
         max_length=50,
         blank=True,
@@ -31,7 +33,7 @@ class LegalResource(BaseModel):
     contributor_name = models.CharField(max_length=120)
     contributor_email = models.EmailField()
     summary = models.TextField(blank=True, null=True)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     class Status(models.IntegerChoices):
         UNREVIEWED = 1, _("Unreviewed")
@@ -110,7 +112,7 @@ class Scholarship(LegalResource):
     )
 
     def __str__(self):
-        return self.title
+        return self.title or self.link.url
 
 
 class FAQ(BaseModel, OrderedModel):
