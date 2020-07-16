@@ -43,10 +43,8 @@ class CaseDetailView(DetailView):
 class ScholarshipListView(ListView):
     template_name = "legal_db/scholarship/index.html"
     context_object_name = "scholarships"
-    queryset = (
-        Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED)
-        .only("title", "authors", "license", "publication_year")
-        .order_by("-publication_year", "title")
+    queryset = Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED).order_by(
+        "-publication_year", "title"
     )
 
     def get_context_data(self, **kwargs):
@@ -56,9 +54,9 @@ class ScholarshipListView(ListView):
 
 
 class ScholarshipDetailView(DetailView):
-    model = Scholarship
     context_object_name = "scholarship"
     template_name = "legal_db/scholarship/detail.html"
+    queryset = Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED)
 
     def get_object(self):
         obj = super().get_object()

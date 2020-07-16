@@ -55,6 +55,8 @@
             {% else %} {{ scho.license }} {% endif %}
           </td>
         </tr>
+      {% empty %}
+        <tr><td colspan="4">No scholarship are available.</td></tr>
       {% endfor %}
       </tbody>
     </table>
