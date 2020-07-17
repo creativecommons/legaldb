@@ -1,5 +1,9 @@
-from legal_db.models import Case, FAQ, Scholarship
+from django.contrib import messages
+from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
+
+from .forms import LinkForm, ScholarshipForm
+from .models import Case, FAQ, Scholarship
 from taggit.models import Tag
 
 
@@ -70,3 +74,47 @@ class FAQListView(ListView):
     model = FAQ
     template_name = "legal_db/faq.html"
     context_object_name = "faqs"
+
+
+def scholarship_submit_view(request):
+    """Show submission form and process the request to save an Scholarship article."""
+    if request.method == "POST":
+        link_form = LinkForm(request.POST)
+        scho_form = ScholarshipForm(request.POST)
+
+        if link_form.is_valid() and scho_form.is_valid():
+            link = link_form.save()
+            scholarship = scho_form.save(commit=False)
+            scholarship.link_id = link.id
+            scholarship.save()
+
+            messages.success(request, "scholarship created")
+            return redirect("submission_result")
+    else:
+        link_form = LinkForm()
+        scho_form = ScholarshipForm()
+
+    return render(
+        request,
+        "legal_db/scholarship/form.html",
+        {"link_form": link_form, "scho_form": scho_form},
+    )
+
+
+def result_view(request):
+    """
+    Result page to tell the resource was successfully received.
+    Redirects to home if the request does not come after a form submitted.
+    """
+    message = get_request_message(request)
+    if not message:
+        return redirect("home")
+
+    return render(request, "legal_db/result.html", {"action": message})
+
+
+def get_request_message(request):
+    storage = messages.get_messages(request)
+    for list in storage:
+        if ("scholarship" in list.message) or ("case" in list.message):
+            return list.message

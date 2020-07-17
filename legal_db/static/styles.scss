@@ -81,6 +81,11 @@ body {
   color: $color-light-gray;
 }
 
+.errorlist {
+  color: $color-tomato;
+  font-size: 0.9rem;
+}
+
 .faq {
   &__content {
     border-bottom: 2px solid $color-light-gray;
@@ -128,6 +133,10 @@ body {
   }
 }
 
+.form {
+  max-width: 768px;
+}
+
 .hero {
   background-color: $color-lighter-gray;
 
@@ -162,6 +171,11 @@ body {
   a {
     color: $color-dark-slate-blue;
   }
+}
+
+.required {
+  color: darkred;
+  font-weight: bold;
 }
 
 .tags-filter {

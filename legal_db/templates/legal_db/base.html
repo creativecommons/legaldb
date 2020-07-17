@@ -16,7 +16,9 @@
   </head>
   <body>
     {% include 'legal_db/partials/_header.html' %}
-    {% block body_content %}{% endblock %}
+    {% block body_content %}
+      {% if msg %}<p><strong>{{ msg }}</strong></p>{% endif %}
+    {% endblock %}
     {% include 'legal_db/partials/_footer.html' %}
 
     <script>
@@ -40,10 +42,9 @@
 
         ajax.send();
       }
-
       patchAssetIntoDom('assets/logos/cc/logomark.svg');
-      patchAssetIntoDom('assets/logos/products/legal_database.svg');
     </script>
+    <script src="{% static 'app.js' %}"></script>
     {% block js_content %}{% endblock %}
   </body>
 </html>

@@ -1,0 +1,14 @@
+{% extends 'legal_db/base.html' %}
+
+{% block body_content %}
+  <main class="hero">
+    <div class="hero-body has-text-centered">
+      <p class="body-big">Thank you for your submission.<br/> It will be reviewed by Creative Commons staff, and you may be contacted for more information.</p>
+      <br/>
+      <a href="{% url 'home' %}" class="button margin-normal">Return Home</a>
+      {% if "scholarship" in action %}
+        <a href="{% url 'scholarship_submit' %}" class="button button-scholarship margin-normal">Submit another article</a>
+      {% endif %}
+    </div>
+  </main>
+{% endblock %}
