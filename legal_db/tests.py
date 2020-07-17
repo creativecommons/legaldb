@@ -1,32 +1,8 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from .models import Link, Scholarship
-
-
-def create_scholarship():
-    """
-    Create a dummy scholarship and link for tests.
-    """
-    link = Link.objects.create(url="example.com")
-    scholarship = Scholarship.objects.create(
-        contributor_name="Testing Contributor",
-        contributor_email="test@test.co",
-        title="A Test Title",
-        publication_year=2010,
-        link_id=link.id,
-    )
-    return scholarship
-
-
-def fill_db_with_some_scholarship():
-    create_scholarship()  # Default status is "UNREVIEWED"
-    scholarship = create_scholarship()
-    scholarship.status = Scholarship.Status.REVIEW_IN_PROGRESS
-    scholarship.save()
-    scholarship = create_scholarship()
-    scholarship.status = Scholarship.Status.PUBLISHED
-    scholarship.save()
+from .factories import ScholarshipFactory
+from .models import Scholarship
 
 
 class ScholarshipListViewTests(TestCase):
@@ -36,14 +12,16 @@ class ScholarshipListViewTests(TestCase):
         """
         response = self.client.get(reverse("scholarship_index"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "No scholarship article are available.")
+        self.assertContains(response, "No scholarships are available.")
 
     def test_show_only_published(self):
         """
         Scholarship list is displayed correctly, only with articles marked with the
         status 'PUBLISHED'.
         """
-        fill_db_with_some_scholarship()
+        scholarships = ScholarshipFactory.create_batch(3)
+        scholarships[1].status = Scholarship.Status.PUBLISHED
+
         response = self.client.get(reverse("scholarship_index"))
         self.assertEqual(response.status_code, 200)
         for row in response.context["scholarships"]:
@@ -58,7 +36,7 @@ class ScholarshipDetailViewTests(TestCase):
         are not shown. Second request is for an published article, therefore is okay
         to display the article's information.
         """
-        scholarship = create_scholarship()
+        scholarship = ScholarshipFactory()
         url = reverse("scholarship_detail", kwargs={"pk": scholarship.id})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 404)
