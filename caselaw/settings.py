@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "legal_db.apps.LegalDBConfig",
     "ordered_model",
     "taggit",
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [

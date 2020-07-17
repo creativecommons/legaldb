@@ -1,14 +1,10 @@
+{% load static %}
+
 <header>
   <nav class="navbar ">
     <div class="navbar-brand">
       <a class="has-text-black" href="/" >
-        <svg
-          class="logo"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 269 40">
-          <use href="#legaldatabase"></use>
-        </svg>
+        <img src="{% static 'logo.svg' %}"
       </a>
       <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
