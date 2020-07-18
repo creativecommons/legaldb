@@ -1,0 +1,112 @@
+{% extends 'legal_db/base.html' %}
+{% load widget_tweaks %}
+
+{% block body_content %}
+<section class="hero has-background-white padding-horizontal-xl padding-vertical-big">
+  <h2>Case Submission</h2>
+  <p class="hero-p">Please add any cases related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;&nbsp;<span class="required">*</span> Required.</p>
+</section>
+<section class="has-background-grey-lighter padding-vertical-normal">
+  <form class="form margin-horizontal-xxl margin-vertical-big" action="{% url 'case_submit' %}" method="post">
+    {% csrf_token %}
+    {% if case_form.non_field_errors %}
+      <div class="notification warning">
+        <strong class="notification-container">{{ case_form.non_field_errors }}</strong>
+      </div>
+    {% endif %}
+
+    <h4 class="b-header">Contact</h4>
+
+    {% with WIDGET_ERROR_CLASS='is-danger' %}
+      <div class="field">
+        <label for="{{ case_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
+        {% render_field case_form.contributor_name|add_class:"input" %}
+        {{ case_form.contributor_name.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
+        {% render_field case_form.contributor_email|add_class:"input" %}
+        {{ case_form.contributor_email.errors }}
+      </div>
+
+      <div class="field">
+        <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
+        <label for="{{ case_form.agreement.id_for_label }}" class="checkbox">
+          {% render_field case_form.agreement %}
+          I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>. {{ case_form.agreement|field_type }}
+        </label>
+        {{ case_form.agreement.errors }}
+      </div>
+      <br/>
+
+      <h4 class="b-header">Case information</h4>
+
+      <div class="field">
+        <label for="{{ case_form.name.id_for_label }}" class="has-text-weight-bold">Case name</label>
+        <p>If there are multiple lawsuits between the parties, please just include one here and note the others in the related cases field.</p>
+        {% render_field case_form.name|add_class:"input" %}
+        {{ case_form.name.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.related_cases.id_for_label }}" class="has-text-weight-bold">Related cases</label>
+        <p>If there are multiple lawsuits between the parties in this dispute, please note additional cases here.</p>
+        {% render_field case_form.related_cases|add_class:"input" %}
+        {{ case_form.related_cases.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.license.id_for_label }}">License on case</label>
+        {% render_field case_form.license|add_class:"input" %}
+        {{ case_form.license.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.country.id_for_label }}">Country</label><br/>
+        <div class="select">{% render_field case_form.country %}</div>
+        {{ case_form.country.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.courts.id_for_label }}" class="has-text-weight-bold">Court(s)</label>
+        <p>If the lawsuit was filed in one court and then went to another court on appeal, please note all relevant courts here.</p>
+        {% render_field case_form.courts|add_class:"input" %}
+        {{ case_form.courts.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.background.id_for_label }}">Background Information</label>
+        {% render_field case_form.background|add_class:"input textarea" placeholder="Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit." %}
+        {{ case_form.background.errors }}
+      </div>
+
+      <div class="field">
+        <label for="{{ case_form.summary.id_for_label }}">Case Summary</label>
+        {% render_field case_form.summary|add_class:"input textarea" placeholder="Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates." %}
+        {{ case_form.summary.errors }}
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <label for="{{ case_form.decision_year.id_for_label }}">Year of case resolution</label>
+          {% render_field case_form.decision_year|add_class:"input" placeholder="YYYY" %}
+          {{ case_form.decision_year.errors }}
+        </div>
+        <div class="column">
+          <label class="checkbox">Pending</label><br/>
+            <div class="select">{% render_field case_form.is_pending %}</div>
+        </div>
+      </div>
+
+      <h4 class="b-header">Links to relevant materials</h4>
+
+      <p>Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
+
+      <hr/>
+    {% endwith %}
+
+    <button type="submit" class="button button-case small">submit case</button>
+  </form>
+</section>
+{% endblock %}

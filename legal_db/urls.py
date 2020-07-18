@@ -3,6 +3,7 @@ from django.urls import path
 from .views import (
     CaseListView,
     CaseDetailView,
+    case_submit_view,
     FAQListView,
     HomeView,
     result_view,
@@ -15,6 +16,7 @@ urlpatterns = [
     path("", HomeView.as_view(), name="home"),
     path("cases/", CaseListView.as_view(), name="case_index"),
     path("cases/<int:pk>/", CaseDetailView.as_view(), name="case_detail"),
+    path("cases/submit/", case_submit_view, name="case_submit"),
     path("scholarship/", ScholarshipListView.as_view(), name="scholarship_index"),
     path(
         "scholarship/<int:pk>/",

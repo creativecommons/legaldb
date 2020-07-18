@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
 
-from .forms import LinkForm, ScholarshipForm
+from .forms import CaseForm, LinkForm, ScholarshipForm
 from .models import Case, FAQ, Scholarship
 from taggit.models import Tag
 
@@ -74,6 +74,20 @@ class FAQListView(ListView):
     model = FAQ
     template_name = "legal_db/faq.html"
     context_object_name = "faqs"
+
+
+def case_submit_view(request):
+    """Show submission form and process the request to save a legal Case."""
+    if request.method == "POST":
+        case_form = CaseForm(request.POST)
+        if case_form.is_valid():
+            # TODO: save case with links.
+            messages.success(request, "case created")
+            return redirect("submission_result")
+    else:
+        case_form = CaseForm()
+
+    return render(request, "legal_db/case/form.html", {"case_form": case_form})
 
 
 def scholarship_submit_view(request):
