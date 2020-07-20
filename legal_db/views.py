@@ -2,10 +2,11 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
 
-from .forms import CaseForm, LinkForm, ScholarshipForm
-from .models import Case, FAQ, Scholarship
+from .forms import CaseForm, LinkForm, LinkFormset, ScholarshipForm
+from .models import Link, Case, FAQ, Scholarship
 from taggit.models import Tag
 
+import pprint
 
 class HomeView(TemplateView):
     template_name = "legal_db/index.html"
@@ -79,15 +80,23 @@ class FAQListView(ListView):
 def case_submit_view(request):
     """Show submission form and process the request to save a legal Case."""
     if request.method == "POST":
+        link_formset = LinkFormset(request.POST)
         case_form = CaseForm(request.POST)
-        if case_form.is_valid():
-            # TODO: save case with links.
+        if link_formset.is_valid() and case_form.is_valid():
+            links = link_formset.save()
+            case = case_form.save()
+            for link in links:
+                case.links.add(link)
+
             messages.success(request, "case created")
             return redirect("submission_result")
     else:
+        link_formset = LinkFormset(queryset=Link.objects.none())
         case_form = CaseForm()
 
-    return render(request, "legal_db/case/form.html", {"case_form": case_form})
+    return render(request, "legal_db/case/form.html",
+        {"link_formset": link_formset, "case_form": case_form}
+    )
 
 
 def scholarship_submit_view(request):

@@ -15,17 +15,21 @@
       </div>
     {% endif %}
 
-    <h4 class="b-header">Contact</h4>
+    <h4 class="b-header margin-bottom-small">Contact</h4>
 
     {% with WIDGET_ERROR_CLASS='is-danger' %}
       <div class="field">
-        <label for="{{ case_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
+        <label for="{{ case_form.contributor_name.id_for_label }}" class="has-text-weight-bold">
+          Your Name <span class="required">*</span>
+        </label>
         {% render_field case_form.contributor_name|add_class:"input" %}
         {{ case_form.contributor_name.errors }}
       </div>
 
       <div class="field">
-        <label for="{{ case_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
+        <label for="{{ case_form.contributor_email.id_for_label }}" class="has-text-weight-bold">
+          Email <span class="required">*</span>
+        </label>
         {% render_field case_form.contributor_email|add_class:"input" %}
         {{ case_form.contributor_email.errors }}
       </div>
@@ -34,13 +38,13 @@
         <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
         <label for="{{ case_form.agreement.id_for_label }}" class="checkbox">
           {% render_field case_form.agreement %}
-          I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>. {{ case_form.agreement|field_type }}
+          I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
         </label>
         {{ case_form.agreement.errors }}
       </div>
       <br/>
 
-      <h4 class="b-header">Case information</h4>
+      <h4 class="b-header margin-bottom-small">Case information</h4>
 
       <div class="field">
         <label for="{{ case_form.name.id_for_label }}" class="has-text-weight-bold">Case name</label>
@@ -57,13 +61,13 @@
       </div>
 
       <div class="field">
-        <label for="{{ case_form.license.id_for_label }}">License on case</label>
+        <label for="{{ case_form.license.id_for_label }}" class="has-text-weight-bold">License on case</label>
         {% render_field case_form.license|add_class:"input" %}
         {{ case_form.license.errors }}
       </div>
 
       <div class="field">
-        <label for="{{ case_form.country.id_for_label }}">Country</label><br/>
+        <label for="{{ case_form.country.id_for_label }}" class="has-text-weight-bold">Country</label><br/>
         <div class="select">{% render_field case_form.country %}</div>
         {{ case_form.country.errors }}
       </div>
@@ -76,37 +80,78 @@
       </div>
 
       <div class="field">
-        <label for="{{ case_form.background.id_for_label }}">Background Information</label>
+        <label for="{{ case_form.background.id_for_label }}" class="has-text-weight-bold">Background Information</label>
         {% render_field case_form.background|add_class:"input textarea" placeholder="Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit." %}
         {{ case_form.background.errors }}
       </div>
 
       <div class="field">
-        <label for="{{ case_form.summary.id_for_label }}">Case Summary</label>
+        <label for="{{ case_form.summary.id_for_label }}" class="has-text-weight-bold">Case Summary</label>
         {% render_field case_form.summary|add_class:"input textarea" placeholder="Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates." %}
         {{ case_form.summary.errors }}
       </div>
 
       <div class="columns">
         <div class="column">
-          <label for="{{ case_form.decision_year.id_for_label }}">Year of case resolution</label>
+          <label for="{{ case_form.decision_year.id_for_label }}" class="has-text-weight-bold">Year of case resolution</label>
           {% render_field case_form.decision_year|add_class:"input" placeholder="YYYY" %}
           {{ case_form.decision_year.errors }}
         </div>
         <div class="column">
-          <label class="checkbox">Pending</label><br/>
+          <label for="{{ case_form.is_pending.id_for_label }}" class="has-text-weight-bold">Is pending?</label><br/>
             <div class="select">{% render_field case_form.is_pending %}</div>
         </div>
       </div>
 
-      <h4 class="b-header">Links to relevant materials</h4>
+      <h4 class="b-header margin-bottom-small">Links to relevant materials</h4>
+      {{ link_formset.management_form }}
 
-      <p>Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
+      <p class="margin-bottom-normal">Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
 
-      <hr/>
+      {% for link_form in link_formset %}
+        <div class="columns">
+          <div class="column is-11">
+            <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
+              URL
+              {% if forloop.counter == 1 %}<span class="required">*</span>{% endif %}
+            </label>
+            {% if forloop.counter == 1 %}
+            {% render_field link_form.url|add_class:"input"|attr:"required" type="text"  placeholder="https://example.com" %}
+            {% else %}
+            {% render_field link_form.url|add_class:"input" type="text"  placeholder="https://example.com" %}
+            {% endif %}
+            {{ link_form.url.errors }}
+          </div>
+          <div class="column">
+            <button class="button is-delete" data-link-id="{{ link_form.url.id_for_label }}">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-three-quarters">
+            <label for="{{ link_form.title.id_for_label }}" class="has-text-weight-bold">Title of link</label>
+            {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
+            {{ link_form.title.errors }}
+          </div>
+          <div class="column is-one-quarter">
+            <label for="{{ link_form.label.id_for_label }}" class="has-text-weight-bold">Label of link</label>
+            {% render_field link_form.label|add_class:"input" placeholder="e.g. Pleading, Brief..." %}
+            {{ link_form.label.errors }}
+          </div>
+        </div>
+        <hr class="has-background-grey-light"/>
+      {% endfor %}
     {% endwith %}
 
-    <button type="submit" class="button button-case small">submit case</button>
+    <div class="columns">
+      <div class="column">
+        <button class="button small is-pulled-right">Add link
+{#          <i class="icon plus"></i>#}
+        </button>
+      </div>
+    </div>
+    <button type="submit" class="button button-case">submit case</button>
   </form>
 </section>
 {% endblock %}
