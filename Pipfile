@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 black = "==19.10b0"
 flake8 = "*"
+factory-boy = "*"
 
 [packages]
 django = "~=3.0"
