@@ -1,4 +1,4 @@
-name: Caselaw lint
+name: Caselaw CI
 
 on:
   push:
@@ -40,3 +40,57 @@ jobs:
           path: test-reports/flake8
       # Use failure() to upload only if failure occurs
       if: failure()
+
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: Install pipenv
+        uses: dschep/install-pipenv-action@v1
+
+      - name: Install dependencies
+        run: |
+          pipenv install --dev
+          pipenv run python manage.py collectstatic
+          pipenv run python manage.py compress --force
+        env:
+          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+
+#      - name: Compile assets
+#        run: |
+#          pipenv run python manage.py compress
+#        env:
+#          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+
+      - name: Run tests
+        run: pipenv run python manage.py test
+        env:
+#          DJANGO_DEBUG_ENABLED: True
+          DJANGO_DATABASE_HOST: localhost
+          DJANGO_DATABASE_PORT: 5432
+          DJANGO_DATABASE_PASSWORD: postgres
+          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
