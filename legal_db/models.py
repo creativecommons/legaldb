@@ -78,6 +78,8 @@ class Case(LegalResource):
     country = CountryField(blank=True, null=True)
     courts = models.CharField(
         max_length=255,
+        blank=True,
+        null=True,
         help_text="The original court name and/or English translation. If the lawsuit "
         "was filed in one court and then went to another court on appeal, please note "
         "all relevant courts here.",
@@ -90,6 +92,9 @@ class Case(LegalResource):
     )
     decision_year = models.PositiveSmallIntegerField(
         blank=True, null=True, help_text="Year of case resolution."
+    )
+    is_pending = models.BooleanField(
+        blank=True, null=True, help_text="Indicate if is an ongoing case or not."
     )
     links = models.ManyToManyField(
         Link,

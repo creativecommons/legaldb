@@ -13,6 +13,17 @@ class LinkFactory(DjangoModelFactory):
     label = "testing"
 
 
+class CaseFactory(DjangoModelFactory):
+    class Meta:
+        model = models.Case
+
+    name = "Test Case Name"
+    country = "US"
+    contributor_name = "John Doe"
+    contributor_email = "john@test.com"
+    links = factory.SubFactory(LinkFactory)
+
+
 class ScholarshipFactory(DjangoModelFactory):
     class Meta:
         model = models.Scholarship

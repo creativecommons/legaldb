@@ -1,16 +1,39 @@
-from django import forms
+from django.forms import BooleanField, ModelForm, modelformset_factory
 
-from .models import Link, Scholarship
+from .models import Case, Link, Scholarship
 
 
-class LinkForm(forms.ModelForm):
+class LinkForm(ModelForm):
     class Meta:
         model = Link
         exclude = ["notes"]
 
 
-class ScholarshipForm(forms.ModelForm):
-    agreement = forms.BooleanField()
+LinkFormset = modelformset_factory(Link, form=LinkForm, min_num=1, extra=2)
+
+
+class CaseForm(ModelForm):
+    agreement = BooleanField()
+
+    class Meta:
+        model = Case
+        fields = [
+            "contributor_name",
+            "contributor_email",
+            "license",
+            "name",
+            "related_cases",
+            "country",
+            "courts",
+            "background",
+            "decision_year",
+            "summary",
+            "is_pending",
+        ]
+
+
+class ScholarshipForm(ModelForm):
+    agreement = BooleanField()
 
     class Meta:
         model = Scholarship

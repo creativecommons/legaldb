@@ -8,6 +8,8 @@
       <a href="{% url 'home' %}" class="button margin-normal">Return Home</a>
       {% if "scholarship" in action %}
         <a href="{% url 'scholarship_submit' %}" class="button button-scholarship margin-normal">Submit another article</a>
+      {% else %}
+        <a href="{% url 'case_submit' %}" class="button button-case margin-normal">Submit another case</a>
       {% endif %}
     </div>
   </main>
