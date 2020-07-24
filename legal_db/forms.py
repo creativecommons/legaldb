@@ -9,7 +9,7 @@ class LinkForm(ModelForm):
         exclude = ["notes"]
 
 
-LinkFormset = modelformset_factory(Link, form=LinkForm, extra=3)
+LinkFormset = modelformset_factory(Link, form=LinkForm, min_num=1, extra=2)
 
 
 class CaseForm(ModelForm):

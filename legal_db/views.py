@@ -6,7 +6,6 @@ from .forms import CaseForm, LinkForm, LinkFormset, ScholarshipForm
 from .models import Link, Case, FAQ, Scholarship
 from taggit.models import Tag
 
-import pprint
 
 class HomeView(TemplateView):
     template_name = "legal_db/index.html"
@@ -92,8 +91,10 @@ def case_submit_view(request):
         link_formset = LinkFormset(queryset=Link.objects.none())
         case_form = CaseForm()
 
-    return render(request, "legal_db/case/form.html",
-        {"link_formset": link_formset, "case_form": case_form}
+    return render(
+        request,
+        "legal_db/case/form.html",
+        {"link_formset": link_formset, "case_form": case_form},
     )
 
 

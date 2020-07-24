@@ -104,54 +104,108 @@
       </div>
 
       <h4 class="b-header margin-bottom-small">Links to relevant materials</h4>
-      {{ link_formset.management_form }}
 
       <p class="margin-bottom-normal">Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
-
-      {% for link_form in link_formset %}
-        <div class="columns">
-          <div class="column is-11">
-            <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
-              URL
-              {% if forloop.counter == 1 %}<span class="required">*</span>{% endif %}
-            </label>
-            {% if forloop.counter == 1 %}
-            {% render_field link_form.url|add_class:"input"|attr:"required" type="text"  placeholder="https://example.com" %}
+      <div id="link-formset">
+        {{ link_formset.management_form }}
+        {% for link_form in link_formset %}
+          <div id="link-form-{{ forloop.counter0 }}">
+            <div class="columns">
+            {% if forloop.counter0 == 0 %}
+              <div class="column is-12">
+                <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
+                  URL <span class="required">*</span>
+                </label>
+                {% render_field link_form.url|add_class:"input"|attr:"required" type="text"  placeholder="https://example.com" %}
+                {{ link_form.url.errors }}
+              </div>
             {% else %}
-            {% render_field link_form.url|add_class:"input" type="text"  placeholder="https://example.com" %}
+              <div class="column is-11">
+                <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">URL</label>
+                {% render_field link_form.url|add_class:"input" type="text"  placeholder="https://example.com" %}
+                {{ link_form.url.errors }}
+              </div>
+              <div class="column is-1">
+                <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')">
+                  <i class="icon cross"></i>
+                </button>
+              </div>
             {% endif %}
-            {{ link_form.url.errors }}
+            </div>
+            <div class="columns">
+              <div class="column is-three-quarters">
+                <label for="{{ link_form.title.id_for_label }}" class="has-text-weight-bold">Title of link</label>
+                {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
+                {{ link_form.title.errors }}
+              </div>
+              <div class="column is-one-quarter">
+                <label for="{{ link_form.label.id_for_label }}" class="has-text-weight-bold">Label of link</label>
+                {% render_field link_form.label|add_class:"input" placeholder="e.g. Pleading, Brief..." %}
+                {{ link_form.label.errors }}
+              </div>
+            </div>
+            <hr class="has-background-grey-light"/>
           </div>
-          <div class="column">
-            <button class="button is-delete" data-link-id="{{ link_form.url.id_for_label }}">
-              <i class="icon cross"></i>
-            </button>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-three-quarters">
-            <label for="{{ link_form.title.id_for_label }}" class="has-text-weight-bold">Title of link</label>
-            {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
-            {{ link_form.title.errors }}
-          </div>
-          <div class="column is-one-quarter">
-            <label for="{{ link_form.label.id_for_label }}" class="has-text-weight-bold">Label of link</label>
-            {% render_field link_form.label|add_class:"input" placeholder="e.g. Pleading, Brief..." %}
-            {{ link_form.label.errors }}
-          </div>
-        </div>
-        <hr class="has-background-grey-light"/>
-      {% endfor %}
+        {% endfor %}
+      </div>
     {% endwith %}
 
     <div class="columns">
       <div class="column">
-        <button class="button small is-pulled-right">Add link
+        <button type="button" class="button small is-pulled-right" id="add-btn">Add link
 {#          <i class="icon plus"></i>#}
         </button>
       </div>
     </div>
+
     <button type="submit" class="button button-case">submit case</button>
   </form>
 </section>
+{% endblock %}
+
+{% block js_content %}
+<script>
+  let totalForms = document.getElementById("id_form-TOTAL_FORMS");
+  let LINKS_COUNT = parseInt(totalForms.value);
+
+  const addBtn = document.getElementById("add-btn");
+  addBtn.addEventListener("click", () => {
+      const linkForm = `<div id="link-form-${LINKS_COUNT}">
+          <div class="columns">
+            <div class="column is-11">
+              <label for="id_form-${LINKS_COUNT}-url" class="has-text-weight-bold">URL</label>
+              <input type="text" name="form-${LINKS_COUNT}-url" maxlength="2000" placeholder="https://example.com" class="input" id="id_form-${LINKS_COUNT}-url">
+            </div>
+            <div class="column">
+              <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-${LINKS_COUNT}')">
+                <i class="icon cross"></i>
+              </button>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-three-quarters">
+              <label for="id_form-${LINKS_COUNT}-title" class="has-text-weight-bold">Title of link</label>
+              <input type="text" name="form-${LINKS_COUNT}-title" maxlength="255" placeholder="Title of the page being linked to" class="input" id="id_form-${LINKS_COUNT}-title">
+            </div>
+            <div class="column is-one-quarter">
+              <label for="id_form-${LINKS_COUNT}-label" class="has-text-weight-bold">Label of link</label>
+              <input type="text" name="form-${LINKS_COUNT}-label" maxlength="255" placeholder="e.g. Pleading, Brief..." class="input" id="id_form-${LINKS_COUNT}-label">
+            </div>
+          </div>
+          <hr class="has-background-grey-light"/>
+        </div>`;
+
+      // Append new link form fields at the end
+      const linksDiv = document.getElementById("link-formset");
+      linksDiv.insertAdjacentHTML("beforeend", linkForm);
+
+      // Increment ManagementForm fields of control
+      LINKS_COUNT+= 1;
+      totalForms.value = LINKS_COUNT;
+  });
+
+  function deleteLinkForm(target) {
+    document.getElementById(target).remove();
+  }
+</script>
 {% endblock %}
