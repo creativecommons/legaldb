@@ -21,7 +21,6 @@ class CaseFactory(DjangoModelFactory):
     country = "US"
     contributor_name = "John Doe"
     contributor_email = "john@test.com"
-    links = factory.SubFactory(LinkFactory)
 
 
 class ScholarshipFactory(DjangoModelFactory):

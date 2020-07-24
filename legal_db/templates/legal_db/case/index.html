@@ -51,6 +51,8 @@
           </td>
           <td class="number-cell">{{ case.decision_year }}</td>
         </tr>
+      {% empty %}
+        <tr><td class="has-text-centered" colspan="4">No cases are available.</td></tr>
       {% endfor %}
       </tbody>
     </table>
