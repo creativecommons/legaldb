@@ -23,14 +23,32 @@ class CaseListViewTests(TestCase):
         Case list is displayed correctly, only with cases marked with status
         'PUBLISHED'.
         """
-        CaseFactory.create_batch(3) # Default status is 'Unreviewed'
+        CaseFactory.create_batch(3)  # Default status is 'UNREVIEWED'
         CaseFactory.create_batch(2, status=LegalResource.Status.PUBLISHED)
 
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context['cases']), 2)
-        for row in response.context['cases']:
+        self.assertEqual(len(response.context["cases"]), 2)
+        for row in response.context["cases"]:
             self.assertEqual(row.status, LegalResource.Status.PUBLISHED)
+
+
+class CaseDetailViewTests(TestCase):
+    def test_show_only_published(self):
+        """
+        Only show details of cases with status 'PUBLISHED'. First request ask for a not
+        published case, it can not be exposed. Second request is for a published case,
+        therefore is okay to display the case's information.
+        """
+        case = CaseFactory()
+        url = reverse("case_detail", kwargs={"pk": case.id})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
+
+        case.status = LegalResource.Status.PUBLISHED
+        case.save()
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
 
 
 class CaseSubmitViewTests(TestCase):
@@ -67,8 +85,8 @@ class CaseSubmitViewTests(TestCase):
 
     def test_post_error(self):
         """
-        When request data is bad then should return back to the form view and show the
-        error(s).
+        When data send in request is bad (not valid or incomplete) then it should
+        return back to the form view and show the error(s).
         """
         response = self.client.post(
             self.url,
@@ -92,7 +110,7 @@ class ScholarshipListViewTests(TestCase):
         When no scholarship exists, announce it and verify that the page still loads.
         """
         response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertContains(response, "No scholarships are available.")
 
     def test_show_only_published(self):
@@ -100,12 +118,12 @@ class ScholarshipListViewTests(TestCase):
         Scholarship list is displayed correctly, only with articles marked with status
         'PUBLISHED'.
         """
-        ScholarshipFactory.create_batch(3) # Default status is 'Unreviewed'
+        ScholarshipFactory.create_batch(3)  # Default status is 'UNREVIEWED'
         ScholarshipFactory.create_batch(2, status=LegalResource.Status.PUBLISHED)
 
         response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context['scholarships']), 2)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(len(response.context["scholarships"]), 2)
         for row in response.context["scholarships"]:
             self.assertEqual(row.status, LegalResource.Status.PUBLISHED)
 
@@ -115,15 +133,15 @@ class ScholarshipDetailViewTests(TestCase):
         """
         Scholarship details is displayed correctly and only when is marked with the
         status 'PUBLISHED'. First request ask for a not published article, so details
-        are not shown. Second request is for an published article, therefore is okay
+        are not shown. Second request is for a published article, therefore is okay
         to display the article's information.
         """
         scholarship = ScholarshipFactory()
         url = reverse("scholarship_detail", kwargs={"pk": scholarship.id})
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
 
         scholarship.status = LegalResource.Status.PUBLISHED
         scholarship.save()
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, HTTPStatus.OK)

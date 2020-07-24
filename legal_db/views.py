@@ -34,8 +34,8 @@ class CaseListView(ListView):
 
 class CaseDetailView(DetailView):
     template_name = "legal_db/case/detail.html"
-    model = Case
     context_object_name = "case"
+    queryset = Case.objects.filter(status=Case.Status.PUBLISHED)
 
     def get_object(self):
         obj = super().get_object()
