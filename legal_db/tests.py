@@ -64,7 +64,7 @@ class CaseSubmitViewTests(TestCase):
 
     def test_post_success(self):
         """
-        Test a submitted request with the minimum data required to create a case.
+        Test a submission request with the minimum data required to create a case.
         """
         response = self.client.post(
             self.url,
@@ -91,6 +91,7 @@ class CaseSubmitViewTests(TestCase):
         response = self.client.post(
             self.url,
             data={
+                # Missing contributor name and email and user agreement
                 "name": "Incomplete case form",
                 "form-TOTAL_FORMS": 1,
                 "form-INITIAL_FORMS": 0,
@@ -145,3 +146,47 @@ class ScholarshipDetailViewTests(TestCase):
         scholarship.save()
         response = self.client.get(url)
         self.assertEqual(response.status_code, HTTPStatus.OK)
+
+
+class ScholarshipSubmitViewTests(TestCase):
+    url = reverse("scholarship_submit")
+
+    def test_get(self):
+        """
+        Check if the view of the form is returned correctly.
+        """
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertContains(response, "Scholarship Submission")
+
+    def test_post_success(self):
+        """
+        Test a submission request with the minimum data required to create a
+        scholarship.
+        """
+        response = self.client.post(
+            self.url,
+            data={
+                "contributor_name": "Grace Hopper",
+                "contributor_email": "grace@test.com",
+                "agreement": 1,
+                "url": "www.test.com",
+            },
+        )
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
+        self.assertEqual(response["location"], "/submission-result/")
+
+    def test_post_error(self):
+        """
+        When data send in request is bad (not valid or incomplete) then it should
+        return back to the form view and show the error(s).
+        """
+        response = self.client.post(
+            self.url,
+            data={
+                # Missing contributor name and email, user agreement and link
+                "title": "Incomplete scholarship form",
+            },
+        )
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertContains(response, "This field is required")
