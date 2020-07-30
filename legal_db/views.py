@@ -21,15 +21,31 @@ class HomeView(TemplateView):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
-    queryset = (
-        Case.objects.filter(status=Case.Status.PUBLISHED)
-        .only("country", "name", "license", "decision_year")
-        .order_by("country", "name")
-    )
+
+    def get_queryset(self):
+        qs = (
+            Case.objects.filter(status=Case.Status.PUBLISHED)
+            .only("country", "name", "license", "decision_year")
+            .order_by("country", "name")
+        )
+        keywords = self.request.GET.get("keywords")
+        if keywords:
+            attributes = [
+                "name",
+                "courts",
+                "related_cases",
+                "background",
+                "summary",
+            ]
+            lookups = build_filters(attributes, keywords)
+            qs = qs.filter(lookups)
+
+        return qs
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["tags"] = Tag.objects.exclude(case=None)
+        context["form"] = SearchForm(self.request.GET)
         return context
 
 
@@ -59,8 +75,8 @@ class ScholarshipListView(ListView):
         keywords = self.request.GET.get("keywords")
         if keywords:
             attributes = ["title", "authors", "summary"]
-            f = build_filters(attributes, keywords)
-            qs = qs.filter(f)
+            lookups = build_filters(attributes, keywords)
+            qs = qs.filter(lookups)
 
         return qs
 
