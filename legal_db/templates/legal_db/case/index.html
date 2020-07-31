@@ -49,7 +49,7 @@
             {% if not case.license %} <span class="has-text-grey">Unknown</span>
             {% else %} {{ case.license }} {% endif %}
           </td>
-          <td class="number-cell">{{ case.decision_year }}</td>
+          <td class="number-cell">{{ case.decision_year|default:"" }}</td>
         </tr>
       {% empty %}
         <tr><td class="has-text-centered" colspan="4">No cases are available.</td></tr>

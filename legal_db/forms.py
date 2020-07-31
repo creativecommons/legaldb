@@ -1,4 +1,10 @@
-from django.forms import BooleanField, ModelForm, modelformset_factory
+from django.forms import (
+    BooleanField,
+    CharField,
+    Form,
+    ModelForm,
+    modelformset_factory,
+)
 
 from .models import Case, Link, Scholarship
 
@@ -47,3 +53,7 @@ class ScholarshipForm(ModelForm):
             "authors",
             "summary",
         ]
+
+
+class SearchForm(Form):
+    keywords = CharField(min_length=3, required=False)
