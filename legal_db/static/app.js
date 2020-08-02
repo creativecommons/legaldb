@@ -1,3 +1,16 @@
+// Allow toggle dropdown of the navbar burger menu
+const burgerMenu = document.getElementsByClassName('navbar-burger')[0];
+burgerMenu.addEventListener('click', () => {
+    const menu = document.getElementsByClassName('navbar-menu')[0];
+    menu.classList.toggle('is-active');
+    burgerMenu.classList.toggle('is-active');
+    if (burgerMenu.classList.contains('is-active')) {
+        burgerMenu.setAttribute('aria-expanded', true);
+    } else {
+        burgerMenu.setAttribute('aria-expanded', false);
+    }
+})
+
 const tagsToggle = document.getElementById('tags-filter');
 
 if (document.body.contains(tagsToggle)) {

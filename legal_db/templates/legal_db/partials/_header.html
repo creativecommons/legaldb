@@ -1,18 +1,18 @@
 {% load static %}
 
-<header>
-  <nav class="navbar ">
+<header class="container">
+  <nav class="navbar">
     <div class="navbar-brand">
-      <a class="has-text-black" href="/" >
-        <img src="{% static 'logo.svg' %}"
+      <a class="has-text-black" href="{% url 'home' %}">
+        <img src="{% static 'logo.svg' %}">
       </a>
-      <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div class="navbar-menu is-active">
+    <div class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="{% url 'case_index' %}">Cases</a>
         <a class="navbar-item" href="{% url 'scholarship_index' %}">Scholarship</a>
