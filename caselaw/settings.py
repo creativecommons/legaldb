@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_countries",
     "legal_db.apps.LegalDBConfig",
+    "markdownx",
     "ordered_model",
     "taggit",
     "widget_tweaks",

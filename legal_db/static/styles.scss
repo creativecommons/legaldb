@@ -132,6 +132,11 @@ body {
 
   &__body {
     padding-right: 1.5rem;
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      margin-left: 15px;
+    }
   }
 
   &__section {

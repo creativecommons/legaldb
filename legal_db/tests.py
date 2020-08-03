@@ -106,7 +106,7 @@ class CaseSubmitViewTests(TestCase):
 class ScholarshipListViewTests(TestCase):
     url = reverse("scholarship_index")
 
-    def test_no_scholarship(self):
+    def test_no_scholarships(self):
         """
         When no scholarship exists, announce it and verify that the page still loads.
         """
@@ -190,3 +190,9 @@ class ScholarshipSubmitViewTests(TestCase):
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertContains(response, "This field is required")
+
+
+class FaqViewTests(TestCase):
+    def test_page_up(self):
+        response = self.client.get(reverse("faq"))
+        self.assertEqual(response.status_code, HTTPStatus.OK)

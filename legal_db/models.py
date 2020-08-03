@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from django_countries.fields import CountryField
+from markdownx.models import MarkdownxField
 from ordered_model.models import OrderedModel
 from taggit.managers import TaggableManager
 
@@ -122,7 +124,7 @@ class Scholarship(LegalResource):
 
 class FAQ(BaseModel, OrderedModel):
     question = models.CharField(max_length=255)
-    answer = models.TextField()
+    answer = MarkdownxField()
 
     class Meta(OrderedModel.Meta):
         ordering = ("order",)
