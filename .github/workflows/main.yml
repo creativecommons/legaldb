@@ -78,7 +78,7 @@ jobs:
 
       - name: Compile assets
         run: |
-          pipenv run python manage.py collectstatic
+          pipenv run python manage.py collectstatic --no-input
           pipenv run python manage.py compress --force
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
@@ -86,8 +86,4 @@ jobs:
       - name: Run tests
         run: pipenv run python manage.py test
         env:
-#          DJANGO_DEBUG_ENABLED: True
-          DJANGO_DATABASE_HOST: localhost
-          DJANGO_DATABASE_PORT: 5432
-          DJANGO_DATABASE_PASSWORD: postgres
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
