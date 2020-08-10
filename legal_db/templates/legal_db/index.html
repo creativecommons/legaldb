@@ -14,7 +14,7 @@
         <h3>Explore by content</h3>
         <div class="padding-top-big">
           {% for tag in cases_tags %}
-          <a class="button tag case outline margin-right-small margin-vertical-normal">
+          <a href="{% url "case_index" %}?tags%5B%5D={{ tag }}" class="button tag case outline margin-right-small margin-vertical-normal">
             {{ tag }}
           </a>
           {% endfor %}
@@ -33,7 +33,7 @@
       </div>
       <div class="column is-half">
         {% for tag in scholarship_tags %}
-        <a class="button tag scholarship outline margin-right-small margin-vertical-normal">
+        <a href="{% url "scholarship_index" %}?tags%5B%5D={{ tag }}" class="button tag scholarship outline margin-right-small margin-vertical-normal">
           {{ tag }}
         </a>
         {% endfor %}

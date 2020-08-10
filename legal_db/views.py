@@ -23,11 +23,13 @@ class CaseListView(ListView):
     context_object_name = "cases"
 
     def get_queryset(self):
-        qs = (
-            Case.objects.filter(status=Case.Status.PUBLISHED)
-            .only("country", "name", "license", "decision_year")
-            .order_by("country", "name")
+        """
+        Get only rows with PUBLISHED status and filtered by user input and tags.
+        """
+        qs = Case.objects.filter(status=Case.Status.PUBLISHED).only(
+            "country", "name", "license", "decision_year"
         )
+
         keywords = self.request.GET.get("keywords")
         if keywords:
             attributes = [
@@ -40,11 +42,23 @@ class CaseListView(ListView):
             lookups = build_filters(attributes, keywords)
             qs = qs.filter(lookups)
 
-        return qs
+        tags = self.request.GET.getlist("tags[]")
+        if tags:
+            qs = qs.filter(tags__name__in=tags)
+
+        return qs.order_by("country", "name")
 
     def get_context_data(self, **kwargs):
+        """
+        Append search form and tags marking the selected ones.
+        """
         context = super().get_context_data(**kwargs)
-        context["tags"] = Tag.objects.exclude(case=None)
+        requested_tags = self.request.GET.getlist("tags[]")
+        tags = []
+        for tag in Tag.objects.exclude(case=None).order_by("name"):
+            checked = True if tag.name in requested_tags else False
+            tags.append({"name": tag, "checked": checked})
+        context["tags"] = tags
         context["form"] = SearchForm(self.request.GET)
         return context
 
@@ -56,7 +70,7 @@ class CaseDetailView(DetailView):
 
     def get_object(self):
         obj = super().get_object()
-        obj.tags = obj.tags.all()
+        obj.tags = obj.tags.order_by("name").all()
         obj.link_list = obj.links.all()
         return obj
 
@@ -72,6 +86,7 @@ class ScholarshipListView(ListView):
         qs = Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED).order_by(
             "-publication_year", "title"
         )
+        qs = filter_by_tags(qs, self.request)
         keywords = self.request.GET.get("keywords")
         if keywords:
             attributes = ["title", "authors", "summary"]

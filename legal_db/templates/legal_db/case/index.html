@@ -20,15 +20,23 @@
 </section>
 
 <div class="padding-horizontal-xxl padding-vertical-normal">
-  {% include "legal_db/partials/_search.html" %}
+  <form role="search" method="get">
+    {% include "legal_db/partials/_search.html" %}
 
-  <section id="tags" aria-expanded="true">
-  {% for tag in tags %}
-    <button class="button tag case margin-right-small margin-vertical-smaller">
-      {{ tag }}
-    </button>
-  {% endfor %}
-  </section>
+    <section id="tags" aria-expanded="true">
+    {% for tag in tags %}
+      <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
+             class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
+        {{ tag.name }}
+        <input type="checkbox" class="tag__check" name="tags[]"
+               id="tag-check-{{ forloop.counter }}"
+               value="{{ tag.name }}"
+               {% if tag.checked %} checked{% endif %}
+               hidden>
+      </label>
+    {% endfor %}
+    </section>
+  </form>
 
   <section class="margin-vertical-big table-container">
     <table class="table is-bordered is-striped is-fullwidth">
@@ -52,7 +60,7 @@
           <td class="number-cell">{{ case.decision_year|default:"" }}</td>
         </tr>
       {% empty %}
-        <tr><td class="has-text-centered" colspan="4">No cases are available.</td></tr>
+        <tr><td class="has-text-centered" colspan="4">No cases are available. Try different filters or search terms.</td></tr>
       {% endfor %}
       </tbody>
     </table>
