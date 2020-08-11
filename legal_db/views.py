@@ -53,10 +53,10 @@ class CaseListView(ListView):
         Append search form and tags marking the selected ones.
         """
         context = super().get_context_data(**kwargs)
-        requested_tags = self.request.GET.getlist("tags[]")
+        selected_tags = self.request.GET.getlist("tags[]")
         tags = []
         for tag in Tag.objects.exclude(case=None).order_by("name"):
-            checked = True if tag.name in requested_tags else False
+            checked = True if tag.name in selected_tags else False
             tags.append({"name": tag, "checked": checked})
         context["tags"] = tags
         context["form"] = SearchForm(self.request.GET)
@@ -83,21 +83,28 @@ class ScholarshipListView(ListView):
         """
         Get only rows with PUBLISHED status and filtered by user input.
         """
-        qs = Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED).order_by(
-            "-publication_year", "title"
-        )
-        qs = filter_by_tags(qs, self.request)
+        qs = Scholarship.objects.filter(status=Scholarship.Status.PUBLISHED)
+
         keywords = self.request.GET.get("keywords")
         if keywords:
             attributes = ["title", "authors", "summary"]
             lookups = build_filters(attributes, keywords)
             qs = qs.filter(lookups)
 
-        return qs
+        tags = self.request.GET.getlist("tags[]")
+        if tags:
+            qs = qs.filter(tags__name__in=tags)
+
+        return qs.order_by("-publication_year", "title")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["tags"] = Tag.objects.exclude(scholarship=None)
+        selected_tags = self.request.GET.getlist("tags[]")
+        tags = []
+        for tag in Tag.objects.exclude(scholarship=None).order_by("name"):
+            checked = True if tag.name in selected_tags else False
+            tags.append({"name": tag, "checked": checked})
+        context["tags"] = tags
         context["form"] = SearchForm(self.request.GET)
         return context
 
@@ -109,7 +116,7 @@ class ScholarshipDetailView(DetailView):
 
     def get_object(self):
         obj = super().get_object()
-        obj.tags = obj.tags.all()
+        obj.tags = obj.tags.order_by("name").all()
         return obj
 
 

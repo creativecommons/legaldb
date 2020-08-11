@@ -11,8 +11,8 @@
       <aside class="padding-horizontal-big padding-vertical-xl">
         <div class="margin-bottom-bigger">
           <h4 class="b-header">License on article</h4>
-          {% if not case.license %} <p class="has-text-grey">Unknown</p>
-          {% else %} <p>{{ cholarship.license }}</p> {% endif %}
+          {% if not scholarship.license %} <p class="has-text-grey">Unknown</p>
+          {% else %} <p>{{ scholarship.license }}</p> {% endif %}
         </div>
 
         <div class="margin-bottom-bigger">
@@ -39,7 +39,7 @@
         <p>{{ scholarship.summary }}</p>
         <hr/>
         {% for tag in scholarship.tags %}
-          <a href="#" class="button tag scholarship margin-right-small margin-vertical-smaller">{{ tag }}</a>
+          <a href="{% url 'scholarship_index' %}?tags%5B%5D={{ tag }}" class="button tag scholarship margin-right-small margin-vertical-smaller">{{ tag }}</a>
         {% endfor %}
       </article>
     </div>
