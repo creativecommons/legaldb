@@ -51,7 +51,7 @@
         <p>{{ case.summary }}</p>
         <hr/>
         {% for tag in case.tags %}
-          <a href="#" class="button tag case margin-horizontal-small">{{ tag }}</a>
+          <a href="{% url 'case_index' %}?tags%5B%5D={{ tag }}" class="button tag case margin-horizontal-small">{{ tag }}</a>
         {% endfor %}
       </article>
     </div>
