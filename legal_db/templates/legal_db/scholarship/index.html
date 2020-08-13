@@ -23,7 +23,7 @@
   <form role="search" method="get">
     {% include "legal_db/partials/_search.html" %}
 
-    <section id="tags" aria-expanded="true">
+    <div id="tags" aria-expanded="true">
     {% for tag in tags %}
       <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
              class="button tag scholarship margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
@@ -35,7 +35,7 @@
                hidden>
       </label>
     {% endfor %}
-    </section>
+    </div>
   </form>
 
   <section class="margin-vertical-big table-container">
