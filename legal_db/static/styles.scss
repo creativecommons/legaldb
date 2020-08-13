@@ -7,6 +7,8 @@ $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
 
 $hero-body-padding: 3rem 1.5rem !default;
+$font-size-body-big: 1.12rem;
+$space-small: 0.5rem;
 
 body {
     color: $color-dark-slate-gray;
@@ -178,8 +180,10 @@ body {
     padding: $hero-body-padding;
   }
 
-  .hero-p {
-    max-width: 800px;
+  .hero-description {
+    max-width: 708px;
+    padding: $space-small 0;
+    font-size: $font-size-body-big;
   }
 }
 
