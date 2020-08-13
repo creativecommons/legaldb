@@ -14,6 +14,10 @@ body {
     color: $color-dark-slate-gray;
 }
 
+a, a:hover {
+  color: $color-dark-slate-blue;
+}
+
 .breadcrumb {
   a, a:hover {
     color: $color-dark-slate-blue;
@@ -161,6 +165,10 @@ body {
   max-width: 768px;
 }
 
+footer a:hover {
+  color: $color-dark-turquoise;
+}
+
 .hero {
   background-color: $color-lighter-gray;
 
@@ -185,10 +193,6 @@ body {
     padding: $space-small 0;
     font-size: $font-size-body-big;
   }
-}
-
-.input.search {
-  max-width: 450px;
 }
 
 .links-list {
