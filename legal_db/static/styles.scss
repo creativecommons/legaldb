@@ -186,10 +186,12 @@ body {
   &.case, &.scholarship {
     margin: $space-big $space-xxl;
 
+    .field {
+      margin-bottom: 1.5rem;
+    }
+
     .input, .select {
       margin-top: $space-small;
-      margin-bottom: .75rem;
-
     }
     hr {
       margin: $space-normal 0;
