@@ -56,7 +56,7 @@
         </div>
         <div class="column is-two-fifth">
           <label for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
-          {% render_field scho_form.publication_year|add_class:"input" placeholder="YYYY" %}
+          {% render_field scho_form.publication_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
           {{ scho_form.publication_year.errors }}
         </div>
       </div>
@@ -84,7 +84,7 @@
 
       <div class="field">
         <label for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
-        {% render_field link_form.url|add_class:"input" type="text" placeholder="https://example.com" %}
+        {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
         {{ link_form.url.errors }}
       </div>
 

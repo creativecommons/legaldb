@@ -96,7 +96,7 @@
       <div class="columns">
         <div class="column">
           <label for="{{ case_form.decision_year.id_for_label }}" class="has-text-weight-bold">Year of case resolution</label>
-          {% render_field case_form.decision_year|add_class:"input" placeholder="YYYY" %}
+          {% render_field case_form.decision_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
           {{ case_form.decision_year.errors }}
         </div>
         <div class="column">
@@ -118,13 +118,13 @@
                 <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
                   URL <span class="required">*</span>
                 </label>
-                {% render_field link_form.url|add_class:"input"|attr:"required" type="text"  placeholder="https://example.com" %}
+                {% render_field link_form.url|add_class:"input"|attr:"required" type="text" inputmode="url" placeholder="https://example.com" %}
                 {{ link_form.url.errors }}
               </div>
             {% else %}
               <div class="column is-11">
                 <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">URL</label>
-                {% render_field link_form.url|add_class:"input" type="text"  placeholder="https://example.com" %}
+                {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
                 {{ link_form.url.errors }}
               </div>
               <div class="column is-1">
@@ -154,9 +154,7 @@
 
     <div class="columns">
       <div class="column">
-        <button type="button" class="button small is-pulled-right" id="add-btn">Add link
-{#          <i class="icon plus"></i>#}
-        </button>
+        <button type="button" class="button small is-pulled-right" id="add-btn">Add link</button>
       </div>
     </div>
 
@@ -176,7 +174,7 @@
           <div class="columns">
             <div class="column is-11">
               <label for="id_form-${LINKS_COUNT}-url" class="has-text-weight-bold">URL</label>
-              <input type="text" name="form-${LINKS_COUNT}-url" maxlength="2000" placeholder="https://example.com" class="input" id="id_form-${LINKS_COUNT}-url">
+              <input type="text" name="form-${LINKS_COUNT}-url" maxlength="2000" inputmode="url" placeholder="https://example.com" class="input" id="id_form-${LINKS_COUNT}-url">
             </div>
             <div class="column">
               <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-${LINKS_COUNT}')">
