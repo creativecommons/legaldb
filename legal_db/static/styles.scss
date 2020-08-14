@@ -179,7 +179,7 @@ body {
   &.case, &.scholarship {
     margin: $space-big $space-xxl;
 
-    .input {
+    .input, .select {
       margin-top: $space-small;
       margin-bottom: .75rem;
 
