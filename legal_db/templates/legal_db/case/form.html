@@ -81,13 +81,15 @@
 
       <div class="field">
         <label for="{{ case_form.background.id_for_label }}" class="has-text-weight-bold">Background Information</label>
-        {% render_field case_form.background|add_class:"input textarea" placeholder="Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit." %}
+        <p>Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit.</p>
+        {% render_field case_form.background|add_class:"input textarea" %}
         {{ case_form.background.errors }}
       </div>
 
       <div class="field">
         <label for="{{ case_form.summary.id_for_label }}" class="has-text-weight-bold">Case Summary</label>
-        {% render_field case_form.summary|add_class:"input textarea" placeholder="Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates." %}
+        <p>Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates.</p>
+        {% render_field case_form.summary|add_class:"input textarea" %}
         {{ case_form.summary.errors }}
       </div>
 
