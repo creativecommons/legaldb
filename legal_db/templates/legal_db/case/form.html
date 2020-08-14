@@ -7,7 +7,7 @@
   <p class="hero-p">Please add any cases related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;&nbsp;<span class="required">*</span> Required.</p>
 </section>
 <section class="has-background-grey-lighter padding-vertical-normal">
-  <form class="form margin-horizontal-xxl margin-vertical-big" action="{% url 'case_submit' %}" method="post">
+  <form class="form case" action="{% url 'case_submit' %}" method="post">
     {% csrf_token %}
     {% if case_form.non_field_errors %}
       <div class="notification warning">
