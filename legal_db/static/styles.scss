@@ -12,6 +12,13 @@ $hero-body-padding: 3rem 1.5rem !default;
 $font-size-body-big: 1.12rem;
 $space-small: 0.5rem;
 
+$space-smaller: 0.25rem;
+$space-small: 0.5rem;
+$space-normal: 1rem;
+$space-big: 1.5rem;
+$space-bigger: 2rem;
+$space-xxl: 6rem;
+
 body {
     color: $color-dark-slate-gray;
 }
@@ -76,13 +83,17 @@ a, a:hover {
   }
   &.is-delete {
     color: $color-tomato;
-    width: 100%;
-    height: 60%;
-    margin-top: 1.5rem;
+    font-size: 1rem;
+    margin-top: $space-bigger;
     padding: 0;
+    width: 100%;
+
+    &:hover {
+      color: white;
+    }
 
     .icon {
-      padding: .35rem 0;
+      padding: $space-smaller 0;
     }
   }
 }
@@ -177,6 +188,22 @@ a, a:hover {
 
 .form {
   max-width: 768px;
+
+  &.case, &.scholarship {
+    margin: $space-big $space-xxl;
+
+    .field {
+      margin-bottom: 1.5rem;
+    }
+
+    .input, .select {
+      margin-top: $space-small;
+    }
+    hr {
+      margin: $space-normal 0;
+      background-color: $color-light-gray;
+    }
+  }
 }
 
 footer a:hover {

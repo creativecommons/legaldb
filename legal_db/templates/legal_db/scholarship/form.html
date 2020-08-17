@@ -4,10 +4,10 @@
 {% block body_content %}
 <section class="hero has-background-white padding-horizontal-xl padding-vertical-big">
   <h2>Scholarship Submission</h2>
-  <p class="hero-p">Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database. <br/><span class="required">*</span> Required.</p>
+  <p class="hero-p">Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database. <span class="required">*</span> Required.</p>
 </section>
 <section class="has-background-grey-lighter padding-vertical-normal">
-  <form class="form margin-horizontal-xxl margin-vertical-big" action="{% url 'scholarship_submit' %}" method="post">
+  <form class="form scholarship margin-horizontal-xxl margin-vertical-big" action="{% url 'scholarship_submit' %}" method="post">
     {% csrf_token %}
     {% if scho_form.non_field_errors %}
       <div class="notification warning">
@@ -56,7 +56,7 @@
         </div>
         <div class="column is-two-fifth">
           <label for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
-          {% render_field scho_form.publication_year|add_class:"input" placeholder="YYYY" %}
+          {% render_field scho_form.publication_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
           {{ scho_form.publication_year.errors }}
         </div>
       </div>
@@ -84,7 +84,7 @@
 
       <div class="field">
         <label for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
-        {% render_field link_form.url|add_class:"input" type="text" placeholder="https://example.com" %}
+        {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
         {{ link_form.url.errors }}
       </div>
 
@@ -102,7 +102,7 @@
       </div>
     {% endwith %}
 
-    <button type="submit" class="button button-scholarship small">submit scholarship</button>
+    <button type="submit" class="button scholarship">submit scholarship</button>
   </form>
 </section>
 {% endblock %}
