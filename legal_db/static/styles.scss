@@ -1,6 +1,8 @@
 $color-tomato: rgb(237, 89, 47);
+$color-brighter-tomato: rgb(255, 105, 51);
 $color-dark-turquoise: rgb(5, 181, 218);
 $color-dark-slate-blue: rgb(60, 92, 153);
+$color-dark-gray: rgb(118, 118, 118);
 $color-dark-slate-gray: rgb(51, 51, 51);
 $color-gray: rgb(176, 176, 176);
 $color-light-gray: rgb(216, 216, 216);
@@ -19,22 +21,51 @@ body {
 }
 
 .button {
-  &-case{
+  &.case {
     background-color: $color-tomato;
     border-color: $color-tomato;
     color: white;
+
     &:hover {
-      background-color: $color-tomato;
-      border-color: $color-tomato;
+      background-color: $color-brighter-tomato;
+      border-color: $color-brighter-tomato;
+    }
+
+    &.tag {
+      background-color: white;
+      color: $color-dark-gray;
+
+      &.outline {
+        border-color: $color-tomato;
+        text-decoration: none;
+      }
+
+      &:hover, &.selected {
+        background-color: $color-tomato;
+        border-color: $color-tomato;
+        color: white;
+      }
     }
   }
-  &-scholarship {
+  &.scholarship {
     background-color: $color-dark-turquoise;
     border-color: $color-dark-turquoise;
     color: white;
-    &:hover {
-      background-color: $color-dark-turquoise;
-      border-color: $color-dark-turquoise;
+
+    &.tag {
+      background-color: white;
+      color: $color-dark-gray;
+
+      &.outline {
+        border-color: $color-dark-turquoise;
+        text-decoration: none;
+      }
+
+      &:hover, &.selected {
+        background-color: $color-dark-turquoise;
+        border-color: $color-dark-turquoise;
+        color: white;
+      }
     }
   }
   &.is-delete {
@@ -56,34 +87,17 @@ body {
   }
 }
 
-.button.tag {
-  &.case {
-    &.outline {
-      border-color: $color-tomato;
-    }
-    &:hover, &.selected {
-      background-color: $color-tomato;
-      border-color: $color-tomato;
-      color: white;
-    }
-  }
-  &.scholarship {
-    &.outline {
-      border-color: $color-dark-turquoise;
-    }
-    &:hover, &.selected {
-      background-color: $color-dark-turquoise;
-      border-color: $color-dark-turquoise;
-      color: white;
-    }
-    &-clear {
-      border-color: $color-dark-turquoise;
-    }
-  }
-}
+.card.entry-post.link.no-border {
+  max-width: 600px;
 
-.card.entry-post.link a .card-content.has-bottom-link {
-  padding: 0 0 3rem 0;
+  a {
+    .card-content.has-bottom-link {
+      padding: 0 0 3rem 0;
+    }
+    &:hover.has-background-tomato {
+      background-color: $color-brighter-tomato !important;
+    }
+  }
 }
 
 .contribute {
