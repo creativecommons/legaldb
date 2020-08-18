@@ -8,13 +8,14 @@
       <p class="hero-p">Please note that the database is not comprehensive, and CC does not necessarily endorse the views of the courts or scholars whose decisions and writings are referenced. The content provided is purely informational, designed for those seeking to better understand the legal ecosystem in which the CC legal tools operate.</p>
     </div>
   </section>
-  <section id="explore" class="padding-horizontal-xxl padding-vertical-bigger">
+  <section id="explore" class="padding-horizontal-xxl padding-vertical-larger">
     <div class="columns is-multiline is-vcentered">
       <div class="column is-half">
-        <h3>Explore by content</h3>
-        <div class="padding-top-big">
+        <h2 class="title is-3">Explore by content</h2>
+        <div class="padding-top-large">
+          <h3 class="subtitle is-4 padding-bottom-big">Cases</h3>
           {% for tag in cases_tags %}
-          <a href="{% url "case_index" %}?tags%5B%5D={{ tag }}" class="button tag case outline margin-right-small margin-vertical-normal">
+          <a href="{% url "case_index" %}?tags%5B%5D={{ tag }}" class="button tag case outline margin-right-small margin-vertical-small">
             {{ tag }}
           </a>
           {% endfor %}
@@ -32,8 +33,9 @@
         </article>
       </div>
       <div class="column is-half">
+        <h3 class="subtitle is-4 padding-bottom-big">Scholarship</h3>
         {% for tag in scholarship_tags %}
-        <a href="{% url "scholarship_index" %}?tags%5B%5D={{ tag }}" class="button tag scholarship outline margin-right-small margin-vertical-normal">
+        <a href="{% url "scholarship_index" %}?tags%5B%5D={{ tag }}" class="button tag scholarship outline margin-right-small margin-vertical-small">
           {{ tag }}
         </a>
         {% endfor %}
@@ -53,10 +55,10 @@
   </section>
   <section id="bottom" class="padding-horizontal-xxl padding-vertical-normal columns is-vcentered">
     <div class="column is-half">
-      <h3>Contribute</h3>
+      <h2 class="title is-3">Contribute</h2>
       <p class="padding-vertical-normal">The information presented here has been contributed by many dedicated members of the CC Global Network and CC staff. You can contribute too using our forms linked to on this page.</p>
-      <a href="{% url 'case_submit' %}" class="button small button-case">Submit a case</a>
-      <a href="{% url 'scholarship_submit' %}" class="button small button-scholarship is-pulled-right">Submit an article</a>
+      <a href="{% url 'case_submit' %}" class="button case small margin-right-bigger margin-bottom-normal">Submit a case</a>
+      <a href="{% url 'scholarship_submit' %}" class="button scholarship small">Submit an article</a>
     </div>
     <div id="faq" class="column is-half">
       <h3 class="faq__section">

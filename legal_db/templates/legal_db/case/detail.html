@@ -10,22 +10,22 @@
     <div class="column is-one-third">
       <aside class="padding-horizontal-big padding-vertical-xl">
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Country</h4>
+          <h4 class="b-header margin-bottom-small">Country</h4>
           <p>{{ case.country.name }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Court(s)</h4>
+          <h4 class="b-header margin-bottom-small">Court(s)</h4>
           <p>{{ case.courts }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Year of resolution</h4>
+          <h4 class="b-header margin-bottom-small">Year of resolution</h4>
           <p>{{ case.decision_year }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Relevant materials</h4>
+          <h4 class="b-header margin-bottom-small">Relevant materials</h4>
           <ul class="links-list">
           {% for link in case.link_list %}
             <li class="margin-vertical-small">
@@ -44,10 +44,10 @@
     </div>
     <div class="column is-two-thirds">
       <article class="padding-horizontal-big padding-vertical-xl">
-        <h3 class="b-header">Background information</h3>
+        <h3 class="b-header margin-bottom-small">Background information</h3>
         <p>{{ case.background }}</p>
         <br/>
-        <h3 class="b-header">Case summary</h3>
+        <h3 class="b-header margin-bottom-small">Case summary</h3>
         <p>{{ case.summary }}</p>
         <hr/>
         {% for tag in case.tags %}

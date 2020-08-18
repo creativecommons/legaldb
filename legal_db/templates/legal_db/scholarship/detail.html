@@ -10,23 +10,23 @@
     <div class="column is-one-third">
       <aside class="padding-horizontal-big padding-vertical-xl">
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">License on article</h4>
+          <h4 class="b-header margin-bottom-small">License on article</h4>
           {% if not scholarship.license %} <p class="has-text-grey">Unknown</p>
           {% else %} <p>{{ scholarship.license }}</p> {% endif %}
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Name of publication</h4>
+          <h4 class="b-header margin-bottom-small">Name of publication</h4>
           <p>{{ scholarship.publication_name }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Year of publication</h4>
+          <h4 class="b-header margin-bottom-small">Year of publication</h4>
           <p>{{ scholarship.publication_year }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header">Link</h4>
+          <h4 class="b-header margin-bottom-small">Link</h4>
           {% if scholarship.link.label %} <b>{{ scholarship.link.label }}</b>: {% endif %}
           <a href="{{ scholarship.link.url }}" class="has-text-dark-slate-blue">{{ scholarship.link.title }}</a>
         </div>
@@ -35,7 +35,7 @@
     </div>
     <div class="column is-two-thirds">
       <article class="padding-horizontal-big padding-vertical-xl">
-        <h3 class="b-header">Summary</h3>
+        <h3 class="b-header margin-bottom-small">Summary</h3>
         <p>{{ scholarship.summary }}</p>
         <hr/>
         {% for tag in scholarship.tags %}
