@@ -1,5 +1,6 @@
 $color-tomato: rgb(237, 89, 47);
 $color-dark-turquoise: rgb(5, 181, 218);
+$color-forest-green:rgb(34,139,34);
 $color-dark-slate-blue: rgb(60, 92, 153);
 $color-dark-slate-gray: rgb(51, 51, 51);
 $color-gray: rgb(176, 176, 176);
@@ -29,12 +30,12 @@ body {
     }
   }
   &-scholarship {
-    background-color: $color-dark-turquoise;
-    border-color: $color-dark-turquoise;
+    background-color: $color-forest-green;
+    border-color: $color-forest-green;
     color: white;
     &:hover {
-      background-color: $color-dark-turquoise;
-      border-color: $color-dark-turquoise;
+      background-color: $color-forest-green;
+      border-color: $color-forest-green;
     }
   }
   &.is-delete {
@@ -69,15 +70,15 @@ body {
   }
   &.scholarship {
     &.outline {
-      border-color: $color-dark-turquoise;
+      border-color: $color-forest-green;
     }
     &:hover, &.selected {
-      background-color: $color-dark-turquoise;
-      border-color: $color-dark-turquoise;
+      background-color: $color-forest-green;
+      border-color: $color-forest-green;
       color: white;
     }
     &-clear {
-      border-color: $color-dark-turquoise;
+      border-color: $color-forest-green;
     }
   }
 }
@@ -167,7 +168,7 @@ body {
   }
 
   &.scholarship {
-    box-shadow: inset 0px 6px 0px $color-dark-turquoise;
+    box-shadow: inset 0px 6px 0px $color-forest-green;
   }
 
   .hero-title-big {
