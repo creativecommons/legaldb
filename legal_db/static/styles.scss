@@ -8,15 +8,14 @@ $color-gray: rgb(176, 176, 176);
 $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
 
-$hero-body-padding: 3rem 1.5rem !default;
-$font-size-body-big: 1.12rem;
 $space-small: 0.5rem;
-
 $space-smaller: 0.25rem;
 $space-small: 0.5rem;
 $space-normal: 1rem;
 $space-big: 1.5rem;
 $space-bigger: 2rem;
+$space-large: 2.5rem;
+$space-xl: 4rem;
 $space-xxl: 6rem;
 
 body {
@@ -117,7 +116,16 @@ a, a:hover {
   }
 }
 
-.contribute {
+.container>.navbar .navbar-brand {
+    margin-left: 0; // Reset logo margin
+}
+
+.contribute { // Home section
+  padding-top: $space-bigger;
+  padding-bottom: $space-xl;
+}
+
+.contribute-card {
   float: right;
   max-width: 380px;
 }
@@ -132,6 +140,18 @@ a, a:hover {
 .errorlist {
   color: $color-tomato;
   font-size: 0.9rem;
+}
+
+.explore { // Home section
+  padding-top: $space-xl;
+  padding-bottom: $space-bigger;
+}
+
+.explore, .contribute { // Home sections
+  .container {
+    padding-left: $space-bigger;
+    padding-right: $space-bigger;
+  }
 }
 
 .faq {
@@ -212,6 +232,12 @@ footer a:hover {
 
 .hero {
   background-color: $color-lighter-gray;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+
+  &.case, &.scholarship, &.faq {
+    padding-top: $space-large;
+  }
 
   &.case {
     box-shadow: inset 0px 6px 0px $color-tomato;
@@ -221,18 +247,13 @@ footer a:hover {
     box-shadow: inset 0px 6px 0px $color-dark-turquoise;
   }
 
-  .hero-title-big {
-    font-size: 10rem;
+  &-title, &-description, .breadcrumb {
+    padding: 0 $space-bigger;
   }
 
-  .hero-body {
-    padding: $hero-body-padding;
-  }
-
-  .hero-description {
+  &-description.body-big {
     max-width: 708px;
-    padding: $space-small 0;
-    font-size: $font-size-body-big;
+    padding-top: $space-small;
   }
 }
 
