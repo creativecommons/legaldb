@@ -1,3 +1,4 @@
+// Original variables from Vocabulary
 $color-tomato: rgb(237, 89, 47);
 $color-brighter-tomato: rgb(255, 105, 51);
 $color-dark-turquoise: rgb(5, 181, 218);
@@ -103,6 +104,7 @@ a, a:hover {
   }
 }
 
+// Override link card styles
 .card.entry-post.link.no-border {
   max-width: 600px;
 
@@ -120,7 +122,7 @@ a, a:hover {
     margin-left: 0; // Reset logo margin
 }
 
-.contribute { // Home section
+.contribute { // Home page section
   padding-top: $space-bigger;
   padding-bottom: $space-xl;
 }
@@ -137,17 +139,22 @@ a, a:hover {
   color: $color-light-gray;
 }
 
+.detail { // Detail page section
+  padding-top: $space-xl;
+  padding-bottom: $space-large;
+}
+
 .errorlist {
   color: $color-tomato;
   font-size: 0.9rem;
 }
 
-.explore { // Home section
+.explore { // Home page section
   padding-top: $space-xl;
   padding-bottom: $space-bigger;
 }
 
-.explore, .contribute { // Home sections
+.explore, .contribute, .detail {
   .container {
     padding-left: $space-bigger;
     padding-right: $space-bigger;
@@ -265,7 +272,7 @@ footer a:hover {
   }
 }
 
-.required {
+.required { // Required form field sign
   color: darkred;
   font-weight: bold;
 }
