@@ -6,12 +6,13 @@ based on Google Form responses and manually curated:
 
 [website]: https://labs.creativecommons.org/caselaw/
 
-:warning: **This project is a potential internship project. It may be
-completely reimplemented soon (for more information, see [Reimplement CC’s
-Legal Database using WordPress or Django — Open Source Internships: Project
-Ideas — Creative Commons on GitHub][project-ideas]).**
+> :warning: **This project is under active development in the
+> [`develop`][devbranch] branch.** For more information, see:
+> - [Posts in the Outreachy May 2020 round: CC Legal Database
+>   series][blogseries]
 
-[project-ideas]: https://opensource.creativecommons.org/internships/project-ideas/#legal-database
+[devbranch]: https://github.com/creativecommons/caselaw/tree/develop
+[blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
 
 
 ## Code of Conduct
