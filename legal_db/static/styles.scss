@@ -118,6 +118,11 @@ a, a:hover {
   }
 }
 
+.cases {
+  padding-top: $space-big;
+  padding-bottom: $space-normal;
+}
+
 .container>.navbar .navbar-brand {
     margin-left: 0; // Reset logo margin
 }
@@ -125,11 +130,12 @@ a, a:hover {
 .contribute { // Home page section
   padding-top: $space-bigger;
   padding-bottom: $space-xl;
-}
 
-.contribute-card {
-  float: right;
-  max-width: 380px;
+  &-card {
+    float: right;
+    max-width: 380px;
+    margin-right: 1.9rem;
+  }
 }
 
 .control.has-icons-left .icon {
@@ -155,7 +161,7 @@ a, a:hover {
   padding-bottom: $space-bigger;
 }
 
-.explore, .contribute, .details, .faqs {
+.explore, .contribute, .cases, .details, .faqs {
   .container {
     padding-left: $space-bigger;
     padding-right: $space-bigger;
