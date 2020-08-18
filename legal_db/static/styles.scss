@@ -118,7 +118,7 @@ a, a:hover {
   }
 }
 
-.cases {
+.cases, .scholarships {
   padding-top: $space-big;
   padding-bottom: $space-normal;
 }
@@ -161,7 +161,7 @@ a, a:hover {
   padding-bottom: $space-bigger;
 }
 
-.explore, .contribute, .cases, .details, .faqs {
+.explore, .contribute, .cases, .scholarships, .details, .faqs {
   .container {
     padding-left: $space-bigger;
     padding-right: $space-bigger;
