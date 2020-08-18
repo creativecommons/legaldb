@@ -8,13 +8,10 @@ based on Google Form responses and manually curated:
 
 > :warning: **This project is under active development in the
 > [`develop`][devbranch] branch.** For more information, see:
-> - [Reimplement CC’s Legal Database using WordPress or Django — Open Source
->   Internships: Project Ideas — Creative Commons on GitHub][project-ideas]
 > - [Posts in the Outreachy May 2020 round: CC Legal Database
 >   series][blogseries]
 
 [devbranch]: https://github.com/creativecommons/caselaw/tree/develop
-[project-ideas]: https://opensource.creativecommons.org/internships/project-ideas/#legal-database
 [blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
 
 
