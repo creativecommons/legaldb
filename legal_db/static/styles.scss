@@ -139,7 +139,8 @@ a, a:hover {
   color: $color-light-gray;
 }
 
-.detail { // Detail page section
+.details, // Detail page section
+.faqs {
   padding-top: $space-xl;
   padding-bottom: $space-large;
 }
@@ -154,7 +155,7 @@ a, a:hover {
   padding-bottom: $space-bigger;
 }
 
-.explore, .contribute, .detail {
+.explore, .contribute, .details, .faqs {
   .container {
     padding-left: $space-bigger;
     padding-right: $space-bigger;
