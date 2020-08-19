@@ -9,9 +9,19 @@
 
 :warning:  **This project, CC’s Legal Database, is undergoing a reimplementation using Django, you can see a preview running on [Heroku](https://cc-caselaw.herokuapp.com/).**
 
+
 Visit the current website: **[CC Legal Database [Beta]][website]**.
 
 [website]: https://labs.creativecommons.org/caselaw/
+
+> :warning: **This project is under active development in the
+> [`develop`][devbranch] branch.** For more information, see:
+> - [Posts in the Outreachy May 2020 round: CC Legal Database
+>   series][blogseries]
+
+[devbranch]: https://github.com/creativecommons/caselaw/tree/develop
+[blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
+
 
 
 ## Code of Conduct

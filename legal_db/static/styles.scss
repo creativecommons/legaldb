@@ -1,5 +1,6 @@
 $color-tomato: rgb(237, 89, 47);
 $color-brighter-tomato: rgb(255, 105, 51);
+$color-dark-turquoise: rgb(5, 181, 218);
 $color-forest-green:rgb(4,166,53);
 $color-dark-slate-blue: rgb(60, 92, 153);
 $color-dark-gray: rgb(118, 118, 118);
@@ -207,7 +208,7 @@ a, a:hover {
 }
 
 footer a:hover {
-  color: $color-forest-green;
+  color: $color-dark-turquoise;
 }
 
 .hero {
