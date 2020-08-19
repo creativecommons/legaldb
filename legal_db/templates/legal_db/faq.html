@@ -2,37 +2,41 @@
 {% load markdown_extras %}
 
 {% block body_content %}
-<div class="hero padding-horizontal-xxl padding-vertical-large">
-  {% include "legal_db/partials/_breadcrumb.html" %}
-  <h2>Frequently Asked Questions</h2>
-</div>
-<div class="margin-horizontal-xxl margin-vertical-larger">
-  <div class="columns">
-    <section class="column is-9">
-    <div class="control has-icons-left">
-      <label for="search" class="is-sr-only">Search: </label>
-      <input id="search" class="input search" type="text" onkeyup="search()" placeholder="Search for..." />
-      <span class="icon is-left"><i class="icon search"></i></span>
-    </div>
-      <div class="padding-right-normal padding-top-big">
-        {% for faq in faqs %}
-        <article class="faq__content">
-          <div id="faq-head-{{ forloop.counter }}" class="faq__head" aria-expanded="false">
-            <h5 class="faq__title">{{ faq.question }}</h5>
-          </div>
-          <div id="faq-body-{{ forloop.counter }}" class="faq__body is-hidden" aria-hidden="false">
-            {{ faq.answer | markdown | safe }}
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-    </section>
-    <aside class="column is-3">
-      <h4>Still have questions?</h4>
-      <b><a href="mailto:legal@creativecommons.org" class="has-text-dark-slate-blue">Contact us</a></b>
-    </aside>
+<div class="hero faq">
+  <div class="container">
+    {% include "legal_db/partials/_breadcrumb.html" %}
+    <h1 class="hero-title title is-2">Frequently Asked Questions</h1>
   </div>
 </div>
+<section class="faqs">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-9">
+        <div class="control has-icons-left">
+          <label for="search" class="is-sr-only">Search:</label>
+          <input id="search" class="input column is-8 margin-bottom-big" type="text" onkeyup="search()" placeholder="Search for..." />
+          <span class="icon is-left"><i class="icon search"></i></span>
+        </div>
+        <div>
+          {% for faq in faqs %}
+          <article class="faq__content">
+            <div id="faq-head-{{ forloop.counter }}" class="faq__head" aria-expanded="false">
+              <h5 class="faq__title">{{ faq.question }}</h5>
+            </div>
+            <div id="faq-body-{{ forloop.counter }}" class="faq__body is-hidden" aria-hidden="false">
+              {{ faq.answer | markdown | safe }}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      <aside class="column is-3">
+        <h4>Still have questions?</h4>
+        <b><a href="mailto:legal@creativecommons.org" class="has-text-dark-slate-blue">Contact us</a></b>
+      </aside>
+    </div>
+  </div>
+</section>
 {% endblock %}
 
 {% block js_content %}
