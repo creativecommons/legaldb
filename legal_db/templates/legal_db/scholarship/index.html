@@ -2,70 +2,74 @@
 {% load static %}
 
 {% block body_content %}
-<section class="hero scholarship padding-horizontal-xxl padding-vertical-large">
-  {% include "legal_db/partials/_breadcrumb.html" %}
-  <h1 class="title is-2">Scholarship</h1>
-  <div class="contribute">
-    <article class="card entry-post link no-border is-hidden-touch">
-      <a href="{% url 'scholarship_submit' %}" class="has-background-forest-green">
-        <span class="card-content has-bottom-link">
-          <h2 class="card-title">Contribute</h2>
-          <span class="content">Do you want to submit a scholarly article to the database?</span>
-          <strong class="link-arrow">Submit an article <i class="icon chevron-right"></i></strong>
-        </span>
-      </a>
-    </article>
+<section class="hero scholarship">
+  <div class="container">
+    {% include "legal_db/partials/_breadcrumb.html" %}
+    <h1 class="hero-title title is-2">Scholarship</h1>
+    <div class="contribute-card">
+      <article class="card entry-post link no-border is-hidden-touch">
+        <a href="{% url 'scholarship_submit' %}" class="has-background-forest-green">
+          <span class="card-content has-bottom-link">
+            <h2 class="card-title">Contribute</h2>
+            <span class="content">Do you want to submit a scholarly article to the database?</span>
+            <strong class="link-arrow">Submit an article <i class="icon chevron-right"></i></strong>
+          </span>
+        </a>
+      </article>
+    </div>
+    <p class="hero-description body-big">Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.</p>
   </div>
-  <p class="hero-description">Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.</p>
 </section>
 
-<div class="padding-horizontal-xxl padding-vertical-normal">
-  <form id="search" role="search" method="get">
-    {% include "legal_db/partials/_search.html" %}
+<section class="scholarships">
+  <div class="container">
+    <form id="search" role="search" method="get">
+      {% include "legal_db/partials/_search.html" %}
 
-    <div id="tags" aria-expanded="true">
-    {% for tag in tags %}
-      <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
-             class="button tag scholarship margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
-        {{ tag.name }}
-        <input type="checkbox" class="tag__check" name="tags[]"
-               id="tag-check-{{ forloop.counter }}"
-               value="{{ tag.name }}"
-               {% if tag.checked %} checked{% endif %}
-               hidden>
-      </label>
-    {% endfor %}
-    </div>
-  </form>
-
-  <section class="margin-vertical-big table-container">
-    <table class="table is-bordered is-striped is-fullwidth">
-      <thead>
-        <tr>
-          <th>Year of publication</th>
-          <th>Title</th>
-          <th>Author(s)</th>
-          <th>License</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for scho in scholarships %}
-        <tr>
-          <td class="number-cell">{{ scho.publication_year }}</td>
-          <td><a href="{% url 'scholarship_detail' scho.id %}" class="has-text-dark-slate-blue">{{ scho.title }}</a></td>
-          <td>{{ scho.authors }}</td>
-          <td class="is-narrow">
-            {% if not scho.license %} <span class="has-text-grey">Unknown</span>
-            {% else %} {{ scho.license }} {% endif %}
-          </td>
-        </tr>
-      {% empty %}
-        <tr><td class="has-text-centered" colspan="4">No scholarships are available.</td></tr>
+      <div id="tags" aria-expanded="true">
+      {% for tag in tags %}
+        <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
+               class="button tag scholarship margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
+          {{ tag.name }}
+          <input type="checkbox" class="tag__check" name="tags[]"
+                 id="tag-check-{{ forloop.counter }}"
+                 value="{{ tag.name }}"
+                 {% if tag.checked %} checked{% endif %}
+                 hidden>
+        </label>
       {% endfor %}
-      </tbody>
-    </table>
-  </section>
-</div>
+      </div>
+    </form>
+
+    <div class="margin-vertical-big table-container">
+      <table class="table is-bordered is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Year of publication</th>
+            <th>Title</th>
+            <th>Author(s)</th>
+            <th>License</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for scho in scholarships %}
+          <tr>
+            <td class="number-cell">{{ scho.publication_year }}</td>
+            <td><a href="{% url 'scholarship_detail' scho.id %}" class="has-text-dark-slate-blue">{{ scho.title }}</a></td>
+            <td>{{ scho.authors }}</td>
+            <td class="is-narrow">
+              {% if not scho.license %} <span class="has-text-grey">Unknown</span>
+              {% else %} {{ scho.license }} {% endif %}
+            </td>
+          </tr>
+        {% empty %}
+          <tr><td class="has-text-centered" colspan="4">No scholarships are available.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 {% endblock %}
 
 {% block js_content %}
