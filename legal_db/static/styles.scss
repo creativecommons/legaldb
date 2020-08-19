@@ -2,10 +2,10 @@
 $color-tomato: rgb(237, 89, 47);
 $color-brighter-tomato: rgb(255, 105, 51);
 $color-dark-turquoise: rgb(5, 181, 218);
+$color-forest-green:rgb(4,166,53);
 $color-dark-slate-blue: rgb(60, 92, 153);
 $color-dark-gray: rgb(118, 118, 118);
 $color-dark-slate-gray: rgb(51, 51, 51);
-$color-gray: rgb(176, 176, 176);
 $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
 
@@ -61,8 +61,8 @@ a, a:hover {
     }
   }
   &.scholarship {
-    background-color: $color-dark-turquoise;
-    border-color: $color-dark-turquoise;
+    background-color: $color-forest-green;
+    border-color: $color-forest-green;
     color: white;
 
     &.tag {
@@ -70,13 +70,13 @@ a, a:hover {
       color: $color-dark-gray;
 
       &.outline {
-        border-color: $color-dark-turquoise;
+        border-color: $color-forest-green;
         text-decoration: none;
       }
 
       &:hover, &.selected {
-        background-color: $color-dark-turquoise;
-        border-color: $color-dark-turquoise;
+        background-color: $color-forest-green;
+        border-color: $color-forest-green;
         color: white;
       }
     }
@@ -258,7 +258,7 @@ footer a:hover {
   }
 
   &.scholarship {
-    box-shadow: inset 0px 6px 0px $color-dark-turquoise;
+    box-shadow: inset 0px 6px 0px $color-forest-green;
   }
 
   &-title, &-description, .breadcrumb {
