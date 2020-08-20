@@ -12,11 +12,12 @@ tagsToggle.addEventListener('click', () => {
 });
 
 const tags = document.querySelectorAll('.tag__check');
+const form = document.getElementById('search');
 tags.forEach(tag => {
     const number = tag.getAttribute('id').split('-').pop();
     const associatedLabel = document.getElementById(`tag-label-${number}`);
     tag.addEventListener('click', (e) => {
-        console.log("click on", tag);
         associatedLabel.classList.toggle('selected');
-    })
+        form.submit();
+    });
 });
