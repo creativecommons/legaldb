@@ -19,13 +19,13 @@
 
     {% with WIDGET_ERROR_CLASS='is-danger' %}
       <div class="field">
-        <label for="{{ scho_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
+        <label class="has-text-weight-bold" for="{{ scho_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
         {% render_field scho_form.contributor_name|add_class:"input" %}
         {{ scho_form.contributor_name.errors }}
       </div>
 
       <div class="field">
-        <label for="{{ scho_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
+        <label class="has-text-weight-bold" for="{{ scho_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
         {% render_field scho_form.contributor_email|add_class:"input" %}
         {{ scho_form.contributor_email.errors }}
       </div>
@@ -43,38 +43,38 @@
       <h4 class="b-header">Article information</h4>
 
       <div class="field">
-        <label for="{{ scho_form.title.id_for_label }}">Title of article</label>
+        <label class="has-text-weight-bold" for="{{ scho_form.title.id_for_label }}">Title of article</label>
         {% render_field scho_form.title|add_class:"input" %}
         {{ scho_form.title.errors }}
       </div>
 
       <div class="columns">
         <div class="column is-three-fifths">
-          <label for="{{ scho_form.license.id_for_label }}">License on article</label>
+          <label class="has-text-weight-bold" for="{{ scho_form.license.id_for_label }}">License on article</label>
           {% render_field scho_form.license|add_class:"input" %}
           {{ scho_form.license.errors }}
         </div>
         <div class="column is-two-fifth">
-          <label for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
+          <label class="has-text-weight-bold" for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
           {% render_field scho_form.publication_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
           {{ scho_form.publication_year.errors }}
         </div>
       </div>
 
       <div class="field">
-        <label for="{{ scho_form.publication_name.id_for_label }}">Name of publication</label>
+        <label class="has-text-weight-bold" for="{{ scho_form.publication_name.id_for_label }}">Name of publication</label>
         {% render_field scho_form.publication_name|add_class:"input" %}
         {{ scho_form.publication_name.errors }}
       </div>
 
       <div class="field">
-        <label for="{{ scho_form.authors.id_for_label }}">Author(s)</label>
+        <label class="has-text-weight-bold" for="{{ scho_form.authors.id_for_label }}">Author(s)</label>
         {% render_field scho_form.authors|add_class:"input" %}
         {{ scho_form.authors.errors }}
       </div>
 
       <div class="field">
-        <label for="{{ scho_form.summary.id_for_label }}">Summary of article</label>
+        <label class="has-text-weight-bold" for="{{ scho_form.summary.id_for_label }}">Summary of article</label>
         {% render_field scho_form.summary|add_class:"input textarea" placeholder="Abstract or summary of the article" %}
         {{ scho_form.summary.errors }}
       </div>
@@ -83,19 +83,19 @@
       <h4 class="b-header">Link to article</h4>
 
       <div class="field">
-        <label for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
+        <label class="has-text-weight-bold"  for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
         {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
         {{ link_form.url.errors }}
       </div>
 
       <div class="columns">
         <div class="column is-three-quarters">
-          <label for="{{ link_form.title.id_for_label }}">Title of link</label>
+          <label class="has-text-weight-bold"  for="{{ link_form.title.id_for_label }}">Title of link</label>
           {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
           {{ link_form.title.errors }}
         </div>
         <div class="column is-one-quarter">
-          <label for="{{ link_form.label.id_for_label }}">Label of link</label>
+          <label class="has-text-weight-bold"  for="{{ link_form.label.id_for_label }}">Label of link</label>
           {% render_field link_form.label|add_class:"input" %}
           {{ link_form.label.errors }}
         </div>
