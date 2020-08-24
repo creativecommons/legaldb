@@ -97,6 +97,8 @@ DATABASES = {
 # See https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 
 if "GITHUB_WORKFLOW" in os.environ:
+    SECRET_KEY = "cbo9e7%1c^ijxoit37^!kbfyikaet%z&*pm&4k(3#h*k%irylt"
+
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
