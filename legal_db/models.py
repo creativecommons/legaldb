@@ -77,7 +77,7 @@ class Case(LegalResource):
         help_text="If there are multiple lawsuits between the parties in this dispute, "
         "please note additional cases here.",
     )
-    country = CountryField(blank=True, null=True)
+    country = CountryField(blank_label="Select a country", blank=True, null=True)
     courts = models.CharField(
         max_length=255,
         blank=True,

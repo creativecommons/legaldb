@@ -2,68 +2,76 @@
 {% load static %}
 
 {% block body_content %}
-<section class="hero case padding-horizontal-xxl padding-vertical-large">
-  {% include "legal_db/partials/_breadcrumb.html" %}
-  <h2>Cases</h2>
-  <div class="contribute">
-    <article class="card entry-post link no-border is-hidden-touch">
-      <a href="{% url 'case_submit' %}" class="has-background-tomato">
-        <span class="card-content has-bottom-link">
-          <h2 class="card-title">Contribute</h2>
-          <span class="content">Do you want to submit a legal dispute to the database?</span>
-          <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
-        </span>
-      </a>
-    </article>
+<section class="hero case">
+  <div class="container">
+    {% include "legal_db/partials/_breadcrumb.html" %}
+    <h1 class="hero-title title is-2">Cases</h1>
+    <div class="contribute-card">
+      <article class="card entry-post link no-border is-hidden-touch">
+        <a href="{% url 'case_submit' %}" class="has-background-tomato">
+          <span class="card-content has-bottom-link">
+            <h2 class="card-title">Contribute</h2>
+            <span class="content">Do you want to submit a legal dispute to the database?</span>
+            <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
+          </span>
+        </a>
+      </article>
+    </div>
+    <p class="hero-description body-big">Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.</p>
   </div>
-  <p class="padding-vertical-small body-big">Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.</p>
 </section>
 
-<div class="padding-horizontal-xxl padding-vertical-normal">
-  <form role="search" method="get">
-    {% include "legal_db/partials/_search.html" %}
+<section class="cases">
+  <div class="container">
+    <form id="search" role="search" method="get">
+      {% include "legal_db/partials/_search.html" %}
 
-    <section id="tags" aria-expanded="true">
-    {% for tag in tags %}
-      <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
-             class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
-        {{ tag.name }}
-        <input type="checkbox" class="tag__check" name="tags[]"
-               id="tag-check-{{ forloop.counter }}"
-               value="{{ tag.name }}"
-               {% if tag.checked %} checked{% endif %}
-               hidden>
-      </label>
-    {% endfor %}
-    </section>
-  </form>
-
-  <section class="margin-vertical-big table-container">
-    <table class="table is-bordered is-striped is-fullwidth">
-      <thead>
-        <tr>
-          <th>Country</th>
-          <th>Case name</th>
-          <th>License</th>
-          <th>Year of resolution</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for case in cases %}
-        <tr>
-          <td>{{ case.country.name }}</td>
-          <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
-          <td class="is-narrow">
-            {% if not case.license %} <span class="has-text-grey">Unknown</span>
-            {% else %} {{ case.license }} {% endif %}
-          </td>
-          <td class="number-cell">{{ case.decision_year|default:"" }}</td>
-        </tr>
-      {% empty %}
-        <tr><td class="has-text-centered" colspan="4">No cases are available. Try different filters or search terms.</td></tr>
+      <div id="tags" aria-expanded="true">
+      {% for tag in tags %}
+        <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
+               class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
+          {{ tag.name }}
+          <input type="checkbox" class="tag__check" name="tags[]"
+                 id="tag-check-{{ forloop.counter }}"
+                 value="{{ tag.name }}"
+                 {% if tag.checked %} checked{% endif %}
+                 hidden>
+        </label>
       {% endfor %}
-      </tbody>
-    </table>
-  </section>
-</div>
+      </div>
+    </form>
+
+    <div class="margin-vertical-big table-container">
+      <table class="table is-bordered is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Case name</th>
+            <th>License</th>
+            <th>Year of resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for case in cases %}
+          <tr>
+            <td>{{ case.country.name }}</td>
+            <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
+            <td class="is-narrow">
+              {% if not case.license %} <span class="has-text-grey">Unknown</span>
+              {% else %} {{ case.license }} {% endif %}
+            </td>
+            <td class="number-cell">{{ case.decision_year|default:"" }}</td>
+          </tr>
+        {% empty %}
+          <tr><td class="has-text-centered" colspan="4">No cases are available. Try different filters or search terms.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block js_content %}
+  <script src="{% static 'listing.js' %}" defer></script>
 {% endblock %}

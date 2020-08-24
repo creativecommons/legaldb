@@ -7,7 +7,7 @@
   <p class="hero-p">Please add any cases related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;&nbsp;<span class="required">*</span> Required.</p>
 </section>
 <section class="has-background-grey-lighter padding-vertical-normal">
-  <form class="form margin-horizontal-xxl margin-vertical-big" action="{% url 'case_submit' %}" method="post">
+  <form class="form case" action="{% url 'case_submit' %}" method="post">
     {% csrf_token %}
     {% if case_form.non_field_errors %}
       <div class="notification warning">
@@ -81,20 +81,22 @@
 
       <div class="field">
         <label for="{{ case_form.background.id_for_label }}" class="has-text-weight-bold">Background Information</label>
-        {% render_field case_form.background|add_class:"input textarea" placeholder="Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit." %}
+        <p>Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit.</p>
+        {% render_field case_form.background|add_class:"input textarea" %}
         {{ case_form.background.errors }}
       </div>
 
       <div class="field">
         <label for="{{ case_form.summary.id_for_label }}" class="has-text-weight-bold">Case Summary</label>
-        {% render_field case_form.summary|add_class:"input textarea" placeholder="Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates." %}
+        <p>Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates.</p>
+        {% render_field case_form.summary|add_class:"input textarea" %}
         {{ case_form.summary.errors }}
       </div>
 
       <div class="columns">
         <div class="column">
           <label for="{{ case_form.decision_year.id_for_label }}" class="has-text-weight-bold">Year of case resolution</label>
-          {% render_field case_form.decision_year|add_class:"input" placeholder="YYYY" %}
+          {% render_field case_form.decision_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
           {{ case_form.decision_year.errors }}
         </div>
         <div class="column">
@@ -116,13 +118,13 @@
                 <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
                   URL <span class="required">*</span>
                 </label>
-                {% render_field link_form.url|add_class:"input"|attr:"required" type="text"  placeholder="https://example.com" %}
+                {% render_field link_form.url|add_class:"input"|attr:"required" type="text" inputmode="url" placeholder="https://example.com" %}
                 {{ link_form.url.errors }}
               </div>
             {% else %}
               <div class="column is-11">
                 <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">URL</label>
-                {% render_field link_form.url|add_class:"input" type="text"  placeholder="https://example.com" %}
+                {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
                 {{ link_form.url.errors }}
               </div>
               <div class="column is-1">
@@ -144,7 +146,7 @@
                 {{ link_form.label.errors }}
               </div>
             </div>
-            <hr class="has-background-grey-light"/>
+            <hr>
           </div>
         {% endfor %}
       </div>
@@ -152,13 +154,11 @@
 
     <div class="columns">
       <div class="column">
-        <button type="button" class="button small is-pulled-right" id="add-btn">Add link
-{#          <i class="icon plus"></i>#}
-        </button>
+        <button type="button" class="button small is-pulled-right" id="add-btn">Add link</button>
       </div>
     </div>
 
-    <button type="submit" class="button button-case">submit case</button>
+    <button type="submit" class="button case">submit case</button>
   </form>
 </section>
 {% endblock %}
@@ -174,7 +174,7 @@
           <div class="columns">
             <div class="column is-11">
               <label for="id_form-${LINKS_COUNT}-url" class="has-text-weight-bold">URL</label>
-              <input type="text" name="form-${LINKS_COUNT}-url" maxlength="2000" placeholder="https://example.com" class="input" id="id_form-${LINKS_COUNT}-url">
+              <input type="text" name="form-${LINKS_COUNT}-url" maxlength="2000" inputmode="url" placeholder="https://example.com" class="input" id="id_form-${LINKS_COUNT}-url">
             </div>
             <div class="column">
               <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-${LINKS_COUNT}')">

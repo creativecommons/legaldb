@@ -1,15 +1,31 @@
+// Original variables from Vocabulary
 $color-tomato: rgb(237, 89, 47);
+$color-brighter-tomato: rgb(255, 105, 51);
 $color-dark-turquoise: rgb(5, 181, 218);
+$color-forest-green: rgb(4,166,53);
+$color-brighter-forest-green: rgb(0, 184, 80);
 $color-dark-slate-blue: rgb(60, 92, 153);
+$color-dark-gray: rgb(118, 118, 118);
 $color-dark-slate-gray: rgb(51, 51, 51);
-$color-gray: rgb(176, 176, 176);
 $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
 
-$hero-body-padding: 3rem 1.5rem !default;
+$space-small: 0.5rem;
+$space-smaller: 0.25rem;
+$space-small: 0.5rem;
+$space-normal: 1rem;
+$space-big: 1.5rem;
+$space-bigger: 2rem;
+$space-large: 2.5rem;
+$space-xl: 4rem;
+$space-xxl: 6rem;
 
 body {
     color: $color-dark-slate-gray;
+}
+
+a, a:hover {
+  color: $color-dark-slate-blue;
 }
 
 .breadcrumb {
@@ -19,33 +35,71 @@ body {
 }
 
 .button {
-  &-case{
+  &.case {
     background-color: $color-tomato;
     border-color: $color-tomato;
     color: white;
+
     &:hover {
-      background-color: $color-tomato;
-      border-color: $color-tomato;
+      background-color: $color-brighter-tomato;
+      border-color: $color-brighter-tomato;
+    }
+
+    &.tag {
+      background-color: white;
+      color: $color-dark-gray;
+
+      &.outline {
+        border-color: $color-tomato;
+        text-decoration: none;
+      }
+
+      &:hover, &.selected {
+        background-color: $color-tomato;
+        border-color: $color-tomato;
+        color: white;
+      }
     }
   }
-  &-scholarship {
-    background-color: $color-dark-turquoise;
-    border-color: $color-dark-turquoise;
+  &.scholarship {
+    background-color: $color-forest-green;
+    border-color: $color-forest-green;
     color: white;
+
     &:hover {
-      background-color: $color-dark-turquoise;
-      border-color: $color-dark-turquoise;
+      background-color: $color-brighter-forest-green;
+      border-color: $color-brighter-forest-green;
+    }
+
+    &.tag {
+      background-color: white;
+      color: $color-dark-gray;
+
+      &.outline {
+        border-color: $color-forest-green;
+        text-decoration: none;
+      }
+
+      &:hover, &.selected {
+        background-color: $color-forest-green;
+        border-color: $color-forest-green;
+        color: white;
+      }
     }
   }
   &.is-delete {
     color: $color-tomato;
-    width: 100%;
-    height: 60%;
-    margin-top: 1.5rem;
+    font-size: 1rem;
+    margin-top: $space-bigger;
     padding: 0;
+    width: 100%;
+
+    &:hover {
+      color: white;
+    }
 
     .icon {
-      padding: .35rem 0;
+      padding: $space-smaller 0;
     }
   }
 }
@@ -56,39 +110,41 @@ body {
   }
 }
 
-.button.tag {
-  &.case {
-    &.outline {
-      border-color: $color-tomato;
+// Override link card styles
+.card.entry-post.link.no-border {
+  max-width: 600px;
+
+  a {
+    .card-content.has-bottom-link {
+      padding: 0 0 3rem 0;
     }
-    &:hover, &.selected {
-      background-color: $color-tomato;
-      border-color: $color-tomato;
-      color: white;
+    &:hover.has-background-tomato {
+      background-color: $color-brighter-tomato !important;
     }
-  }
-  &.scholarship {
-    &.outline {
-      border-color: $color-dark-turquoise;
-    }
-    &:hover, &.selected {
-      background-color: $color-dark-turquoise;
-      border-color: $color-dark-turquoise;
-      color: white;
-    }
-    &-clear {
-      border-color: $color-dark-turquoise;
+    &:hover.has-background-forest-green {
+      background-color: $color-brighter-forest-green !important;
     }
   }
 }
 
-.card.entry-post.link a .card-content.has-bottom-link {
-  padding: 0 0 3rem 0;
+.cases, .scholarships {
+  padding-top: $space-big;
+  padding-bottom: $space-normal;
 }
 
-.contribute {
-  float: right;
-  max-width: 380px;
+.container>.navbar .navbar-brand {
+    margin-left: 0; // Reset logo margin
+}
+
+.contribute { // Home page section
+  padding-top: $space-bigger;
+  padding-bottom: $space-xl;
+
+  &-card {
+    float: right;
+    max-width: 380px;
+    margin-right: 1.9rem;
+  }
 }
 
 .control.has-icons-left .icon {
@@ -98,9 +154,27 @@ body {
   color: $color-light-gray;
 }
 
+.details, // Detail page section
+.faqs {
+  padding-top: $space-xl;
+  padding-bottom: $space-large;
+}
+
 .errorlist {
   color: $color-tomato;
   font-size: 0.9rem;
+}
+
+.explore { // Home page section
+  padding-top: $space-xl;
+  padding-bottom: $space-bigger;
+}
+
+.explore, .contribute, .cases, .scholarships, .details, .faqs {
+  .container {
+    padding-left: $space-bigger;
+    padding-right: $space-bigger;
+  }
 }
 
 .faq {
@@ -157,34 +231,53 @@ body {
 
 .form {
   max-width: 768px;
+
+  &.case, &.scholarship {
+    margin: $space-big $space-xxl;
+
+    .field {
+      margin-bottom: 1.5rem;
+    }
+
+    .input, .select {
+      margin-top: $space-small;
+    }
+    hr {
+      margin: $space-normal 0;
+      background-color: $color-light-gray;
+    }
+  }
+}
+
+footer a:hover {
+  color: $color-dark-turquoise;
 }
 
 .hero {
   background-color: $color-lighter-gray;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+
+  &.case, &.scholarship, &.faq {
+    padding-top: $space-large;
+  }
 
   &.case {
     box-shadow: inset 0px 6px 0px $color-tomato;
   }
 
   &.scholarship {
-    box-shadow: inset 0px 6px 0px $color-dark-turquoise;
+    box-shadow: inset 0px 6px 0px $color-forest-green;
   }
 
-  .hero-title-big {
-    font-size: 10rem;
+  &-title, &-description, .breadcrumb {
+    padding: 0 $space-bigger;
   }
 
-  .hero-body {
-    padding: $hero-body-padding;
+  &-description.body-big {
+    max-width: 708px;
+    padding-top: $space-small;
   }
-
-  .hero-p {
-    max-width: 800px;
-  }
-}
-
-.input.search {
-  max-width: 450px;
 }
 
 .links-list {
@@ -195,7 +288,7 @@ body {
   }
 }
 
-.required {
+.required { // Required form field sign
   color: darkred;
   font-weight: bold;
 }
