@@ -132,6 +132,11 @@ a, a:hover {
   padding-bottom: $space-normal;
 }
 
+.columns.submit {
+  background-color: $color-lighter-gray;
+  margin-bottom: 0;
+}
+
 .container>.navbar .navbar-brand {
     margin-left: 0; // Reset logo margin
 }
@@ -230,10 +235,9 @@ a, a:hover {
 }
 
 .form {
-  max-width: 768px;
 
   &.case, &.scholarship {
-    margin: $space-big $space-xxl;
+    margin: $space-big $space-bigger;
 
     .field {
       margin-bottom: 1.5rem;
@@ -270,13 +274,24 @@ footer a:hover {
     box-shadow: inset 0px 6px 0px $color-forest-green;
   }
 
+  &.submit {
+    background-color: white;
+    padding-top: $space-big;
+    padding-bottom: $space-big;
+  }
+
   &-title, &-description, .breadcrumb {
     padding: 0 $space-bigger;
   }
 
-  &-description.body-big {
-    max-width: 708px;
-    padding-top: $space-small;
+  &-description {
+    &.body-big {
+      max-width: 708px;
+      padding-top: $space-small;
+    }
+    &.body-normal {
+      max-width: 800px;
+    }
   }
 }
 
