@@ -246,6 +246,11 @@ a, a:hover {
     .input, .select {
       margin-top: $space-small;
     }
+
+    h4 {
+      margin-bottom: $space-small;
+    }
+
     hr {
       margin: $space-normal 0;
       background-color: $color-light-gray;
