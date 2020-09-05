@@ -2,164 +2,170 @@
 {% load widget_tweaks %}
 
 {% block body_content %}
-<section class="hero has-background-white padding-horizontal-xl padding-vertical-big">
-  <h2>Case Submission</h2>
-  <p class="hero-p">Please add any cases related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;&nbsp;<span class="required">*</span> Required.</p>
+<section class="hero submit">
+  <div class="container">
+    <h1 class="hero-title title is-2">Case Submission</h1>
+    <p class="hero-description body-normal">Please add any cases related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;<span class="required">*</span> Required.</p>
+  </div>
 </section>
-<section class="has-background-grey-lighter padding-vertical-normal">
-  <form class="form case" action="{% url 'case_submit' %}" method="post">
-    {% csrf_token %}
-    {% if case_form.non_field_errors %}
-      <div class="notification warning">
-        <strong class="notification-container">{{ case_form.non_field_errors }}</strong>
-      </div>
-    {% endif %}
-
-    <h4 class="b-header margin-bottom-small">Contact</h4>
-
-    {% with WIDGET_ERROR_CLASS='is-danger' %}
-      <div class="field">
-        <label for="{{ case_form.contributor_name.id_for_label }}" class="has-text-weight-bold">
-          Your Name <span class="required">*</span>
-        </label>
-        {% render_field case_form.contributor_name|add_class:"input" %}
-        {{ case_form.contributor_name.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.contributor_email.id_for_label }}" class="has-text-weight-bold">
-          Email <span class="required">*</span>
-        </label>
-        {% render_field case_form.contributor_email|add_class:"input" %}
-        {{ case_form.contributor_email.errors }}
-      </div>
-
-      <div class="field">
-        <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
-        <label for="{{ case_form.agreement.id_for_label }}" class="checkbox">
-          {% render_field case_form.agreement %}
-          I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
-        </label>
-        {{ case_form.agreement.errors }}
-      </div>
-      <br/>
-
-      <h4 class="b-header margin-bottom-small">Case information</h4>
-
-      <div class="field">
-        <label for="{{ case_form.name.id_for_label }}" class="has-text-weight-bold">Case name</label>
-        <p>If there are multiple lawsuits between the parties, please just include one here and note the others in the related cases field.</p>
-        {% render_field case_form.name|add_class:"input" %}
-        {{ case_form.name.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.related_cases.id_for_label }}" class="has-text-weight-bold">Related cases</label>
-        <p>If there are multiple lawsuits between the parties in this dispute, please note additional cases here.</p>
-        {% render_field case_form.related_cases|add_class:"input" %}
-        {{ case_form.related_cases.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.license.id_for_label }}" class="has-text-weight-bold">License on case</label>
-        {% render_field case_form.license|add_class:"input" %}
-        {{ case_form.license.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.country.id_for_label }}" class="has-text-weight-bold">Country</label><br/>
-        <div class="select">{% render_field case_form.country %}</div>
-        {{ case_form.country.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.courts.id_for_label }}" class="has-text-weight-bold">Court(s)</label>
-        <p>If the lawsuit was filed in one court and then went to another court on appeal, please note all relevant courts here.</p>
-        {% render_field case_form.courts|add_class:"input" %}
-        {{ case_form.courts.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.background.id_for_label }}" class="has-text-weight-bold">Background Information</label>
-        <p>Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit.</p>
-        {% render_field case_form.background|add_class:"input textarea" %}
-        {{ case_form.background.errors }}
-      </div>
-
-      <div class="field">
-        <label for="{{ case_form.summary.id_for_label }}" class="has-text-weight-bold">Case Summary</label>
-        <p>Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates.</p>
-        {% render_field case_form.summary|add_class:"input textarea" %}
-        {{ case_form.summary.errors }}
-      </div>
-
-      <div class="columns">
-        <div class="column">
-          <label for="{{ case_form.decision_year.id_for_label }}" class="has-text-weight-bold">Year of case resolution</label>
-          {% render_field case_form.decision_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
-          {{ case_form.decision_year.errors }}
-        </div>
-        <div class="column">
-          <label for="{{ case_form.is_pending.id_for_label }}" class="has-text-weight-bold">Is pending?</label><br/>
-            <div class="select">{% render_field case_form.is_pending %}</div>
-        </div>
-      </div>
-
-      <h4 class="b-header margin-bottom-small">Links to relevant materials</h4>
-
-      <p class="margin-bottom-normal">Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
-      <div id="link-formset">
-        {{ link_formset.management_form }}
-        {% for link_form in link_formset %}
-          <div id="link-form-{{ forloop.counter0 }}">
-            <div class="columns">
-            {% if forloop.counter0 == 0 %}
-              <div class="column is-12">
-                <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
-                  URL <span class="required">*</span>
-                </label>
-                {% render_field link_form.url|add_class:"input"|attr:"required" type="text" inputmode="url" placeholder="https://example.com" %}
-                {{ link_form.url.errors }}
-              </div>
-            {% else %}
-              <div class="column is-11">
-                <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">URL</label>
-                {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
-                {{ link_form.url.errors }}
-              </div>
-              <div class="column is-1">
-                <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')">
-                  <i class="icon cross"></i>
-                </button>
-              </div>
-            {% endif %}
-            </div>
-            <div class="columns">
-              <div class="column is-three-quarters">
-                <label for="{{ link_form.title.id_for_label }}" class="has-text-weight-bold">Title of link</label>
-                {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
-                {{ link_form.title.errors }}
-              </div>
-              <div class="column is-one-quarter">
-                <label for="{{ link_form.label.id_for_label }}" class="has-text-weight-bold">Label of link</label>
-                {% render_field link_form.label|add_class:"input" placeholder="e.g. Pleading, Brief..." %}
-                {{ link_form.label.errors }}
-              </div>
-            </div>
-            <hr>
+<section class="columns submit is-centered">
+  <div class="column is-9">
+    <div class="container">
+      <form class="form case" action="{% url 'case_submit' %}" method="post">
+        {% csrf_token %}
+        {% if case_form.non_field_errors %}
+          <div class="notification warning">
+            <strong class="notification-container">{{ case_form.non_field_errors }}</strong>
           </div>
-        {% endfor %}
-      </div>
-    {% endwith %}
+        {% endif %}
 
-    <div class="columns">
-      <div class="column">
-        <button type="button" class="button small is-pulled-right" id="add-btn">Add link</button>
-      </div>
+        <h4 class="b-header">Contact</h4>
+
+        {% with WIDGET_ERROR_CLASS='is-danger' %}
+          <div class="field">
+            <label for="{{ case_form.contributor_name.id_for_label }}" class="has-text-weight-bold">
+              Your Name <span class="required">*</span>
+            </label>
+            {% render_field case_form.contributor_name|add_class:"input" %}
+            {{ case_form.contributor_name.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.contributor_email.id_for_label }}" class="has-text-weight-bold">
+              Email <span class="required">*</span>
+            </label>
+            {% render_field case_form.contributor_email|add_class:"input" %}
+            {{ case_form.contributor_email.errors }}
+          </div>
+
+          <div class="field">
+            <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
+            <label for="{{ case_form.agreement.id_for_label }}" class="checkbox">
+              {% render_field case_form.agreement %}
+              I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
+            </label>
+            {{ case_form.agreement.errors }}
+          </div>
+          <br/>
+
+          <h4 class="b-header">Case information</h4>
+
+          <div class="field">
+            <label for="{{ case_form.name.id_for_label }}" class="has-text-weight-bold">Case name</label>
+            <p>If there are multiple lawsuits between the parties, please just include one here and note the others in the related cases field.</p>
+            {% render_field case_form.name|add_class:"input" %}
+            {{ case_form.name.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.related_cases.id_for_label }}" class="has-text-weight-bold">Related cases</label>
+            <p>If there are multiple lawsuits between the parties in this dispute, please note additional cases here.</p>
+            {% render_field case_form.related_cases|add_class:"input" %}
+            {{ case_form.related_cases.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.license.id_for_label }}" class="has-text-weight-bold">License on case</label>
+            {% render_field case_form.license|add_class:"input" %}
+            {{ case_form.license.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.country.id_for_label }}" class="has-text-weight-bold">Country</label><br/>
+            <div class="select">{% render_field case_form.country %}</div>
+            {{ case_form.country.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.courts.id_for_label }}" class="has-text-weight-bold">Court(s)</label>
+            <p>If the lawsuit was filed in one court and then went to another court on appeal, please note all relevant courts here.</p>
+            {% render_field case_form.courts|add_class:"input" %}
+            {{ case_form.courts.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.background.id_for_label }}" class="has-text-weight-bold">Background Information</label>
+            <p>Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit.</p>
+            {% render_field case_form.background|add_class:"input textarea" %}
+            {{ case_form.background.errors }}
+          </div>
+
+          <div class="field">
+            <label for="{{ case_form.summary.id_for_label }}" class="has-text-weight-bold">Case Summary</label>
+            <p>Please describe what happened after the lawsuit was filed. If there were judicial decisions, please include the dates.</p>
+            {% render_field case_form.summary|add_class:"input textarea" %}
+            {{ case_form.summary.errors }}
+          </div>
+
+          <div class="columns">
+            <div class="column">
+              <label for="{{ case_form.decision_year.id_for_label }}" class="has-text-weight-bold">Year of case resolution</label>
+              {% render_field case_form.decision_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
+              {{ case_form.decision_year.errors }}
+            </div>
+            <div class="column">
+              <label for="{{ case_form.is_pending.id_for_label }}" class="has-text-weight-bold">Is pending?</label><br/>
+                <div class="select">{% render_field case_form.is_pending %}</div>
+            </div>
+          </div>
+
+          <h4 class="b-header">Links to relevant materials</h4>
+
+          <p class="margin-bottom-normal">Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
+          <div id="link-formset">
+            {{ link_formset.management_form }}
+            {% for link_form in link_formset %}
+              <div id="link-form-{{ forloop.counter0 }}">
+                <div class="columns">
+                {% if forloop.counter0 == 0 %}
+                  <div class="column is-12">
+                    <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">
+                      URL <span class="required">*</span>
+                    </label>
+                    {% render_field link_form.url|add_class:"input"|attr:"required" type="text" inputmode="url" placeholder="https://example.com" %}
+                    {{ link_form.url.errors }}
+                  </div>
+                {% else %}
+                  <div class="column is-11">
+                    <label for="{{ link_form.url.id_for_label }}" class="has-text-weight-bold">URL</label>
+                    {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
+                    {{ link_form.url.errors }}
+                  </div>
+                  <div class="column is-1">
+                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')">
+                      <i class="icon cross"></i>
+                    </button>
+                  </div>
+                {% endif %}
+                </div>
+                <div class="columns">
+                  <div class="column is-three-quarters">
+                    <label for="{{ link_form.title.id_for_label }}" class="has-text-weight-bold">Title of link</label>
+                    {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
+                    {{ link_form.title.errors }}
+                  </div>
+                  <div class="column is-one-quarter">
+                    <label for="{{ link_form.label.id_for_label }}" class="has-text-weight-bold">Label of link</label>
+                    {% render_field link_form.label|add_class:"input" placeholder="e.g. Pleading, Brief..." %}
+                    {{ link_form.label.errors }}
+                  </div>
+                </div>
+                <hr>
+              </div>
+            {% endfor %}
+          </div>
+        {% endwith %}
+
+        <div class="columns">
+          <div class="column">
+            <button type="button" class="button small is-pulled-right" id="add-btn">Add link</button>
+          </div>
+        </div>
+
+        <button type="submit" class="button case">submit case</button>
+      </form>
     </div>
-
-    <button type="submit" class="button case">submit case</button>
-  </form>
+  </div>
 </section>
 {% endblock %}
 

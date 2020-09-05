@@ -2,107 +2,113 @@
 {% load widget_tweaks %}
 
 {% block body_content %}
-<section class="hero has-background-white padding-horizontal-xl padding-vertical-big">
-  <h2>Scholarship Submission</h2>
-  <p class="hero-p">Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database. <span class="required">*</span> Required.</p>
+<section class="hero submit">
+  <div class="container">
+    <h1 class="hero-title title is-2">Scholarship Submission</h1>
+    <p class="hero-description body-normal">Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;<span class="required">*</span> Required.</p>
+  </div>
 </section>
-<section class="has-background-grey-lighter padding-vertical-normal">
-  <form class="form scholarship margin-horizontal-xxl margin-vertical-big" action="{% url 'scholarship_submit' %}" method="post">
-    {% csrf_token %}
-    {% if scho_form.non_field_errors %}
-      <div class="notification warning">
-        <strong class="notification-container">{{ scho_form.non_field_errors }}</strong>
-      </div>
-    {% endif %}
-
-    <h4 class="b-header">Contact</h4>
-
-    {% with WIDGET_ERROR_CLASS='is-danger' %}
-      <div class="field">
-        <label class="has-text-weight-bold" for="{{ scho_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
-        {% render_field scho_form.contributor_name|add_class:"input" %}
-        {{ scho_form.contributor_name.errors }}
-      </div>
-
-      <div class="field">
-        <label class="has-text-weight-bold" for="{{ scho_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
-        {% render_field scho_form.contributor_email|add_class:"input" %}
-        {{ scho_form.contributor_email.errors }}
-      </div>
-
-      <div class="field">
-        <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
-        <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox">
-          {% render_field scho_form.agreement %}
-          I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
-        </label>
-        {{ scho_form.agreement.errors }}
-      </div>
-      <br/>
-
-      <h4 class="b-header">Article information</h4>
-
-      <div class="field">
-        <label class="has-text-weight-bold" for="{{ scho_form.title.id_for_label }}">Title of article</label>
-        {% render_field scho_form.title|add_class:"input" %}
-        {{ scho_form.title.errors }}
-      </div>
-
-      <div class="columns">
-        <div class="column is-three-fifths">
-          <label class="has-text-weight-bold" for="{{ scho_form.license.id_for_label }}">License on article</label>
-          {% render_field scho_form.license|add_class:"input" %}
-          {{ scho_form.license.errors }}
+<section class="columns submit is-centered">
+  <div class="column is-9">
+    <div class="container">
+      <form class="form scholarship" action="{% url 'scholarship_submit' %}" method="post">
+      {% csrf_token %}
+      {% if scho_form.non_field_errors %}
+        <div class="notification warning">
+          <strong class="notification-container">{{ scho_form.non_field_errors }}</strong>
         </div>
-        <div class="column is-two-fifth">
-          <label class="has-text-weight-bold" for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
-          {% render_field scho_form.publication_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
-          {{ scho_form.publication_year.errors }}
+      {% endif %}
+
+      <h4 class="b-header">Contact</h4>
+
+      {% with WIDGET_ERROR_CLASS='is-danger' %}
+        <div class="field">
+          <label class="has-text-weight-bold" for="{{ scho_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
+          {% render_field scho_form.contributor_name|add_class:"input" %}
+          {{ scho_form.contributor_name.errors }}
         </div>
-      </div>
 
-      <div class="field">
-        <label class="has-text-weight-bold" for="{{ scho_form.publication_name.id_for_label }}">Name of publication</label>
-        {% render_field scho_form.publication_name|add_class:"input" %}
-        {{ scho_form.publication_name.errors }}
-      </div>
-
-      <div class="field">
-        <label class="has-text-weight-bold" for="{{ scho_form.authors.id_for_label }}">Author(s)</label>
-        {% render_field scho_form.authors|add_class:"input" %}
-        {{ scho_form.authors.errors }}
-      </div>
-
-      <div class="field">
-        <label class="has-text-weight-bold" for="{{ scho_form.summary.id_for_label }}">Summary of article</label>
-        {% render_field scho_form.summary|add_class:"input textarea" placeholder="Abstract or summary of the article" %}
-        {{ scho_form.summary.errors }}
-      </div>
-      <br/>
-
-      <h4 class="b-header">Link to article</h4>
-
-      <div class="field">
-        <label class="has-text-weight-bold"  for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
-        {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
-        {{ link_form.url.errors }}
-      </div>
-
-      <div class="columns">
-        <div class="column is-three-quarters">
-          <label class="has-text-weight-bold"  for="{{ link_form.title.id_for_label }}">Title of link</label>
-          {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
-          {{ link_form.title.errors }}
+        <div class="field">
+          <label class="has-text-weight-bold" for="{{ scho_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
+          {% render_field scho_form.contributor_email|add_class:"input" %}
+          {{ scho_form.contributor_email.errors }}
         </div>
-        <div class="column is-one-quarter">
-          <label class="has-text-weight-bold"  for="{{ link_form.label.id_for_label }}">Label of link</label>
-          {% render_field link_form.label|add_class:"input" %}
-          {{ link_form.label.errors }}
-        </div>
-      </div>
-    {% endwith %}
 
-    <button type="submit" class="button scholarship">submit scholarship</button>
-  </form>
+        <div class="field">
+          <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
+          <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox">
+            {% render_field scho_form.agreement %}
+            I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
+          </label>
+          {{ scho_form.agreement.errors }}
+        </div>
+        <br/>
+
+        <h4 class="b-header">Article information</h4>
+
+        <div class="field">
+          <label class="has-text-weight-bold" for="{{ scho_form.title.id_for_label }}">Title of article</label>
+          {% render_field scho_form.title|add_class:"input" %}
+          {{ scho_form.title.errors }}
+        </div>
+
+        <div class="columns">
+          <div class="column is-three-fifths">
+            <label class="has-text-weight-bold" for="{{ scho_form.license.id_for_label }}">License on article</label>
+            {% render_field scho_form.license|add_class:"input" %}
+            {{ scho_form.license.errors }}
+          </div>
+          <div class="column is-two-fifth">
+            <label class="has-text-weight-bold" for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
+            {% render_field scho_form.publication_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
+            {{ scho_form.publication_year.errors }}
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="has-text-weight-bold" for="{{ scho_form.publication_name.id_for_label }}">Name of publication</label>
+          {% render_field scho_form.publication_name|add_class:"input" %}
+          {{ scho_form.publication_name.errors }}
+        </div>
+
+        <div class="field">
+          <label class="has-text-weight-bold" for="{{ scho_form.authors.id_for_label }}">Author(s)</label>
+          {% render_field scho_form.authors|add_class:"input" %}
+          {{ scho_form.authors.errors }}
+        </div>
+
+        <div class="field">
+          <label class="has-text-weight-bold" for="{{ scho_form.summary.id_for_label }}">Summary of article</label>
+          {% render_field scho_form.summary|add_class:"input textarea" placeholder="Abstract or summary of the article" %}
+          {{ scho_form.summary.errors }}
+        </div>
+        <br/>
+
+        <h4 class="b-header">Link to article</h4>
+
+        <div class="field">
+          <label class="has-text-weight-bold"  for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
+          {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
+          {{ link_form.url.errors }}
+        </div>
+
+        <div class="columns">
+          <div class="column is-three-quarters">
+            <label class="has-text-weight-bold"  for="{{ link_form.title.id_for_label }}">Title of link</label>
+            {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
+            {{ link_form.title.errors }}
+          </div>
+          <div class="column is-one-quarter">
+            <label class="has-text-weight-bold"  for="{{ link_form.label.id_for_label }}">Label of link</label>
+            {% render_field link_form.label|add_class:"input" %}
+            {{ link_form.label.errors }}
+          </div>
+        </div>
+      {% endwith %}
+
+      <button type="submit" class="button scholarship">submit scholarship</button>
+    </form>
+    </div>
+  </div>
 </section>
 {% endblock %}
