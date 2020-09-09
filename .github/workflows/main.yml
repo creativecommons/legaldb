@@ -80,10 +80,6 @@ jobs:
         run: |
           pipenv run python manage.py collectstatic --no-input
           pipenv run python manage.py compress --force
-        env:
-          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_CI_SECRET_KEY }}
 
       - name: Run tests
         run: pipenv run python manage.py test
-        env:
-          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_CI_SECRET_KEY }}
