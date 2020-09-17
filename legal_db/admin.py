@@ -6,7 +6,7 @@ from .models import Case, FAQ, Link, Scholarship
 
 
 class CaseAdmin(admin.ModelAdmin):
-    # Customize the order of fields in form
+    # Customize order of fields in edit form
     fields = (
         "name",
         "related_cases",
@@ -28,14 +28,32 @@ class CaseAdmin(admin.ModelAdmin):
     list_display = ("name", "license", "status", "updated_at")
     list_filter = ["status"]
 
+
 class LinkAdmin(admin.ModelAdmin):
     # Customize the list
     list_display = ("url", "title")
 
+
 class ScholarshipAdmin(admin.ModelAdmin):
+    # Customize order of fields in edit form
+    fields = (
+        "title",
+        "authors",
+        "publication_name",
+        "publication_year",
+        "license",
+        "tags",
+        "summary",
+        "link",
+        "status",
+        "contributor_name",
+        "contributor_email",
+        "notes",
+    )
     # Customize the list
     list_display = ("title", "license", "status", "updated_at")
     list_filter = ["status"]
+
 
 class FAQAdmin(OrderedModelAdmin):
     fields = ("question", "answer", "notes")
