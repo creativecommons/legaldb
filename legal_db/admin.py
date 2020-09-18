@@ -26,7 +26,8 @@ class CaseAdmin(admin.ModelAdmin):
     )
     # Customize the list
     list_display = ("name", "license", "status", "updated_at")
-    list_filter = ["status"]
+    list_filter = ["status", "license"]
+    search_fields = ("name", "courts", "related_cases", "background", "summary")
 
 
 class LinkAdmin(admin.ModelAdmin):
@@ -52,7 +53,8 @@ class ScholarshipAdmin(admin.ModelAdmin):
     )
     # Customize the list
     list_display = ("title", "license", "status", "updated_at")
-    list_filter = ["status"]
+    list_filter = ["status", "license"]
+    search_fields = ("title", "authors", "summary")
 
 
 class FAQAdmin(OrderedModelAdmin):
