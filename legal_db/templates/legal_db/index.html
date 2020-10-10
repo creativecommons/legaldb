@@ -56,7 +56,7 @@
   </section>
   <section class="contribute">
     <div class="container">
-      <div class="columns is-vcentered is-paddingless">
+      <div class="columns is-paddingless">
         <div class="column is-half">
           <h2 class="title is-3">Contribute</h2>
           <p class="padding-vertical-normal">The information presented here has been contributed by many dedicated members of the CC Global Network and CC staff. You can contribute too using our forms linked to on this page.</p>
@@ -64,10 +64,12 @@
           <a href="{% url 'scholarship_submit' %}" class="button scholarship small">Submit an article</a>
         </div>
         <div class="column is-half">
-          <h3 class="faq__section">
-            <small>Check the</small><br>
-            <a href="{% url 'faq' %}" class="has-text-dark-slate-blue">Frequently asked quesitons</a>
-          </h3>
+          <article class="card entry-post link">
+            <a href="{% url 'faq' %}">
+              <span class="card-eyebrow">Check the</span>
+              <h2 class="card-title">Frequently asked quesitons</h2>
+            </a>
+          </article>
         </div>
       </div>
     </div>
