@@ -1,14 +1,18 @@
 // Original variables from Vocabulary
-$color-tomato: rgb(237, 89, 47);
+$color-tomato: rgb(226, 54, 0);
 $color-brighter-tomato: rgb(255, 105, 51);
 $color-dark-turquoise: rgb(5, 181, 218);
-$color-forest-green: rgb(4,166,53);
+$color-forest-green: rgb(0,131,0);
 $color-brighter-forest-green: rgb(0, 184, 80);
 $color-dark-slate-blue: rgb(60, 92, 153);
 $color-dark-gray: rgb(118, 118, 118);
 $color-dark-slate-gray: rgb(51, 51, 51);
 $color-light-gray: rgb(216, 216, 216);
 $color-lighter-gray: rgb(245, 245, 245);
+
+$family-roboto-condensed: 'Roboto Condensed', sans-serif;
+$family-heading: $family-roboto-condensed;
+$font-size-h4: 1.43rem;
 
 $space-small: 0.5rem;
 $space-smaller: 0.25rem;
@@ -127,6 +131,16 @@ a, a:hover {
   }
 }
 
+.card-eyebrow {
+  color: $color-dark-slate-gray;
+  font-family: $family-heading;
+  font-size: $font-size-h4;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.3;
+  letter-spacing: 0.02rem;
+}
+
 .cases, .scholarships {
   padding-top: $space-big;
   padding-bottom: $space-normal;
@@ -217,21 +231,6 @@ a, a:hover {
       margin-left: 15px;
     }
   }
-
-  &__section {
-    position: relative;
-
-    &::before {
-      color: $color-lighter-gray;
-      content: "\ea0c";  // question-circle icon
-      font-family: "Vocabulary Icons";
-      position: absolute;
-      bottom: -1.5rem;
-      right: 3rem;
-      font-size: 7rem;
-      z-index: -1;
-    }
-  }
 }
 
 .form {
@@ -256,10 +255,6 @@ a, a:hover {
       background-color: $color-light-gray;
     }
   }
-}
-
-footer a:hover {
-  color: $color-dark-turquoise;
 }
 
 .hero {
