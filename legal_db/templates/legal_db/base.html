@@ -1,0 +1,58 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta name="description" content="This database contains case law and legal scholarship about CC licenses and the issues that relate to their enforceability and interpretation."/>
+    <title>CC Legal Database</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary@2020.9.4/css/vocabulary.css" type="text/css" media="screen">
+    {% compress css file style %}
+      <link rel="stylesheet" href="{% static 'styles.scss' %}" type="text/x-scss" media="screen">
+    {% endcompress %}
+  </head>
+  <body>
+    {% include 'legal_db/partials/_header.html' %}
+    {% block body_content %}
+      {% if msg %}<p><strong>{{ msg }}</strong></p>{% endif %}
+    {% endblock %}
+    {% include 'legal_db/partials/_footer.html' %}
+
+    <script>
+      // This script load Vocabulary's assets
+      const getFullyQualifiedUrl = (path, version) => {
+        let baseUrl = "https://unpkg.com/@creativecommons/vocabulary"
+        if (version) { baseUrl = `${baseUrl}@${version}` }
+        return `${baseUrl}/${path}`
+      }
+
+      const patchAssetIntoDom = (asset, version=null) => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", getFullyQualifiedUrl(asset, version), true);
+        ajax.onload = () => {
+        var div = document.createElement("div");
+          // Render SVG in the page
+          div.innerHTML = ajax.responseText;
+          div.style.display = 'none';
+          document.body.insertBefore(div, document.body.childNodes[0]);
+        }
+
+        ajax.send();
+      }
+      patchAssetIntoDom('assets/logos/cc/logomark.svg');
+
+      // Allow toggle dropdown of the navbar burger menu
+      const burgerMenu = document.getElementsByClassName('navbar-burger')[0];
+      burgerMenu.addEventListener('click', () => {
+          const menu = document.getElementsByClassName('navbar-menu')[0];
+          menu.classList.toggle('is-active');
+          burgerMenu.classList.toggle('is-active');
+          burgerMenu.setAttribute('aria-expanded', burgerMenu.classList.contains('is-active'));
+      })
+    </script>
+    {% block js_content %}{% endblock %}
+  </body>
+</html>

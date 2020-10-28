@@ -1,0 +1,60 @@
+{% extends 'legal_db/base.html' %}
+
+{% block body_content %}
+<section class="hero case">
+  <div class="container">
+    {% include "legal_db/partials/_breadcrumb.html" %}
+    <h2 class="hero-title b-header">{{ case.name }}</h2>
+  </div>
+</section>
+<section class="details">
+  <div class="container">
+    <div class="columns">
+      <aside class="column is-one-third">
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header margin-bottom-small">Country</h4>
+          <p>{{ case.country.name }}</p>
+        </div>
+
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header margin-bottom-small">Court(s)</h4>
+          <p>{{ case.courts }}</p>
+        </div>
+
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header margin-bottom-small">Year of resolution</h4>
+          <p>{{ case.decision_year|default:'<span class="has-text-grey">Unknown</span>' }}
+          </p>
+        </div>
+
+        <div class="margin-bottom-bigger">
+          <h4 class="b-header margin-bottom-small">Relevant materials</h4>
+          <ul class="links-list">
+          {% for link in case.link_list %}
+            <li class="margin-vertical-small">
+              {% if link.label %}<b>{{ link.label }}</b>:{% endif %}
+              <a href="{{ link.url }}">
+               {% if link.title %} {{ link.title }}
+               {% else %} {{ link.url }}
+               {% endif %}
+            </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </aside>
+      <article class="column is-two-thirds">
+        <h3 class="b-header margin-bottom-small">Background information</h3>
+        <p>{{ case.background }}</p>
+        <br/>
+        <h3 class="b-header margin-bottom-small">Case summary</h3>
+        <p>{{ case.summary }}</p>
+        <hr/>
+        {% for tag in case.tags %}
+          <a href="{% url 'case_index' %}?tags%5B%5D={{ tag }}" class="button tag case margin-horizontal-small">{{ tag }}</a>
+        {% endfor %}
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}

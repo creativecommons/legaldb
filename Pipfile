@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "==19.10b0"
+flake8 = "*"
+factory-boy = "*"
+
+[packages]
+django = "~=3.0"
+django_compressor = "*"
+django-countries = "*"
+django-heroku = "*"
+django-libsass = "*"
+django-markdownx = "*"
+django-widget-tweaks = "*"
+gunicorn = "*"
+psycopg2 = "*"
+django-ordered-model = "*"
+django-taggit = "*"
+whitenoise = "*"
+
+[requires]
+python_version = "3.7"

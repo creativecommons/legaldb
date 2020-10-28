@@ -1,0 +1,49 @@
+{% extends 'legal_db/base.html' %}
+
+{% block body_content %}
+<div class="hero scholarship">
+  <div class="container">
+    {% include "legal_db/partials/_breadcrumb.html" %}
+    <h2 class="hero-title b-header">{{ scholarship.title }}</h2>
+  </div>
+</div>
+<div class="details">
+  <div class="container">
+    <div class="columns">
+      <aside class="column is-one-third">
+          <div class="margin-bottom-bigger">
+            <h4 class="b-header margin-bottom-small">License on article</h4>
+            {% if not scholarship.license %} <p class="has-text-grey">Unknown</p>
+            {% else %} <p>{{ scholarship.license }}</p> {% endif %}
+          </div>
+
+          <div class="margin-bottom-bigger">
+            <h4 class="b-header margin-bottom-small">Name of publication</h4>
+            <p>{{ scholarship.publication_name }}</p>
+          </div>
+
+          <div class="margin-bottom-bigger">
+            <h4 class="b-header margin-bottom-small">Year of publication</h4>
+            <p>{{ scholarship.publication_year }}</p>
+          </div>
+
+          <div class="margin-bottom-bigger">
+            <h4 class="b-header margin-bottom-small">Link</h4>
+            {% if scholarship.link.label %} <b>{{ scholarship.link.label }}</b>: {% endif %}
+            <a href="{{ scholarship.link.url }}" class="has-text-dark-slate-blue">{{ scholarship.link.title }}</a>
+          </div>
+      </aside>
+      <article class="column is-two-thirds">
+        <h3 class="b-header margin-bottom-small">Summary</h3>
+        <p>{{ scholarship.summary }}</p>
+        <hr/>
+        {% for tag in scholarship.tags %}
+          <a href="{% url 'scholarship_index' %}?tags%5B%5D={{ tag }}" class="button tag scholarship margin-right-small margin-vertical-smaller">
+            {{ tag }}
+          </a>
+        {% endfor %}
+      </article>
+    </div>
+  </div>
+</div>
+{% endblock %}

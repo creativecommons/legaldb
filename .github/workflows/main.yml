@@ -1,0 +1,85 @@
+name: Caselaw CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+      
+    - name: Install pipenv
+      uses: dschep/install-pipenv-action@v1
+
+    - name: Install dependencies
+      run: |
+        pipenv install --dev
+    
+    - name: Run Black check
+      run: |
+        pipenv run black --check ./
+    
+    - name: Run Flake8 check
+      run: |
+        mkdir test-reports
+        pipenv run flake8 ./ --output-file test-reports/flake8
+    
+    - name: Upload flake test results
+      uses: actions/upload-artifact@master
+      with:
+          name: flake8-report
+          path: test-reports/flake8
+      # Use failure() to upload only if failure occurs
+      if: failure()
+
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:12.3-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: Install pipenv
+        uses: dschep/install-pipenv-action@v1
+
+      - name: Install dependencies
+        run: |
+          pipenv install --dev
+
+      - name: Compile assets
+        run: |
+          pipenv run python manage.py collectstatic --no-input
+          pipenv run python manage.py compress --force
+
+      - name: Run tests
+        run: pipenv run python manage.py test

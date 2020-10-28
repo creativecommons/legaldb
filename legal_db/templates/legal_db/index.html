@@ -1,0 +1,77 @@
+{% extends 'legal_db/base.html' %}
+
+{% block body_content %}
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Creative Commons Legal Database</h1>
+      <p class="hero-description body-bigger column is-9">This database includes <a href="{% url 'case_index' %}" class="has-text-weight-bold">case law</a> and <a href="{% url 'scholarship_index' %}" class="has-text-weight-bold">legal scholarship</a> that relates to Creative Commons legal tools.<br/>Please note that the database is not comprehensive, and CC does not necessarily endorse the views of the courts or scholars whose decisions and writings are referenced. The content provided is purely informational, designed for those seeking to better understand the legal ecosystem in which the CC legal tools operate.</p>
+    </div>
+  </section>
+  <section class="explore">
+    <div class="container">
+      <div class="columns is-multiline is-vcentered is-paddingless">
+        <div class="column is-half">
+          <h2 class="title is-3">Explore by content</h2>
+          <div class="padding-top-large">
+            <h3 class="subtitle is-4 padding-bottom-big">Cases</h3>
+            {% for tag in cases_tags %}
+            <a href="{% url "case_index" %}?tags%5B%5D={{ tag }}" class="button tag case outline margin-right-small margin-vertical-small">
+              {{ tag }}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="column is-half">
+          <article class="card entry-post link no-border">
+            <a href="{% url 'case_index' %}" class="has-background-tomato">
+              <span class="card-content has-bottom-link">
+                <h3 class="b-header has-text-white">Caselaw Database</h3>
+                <span class="content">The Case Law Database includes court decisions from around the globe concerning Creative Commons.</span>
+                <strong class="link-arrow">Go to Cases <i class="icon chevron-right"></i></strong>
+              </span>
+            </a>
+          </article>
+        </div>
+        <div class="column is-half">
+          <h3 class="subtitle is-4 padding-bottom-big">Scholarship</h3>
+          {% for tag in scholarship_tags %}
+          <a href="{% url "scholarship_index" %}?tags%5B%5D={{ tag }}" class="button tag scholarship outline margin-right-small margin-vertical-small">
+            {{ tag }}
+          </a>
+          {% endfor %}
+        </div>
+        <div class="column is-half">
+          <article class="card entry-post link no-border">
+            <a href="{% url 'scholarship_index' %}" class="has-background-forest-green">
+              <span class="card-content has-bottom-link">
+                <h3 class="b-header has-text-white">Legal Scholarship Database</h3>
+                <span class="content">The Scholarship Database aims to provide users with resources concerning the use, interpretation, and enforceability of Creative Commons licenses.</span>
+                <strong class="link-arrow">Go to Scholarship <i class="icon chevron-right"></i></strong>
+              </span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contribute">
+    <div class="container">
+      <div class="columns is-paddingless">
+        <div class="column is-half">
+          <h2 class="title is-3">Contribute</h2>
+          <p class="padding-vertical-normal">The information presented here has been contributed by many dedicated members of the CC Global Network and CC staff. You can contribute too using our forms linked to on this page.</p>
+          <a href="{% url 'case_submit' %}" class="button case small margin-right-bigger margin-bottom-normal">Submit a case</a>
+          <a href="{% url 'scholarship_submit' %}" class="button scholarship small">Submit an article</a>
+        </div>
+        <div class="column is-half">
+          <article class="card entry-post link">
+            <a href="{% url 'faq' %}">
+              <span class="card-eyebrow">Check the</span>
+              <h2 class="card-title">Frequently asked quesitons</h2>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

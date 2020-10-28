@@ -1,0 +1,319 @@
+// Original variables from Vocabulary
+$color-tomato: rgb(226, 54, 0);
+$color-brighter-tomato: rgb(255, 105, 51);
+$color-dark-turquoise: rgb(5, 181, 218);
+$color-forest-green: rgb(0,131,0);
+$color-brighter-forest-green: rgb(0, 184, 80);
+$color-dark-slate-blue: rgb(60, 92, 153);
+$color-dark-gray: rgb(118, 118, 118);
+$color-dark-slate-gray: rgb(51, 51, 51);
+$color-light-gray: rgb(216, 216, 216);
+$color-lighter-gray: rgb(245, 245, 245);
+
+$family-roboto-condensed: 'Roboto Condensed', sans-serif;
+$family-heading: $family-roboto-condensed;
+$font-size-h4: 1.43rem;
+
+$space-small: 0.5rem;
+$space-smaller: 0.25rem;
+$space-small: 0.5rem;
+$space-normal: 1rem;
+$space-big: 1.5rem;
+$space-bigger: 2rem;
+$space-large: 2.5rem;
+$space-xl: 4rem;
+$space-xxl: 6rem;
+
+body {
+    color: $color-dark-slate-gray;
+}
+
+a, a:hover {
+  color: $color-dark-slate-blue;
+}
+
+.breadcrumb {
+  a, a:hover {
+    color: $color-dark-slate-blue;
+  }
+}
+
+.button {
+  &.case {
+    background-color: $color-tomato;
+    border-color: $color-tomato;
+    color: white;
+
+    &:hover {
+      background-color: $color-brighter-tomato;
+      border-color: $color-brighter-tomato;
+    }
+
+    &.tag {
+      background-color: white;
+      color: $color-dark-gray;
+
+      &.outline {
+        border-color: $color-tomato;
+        text-decoration: none;
+      }
+
+      &:hover, &.selected {
+        background-color: $color-tomato;
+        border-color: $color-tomato;
+        color: white;
+      }
+    }
+  }
+  &.scholarship {
+    background-color: $color-forest-green;
+    border-color: $color-forest-green;
+    color: white;
+
+    &:hover {
+      background-color: $color-brighter-forest-green;
+      border-color: $color-brighter-forest-green;
+    }
+
+    &.tag {
+      background-color: white;
+      color: $color-dark-gray;
+
+      &.outline {
+        border-color: $color-forest-green;
+        text-decoration: none;
+      }
+
+      &:hover, &.selected {
+        background-color: $color-forest-green;
+        border-color: $color-forest-green;
+        color: white;
+      }
+    }
+  }
+  &.is-delete {
+    color: $color-tomato;
+    font-size: 1rem;
+    margin-top: $space-bigger;
+    padding: 0;
+    width: 100%;
+
+    &:hover {
+      color: white;
+    }
+
+    .icon {
+      padding: $space-smaller 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .button.is-delete {
+    margin-top: 0;
+  }
+}
+
+// Override link card styles
+.card.entry-post.link.no-border {
+  max-width: 600px;
+
+  a {
+    .card-content.has-bottom-link {
+      padding: 0 0 3rem 0;
+    }
+    &:hover.has-background-tomato {
+      background-color: $color-brighter-tomato !important;
+    }
+    &:hover.has-background-forest-green {
+      background-color: $color-brighter-forest-green !important;
+    }
+  }
+}
+
+.card-eyebrow {
+  color: $color-dark-slate-gray;
+  font-family: $family-heading;
+  font-size: $font-size-h4;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.3;
+  letter-spacing: 0.02rem;
+}
+
+.cases, .scholarships {
+  padding-top: $space-big;
+  padding-bottom: $space-normal;
+}
+
+.columns.submit {
+  background-color: $color-lighter-gray;
+  margin-bottom: 0;
+}
+
+.container>.navbar .navbar-brand {
+    margin-left: 0; // Reset logo margin
+}
+
+.contribute { // Home page section
+  padding-top: $space-bigger;
+  padding-bottom: $space-xl;
+
+  &-card {
+    float: right;
+    max-width: 380px;
+    margin-right: 1.9rem;
+  }
+}
+
+.control.has-icons-left .icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  color: $color-light-gray;
+}
+
+.details, // Detail page section
+.faqs {
+  padding-top: $space-xl;
+  padding-bottom: $space-large;
+}
+
+.errorlist {
+  color: $color-tomato;
+  font-size: 0.9rem;
+}
+
+.explore { // Home page section
+  padding-top: $space-xl;
+  padding-bottom: $space-bigger;
+}
+
+.explore, .contribute, .cases, .scholarships, .details, .faqs {
+  .container {
+    padding-left: $space-bigger;
+    padding-right: $space-bigger;
+  }
+}
+
+.faq {
+  &__content {
+    border-bottom: 2px solid $color-light-gray;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &::after {
+      font-family: "Vocabulary Icons";
+      font-size: 1.5rem;
+      content: '\e906'; // angle-down icon
+      color: $color-dark-slate-gray;
+      margin: 0 1rem;
+    }
+  }
+
+  &__head.expanded {
+    &::after {
+      content: '\e904'; // angle-up icon
+    }
+  }
+
+  &__body {
+    padding-right: 1.5rem;
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      margin-left: 15px;
+    }
+  }
+}
+
+.form {
+
+  &.case, &.scholarship {
+    margin: $space-big $space-bigger;
+
+    .field {
+      margin-bottom: 1.5rem;
+    }
+
+    .input, .select {
+      margin-top: $space-small;
+    }
+
+    h4 {
+      margin-bottom: $space-small;
+    }
+
+    hr {
+      margin: $space-normal 0;
+      background-color: $color-light-gray;
+    }
+  }
+}
+
+.hero {
+  background-color: $color-lighter-gray;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+
+  &.case, &.scholarship, &.faq {
+    padding-top: $space-large;
+  }
+
+  &.case {
+    box-shadow: inset 0px 6px 0px $color-tomato;
+  }
+
+  &.scholarship {
+    box-shadow: inset 0px 6px 0px $color-forest-green;
+  }
+
+  &.submit {
+    background-color: white;
+    padding-top: $space-big;
+    padding-bottom: $space-big;
+  }
+
+  &-title, &-description, .breadcrumb {
+    padding: 0 $space-bigger;
+  }
+
+  &-description {
+    &.body-big {
+      max-width: 708px;
+      padding-top: $space-small;
+    }
+    &.body-normal {
+      max-width: 800px;
+    }
+  }
+}
+
+.links-list {
+  list-style-type: circle;
+  overflow-wrap: break-word;
+  a {
+    color: $color-dark-slate-blue;
+  }
+}
+
+.required { // Required form field sign
+  color: darkred;
+  font-weight: bold;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.tags-filter {
+  color: $color-dark-slate-blue;
+  cursor: pointer;
+  user-select: none;
+}

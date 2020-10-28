@@ -1,0 +1,19 @@
+[tool.black]
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | __pycache__
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+  | static
+  | staticfiles
+  | templates
+  | venv
+)/
+'''
