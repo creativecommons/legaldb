@@ -53,8 +53,31 @@
     heroku open
     ```
    - Add `admin/` to the URL to access the admin interface
-7. Import database data
-   - ...
+7. Import database
+   - :warning: **WARNING: this assumes any existing data can be destroyed**
+    ```shell
+    heroku pg:psql < backup.sql
+    ```
+
+
+## Troubleshooting
+
+
+### Database Backup is in `.dump` format instead of `.sql` format
+
+Convert it:
+```shell
+pg_restore -f backup.sql backup.dump
+```
+
+### psql Connection Error
+
+If you receive an error like the following, ensure a firewall is not blocking
+communication on port 5432
+```
+psql: error: could not connect to server: could not connect to server:
+    Connection refused
+```
 
 
 ## Documentation
@@ -67,6 +90,3 @@
 [herokupython]: https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true
 [herokugit]: https://devcenter.heroku.com/articles/git
 [herokuconfig]: https://devcenter.heroku.com/articles/config-vars
-
-
-

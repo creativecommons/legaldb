@@ -76,6 +76,11 @@ pipenv run flake8
 ```
 
 
+## Deploy to Heroku
+
+See [`deploy_to_heroku.md`](deploy_to_heroku.md).
+
+
 ## Legacy Information
 
 **The following information is deprecated and will be removed once the
