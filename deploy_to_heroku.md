@@ -16,8 +16,8 @@
         ```
       - Allow Heroku to set a random name
       - Specify the team (omit if not applicable)
-      - If you want a specific PostgreSQL plan, it's easiest to specify it here
-        (ex. `--addons=heroku-postgresql:standard-0`)
+      - If you want a specific Heroku PostgreSQL plan, it's easiest to specify
+        it here (ex. `--addons=heroku-postgresql:standard-0`)
 3. Mange confign variables (this can be done using the Heroku Dashboard too)
    1. Edit config variables
       - Command
