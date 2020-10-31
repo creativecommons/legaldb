@@ -18,7 +18,7 @@
       - Specify the team (omit if not applicable)
       - If you want a specific Heroku PostgreSQL plan, it's easiest to specify
         it here (ex. `--addons=heroku-postgresql:standard-0`)
-3. Mange confign variables (this can be done using the Heroku Dashboard too)
+4. Manage config variables (this can be done using the Heroku Dashboard too)
    1. Edit config variables
       - Command
         ```shell
@@ -37,23 +37,23 @@
         ```shell
         heroku config
         ```
-4. Deploy:
+5. Deploy:
     ```shell
     git push heroku main
     ```
    - (If you didn't specify `--addons=heroku-postgresql:xxxxxx`, above, the
      PostgreSQL instance will be created and linked automatically :sparkles:)
-5. *(optional)* Change dyno type.
+6. *(optional)* Change dyno type.
    - :warning: **WARNING: the following command will incur a monthly charge**
     ```shell
     heroku ps:type standard-1x
     ```
-6. Open the new app in your browser:
+7. Open the new app in your browser:
     ```shell
     heroku open
     ```
    - Add `admin/` to the URL to access the admin interface
-7. Import database
+8. Import database
    - :warning: **WARNING: this assumes any existing data can be destroyed**
     ```shell
     heroku pg:psql < backup.sql
