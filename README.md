@@ -1,23 +1,13 @@
-# caselaw
+# legaldb
 
 <p align="center">
     <a href="https://github.com/creativecommons/caselaw/blob/master/LICENSE"><img alt="MIT license" src="https://img.shields.io/github/license/creativecommons/vocabulary.svg?color=brightgreen"/></a>
     <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
-Curated repository of Case Law and Scholarship data from around the world in a
-Django based website.
+CC Legal Database: curated repository of Case Law and Scholarship data from around the world in a Django based website.
 
-> :warning:  **This project, CC’s Legal Database, is undergoing
-> reimplementation using Django.**
-> - [Heroku Dev Site][herokudev]
-> - [`develop`][devbranch] branch
-> - [Posts in the Outreachy May 2020 round: CC Legal Database
->   series][blogseries]
-
-[herokudev]: https://cc-caselaw.herokuapp.com/
-[devbranch]: https://github.com/creativecommons/caselaw/tree/develop
-[blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
+**[legaldb.creativecommons.org](https://legaldb.creativecommons.org/)**
 
 
 ## Code of Conduct
@@ -76,54 +66,16 @@ pipenv run flake8
 ```
 
 
+### Development Blog Posts
+
+[Posts in the Outreachy May 2020 round: CC Legal Database series][blogseries]
+
+[blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
+
+
 ## Deploy to Heroku
 
 See [`deploy_to_heroku.md`](deploy_to_heroku.md).
-
-
-## Legacy Information
-
-**The following information is deprecated and will be removed once the
-production site is live.**
-
-Visit the legacy website: [CC Legal Database [Beta]][website]
-
-[website]: https://labs.creativecommons.org/caselaw/
-
-
-### Spreadsheets
-
-
-#### Caselaw - Primary Data Google Sheet
-
-Google Sheet:
-- [Caselaw - Primary Data][primarysheet]
-
-[primarysheet]: https://docs.google.com/spreadsheets/d/1Z9IcBgdDYoeZw0Xx573ZMp5JcJDCNhOUHrj0guU9byo/edit#
-
-
-#### Google Form Responses Google Sheets
-
-Google Sheets:
-- [Caselaw - Cases Form Responses (for copying from, do not edit; Restricted
-  Access)][sheetcases]
-- [Caselaw - Scholarship Form Responses (for copying from, do not edit;
-  Restricted Access)][sheetscholar]
-
-Note: These Google Sheets are the results of people completing the Google
-Forms.
-
-[sheetcases]: https://docs.google.com/spreadsheets/d/1bd21-MXfGLaWOhUDOCKmGlBDqxzpxr_FZSf_Bpnl_ZI/edit#
-[sheetscholar]: https://docs.google.com/spreadsheets/d/1rGo8vOIwUD84YAbvmP0M4k53wSsboUPdeBYKo5vtNzI/edit#gid=284152088
-
-
-### Forms
-
-- [Creative Commons Legal Database -- Cases][formcases]
-- [Creative Commons Legal Database -- Scholarship][formscholar]
-
-[formcases]: https://docs.google.com/forms/d/e/1FAIpQLSdyhi06rJzP3fnyCfv-d40Q5ucaWRRsaC74G8qlY23xDhspwA/viewform
-[formscholar]: https://docs.google.com/forms/d/e/1FAIpQLSfxxk5FWZCl3QURJqF42-FtMoWrwj1PMsdOyk2hUayU7FPB7w/viewform
 
 
 ## License
