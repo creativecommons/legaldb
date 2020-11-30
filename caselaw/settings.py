@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # SecurityMiddleware must be listed before other middleware
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -194,6 +195,14 @@ COMPRESS_ENABLED = bool(strtobool(str(os.environ.get("DJANGO_COMPRESS_ENABLED", 
 COMPRESS_OFFLINE = bool(strtobool(str(os.environ.get("DJANGO_COMPRESS_OFFLINE", True))))
 
 LIBSASS_OUTPUT_STYLE = os.environ.get("DJANGO_LIBSASS_STYLE", "compressed")
+
+
+# TLS/SSL (HTTPS)
+SECURE_SSL_REDIRECT = bool(
+    strtobool(str(os.environ.get("DJANGO_SECURE_SSL_REDIRECT", True)))
+)
+if SECURE_SSL_REDIRECT:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # See https://devcenter.heroku.com/articles/deploying-python#python-deployment-flow
