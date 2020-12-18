@@ -64,7 +64,7 @@ Open another terminal and navigate to webpack folder using:
 cd webpack
 ```
 
-To install webpackdependencies with:
+To install webpack dependencies use:
 ```shell
 npm install
 ```
