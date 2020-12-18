@@ -11,8 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@creativecommons/vocabulary": "^2020.9.4",
-    "bulma": "^0.9.1",
+    "@creativecommons/vocabulary": "2020.9.4",
+    "bulma": "0.9.1",
     "css-loader": "^5.0.1",
     "mini-css-extract-plugin": "^1.3.3",
     "sass": "^1.30.0",

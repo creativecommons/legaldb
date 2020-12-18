@@ -68,6 +68,10 @@ To install webpack dependencies use:
 ```shell
 npm install
 ```
+or alternatively to install from package-lock.json use:
+```shell
+npm ci
+```
 
 If you want to make changes to scss files during development run:
 ```shell
