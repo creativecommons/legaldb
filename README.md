@@ -21,25 +21,7 @@ abide by its terms.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md). It contains some general instructions
 that should be followed when contributing to any of the Creative Commons
-open-source repositories.repos:
-- repo: https://github.com/python/black
-  rev: 20.8b1
-  hooks:
-  - id: black
-    language_version: python3.7
-    exclude: migrations
-- repo: https://github.com/timothycrosley/isort
-  rev: 5.4.2  # from https://github.com/timothycrosley/isort/releases
-  hooks:
-  - id: isort
-    exclude: migrations
-- repo: https://gitlab.com/pycqa/flake8
-  rev: 3.8.3
-  hooks:
-  - id: flake8
-    exclude: migrations
-
-
+open-source repositories.
 
 ## Development setup
 Copy `.env.template` and set environment variables (like
