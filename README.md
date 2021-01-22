@@ -21,11 +21,34 @@ abide by its terms.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md). It contains some general instructions
 that should be followed when contributing to any of the Creative Commons
-open-source repositories.
+open-source repositories.repos:
+- repo: https://github.com/python/black
+  rev: 20.8b1
+  hooks:
+  - id: black
+    language_version: python3.7
+    exclude: migrations
+- repo: https://github.com/timothycrosley/isort
+  rev: 5.4.2  # from https://github.com/timothycrosley/isort/releases
+  hooks:
+  - id: isort
+    exclude: migrations
+- repo: https://gitlab.com/pycqa/flake8
+  rev: 3.8.3
+  hooks:
+  - id: flake8
+    exclude: migrations
 
 
-### Development setup
 
+## Development setup
+Copy `.env.template` and set environment variables (like
+`DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
+in a `.env` file.
+```shell
+cp .env.template .env
+```
+### Using Pipenv
 To follow these instructions, Python 3 and
 [Pipenv](https://pipenv.pypa.io/en/latest/) are required.
 
@@ -34,14 +57,7 @@ Install dependencies with pipenv.
 pipenv install --dev
 ```
 
-Copy `.env.template` and set environment variables (like
-`DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
-in a `.env` file.
-```shell
-cp .env.template .env
-```
-
-After setting variables run the migrations to create the database (we use
+Run the migrations to create the database (we use
 Postgresql in this case).
 ```shell
 pipenv run python manage.py migrate
@@ -59,13 +75,39 @@ pipenv run python manage.py runserver
 and see a local version of the website following `http://127.0.0.1:8000/` on
 the browser.
 
-After made code changes and before commit, check code style.
+
+
+### Using Docker-Compose for Development
+Ensure that you have Docker and Docker Compose installed on your system
+For installation instructions refer: https://docs.docker.com/install/
+
+#### Starting the Server
+```sh
+docker-compose up
+```
+This will start postgres and django server hosted at `http://127.0.0.1:8000/`
+#### Execute Commands
+
+To execute any commands inside django docker container, follow this format:
+
+```
+docker-compose run app sh -c "command here"
+```
+
+#### Examples
+
+* Create a Super User: 
+
+    `docker-compose run app sh -c "python manage.py create superuser"`
+* Collect static files: 
+
+    `docker-compose run app sh -c "python manage.py collectstatic"`
+
+After making changes in code and before commit, check code style.
 ```shell
 pipenv run black .
 pipenv run flake8
 ```
-
-
 ### Development Blog Posts
 
 [Posts in the Outreachy May 2020 round: CC Legal Database series][blogseries]
