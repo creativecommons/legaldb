@@ -103,6 +103,7 @@ docker-compose run app sh -c "command here"
 
     `docker-compose run app sh -c "python manage.py collectstatic"`
 
+### Code Style
 After making changes in code and before commit, check code style.
 ```shell
 pipenv run black .
