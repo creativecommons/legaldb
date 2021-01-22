@@ -77,7 +77,7 @@ the browser.
 
 
 
-### Using Docker-Compose for Development
+### Using Docker-Compose
 Ensure that you have Docker and Docker Compose installed on your system
 For installation instructions refer: https://docs.docker.com/install/
 
