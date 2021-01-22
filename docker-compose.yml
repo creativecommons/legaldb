@@ -36,7 +36,7 @@ services:
     environment:
       - POSTGRES_DB=${DJANGO_DATABASE_NAME}
       - POSTGRES_USER=${DJANGO_DATABASE_USER}
-      - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
+      - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD}
     env_file:
       - .env
     <<: *default-logging
