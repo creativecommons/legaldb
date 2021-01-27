@@ -1,10 +1,4 @@
 version: "3"
-x-logging:
-  &default-logging
-  logging:
-    driver: json-file
-    options:
-      max-size: 100m
 
 services:
   app:
@@ -15,31 +9,22 @@ services:
     volumes:
       - ./:/app
     command: >
-      sh -c " python manage.py migrate &&
-              python manage.py runserver 0.0.0.0:8000"
+      bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
+                python manage.py migrate &&
+                python manage.py runserver 0.0.0.0:8000"
     environment:
       - DJANGO_DATABASE_HOST=db
       - DJANGO_DATABASE_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
     env_file:
       - .env
     depends_on:
-      db:
-        condition: service_healthy
-    links:
       - db
-    <<: *default-logging
 
   db:
     image: postgres:alpine
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
-      interval: 5s
-      timeout: 5s
-      retries: 5
     environment:
       - POSTGRES_DB=${DJANGO_DATABASE_NAME}
       - POSTGRES_USER=${DJANGO_DATABASE_USER}
       - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
     env_file:
       - .env
-    <<: *default-logging
