@@ -72,7 +72,7 @@ This will start postgres and django server hosted at `http://127.0.0.1:8000/`
 
 To execute any commands inside django docker container, follow this format:
 
-```
+```shell
 docker-compose run app sh -c "command here"
 ```
 
@@ -80,10 +80,14 @@ docker-compose run app sh -c "command here"
 
 * Create a Super User: 
 
-    `docker-compose run app sh -c "python manage.py create superuser"`
+  ```shell
+  docker-compose run app sh -c "python manage.py create superuser"
+  ```
 * Collect static files: 
 
-    `docker-compose run app sh -c "python manage.py collectstatic"`
+    ```shell
+    docker-compose run app sh -c "python manage.py collectstatic"
+    ```
 
 ### Code Style
 After making changes in code and before commit, check code style.
