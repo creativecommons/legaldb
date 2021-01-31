@@ -7,13 +7,20 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update
 
 # Copying app to docker and making it as working directory
-RUN mkdir /app
-WORKDIR /app
-COPY ./ /app
+RUN mkdir /legaldb
+WORKDIR /legaldb
 
-# Install all dependencies
-RUN pip install pipenv
-RUN pipenv install --system
+# Install Python dependency management tools
+RUN pip install --upgrade pip \
+    && pip install --upgrade setuptools \
+    && pip install --upgrade pipenv
+
+# Copy the Pipenv files into the container
+COPY Pipfile /legaldb/
+COPY Pipfile.lock /legaldb/
+
+# Install the dependencies system-wide
+RUN pipenv install --deploy --system --dev
 
 #Creating a user
 RUN useradd -ms /bin/bash user

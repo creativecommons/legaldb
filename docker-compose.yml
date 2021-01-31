@@ -7,7 +7,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./:/app
+      - ./:/legaldb
     command: >
       bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
                 python manage.py migrate &&
