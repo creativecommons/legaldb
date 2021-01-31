@@ -10,7 +10,6 @@ services:
       - ./:/legaldb
     command: >
       bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
-                python manage.py migrate &&
                 python manage.py runserver 0.0.0.0:8000"
     environment:
       - DJANGO_DATABASE_HOST=db

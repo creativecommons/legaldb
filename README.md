@@ -63,6 +63,12 @@ the browser.
 Ensure that you have Docker and Docker Compose installed on your system
 For installation instructions refer: https://docs.docker.com/install/
 
+#### Run Migrations
+Run the migrations to create database schema (we use Postgresql in this case).
+```shell
+docker-compose run app sh -c "python manage.py migrate"
+```
+
 #### Starting the Server
 ```sh
 docker-compose up
