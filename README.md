@@ -59,7 +59,31 @@ pipenv run python manage.py runserver
 and see a local version of the website following `http://127.0.0.1:8000/` on
 the browser.
 
-After made code changes and before commit, check code style.
+Open another terminal and navigate to webpack folder using:
+```shell
+cd webpack
+```
+
+To install webpack dependencies use:
+```shell
+npm install
+```
+or alternatively to install from package-lock.json use:
+```shell
+npm ci
+```
+
+If you want to make changes to scss files during development run:
+```shell
+npm run watch
+```
+
+otherwise run the following command
+```shell
+npm run build
+```
+
+After made code changes and before commit, check code style from main directory using.
 ```shell
 pipenv run black .
 pipenv run flake8
