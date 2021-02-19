@@ -1,23 +1,24 @@
 {% extends 'legal_db/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block body_content %}
 <section class="hero case">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
-    <h1 class="hero-title title is-2">Cases</h1>
+    <h1 class="hero-title title is-2">{% trans "Cases" %}</h1>
     <div class="contribute-card">
       <article class="card entry-post link no-border is-hidden-touch">
         <a href="{% url 'case_submit' %}" class="has-background-tomato">
           <span class="card-content has-bottom-link">
-            <h2 class="card-title">Contribute</h2>
-            <span class="content">Do you want to submit a legal dispute to the database?</span>
-            <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
+            <h2 class="card-title">{% trans "Contribute" %}</h2>
+            <span class="content">{% trans "Do you want to submit a legal dispute to the database?" %}</span>
+            <strong class="link-arrow">{% trans "Submit a case" %} <i class="icon chevron-right"></i></strong>
           </span>
         </a>
       </article>
     </div>
-    <p class="hero-description body-big">Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.</p>
+    <p class="hero-description body-big">{% trans "Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute." %}</p>
   </div>
 </section>
 
@@ -45,10 +46,10 @@
       <table class="table is-bordered is-striped is-fullwidth">
         <thead>
           <tr>
-            <th>Country</th>
-            <th>Case name</th>
-            <th>License</th>
-            <th>Year of resolution</th>
+            <th>{% trans "Country" %}</th>
+            <th>{% trans "Case name" %}</th>
+            <th>{% trans "License" %}</th>
+            <th>{% trans "Year of resolution" %}</th>
           </tr>
         </thead>
         <tbody>
@@ -57,13 +58,13 @@
             <td>{{ case.country.name }}</td>
             <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
             <td class="is-narrow">
-              {% if not case.license %} <span class="has-text-grey">Unknown</span>
+              {% if not case.license %} <span class="has-text-grey">{% trans "Unknown" %}</span>
               {% else %} {{ case.license }} {% endif %}
             </td>
             <td class="number-cell">{{ case.decision_year|default:"" }}</td>
           </tr>
         {% empty %}
-          <tr><td class="has-text-centered" colspan="4">No cases are available. Try different filters or search terms.</td></tr>
+          <tr><td class="has-text-centered" colspan="4">{% trans "No cases are available. Try different filters or search terms." %}</td></tr>
         {% endfor %}
         </tbody>
       </table>
