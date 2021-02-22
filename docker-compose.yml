@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/legaldb
+    command: >
+      bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
+                python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DJANGO_DATABASE_HOST=db
+      - DJANGO_DATABASE_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.5-alpine
+    environment:
+      - POSTGRES_DB=${DJANGO_DATABASE_NAME}
+      - POSTGRES_USER=${DJANGO_DATABASE_USER}
+      - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
+    env_file:
+      - .env
