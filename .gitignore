@@ -8,3 +8,5 @@
 _site
 __pycache__/
 staticfiles/
+venv/
+node_modules/

@@ -9,10 +9,7 @@
     <meta name="description" content="This database contains case law and legal scholarship about CC licenses and the issues that relate to their enforceability and interpretation."/>
     <title>CC Legal Database</title>
     <link rel="icon" href="{% static 'favicon.ico' %}"/>
-    <link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary@2020.9.4/css/vocabulary.css" type="text/css" media="screen">
-    {% compress css file style %}
-      <link rel="stylesheet" href="{% static 'styles.scss' %}" type="text/x-scss" media="screen">
-    {% endcompress %}
+    <link rel="stylesheet" href="{% static 'webpack_files/css/index.css' %}" type="text/css">
   </head>
   <body>
     {% include 'legal_db/partials/_header.html' %}

@@ -23,14 +23,19 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md). It contains some general instructions
 that should be followed when contributing to any of the Creative Commons
 open-source repositories.
 
+
 ## Development setup
+
 Copy `.env.template` and set environment variables (like
 `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
 in a `.env` file.
 ```shell
 cp .env.template .env
 ```
+
+
 ### Using Pipenv
+
 To follow these instructions, Python 3 and
 [Pipenv](https://pipenv.pypa.io/en/latest/) are required.
 
@@ -58,22 +63,28 @@ and see a local version of the website following `http://127.0.0.1:8000/` on
 the browser.
 
 
-
 ### Using Docker-Compose
+
 Ensure that you have Docker and Docker Compose installed on your system
 For installation instructions refer: https://docs.docker.com/install/
 
+
 #### Run Migrations
-Run the migrations to create database schema (we use Postgresql in this case).
+
+Run the migrations to create database schema (we use Postgresql in this case):
 ```shell
 docker-compose run app sh -c "python manage.py migrate"
 ```
 
+
 #### Starting the Server
+
 ```sh
 docker-compose up
 ```
 This will start postgres and django server hosted at `http://127.0.0.1:8000/`
+
+
 #### Execute Commands
 
 To execute any commands inside django docker container, follow this format:
@@ -81,6 +92,35 @@ To execute any commands inside django docker container, follow this format:
 ```shell
 docker-compose run app sh -c "command here"
 ```
+
+### Webpack
+
+Open another terminal and navigate to webpack folder using:
+```shell
+cd webpack
+```
+
+To install webpack dependencies use:
+```shell
+npm install
+```
+or alternatively to install from package-lock.json use:
+```shell
+npm ci
+```
+
+If you want to make changes to scss files during development run:
+```shell
+npm run watch
+```
+
+otherwise run the following command
+```shell
+npm run build
+```
+
+After made code changes and before commit, check code style from main directory using.
+
 
 #### Examples
 
