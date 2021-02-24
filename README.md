@@ -59,14 +59,24 @@ Finally you can start a development server with:
 ```shell
 pipenv run python manage.py runserver
 ```
-and see a local version of the website following `http://127.0.0.1:8000/` on
-the browser.
+and see a local version of the website at
+[127.0.0.1:8000](http://127.0.0.1:8000/).
 
 
 ### Using Docker-Compose
 
 Ensure that you have Docker and Docker Compose installed on your system
-For installation instructions refer: https://docs.docker.com/install/
+For installation instructions refer: [Get Docker | Docker
+Documentation](https://docs.docker.com/get-docker/)
+
+
+#### Start (and Build) the Servers
+
+Start Django server (backed by PostgreSQL server ) at
+[127.0.0.1:8000](http://127.0.0.1:8000/):
+```sh
+docker-compose up
+```
 
 
 #### Run Migrations
@@ -75,23 +85,27 @@ Run the migrations to create database schema (we use Postgresql in this case):
 ```shell
 docker-compose run app sh -c "python manage.py migrate"
 ```
-
-
-#### Starting the Server
-
-```sh
-docker-compose up
-```
-This will start postgres and django server hosted at `http://127.0.0.1:8000/`
+**(Required after initial build)**
 
 
 #### Execute Commands
 
-To execute any commands inside django docker container, follow this format:
+To execute any commands inside the app docker container, follow this format:
 
 ```shell
 docker-compose run app sh -c "command here"
 ```
+
+Examples:
+- Create a Super User:
+    ```shell
+    docker-compose run app sh -c "python manage.py create superuser"
+    ```
+- Collect static files:
+    ```shell
+    docker-compose run app sh -c "python manage.py collectstatic"
+    ```
+
 
 ### Webpack
 
@@ -122,25 +136,15 @@ npm run build
 After made code changes and before commit, check code style from main directory using.
 
 
-#### Examples
-
-* Create a Super User: 
-
-  ```shell
-  docker-compose run app sh -c "python manage.py create superuser"
-  ```
-* Collect static files: 
-
-    ```shell
-    docker-compose run app sh -c "python manage.py collectstatic"
-    ```
-
 ### Code Style
+
 After making changes in code and before commit, check code style.
 ```shell
 pipenv run black .
 pipenv run flake8
 ```
+
+
 ### Development Blog Posts
 
 [Posts in the Outreachy May 2020 round: CC Legal Database series][blogseries]
