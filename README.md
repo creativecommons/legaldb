@@ -99,7 +99,7 @@ docker-compose run app sh -c "command here"
 Examples:
 - Create a Super User:
     ```shell
-    docker-compose run app sh -c "python manage.py create superuser"
+    docker-compose run app sh -c "python manage.py createsuperuser"
     ```
 - Collect static files:
     ```shell
