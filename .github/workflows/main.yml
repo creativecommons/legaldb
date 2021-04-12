@@ -11,28 +11,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      
+
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-      
+
     - name: Install pipenv
       uses: dschep/install-pipenv-action@v1
 
     - name: Install dependencies
       run: |
-        pipenv install --dev
-    
+        pipenv sync --dev
+
     - name: Run Black check
       run: |
-        pipenv run black --check ./
-    
+        pipenv run black --check .
+
     - name: Run Flake8 check
       run: |
         mkdir test-reports
-        pipenv run flake8 ./ --output-file test-reports/flake8
-    
+        pipenv run flake8 . --output-file test-reports/flake8
+
     - name: Upload flake test results
       uses: actions/upload-artifact@master
       with:
@@ -46,7 +46,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12.3-alpine
+        image: postgres:12.5-alpine
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -74,7 +74,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pipenv install --dev
+          pipenv sync --dev
 
       - name: Compile assets
         run: |
