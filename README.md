@@ -140,8 +140,9 @@ After made code changes and before commit, check code style from main directory 
 
 After making changes in code and before commit, check code style.
 ```shell
+pipenv run isort .
 pipenv run black .
-pipenv run flake8
+pipenv run flake8 .
 ```
 
 
