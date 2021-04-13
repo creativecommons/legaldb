@@ -83,7 +83,7 @@ docker-compose up
 
 Run the migrations to create database schema (we use Postgresql in this case):
 ```shell
-docker-compose run app sh -c "python manage.py migrate"
+docker-compose run app python manage.py migrate
 ```
 **(Required after initial build)**
 
@@ -93,17 +93,29 @@ docker-compose run app sh -c "python manage.py migrate"
 To execute any commands inside the app docker container, follow this format:
 
 ```shell
-docker-compose run app sh -c "command here"
+docker-compose run app python manage.py DJANGO COMMAND HERE
+```
+or
+```shell
+docker-compose run app sh -c "SHELL COMMAND HERE"
 ```
 
 Examples:
 - Create a Super User:
     ```shell
-    docker-compose run app sh -c "python manage.py createsuperuser"
+    docker-compose run app python manage.py createsuperuser
     ```
 - Collect static files:
     ```shell
-    docker-compose run app sh -c "python manage.py collectstatic"
+    docker-compose run app python manage.py collectstatic
+    ```
+- Compress content:
+    ```shell
+    docker-compose run app python manage.py compress
+    ```
+- Run tests:
+    ```shell
+    docker-compose run app python manage.py test
     ```
 
 
@@ -140,8 +152,9 @@ After made code changes and before commit, check code style from main directory 
 
 After making changes in code and before commit, check code style.
 ```shell
+pipenv run isort .
 pipenv run black .
-pipenv run flake8
+pipenv run flake8 .
 ```
 
 

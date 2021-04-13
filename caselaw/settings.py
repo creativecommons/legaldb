@@ -10,9 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+# Standard library
 import os
-import django_heroku
 from distutils.util import strtobool
+
+# Third-party
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(strtobool(str(os.environ.get("DJANGO_DEBUG_ENABLED", default=False))))
+DEBUG = bool(
+    strtobool(str(os.environ.get("DJANGO_DEBUG_ENABLED", default=False)))
+)
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -95,7 +100,7 @@ DATABASES = {
     }
 }
 
-# See https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+# See https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables  # noqa: E501
 
 if "GITHUB_WORKFLOW" in os.environ:
     SECRET_KEY = "cbo9e7%1c^ijxoit37^!kbfyikaet%z&*pm&4k(3#h*k%irylt"
@@ -115,13 +120,12 @@ if "GITHUB_WORKFLOW" in os.environ:
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
+_auth_pass_valid = "django.contrib.auth.password_validation"
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {"NAME": f"{_auth_pass_valid}.UserAttributeSimilarityValidator"},
+    {"NAME": f"{_auth_pass_valid}.MinimumLengthValidator"},
+    {"NAME": f"{_auth_pass_valid}.CommonPasswordValidator"},
+    {"NAME": f"{_auth_pass_valid}.NumericPasswordValidator"},
 ]
 
 
@@ -149,7 +153,11 @@ LOGGING = {
         },
     },
     "loggers": {
-        "django": {"handlers": ["console"], "level": "DEBUG", "propagate": True},
+        "django": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": True,
+        },
         "django.request": {
             "handlers": ["console"],
             "level": "DEBUG",
@@ -190,9 +198,13 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
-COMPRESS_ENABLED = bool(strtobool(str(os.environ.get("DJANGO_COMPRESS_ENABLED", True))))
+COMPRESS_ENABLED = bool(
+    strtobool(str(os.environ.get("DJANGO_COMPRESS_ENABLED", True)))
+)
 
-COMPRESS_OFFLINE = bool(strtobool(str(os.environ.get("DJANGO_COMPRESS_OFFLINE", True))))
+COMPRESS_OFFLINE = bool(
+    strtobool(str(os.environ.get("DJANGO_COMPRESS_OFFLINE", True)))
+)
 
 LIBSASS_OUTPUT_STYLE = os.environ.get("DJANGO_LIBSASS_STYLE", "compressed")
 

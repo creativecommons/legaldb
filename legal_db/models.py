@@ -1,6 +1,6 @@
+# Third-party
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
 from django_countries.fields import CountryField
 from markdownx.models import MarkdownxField
 from ordered_model.models import OrderedModel
@@ -12,7 +12,8 @@ class BaseModel(models.Model):
         blank=True, null=True, help_text="Internal notes or description."
     )
     created_at = models.DateTimeField(
-        auto_now_add=True, help_text="A timestamp of when the object is first created."
+        auto_now_add=True,
+        help_text="A timestamp of when the object is first created.",
     )
     updated_at = models.DateTimeField(
         auto_now=True,
@@ -24,13 +25,16 @@ class BaseModel(models.Model):
 
 
 class LegalResource(BaseModel):
-    """Abstract Class to contain the commons attributes of Cases and Scholarship"""
+    """
+    Abstract Class to contain the commons attributes of Cases and Scholarship
+    """
 
     license = models.CharField(
         max_length=50,
         blank=True,
         null=True,
-        help_text="The Creative Commons licence associated to the legal resource.",
+        help_text="The Creative Commons licence associated to the legal"
+        " resource.",
     )
     contributor_name = models.CharField(max_length=120)
     contributor_email = models.EmailField()
@@ -67,42 +71,47 @@ class Case(LegalResource):
         max_length=200,
         blank=True,
         null=True,
-        help_text="If there are multiple lawsuits between the parties, please just "
-        "include one here and note the others in the related cases field.",
+        help_text="If there are multiple lawsuits between the parties, please"
+        " just include one here and note the others in the related cases"
+        " field.",
     )
     related_cases = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text="If there are multiple lawsuits between the parties in this dispute, "
-        "please note additional cases here.",
+        help_text="If there are multiple lawsuits between the parties in this"
+        " dispute, please note additional cases here.",
     )
-    country = CountryField(blank_label="Select a country", blank=True, null=True)
+    country = CountryField(
+        blank_label="Select a country", blank=True, null=True
+    )
     courts = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text="The original court name and/or English translation. If the lawsuit "
-        "was filed in one court and then went to another court on appeal, please note "
-        "all relevant courts here.",
+        help_text="The original court name and/or English translation. If the"
+        " lawsuit was filed in one court and then went to another court on"
+        " appeal, please note all relevant courts here.",
     )
     background = models.TextField(
         blank=True,
         null=True,
-        help_text="Describe the factual information that led to the lawsuit "
-        "being filed, and explain what claims were filed in the lawsuit.",
+        help_text="Describe the factual information that led to the lawsuit"
+        " being filed, and explain what claims were filed in the lawsuit.",
     )
     decision_year = models.PositiveSmallIntegerField(
         blank=True, null=True, help_text="Year of case resolution."
     )
     is_pending = models.BooleanField(
-        blank=True, null=True, help_text="Indicate if is an ongoing case or not."
+        blank=True,
+        null=True,
+        help_text="Indicate if is an ongoing case or not.",
     )
     links = models.ManyToManyField(
         Link,
-        help_text="Include any links to pleadings, briefs, and opinions in the "
-        "lawsuit, as well as blog posts, academic articles, or other relevant "
-        "materials.",
+        help_text="Include any links to pleadings, briefs, and opinions in the"
+        " lawsuit, as well as blog posts, academic articles, or other relevant"
+        " materials.",
     )
 
     def __str__(self):

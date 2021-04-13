@@ -1,11 +1,12 @@
+# Third-party
 from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
+from taggit.models import Tag
 
 from .forms import CaseForm, LinkForm, LinkFormset, ScholarshipForm, SearchForm
-from .models import Link, Case, FAQ, Scholarship
-from taggit.models import Tag
+from .models import FAQ, Case, Link, Scholarship
 
 
 class HomeView(TemplateView):
@@ -14,7 +15,9 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cases_tags"] = Tag.objects.exclude(case=None)[:12]
-        context["scholarship_tags"] = Tag.objects.exclude(scholarship=None)[:12]
+        context["scholarship_tags"] = Tag.objects.exclude(scholarship=None)[
+            :12
+        ]
         return context
 
 
@@ -24,7 +27,8 @@ class CaseListView(ListView):
 
     def get_queryset(self):
         """
-        Get only rows with PUBLISHED status and filtered by user input and tags.
+        Get only rows with PUBLISHED status and filtered by user input and
+        tags.
         """
         qs = Case.objects.filter(status=Case.Status.PUBLISHED).only(
             "country", "name", "license", "decision_year"
@@ -151,7 +155,10 @@ def case_submit_view(request):
 
 
 def scholarship_submit_view(request):
-    """Show submission form and process the request to save an Scholarship article."""
+    """
+    Show submission form and process the request to save an Scholarship
+    article.
+    """
     if request.method == "POST":
         link_form = LinkForm(request.POST)
         scho_form = ScholarshipForm(request.POST)

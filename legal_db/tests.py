@@ -1,5 +1,7 @@
+# Standard library
 from http import HTTPStatus
 
+# Third-party
 from django.test import TestCase
 from django.urls import reverse
 
@@ -12,7 +14,8 @@ class CaseListViewTests(TestCase):
 
     def test_no_cases(self):
         """
-        Where there is no case, announce it and verify that the page still loads.
+        Where there is no case, announce it and verify that the page still
+        loads.
         """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
@@ -36,9 +39,10 @@ class CaseListViewTests(TestCase):
 class CaseDetailViewTests(TestCase):
     def test_show_only_published(self):
         """
-        Only show details of cases with status 'PUBLISHED'. First request ask for a not
-        published case, it can not be exposed. Second request is for a published case,
-        therefore is okay to display the case's information.
+        Only show details of cases with status 'PUBLISHED'. First request ask
+        for a not published case, it can not be exposed. Second request is for
+        a published case, therefore is okay to display the case's
+        information.
         """
         case = CaseFactory()
         url = reverse("case_detail", kwargs={"pk": case.id})
@@ -64,7 +68,8 @@ class CaseSubmitViewTests(TestCase):
 
     def test_post_success(self):
         """
-        Test a submission request with the minimum data required to create a case.
+        Test a submission request with the minimum data required to create a
+        case.
         """
         response = self.client.post(
             self.url,
@@ -85,8 +90,8 @@ class CaseSubmitViewTests(TestCase):
 
     def test_post_error(self):
         """
-        When data send in request is bad (not valid or incomplete) then it should
-        return back to the form view and show the error(s).
+        When data send in request is bad (not valid or incomplete) then it
+        should return back to the form view and show the error(s).
         """
         response = self.client.post(
             self.url,
@@ -108,7 +113,8 @@ class ScholarshipListViewTests(TestCase):
 
     def test_no_scholarships(self):
         """
-        When no scholarship exists, announce it and verify that the page still loads.
+        When no scholarship exists, announce it and verify that the page still
+        loads.
         """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -116,11 +122,13 @@ class ScholarshipListViewTests(TestCase):
 
     def test_show_only_published(self):
         """
-        Scholarship list is displayed correctly, only with articles marked with status
-        'PUBLISHED'.
+        Scholarship list is displayed correctly, only with articles marked with
+        status 'PUBLISHED'.
         """
         ScholarshipFactory.create_batch(3)  # Default status is 'UNREVIEWED'
-        ScholarshipFactory.create_batch(2, status=LegalResource.Status.PUBLISHED)
+        ScholarshipFactory.create_batch(
+            2, status=LegalResource.Status.PUBLISHED
+        )
 
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -132,10 +140,10 @@ class ScholarshipListViewTests(TestCase):
 class ScholarshipDetailViewTests(TestCase):
     def test_show_only_published(self):
         """
-        Scholarship details is displayed correctly and only when is marked with the
-        status 'PUBLISHED'. First request ask for a not published article, so details
-        are not shown. Second request is for a published article, therefore is okay
-        to display the article's information.
+        Scholarship details is displayed correctly and only when is marked with
+        the status 'PUBLISHED'. First request ask for a not published article,
+        so details are not shown. Second request is for a published article,
+        therefore is okay to display the article's information.
         """
         scholarship = ScholarshipFactory()
         url = reverse("scholarship_detail", kwargs={"pk": scholarship.id})
@@ -178,8 +186,8 @@ class ScholarshipSubmitViewTests(TestCase):
 
     def test_post_error(self):
         """
-        When data send in request is bad (not valid or incomplete) then it should
-        return back to the form view and show the error(s).
+        When data send in request is bad (not valid or incomplete) then it
+        should return back to the form view and show the error(s).
         """
         response = self.client.post(
             self.url,

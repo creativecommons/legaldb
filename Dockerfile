@@ -14,7 +14,7 @@ COPY Pipfile* /tmp/
 
 # Install the dependencies system-wide
 WORKDIR /tmp
-RUN pipenv sync --system
+RUN pipenv sync --dev --system
 
 # Create mount point for docker-compose volume and set as current workdir
 WORKDIR /legaldb
