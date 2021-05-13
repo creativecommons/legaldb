@@ -1,8 +1,7 @@
 [flake8]
-max-line-length = 119
-exclude =
-    .git,
+extend-exclude =
     migrations,
     static,
     staticfiles,
     templates,
+max-line-length = 79

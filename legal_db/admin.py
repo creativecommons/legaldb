@@ -1,8 +1,8 @@
+# Third-party
 from django.contrib import admin
-
 from ordered_model.admin import OrderedModelAdmin
 
-from .models import Case, FAQ, Link, Scholarship
+from .models import FAQ, Case, Link, Scholarship
 
 
 class CaseAdmin(admin.ModelAdmin):
@@ -27,7 +27,13 @@ class CaseAdmin(admin.ModelAdmin):
     # Customize the list
     list_display = ("name", "license", "status", "updated_at")
     list_filter = ["status", "license"]
-    search_fields = ("name", "courts", "related_cases", "background", "summary")
+    search_fields = (
+        "name",
+        "courts",
+        "related_cases",
+        "background",
+        "summary",
+    )
 
 
 class LinkAdmin(admin.ModelAdmin):
