@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.9
 
 # Run python in unbuffered mode to allow for log messages to be
 # immediately dumped to the stream instead of being buffered.
