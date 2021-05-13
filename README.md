@@ -121,8 +121,6 @@ and see a local version of the website at
 [127.0.0.1:8000](http://127.0.0.1:8000/).
 
 
-
-
 ### Webpack
 
 Open another terminal and navigate to webpack folder using:
