@@ -34,35 +34,6 @@ cp .env.template .env
 ```
 
 
-### Using Pipenv
-
-To follow these instructions, Python 3 and
-[Pipenv](https://pipenv.pypa.io/en/latest/) are required.
-
-Install dependencies with pipenv.
-```shell
-pipenv install --dev
-```
-
-Run the migrations to create the database (we use
-Postgresql in this case).
-```shell
-pipenv run python manage.py migrate
-```
-
-The next step is to create an admin account for Django admin.
-```shell
-pipenv run python manage.py createsuperuser
-```
-
-Finally you can start a development server with:
-```shell
-pipenv run python manage.py runserver
-```
-and see a local version of the website at
-[127.0.0.1:8000](http://127.0.0.1:8000/).
-
-
 ### Using Docker-Compose
 
 Ensure that you have Docker and Docker Compose installed on your system
@@ -83,7 +54,7 @@ docker-compose up
 
 Run the migrations to create database schema (we use Postgresql in this case):
 ```shell
-docker-compose run app python manage.py migrate
+docker-compose run app ./manage.py migrate
 ```
 **(Required after initial build)**
 
@@ -93,7 +64,7 @@ docker-compose run app python manage.py migrate
 To execute any commands inside the app docker container, follow this format:
 
 ```shell
-docker-compose run app python manage.py DJANGO COMMAND HERE
+docker-compose run app ./manage.py DJANGO COMMAND HERE
 ```
 or
 ```shell
@@ -103,20 +74,51 @@ docker-compose run app sh -c "SHELL COMMAND HERE"
 Examples:
 - Create a Super User:
     ```shell
-    docker-compose run app python manage.py createsuperuser
+    docker-compose run app ./manage.py createsuperuser
     ```
 - Collect static files:
     ```shell
-    docker-compose run app python manage.py collectstatic
+    docker-compose run app ./manage.py collectstatic
     ```
 - Compress content:
     ```shell
-    docker-compose run app python manage.py compress
+    docker-compose run app ./manage.py compress
     ```
 - Run tests:
     ```shell
-    docker-compose run app python manage.py test
+    docker-compose run app ./manage.py test
     ```
+
+
+### Using Pipenv
+
+NOTE: The prefered method is [Using Docker-Compose](#using-docker-compose).
+
+To follow these instructions, Python 3 and
+[Pipenv](https://pipenv.pypa.io/en/latest/) are required.
+
+Install dependencies with pipenv.
+```shell
+pipenv install --dev
+```
+
+Run the migrations to create the database (we use
+Postgresql in this case).
+```shell
+pipenv run ./manage.py migrate
+```
+
+The next step is to create an admin account for Django admin.
+```shell
+pipenv run ./manage.py createsuperuser
+```
+
+Finally you can start a development server with:
+```shell
+pipenv run ./manage.py runserver
+```
+and see a local version of the website at
+[127.0.0.1:8000](http://127.0.0.1:8000/).
 
 
 ### Webpack
