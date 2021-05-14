@@ -218,5 +218,5 @@ if SECURE_SSL_REDIRECT:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
-# See https://devcenter.heroku.com/articles/deploying-python#python-deployment-flow
+# See https://devcenter.heroku.com/articles/deploying-python
 django_heroku.settings(locals(), logging=False)
