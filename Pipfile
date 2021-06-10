@@ -10,7 +10,7 @@ factory-boy = "*"
 isort = "*"
 
 [packages]
-django = "~=3.0"
+django = "~=3.2"
 django_compressor = "*"
 django-countries = "*"
 django-heroku = "*"
