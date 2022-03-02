@@ -1,26 +1,50 @@
-FROM python:3.9
+# https://docs.docker.com/engine/reference/builder/
 
-# Run python in unbuffered mode to allow for log messages to be
-# immediately dumped to the stream instead of being buffered.
-ENV PYTHONUNBUFFERED 1
+# https://hub.docker.com/_/python/
+FROM python:3.9-slim
 
-# Install Python and system dependencies
-RUN pip install --upgrade pip \
-    && pip install --upgrade setuptools \
-    && pip install --upgrade pipenv
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends gettext
+# Configure apt not to prompt during docker build
+ARG DEBIAN_FRONTEND=noninteractive
 
-# Copy the Pipenv files into the container
-COPY Pipfile* /tmp/
+# Python: disable bytecode (.pyc) files
+# https://docs.python.org/3.9/using/cmdline.html
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# Install the dependencies system-wide
-WORKDIR /tmp
+# Python: force the stdout and stderr streams to be unbuffered
+# https://docs.python.org/3.9/using/cmdline.html
+ENV PYTHONUNBUFFERED=1
+
+# Python: enable faulthandler to dump Python traceback on catastrophic cases
+# https://docs.python.org/3.9/library/faulthandler.html
+ENV PYTHONFAULTHANDLER=1
+
+WORKDIR /root
+
+# Configure apt to avoid installing recommended and suggested packages
+RUN apt-config dump \
+| grep -E '^APT::Install-(Recommends|Suggests)' \
+| sed -e's/1/0/' \
+| tee /etc/apt/apt.conf.d/99no-recommends-no-suggests
+
+# Resynchronize apt package index
+RUN apt-get update
+
+# Install apt package dependencies
+RUN apt-get install -y gcc gettext postgresql-server-dev-all
+
+## Install pipenv
+RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
+RUN pip install --upgrade pipenv
+
+# Install python dependencies
+COPY Pipfile .
+COPY Pipfile.lock .
 RUN pipenv sync --dev --system
 
 # Create mount point for docker-compose volume and set as current workdir
 WORKDIR /legaldb
 
-#Creating a user
-RUN useradd -ms /bin/bash user
+# Create non-root user
+RUN useradd --create-home --shell /bin/bash user
 USER user
