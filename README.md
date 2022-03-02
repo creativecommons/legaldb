@@ -5,7 +5,8 @@
     <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
-CC Legal Database: curated repository of Case Law and Scholarship data from around the world in a Django based website.
+CC Legal Database: curated repository of Case Law and Scholarship data from
+around the world in a Django based website.
 
 **[legaldb.creativecommons.org](https://legaldb.creativecommons.org/)**
 
@@ -54,7 +55,7 @@ docker-compose up
 
 Run the migrations to create database schema (we use Postgresql in this case):
 ```shell
-docker-compose run app ./manage.py migrate
+docker compose exec app ./manage.py migrate
 ```
 **(Required after initial build)**
 
@@ -64,29 +65,29 @@ docker-compose run app ./manage.py migrate
 To execute any commands inside the app docker container, follow this format:
 
 ```shell
-docker-compose run app ./manage.py DJANGO COMMAND HERE
+docker compose exec app ./manage.py DJANGO COMMAND HERE
 ```
 or
 ```shell
-docker-compose run app sh -c "SHELL COMMAND HERE"
+docker compose exec app sh -c "SHELL COMMAND HERE"
 ```
 
 Examples:
 - Create a Super User:
     ```shell
-    docker-compose run app ./manage.py createsuperuser
+    docker compose exec app ./manage.py createsuperuser
     ```
 - Collect static files:
     ```shell
-    docker-compose run app ./manage.py collectstatic
+    docker compose exec app ./manage.py collectstatic
     ```
 - Compress content:
     ```shell
-    docker-compose run app ./manage.py compress
+    docker compose exec app ./manage.py compress
     ```
 - Run tests:
     ```shell
-    docker-compose run app ./manage.py test
+    docker compose exec app ./manage.py test
     ```
 
 
