@@ -95,7 +95,11 @@ class ScholarshipListView(ListView):
         keywords = self.request.GET.get("keywords")
         if keywords:
             attributes = [
-                "publication_year", "title", "authors", "summary", "license"
+                "publication_year",
+                "title",
+                "authors",
+                "summary",
+                "license",
             ]
             lookups = build_filters(attributes, keywords)
             qs = qs.filter(lookups)
