@@ -2,32 +2,34 @@
 version: "3"
 
 services:
+
   app:
     build:
       context: .
+    command: >
+      bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
+               ./manage.py runserver 0.0.0.0:8000"
+    env_file:
+      - .env
+    environment:
+      - DJANGO_DATABASE_HOST=db
+      - DJANGO_DATABASE_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
+    depends_on:
+      - db
     ports:
       - 8000:8000
     volumes:
       - ./:/legaldb
-    command: >
-      bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
-               ./manage.py runserver 0.0.0.0:8000"
-    environment:
-      - DJANGO_DATABASE_HOST=db
-      - DJANGO_DATABASE_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
-    env_file:
-      - .env
-    depends_on:
-      - db
 
   db:
-    # https://hub.docker.com/_/postgres
-    #
-    # Match version to Heroku app
-    image: postgres:12.9-alpine
+    env_file:
+      - .env
     environment:
       - POSTGRES_DB=${DJANGO_DATABASE_NAME}
       - POSTGRES_USER=${DJANGO_DATABASE_USER}
       - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
-    env_file:
-      - .env
+    # https://hub.docker.com/_/postgres
+    # Match version to Heroku app
+    image: postgres:12.9-alpine
+    volumes:
+      - ./tmp/pgdata/:/var/lib/postgresql/data
