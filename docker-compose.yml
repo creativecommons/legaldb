@@ -18,6 +18,7 @@ services:
       - db
     ports:
       - 8000:8000
+    restart: always
     volumes:
       - ./:/legaldb
 
@@ -31,5 +32,6 @@ services:
     # https://hub.docker.com/_/postgres
     # Match version to Heroku app
     image: postgres:12.9-alpine
+    restart: always
     volumes:
       - ./tmp/pgdata/:/var/lib/postgresql/data
