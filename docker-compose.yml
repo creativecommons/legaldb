@@ -1,29 +1,37 @@
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
 version: "3"
 
 services:
+
   app:
     build:
       context: .
-    ports:
-      - 8000:8000
-    volumes:
-      - ./:/legaldb
     command: >
       bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
-                python manage.py runserver 0.0.0.0:8000"
+               ./manage.py runserver 0.0.0.0:8000"
+    env_file:
+      - .env
     environment:
       - DJANGO_DATABASE_HOST=db
       - DJANGO_DATABASE_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
-    env_file:
-      - .env
     depends_on:
       - db
+    ports:
+      - 8000:8000
+    restart: always
+    volumes:
+      - ./:/legaldb
 
   db:
-    image: postgres:12.5-alpine
+    env_file:
+      - .env
     environment:
       - POSTGRES_DB=${DJANGO_DATABASE_NAME}
       - POSTGRES_USER=${DJANGO_DATABASE_USER}
       - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
-    env_file:
-      - .env
+    # https://hub.docker.com/_/postgres
+    # Match version to Heroku app
+    image: postgres:12.9-alpine
+    restart: always
+    volumes:
+      - ./tmp/pgdata/:/var/lib/postgresql/data

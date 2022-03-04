@@ -5,8 +5,9 @@
 .idea/
 .jekyll-metadata
 .sass-cache
-_site
 __pycache__/
-staticfiles/
-venv/
+_site
 node_modules/
+staticfiles/
+tmp/
+venv/

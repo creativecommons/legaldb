@@ -4,23 +4,23 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-black = "==21.6b0"
-flake8 = "*"
+black = "*"
 factory-boy = "*"
+flake8 = "*"
 isort = "*"
 
 [packages]
-django = "~=3.2"
-django_compressor = "*"
+Django = ">=3.2.12,<3.3"
 django-countries = "*"
 django-heroku = "*"
 django-libsass = "*"
 django-markdownx = "*"
-django-widget-tweaks = "*"
-gunicorn = "*"
-psycopg2 = "*"
 django-ordered-model = "*"
 django-taggit = "*"
+django-widget-tweaks = "*"
+django_compressor = "*"
+gunicorn = "*"
+psycopg2 = "*"
 whitenoise = "*"
 
 [requires]
