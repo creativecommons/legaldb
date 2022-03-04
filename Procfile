@@ -1,5 +1,7 @@
-# See https://devcenter.heroku.com/articles/release-phase
+# https://devcenter.heroku.com/articles/procfile
+
+# https://devcenter.heroku.com/articles/release-phase
 release: ./bin/release_tasks
 
-# See https://devcenter.heroku.com/articles/python-gunicorn
+# https://devcenter.heroku.com/articles/python-gunicorn
 web: gunicorn caselaw.wsgi --log-file -
