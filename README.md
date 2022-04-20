@@ -35,7 +35,7 @@ cp .env.template .env
 ```
 
 
-### Using Docker-Compose
+### Using docker compose
 
 Ensure that you have Docker and Docker Compose installed on your system
 For installation instructions refer: [Get Docker | Docker
@@ -47,7 +47,7 @@ Documentation](https://docs.docker.com/get-docker/)
 Start Django server (backed by PostgreSQL server ) at
 [127.0.0.1:8000](http://127.0.0.1:8000/):
 ```sh
-docker-compose up
+docker compose up
 ```
 
 
@@ -93,7 +93,7 @@ Examples:
 
 ### Using Pipenv
 
-NOTE: The prefered method is [Using Docker-Compose](#using-docker-compose).
+NOTE: The prefered method is [Using docker compose](#using-docker-compose).
 
 To follow these instructions, Python 3 and
 [Pipenv](https://pipenv.pypa.io/en/latest/) are required.
