@@ -60,6 +60,14 @@
     ```
 
 
+## Database Migrations
+
+Django database migrations are triggered by `bin/release_tasks`, which is
+called by the `Procfile` ([The Procfile | Heroku Dev Center][procfile]).
+
+[procfile]: https://devcenter.heroku.com/articles/procfile
+
+
 ## Troubleshooting
 
 
