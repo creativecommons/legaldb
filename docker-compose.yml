@@ -30,8 +30,9 @@ services:
       - POSTGRES_USER=${DJANGO_DATABASE_USER}
       - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
     # https://hub.docker.com/_/postgres
-    # Match version to Heroku app
-    image: postgres:12.9-alpine
+    # https://devcenter.heroku.com/articles/heroku-postgresql#version-support
+    # Match version to Heroku app. Keep in sync with .github/workflows/main.yml
+    image: postgres:14-alpine
     restart: always
     volumes:
       - ./tmp/pgdata/:/var/lib/postgresql/data

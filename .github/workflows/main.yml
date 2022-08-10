@@ -10,15 +10,20 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+    # https://devcenter.heroku.com/articles/getting-started-with-python
+    # Match version to Heroku app
+    # Keep in sync with Dockerfile and Pipfile
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: 3.10
 
     - name: Install pipenv
-      uses: dschep/install-pipenv-action@v1
+      run: |
+        pip install --upgrade pip
+        pip install pipenv
 
     - name: Install dependencies
       run: |
@@ -34,7 +39,7 @@ jobs:
         pipenv run flake8 . --output-file test-reports/flake8
 
     - name: Upload flake test results
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@v3
       with:
           name: flake8-report
           path: test-reports/flake8
@@ -46,7 +51,10 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12.5-alpine
+        # https://hub.docker.com/_/postgres
+        # https://devcenter.heroku.com/articles/heroku-postgresql#version-support
+        # Match version to Heroku app. Keep in sync with docker-compose.yml
+        image: postgres:14-alpine
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -62,15 +70,20 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v1
+    # https://devcenter.heroku.com/articles/getting-started-with-python
+    # Match version to Heroku app
+    # Keep in sync with Dockerfile and Pipfile
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.10
 
-      - name: Install pipenv
-        uses: dschep/install-pipenv-action@v1
+    - name: Install pipenv
+      run: |
+        pip install --upgrade pip
+        pip install pipenv
 
       - name: Install dependencies
         run: |
