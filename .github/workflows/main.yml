@@ -12,10 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
+    # https://devcenter.heroku.com/articles/getting-started-with-python
+    # Match version to Heroku app
+    # Keep in sync with Dockerfile and Pipfile
+    - name: Set up Python 3.10
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.10
 
     - name: Install pipenv
       run: |
@@ -69,10 +72,13 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.9
+    # https://devcenter.heroku.com/articles/getting-started-with-python
+    # Match version to Heroku app
+    # Keep in sync with Dockerfile and Pipfile
+      - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: 3.10
 
     - name: Install pipenv
       run: |
