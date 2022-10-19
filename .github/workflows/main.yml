@@ -46,7 +46,7 @@ jobs:
           name: flake8-report
           path: test-reports/flake8
       # Use failure() to upload only if failure occurs
-      if: failure()
+      if: ${{ failure() }}
 
   job_test:
     runs-on: ubuntu-latest
