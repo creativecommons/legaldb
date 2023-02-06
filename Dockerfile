@@ -33,7 +33,7 @@ RUN apt-config dump \
 RUN apt-get update
 
 # Install apt package dependencies
-RUN apt-get install -y gcc gettext postgresql-server-dev-all
+RUN apt-get install -y g++ gcc gettext postgresql-server-dev-all
 
 ## Install pipenv
 RUN pip install --upgrade pip
