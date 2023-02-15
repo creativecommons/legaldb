@@ -33,11 +33,11 @@
         },
         "django": {
             "hashes": [
-                "sha256:59c39fc342b242fb42b6b040ad8b1b4c15df438706c1d970d416d63cdd73e7fd",
-                "sha256:644288341f06ebe4938eec6801b6bd59a6534a78e4aedde2a153075d11143894"
+                "sha256:08208dfe892eb64fff073ca743b3b952311104f939e7f6dae954fe72dcc533ba",
+                "sha256:4d492d9024c7b3dfababf49f94511ab6a58e2c9c3c7207786f1ba4eb77750706"
             ],
             "index": "pypi",
-            "version": "==3.2.17"
+            "version": "==3.2.18"
         },
         "django-appconf": {
             "hashes": [
@@ -305,11 +305,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:a7687c12b444eaac951ea87a9627c4f904ac757e7abdc5aac32833234af90378",
-                "sha256:e261cdf010c11a41cb5cb5f1bf3338a7433832029f559a6a7614bd42a967c300"
+                "sha256:95f00380ef2ffa41d9bba85d95b27689d923c93dfbafed4aecd7cf988a25e012",
+                "sha256:bb6d8e508de562768f2027902929f8523932fcd1fb784e6d573d2cafac995a48"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.1.0"
+            "version": "==67.3.2"
         },
         "sqlparse": {
             "hashes": [
@@ -321,11 +321,11 @@
         },
         "typing-extensions": {
             "hashes": [
-                "sha256:1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa",
-                "sha256:16fa4864408f655d35ec496218b85f79b3437c829e93320c7c9215ccfd92489e"
+                "sha256:5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb",
+                "sha256:fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.4.0"
+            "version": "==4.5.0"
         },
         "whitenoise": {
             "hashes": [
@@ -386,11 +386,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:2375d0bbaf405dc4f1cbc771485a78ad952c776798e5c228eef3e7b337f78868",
-                "sha256:b76e5d2405470e3d38d37d1bfaa9d9bbf171bdf41c814f5bbd8117b121f6bccb"
+                "sha256:17cf85aeb0363a3384ccd4c1f52b52ec8f414c7afaab74ae1f4c3e09a06e14de",
+                "sha256:21c3c6c45183308151c14f62afe59bf54ace68f663e0180973698ba2a9a3b2c4"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==16.6.1"
+            "version": "==17.0.0"
         },
         "flake8": {
             "hashes": [
