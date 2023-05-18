@@ -10,7 +10,7 @@ flake8 = "*"
 isort = "*"
 
 [packages]
-Django = ">=3.2.18,<3.3"
+Django = ">=3.2.19,<3.3"
 django-countries = "*"
 django-heroku = "*"
 django-libsass = "*"
