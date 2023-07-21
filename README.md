@@ -27,6 +27,10 @@ open-source repositories.
 
 ## Development setup
 
+To clone this repo, type the following command in your terminal:
+git clone https://github.com/creativecommons/legaldb.git
+
+
 Copy `.env.template` and set environment variables (like
 `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
 in a `.env` file.
