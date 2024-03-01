@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     # https://devcenter.heroku.com/articles/getting-started-with-python
     # Match version to Heroku app
     # Keep in sync with Dockerfile and Pipfile
     - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -41,7 +41,7 @@ jobs:
         pipenv run flake8 . --output-file test-reports/flake8
 
     - name: Upload flake test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           name: flake8-report
           path: test-reports/flake8
@@ -54,9 +54,9 @@ jobs:
     services:
       postgres:
         # https://hub.docker.com/_/postgres
-        # https://devcenter.heroku.com/articles/heroku-postgresql#version-support
+        # https://devcenter.heroku.com/articles/heroku-postgres-version-support
         # Match version to Heroku app. Keep in sync with docker-compose.yml
-        image: postgres:14-alpine
+        image: postgres:15-alpine
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -72,13 +72,13 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
     # https://devcenter.heroku.com/articles/getting-started-with-python
     # Match version to Heroku app
     # Keep in sync with Dockerfile and Pipfile
       - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
