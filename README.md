@@ -174,17 +174,17 @@ pipenv run flake8 .
 
 6. Now open the code editor you use (Visual Studio Code recommended and used here), then open the folder you want to clone the code in.
 
-7. Then open bash terminal and type the following git command:
+7. Then open bash terminal within your code editor and type the following git command:
 
 ```shell 
 git clone https://github.com/creativecommons/legaldb.git
 ```
 
-Here in this command I have already pasted the URL or Link you have copied from github.
+8. Here in this command I have already pasted the URL or Link you have copied from github.
 
-8. Press Enter after typing this command and the code will be cloned in your code editor and you are free to edit it.
+9. Press Enter after typing this command and the code will be cloned in your code editor and you are free to edit it.
 
-9. Recommended: Use of Visual Studio Code and knowledge of Git and GitHub and some terminal commands. (Can watch some videos on Youtube to know about Git and GitHub)
+10. Recommended: Use of Visual Studio Code and knowledge of Git and GitHub and some terminal commands. (Can watch some videos on Youtube to know about Git and GitHub)
 
 
 
