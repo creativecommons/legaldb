@@ -160,33 +160,6 @@ pipenv run black .
 pipenv run flake8 .
 ```
 
-### Cloning Code Into Your CodeEditor
-
-1. Open https://github.com/creativecommons/legaldb in your browser, it will redirect you to the github repository of Creative Common's legaldb.
-
-2. Here you will see all the folders and files present in the repository, somewhat at the middle-right of the screen you will find a green button saying "Code" with a arrow within it.
-
-3. Tap on the arrow and you have three options before you, first will be HTTPS, second will be SSH and third will be GitHub CLI.
-
-4. By default you will be on the first option HTTPS and that is what we will use to clone the code.
-
-5. In this option (First one HTTPS) you will see a URL or Link in a box below which "Clone using the web URL" will be written, simply copy the URL or Link.
-
-6. Now open the code editor you use (Visual Studio Code recommended and used here), then open the folder you want to clone the code in.
-
-7. Then open bash terminal within your code editor and type the following git command:
-
-```shell 
-git clone https://github.com/creativecommons/legaldb.git
-```
-
-8. Here in this command I have already pasted the URL or Link you have copied from github.
-
-9. Press Enter after typing this command and the code will be cloned in your code editor and you are free to edit it.
-
-10. Recommended: Use of Visual Studio Code and knowledge of Git and GitHub and some terminal commands. (Can watch some videos on Youtube to know about Git and GitHub)
-
-
 
 ### Development Blog Posts
 
