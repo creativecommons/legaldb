@@ -10,7 +10,7 @@ flake8 = "*"
 isort = "*"
 
 [packages]
-Django = ">=3.2.23,<3.3"
+Django = ">=4.2.11,<4.3"
 certifi = ">=2023.7.22"  # Ensure dependency is secure
 django-countries = "*"
 django-heroku = "*"
@@ -26,7 +26,7 @@ urllib3 = ">=2.0.7"  # Ensure dependency is secure
 whitenoise = "*"
 
 [requires]
-# https://devcenter.heroku.com/articles/getting-started-with-python
+# https://devcenter.heroku.com/articles/python-support
 # Match version to Heroku app
 # Keep in sync with .github/workflows/main.yml and Dockerfile
-python_version = "3.10"
+python_version = "3.12"
