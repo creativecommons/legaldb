@@ -1,4 +1,4 @@
-name: Caselaw CI
+name: LegalDB CI
 
 on:
   push:
@@ -17,10 +17,10 @@ jobs:
     # https://devcenter.heroku.com/articles/getting-started-with-python
     # Match version to Heroku app
     # Keep in sync with Dockerfile and Pipfile
-    - name: Set up Python 3.10
+    - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.12'
 
     - name: Install pipenv
       run: |
@@ -28,17 +28,16 @@ jobs:
         pip install pipenv
 
     - name: Install dependencies
-      run: |
-        pipenv sync --dev
+      # Install _only_ [dev-packages]
+      run: pipenv sync --categories dev-packages --system
 
     - name: Run Black check
-      run: |
-        pipenv run black --check .
+      run: black --check .
 
     - name: Run Flake8 check
       run: |
         mkdir test-reports
-        pipenv run flake8 . --output-file test-reports/flake8
+        flake8 . --output-file test-reports/flake8
 
     - name: Upload flake test results
       uses: actions/upload-artifact@v4
@@ -74,13 +73,13 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-    # https://devcenter.heroku.com/articles/getting-started-with-python
-    # Match version to Heroku app
-    # Keep in sync with Dockerfile and Pipfile
-      - name: Set up Python 3.10
+      # https://devcenter.heroku.com/articles/python-support
+      # Match version to Heroku app
+      # Keep in sync with Dockerfile and Pipfile
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
       - name: Install pipenv
         run: |
@@ -88,13 +87,12 @@ jobs:
           pip install pipenv
 
       - name: Install dependencies
-        run: |
-          pipenv sync --dev
+        run: pipenv sync --dev --system
 
       - name: Compile assets
         run: |
-          pipenv run python manage.py collectstatic --no-input
-          pipenv run python manage.py compress --force
+          python manage.py collectstatic --no-input
+          python manage.py compress --force
 
       - name: Run tests
         run: pipenv run python manage.py test

@@ -1,10 +1,10 @@
 # https://docs.docker.com/engine/reference/builder/
 
 # https://hub.docker.com/_/python/
-# https://devcenter.heroku.com/articles/getting-started-with-python
+# https://devcenter.heroku.com/articles/python-support
 # Match version to Heroku app
 # Keep in sync with .github/workflows/main.yml and Pipfile
-FROM python:3.10
+FROM python:3.12
 
 # Configure apt not to prompt during docker build
 ARG DEBIAN_FRONTEND=noninteractive
