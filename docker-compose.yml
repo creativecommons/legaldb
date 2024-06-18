@@ -1,9 +1,7 @@
 # Also see:
 #   Dockerfile
 #
-# https://docs.docker.com/compose/compose-file/compose-file-v2/
-
-version: "2.4"
+# https://docs.docker.com/compose/compose-file/
 
 services:
 
@@ -11,13 +9,18 @@ services:
     build:
       context: .
     command: >
-      bash -c " while !</dev/tcp/db/${DJANGO_DATABASE_PORT}; do sleep 1; done;
-               ./manage.py runserver 0.0.0.0:8000"
+      bash -c "while !</dev/tcp/db/${DJANGO_DATABASE_PORT:?}; do sleep 1; done;
+        ./manage.py runserver 0.0.0.0:8000"
     env_file:
+      # .env should be copied from .env.template and configured
       - .env
     environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:?}
       - DJANGO_DATABASE_HOST=db
       - DJANGO_DATABASE_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
+      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME:?}
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:?}
+      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD:?}
     depends_on:
       - db
     ports:
@@ -28,15 +31,16 @@ services:
 
   db:
     env_file:
+      # .env should be copied from .env.template and configured
       - .env
     environment:
-      - POSTGRES_DB=${DJANGO_DATABASE_NAME}
-      - POSTGRES_USER=${DJANGO_DATABASE_USER}
+      - POSTGRES_DB=${DJANGO_DATABASE_NAME:?}
       - POSTGRES_PASSWORD=${DJANGO_DATABASE_PASSWORD:-postgres}
+      - POSTGRES_USER=${DJANGO_DATABASE_USER:?}
     # https://hub.docker.com/_/postgres
     # https://devcenter.heroku.com/articles/heroku-postgres-version-support
     # Match version to Heroku app. Keep in sync with .github/workflows/main.yml
-    image: postgres:15-alpine
+    image: postgres:16-alpine
     restart: always
     volumes:
       - ./tmp/pgdata/:/var/lib/postgresql/data
