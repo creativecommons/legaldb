@@ -29,20 +29,24 @@ RUN apt-config dump \
 | sed -e's/1/0/' \
 | tee /etc/apt/apt.conf.d/99no-recommends-no-suggests
 
-# Resynchronize apt package index
-RUN apt-get update
-
-# Install apt package dependencies
-RUN apt-get install -y g++ gcc gettext postgresql-server-dev-all
+# Resynchronize the package index and install packages
+# https://docs.docker.com/build/building/best-practices/#apt-get
+RUN apt-get update \
+    && apt-get install -y \
+        g++ \
+        gcc \
+        gettext \
+        postgresql-server-dev-all \
+    && rm -rf /var/lib/apt/lists/*
 
 ## Install pipenv
-RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
-RUN pip install --upgrade pipenv
+RUN pip install --upgrade \
+    pip \
+    setuptools \
+    pipenv
 
 # Install python dependencies
-COPY Pipfile .
-COPY Pipfile.lock .
+COPY Pipfile Pipfile.lock .
 RUN pipenv sync --dev --system
 
 # Create mount point for docker-compose volume and set as current workdir
