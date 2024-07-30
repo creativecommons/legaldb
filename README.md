@@ -10,7 +10,6 @@ around the world in a Django based website.
 
 **[legaldb.creativecommons.org](https://legaldb.creativecommons.org/)**
 
-
 ## Code of conduct
 
 [`CODE_OF_CONDUCT.md`][org-coc]:
@@ -23,6 +22,16 @@ around the world in a Django based website.
 [org-coc]: https://github.com/creativecommons/.github/blob/main/CODE_OF_CONDUCT.md
 [code_of_conduct]: https://opensource.creativecommons.org/community/code-of-conduct/
 [reporting_guide]: https://opensource.creativecommons.org/community/code-of-conduct/enforcement/
+
+## Cloning
+
+To clone this repository, type the following command on your terminal:
+
+```
+git clone https://github.com/creativecommons/legaldb.git
+```
+
+If this is your first time using git, checkout the comprehensive documentation on [Github Docs](https://docs.github.com/en/get-started/using-git/about-git#basic-git-commands).
 
 
 ## Contributing
