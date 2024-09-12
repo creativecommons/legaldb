@@ -10,7 +10,7 @@ flake8 = "*"
 isort = "*"
 
 [packages]
-Django = ">=4.2.11,<4.3"
+Django = ">=4.2.16,<4.3"
 certifi = ">=2023.7.22"  # Ensure dependency is secure
 django-countries = "*"
 django-heroku = "*"
