@@ -23,16 +23,6 @@ around the world in a Django based website.
 [code_of_conduct]: https://opensource.creativecommons.org/community/code-of-conduct/
 [reporting_guide]: https://opensource.creativecommons.org/community/code-of-conduct/enforcement/
 
-## Cloning
-
-To clone this repository, type the following command on your terminal:
-
-```
-git clone https://github.com/creativecommons/legaldb.git
-```
-
-If this is your first time using git, checkout the comprehensive documentation on [Github Docs](https://docs.github.com/en/get-started/using-git/about-git#basic-git-commands).
-
 
 ## Contributing
 
@@ -43,13 +33,16 @@ See [`CONTRIBUTING.md`][org-contrib].
 
 ## Development setup
 
+For information on learning and installing the prerequisite technologies for this project, please see [Foundational technologies — Creative Commons Open Source][found-tech].
+
+[found-tech]: https://opensource.creativecommons.org/contributing-code/foundational-tech/
+
 Copy `.env.template` and set environment variables (like
 `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
 in a `.env` file.
 ```shell
 cp .env.template .env
 ```
-
 
 ### Using docker compose
 
