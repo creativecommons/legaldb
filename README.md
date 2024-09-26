@@ -46,11 +46,6 @@ cp .env.template .env
 
 ### Using docker compose
 
-Ensure that you have Docker and Docker Compose installed on your system
-For installation instructions refer: [Get Docker | Docker
-Documentation](https://docs.docker.com/get-docker/)
-
-
 #### Start (and Build) the Servers
 
 Start Django server (backed by PostgreSQL server ) at
