@@ -11,3 +11,4 @@ node_modules/
 staticfiles/
 tmp/
 venv/
+docker-compose.override.yml

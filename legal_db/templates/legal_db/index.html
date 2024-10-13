@@ -15,7 +15,7 @@
           <div class="padding-top-large">
             <h3 class="subtitle is-4 padding-bottom-big">Cases</h3>
             {% for tag in cases_tags %}
-            <a href="{% url "case_index" %}?tags%5B%5D={{ tag }}" class="button tag case outline margin-right-small margin-vertical-small">
+            <a href="{% url 'case_index' %}?tags%5B%5D={{ tag }}" class="button tag case outline margin-right-small margin-vertical-small">
               {{ tag }}
             </a>
             {% endfor %}
@@ -35,7 +35,7 @@
         <div class="column is-half">
           <h3 class="subtitle is-4 padding-bottom-big">Scholarship</h3>
           {% for tag in scholarship_tags %}
-          <a href="{% url "scholarship_index" %}?tags%5B%5D={{ tag }}" class="button tag scholarship outline margin-right-small margin-vertical-small">
+          <a href="{% url 'scholarship_index' %}?tags%5B%5D={{ tag }}" class="button tag scholarship outline margin-right-small margin-vertical-small">
             {{ tag }}
           </a>
           {% endfor %}
