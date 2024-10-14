@@ -10,7 +10,6 @@ around the world in a Django based website.
 
 **[legaldb.creativecommons.org](https://legaldb.creativecommons.org/)**
 
-
 ## Code of conduct
 
 [`CODE_OF_CONDUCT.md`][org-coc]:
@@ -34,6 +33,10 @@ See [`CONTRIBUTING.md`][org-contrib].
 
 ## Development setup
 
+For information on learning and installing the prerequisite technologies for this project, please see [Foundational technologies — Creative Commons Open Source][found-tech].
+
+[found-tech]: https://opensource.creativecommons.org/contributing-code/foundational-tech/
+
 Copy `.env.template` and set environment variables (like
 `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
 in a `.env` file.
@@ -41,13 +44,7 @@ in a `.env` file.
 cp .env.template .env
 ```
 
-
 ### Using docker compose
-
-Ensure that you have Docker and Docker Compose installed on your system
-For installation instructions refer: [Get Docker | Docker
-Documentation](https://docs.docker.com/get-docker/)
-
 
 #### Start (and Build) the Servers
 

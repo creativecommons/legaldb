@@ -85,7 +85,7 @@
 
           <div class="field">
             <label for="{{ case_form.background.id_for_label }}" class="has-text-weight-bold">Background Information</label>
-            <p>Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit.</p>
+            <p>Please describe the factual information that led to the lawsuit being filed, and explain what claims were filed in the lawsuit.</p>
             {% render_field case_form.background|add_class:"input textarea" %}
             {{ case_form.background.errors }}
           </div>
@@ -111,7 +111,7 @@
 
           <h4 class="b-header">Links to relevant materials</h4>
 
-          <p class="margin-bottom-normal">Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other  relevant materials. At least one URL is required.</p>
+          <p class="margin-bottom-normal">Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other relevant materials. At least one URL is required.</p>
           <div id="link-formset">
             {{ link_formset.management_form }}
             {% for link_form in link_formset %}
