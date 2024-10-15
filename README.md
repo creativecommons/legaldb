@@ -40,6 +40,9 @@ For information on learning and installing the prerequisite technologies for thi
 Copy `.env.template` and set environment variables (like
 `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
 in a `.env` file.
+
+Please read the comments in the `.env` file for specific instructions to get it to work locally.
+
 ```shell
 cp .env.template .env
 ```
