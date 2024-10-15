@@ -11,7 +11,9 @@ node_modules/
 staticfiles/
 tmp/
 venv/
-.DS_Store
-legaldb/.DS_Store
-legaldb/static/.DS_Store
+# macOS general  
+# https://github.com/github/gitignore/blob/main/Global/macOS.gitignore  
+.DS_Store  
+.AppleDouble  
+.LSOverride  
 docker-compose.override.yml
