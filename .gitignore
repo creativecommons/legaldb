@@ -11,3 +11,7 @@ node_modules/
 staticfiles/
 tmp/
 venv/
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
