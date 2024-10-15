@@ -14,3 +14,4 @@ venv/
 .DS_Store
 legaldb/.DS_Store
 legaldb/static/.DS_Store
+docker-compose.override.yml
