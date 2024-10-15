@@ -1,31 +1,4 @@
 {% load static %}
-<style>
-  @media screen and (max-width: 780px) {
-    .navbar-burger {
-      cursor: pointer;
-      display: block; 
-      background-color: #ebeeee;
-      padding: 0.5rem 0.2rem 0rem;
-      font-weight: 900;
-      font-size: 20px;
-      color: rgb(64, 60, 60);
-      margin: 5px auto;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease-in-out;
-      min-width: 100px;
-      text-align: center;
-      line-height: 1;
-      border-radius: 2%;
-    }
-
-    .navbar-item{
-    border-top: 1px solid rgba(212, 210, 210, 0.945);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  }
-</style>
-
 
 <header class="container">
   <nav class="navbar">
@@ -33,12 +6,8 @@
       <a class="has-text-black" href="{% url 'home' %}">
         <img src="{% static 'logo.svg' %}" alt="CC legal database logo">
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" 
-         >
-        <!-- <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span> -->
-        MENU
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" >
+        Menu
       </a>
     </div>
     <div class="navbar-menu">
