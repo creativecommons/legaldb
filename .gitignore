@@ -11,3 +11,6 @@ node_modules/
 staticfiles/
 tmp/
 venv/
+.DS_Store
+legaldb/.DS_Store
+legaldb/static/.DS_Store
