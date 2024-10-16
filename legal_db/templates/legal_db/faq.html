@@ -14,12 +14,12 @@
       <div class="column is-9">
         <div class="control has-icons-left">
           <label for="search" class="is-sr-only">Search:</label>
-          <input id="search" class="input column is-8 margin-bottom-big" type="text" onkeyup="search()" placeholder="Search for..." />
+          <input id="search" class="input column is-8 margin-bottom-big" type="text" onkeyup="search()" placeholder="Search for..." aria-label="Search through FAQs"/>
           <span class="icon is-left"><i class="icon search"></i></span>
         </div>
         <div>
           {% for faq in faqs %}
-          <article class="faq__content">
+          <article class="faq__content" aria-labelledby="faq-head-{{ forloop.counter }}">
             <div id="faq-head-{{ forloop.counter }}" class="faq__head" aria-expanded="false">
               <h5 class="faq__title">{{ faq.question }}</h5>
             </div>

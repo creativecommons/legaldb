@@ -42,7 +42,7 @@
             <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
             <label for="{{ case_form.agreement.id_for_label }}" class="checkbox">
               {% render_field case_form.agreement %}
-              I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
+              I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue" aria-label="Creative Commons Privacy Policy">Creative Commons Privacy Policy</a>.
             </label>
             {{ case_form.agreement.errors }}
           </div>
@@ -132,7 +132,7 @@
                     {{ link_form.url.errors }}
                   </div>
                   <div class="column is-1">
-                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')">
+                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')" aria-label="Delete this link form">
                       <i class="icon cross"></i>
                     </button>
                   </div>
