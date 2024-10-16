@@ -1,3 +1,9 @@
+# macOS general
+# https://github.com/github/gitignore/blob/main/Global/macOS.gitignore
+.DS_Store
+.AppleDouble
+.LSOverride
+
 *.swp
 *~
 .\#*
