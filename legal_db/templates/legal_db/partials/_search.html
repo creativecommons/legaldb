@@ -2,15 +2,17 @@
 
 <section class="columns is-gapless is-vcentered margin-top-big margin-bottom-small">
   <div class="column is-8">
-    <div role="search" method="get" class="field has-addons">
-      <div class="control has-icons-left search-input">
-        <label for="{{ form.keywords.id_for_label }}" class="is-sr-only">Search: </label>
-        {% render_field form.keywords|add_class:"input" placeholder="Search for..." %}
-        <span class="icon is-left"><i class="icon search"></i></span>
-      </div>
-      <div class="control is-4">
-        <button type="submit" class="button small">Search</button>
-      </div>
+    <div class="content field has-addons">
+      <form role="search" method="get">
+        <div class="control has-icons-left search-input">
+          <label for="{{ form.keywords.id_for_label }}" class="is-sr-only">Search: </label>
+         {% render_field form.keywords|add_class:"input" placeholder="Search for..." %}
+          <span class="icon is-left"><i class="icon search"></i></span>
+        </div>
+        <div class="control is-4">
+         <button type="submit" class="button small">Search</button>
+        </div>
+      </form>
     </div>
     {{ form.keywords.errors }}
   </div>
