@@ -27,17 +27,17 @@
       {% include "legal_db/partials/_search.html" %}
 
       <div id="tags" aria-expanded="true">
-      {% for tag in tags %}
-        <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
-               class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
-          {{ tag.name }}
-          <input type="checkbox" class="tag__check" name="tags[]"
-                 id="tag-check-{{ forloop.counter }}"
-                 value="{{ tag.name }}"
-                 {% if tag.checked %} checked{% endif %}
-                 hidden>
-        </label>
-      {% endfor %}
+        {% for tag in tags %}
+          <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
+                 class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
+            {{ tag.name }}
+            <input type="checkbox" class="tag__check" name="tags[]"
+                   id="tag-check-{{ forloop.counter }}"
+                   value="{{ tag.name }}"
+                   {% if tag.checked %} checked{% endif %}
+                   hidden>
+          </label>
+        {% endfor %}
       </div>
     </form>
 
@@ -45,17 +45,29 @@
       <table class="table is-bordered is-striped is-fullwidth">
         <thead>
           <tr>
-            <th>Country</th>
-            <th>Case name</th>
+            <th>
+              <a href="?sort=country&direction={% if direction == 'desc' %}asc{% else %}desc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
+                Country
+              </a>
+            </th>
+            <th>
+              <a href="?sort=name&direction={% if direction == 'desc' %}asc{% else %}desc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
+                Case name
+              </a>
+            </th>
             <th>License</th>
-            <th>Year of resolution</th>
+            <th>
+              <a href="?sort=decision_year&direction={% if direction == 'desc' %}asc{% else %}desc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
+                Year of resolution
+              </a>
+            </th>
           </tr>
         </thead>
         <tbody>
         {% for case in cases %}
           <tr>
             <td>{{ case.country.name }}</td>
-            <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
+            <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a></td>
             <td class="is-narrow">
               {% if not case.license %} <span class="has-text-grey">Unknown</span>
               {% else %} {{ case.license }} {% endif %}
@@ -68,6 +80,28 @@
         </tbody>
       </table>
     </div>
+
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+      <ul class="pagination-list">
+        {% if page_obj.has_previous %}
+          <li><a class="pagination-link" href="?page=1&sort={{ current_sort }}&direction={{ direction }}">&laquo; First</a></li>
+          <li><a class="pagination-link" href="?page={{ page_obj.previous_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Previous</a></li>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+          {% if num == page_obj.number %}
+            <li><a class="pagination-link is-current">{{ num }}</a></li>
+          {% else %}
+            <li><a class="pagination-link" href="?page={{ num }}&sort={{ current_sort }}&direction={{ direction }}">{{ num }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li><a class="pagination-link" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a></li>
+          <li><a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}">Last &raquo;</a></li>
+        {% endif %}
+      </ul>
+    </nav>
   </div>
 </section>
 {% endblock %}

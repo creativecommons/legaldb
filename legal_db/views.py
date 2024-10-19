@@ -4,6 +4,8 @@ from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
 from taggit.models import Tag
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 from .forms import CaseForm, LinkForm, LinkFormset, ScholarshipForm, SearchForm
 from .models import FAQ, Case, Link, Scholarship
@@ -24,6 +26,7 @@ class HomeView(TemplateView):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
+    paginate_by = 10  # Number of cases per page
 
     def get_queryset(self):
         """
@@ -49,11 +52,18 @@ class CaseListView(ListView):
             lookups = build_filters(attributes, keywords)
             qs = qs.filter(lookups)
 
+
         tags = self.request.GET.getlist("tags[]")
         if tags:
             qs = qs.filter(tags__name__in=tags)
 
-        return qs.order_by("country", "name")
+
+        sort_by = self.request.GET.get('sort', 'name') 
+        direction = self.request.GET.get('direction', 'asc')  
+        if direction == 'desc':
+            sort_by = '-' + sort_by
+
+        return qs.order_by(sort_by)
 
     def get_context_data(self, **kwargs):
         """
@@ -67,6 +77,10 @@ class CaseListView(ListView):
             tags.append({"name": tag, "checked": checked})
         context["tags"] = tags
         context["form"] = SearchForm(self.request.GET)
+
+        context["current_sort"] = self.request.GET.get('sort', 'name')
+        context["direction"] = self.request.GET.get('direction', 'asc')
+        
         return context
 
 
