@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 
 <header class="container">
   <nav class="navbar">
@@ -14,9 +14,9 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="{% url 'case_index' %}">Cases</a>
-        <a class="navbar-item" href="{% url 'scholarship_index' %}">Scholarship</a>
-        <a class="navbar-item" href="{% url 'faq' %}">FAQ</a>
+        <a class="navbar-item" href="{% url 'case_index' %}">{% trans "Cases" %}</a>
+        <a class="navbar-item" href="{% url 'scholarship_index' %}">{% trans "Scholarship" %}</a>
+        <a class="navbar-item" href="{% url 'faq' %}">{% trans "FAQ" %}</a>
       </div>
     </div>
   </nav>
