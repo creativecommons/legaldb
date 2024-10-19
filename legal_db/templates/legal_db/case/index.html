@@ -2,6 +2,32 @@
 {% load static %}
 
 {% block body_content %}
+<style>
+  .pagination-link {
+    color: #333; 
+    background-color: #fff; 
+    border-color: #ddd; 
+  }
+  
+  .pagination-link:hover {
+    color: #fff; 
+    background-color: #333; 
+    border-color: #333; 
+  }
+  
+  .pagination-link.is-current {
+    color: #fff; 
+    background-color: #333; 
+    border-color: #333; 
+  }
+  
+  .pagination-link.is-current:hover {
+    color: #fff; 
+    background-color: #333; 
+    border-color: #333; 
+  }
+  
+</style>
 <section class="hero case">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
@@ -97,7 +123,7 @@
         {% endfor %}
 
         {% if page_obj.has_next %}
-          <li><a class="pagination-link" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a></li>
+          <li><a class="pagination-link" style="background-color: primary;" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a></li>
           <li><a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}">Last &raquo;</a></li>
         {% endif %}
       </ul>
