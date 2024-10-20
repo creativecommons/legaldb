@@ -17,7 +17,9 @@ class BaseModel(models.Model):
     )
     updated_at = models.DateTimeField(
         auto_now=True,
-        help_text=_("A timestamp of the last time when the object was modified."),
+        help_text=_(
+            "A timestamp of the last time when the object was modified."
+        ),
     )
 
     class Meta:
@@ -26,7 +28,8 @@ class BaseModel(models.Model):
 
 class LegalResource(BaseModel):
     """
-    Abstract Class to contain the commons attributes of Cases and Scholarship
+    Abstract Class to contain the commons attributes
+    of Cases and Scholarship
     """
 
     license = models.CharField(
@@ -73,8 +76,9 @@ class Case(LegalResource):
         blank=True,
         null=True,
         help_text=_(
-            "If there are multiple lawsuits between the parties, please just include "
-            "one here and note the others in the related cases field."
+            "If there are multiple lawsuits between the parties, "
+            "please just include one here and note the others "
+            "in the related cases field."
         ),
     )
     related_cases = models.CharField(
@@ -92,21 +96,25 @@ class Case(LegalResource):
         blank=True,
         null=True,
         help_text=_(
-            "The original court name and/or English translation. If the lawsuit was "
-            "filed in one court and then went to another court on appeal, please note "
-            "all relevant courts here."
+            "The original court name and/or English translation. "
+            "If the lawsuit was filed in one court and then went "
+            "to another court on appeal, please note all relevant "
+            "courts here."
         ),
     )
     background = models.TextField(
         blank=True,
         null=True,
         help_text=_(
-            "Describe the factual information that led to the lawsuit being filed, "
-            "and explain what claims were filed in the lawsuit."
+            "Describe the factual information that led to the lawsuit "
+            "being filed, and explain what claims were filed "
+            "in the lawsuit."
         ),
     )
     decision_year = models.PositiveSmallIntegerField(
-        blank=True, null=True, help_text=_("Year of case resolution.")
+        blank=True,
+        null=True,
+        help_text=_("Year of case resolution.")
     )
     is_pending = models.BooleanField(
         blank=True,
@@ -116,8 +124,9 @@ class Case(LegalResource):
     links = models.ManyToManyField(
         Link,
         help_text=_(
-            "Include any links to pleadings, briefs, and opinions in the lawsuit, "
-            "as well as blog posts, academic articles, or other relevant materials."
+            "Include any links to pleadings, briefs, and opinions "
+            "in the lawsuit, as well as blog posts, academic articles, "
+            "or other relevant materials."
         ),
     )
 
@@ -127,11 +136,20 @@ class Case(LegalResource):
 
 class Scholarship(LegalResource):
     title = models.CharField(max_length=255, blank=True, null=True)
-    publication_name = models.CharField(max_length=255, blank=True, null=True)
-    publication_year = models.PositiveSmallIntegerField(blank=True, null=True)
+    publication_name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+    publication_year = models.PositiveSmallIntegerField(
+        blank=True,
+        null=True
+    )
     authors = models.CharField(max_length=255, blank=True, null=True)
     link = models.ForeignKey(
-        Link, on_delete=models.CASCADE, help_text=_("The link to the article.")
+        Link,
+        on_delete=models.CASCADE,
+        help_text=_("The link to the article.")
     )
 
     def __str__(self):

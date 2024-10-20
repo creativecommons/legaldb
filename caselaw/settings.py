@@ -56,7 +56,8 @@ MIDDLEWARE = [
     # SecurityMiddleware must be listed before other middleware
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.locale.LocaleMiddleware", # Check if this is necessary, not in cc-legal-tools-app
+    # Check if this is necessary, not in cc-legal-tools-app
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -172,7 +173,8 @@ LOGGING = {
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en" # This matches the language code on Transifex
+# This matches the language code on Transifex ("en")
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = os.environ.get("DJANGO_TIME_ZONE", "UTC")
 
