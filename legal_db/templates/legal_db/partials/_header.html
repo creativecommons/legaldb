@@ -17,6 +17,27 @@
         <a class="navbar-item" href="{% url 'case_index' %}">{% trans "Cases" %}</a>
         <a class="navbar-item" href="{% url 'scholarship_index' %}">{% trans "Scholarship" %}</a>
         <a class="navbar-item" href="{% url 'faq' %}">{% trans "FAQ" %}</a>
+
+        <!-- Language Dropdown -->
+        <div class="navbar-item">
+          <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <div class="select">
+              <select name="language" onchange="this.form.submit()">
+                <option disabled>{% trans 'Languages available' %}</option>
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as languages %}
+                {% for lang_code, lang_name in languages %}
+                  <option value="{{ lang_code }}"
+                          {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                    {{ lang_name }}
+                  </option>
+                {% endfor %}
+              </select>
+            </div>
+            <input type="hidden" name="next" value="{{ request.path }}">
+          </form>
+        </div>
       </div>
     </div>
   </nav>

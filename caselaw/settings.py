@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 # Standard library
 import os
 from distutils.util import strtobool
+from django.utils.translation import gettext_lazy as _
 
 # Third-party
 import django_heroku
@@ -184,6 +185,12 @@ USE_TZ = True
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, "locale"),
 )
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    # Add other languages here
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

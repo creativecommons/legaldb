@@ -5,12 +5,11 @@
     <div class="columns">
       <div class="column is-one-third-tablet-only is-one-quarter-desktop">
         <a href="https://creativecommons.org" class="main-logo margin-bottom-bigger">
-          <span class="has-text-white"><svg
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 304 73">
-            <use href="#logomark"></use>
-          </svg></span>
+          <span class="has-text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 304 73">
+              <use href="#logomark"></use>
+            </svg>
+          </span>
         </a>
         <div>
           <address class="margin-bottom-normal">Creative Commons<br/>PO Box 1866, Mountain View CA 94042</address>
@@ -62,16 +61,14 @@
             </div>
             <div class="attribution margin-top-bigger">
               <p class="caption">
-                {% blocktrans with
-                    policy_url="https://creativecommons.org/policies#license"
-                    license_url="https://creativecommons.org/licenses/by/4.0/"
-                    icons_url="https://creativecommons.org/website-icons"
-                    fontawesome_url="https://fontawesome.com/" %}
-                    Except where otherwise <a href="{{ policy_url }}" target="_blank" rel="noopener">noted</a>, 
-                    content on this site is licensed under a 
-                    <a href="{{ license_url }}" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International license</a>.
-                    <a href="{{ icons_url }}" target="_blank" rel="noopener">Icons</a> by 
-                    <a href="{{ fontawesome_url }}" target="_blank" rel="noopener">Font Awesome</a>.
+                {% blocktrans %}
+                Except where otherwise
+                <a href="https://creativecommons.org/policies#license" target="_blank" rel="noopener">noted</a>,
+                content on this site is licensed under a
+                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International license</a>.
+                <a href="https://creativecommons.org/website-icons" target="_blank" rel="noopener">Icons</a>
+                by
+                <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>.
                 {% endblocktrans %}
               </p>
               <div class="margin-top-smaller">
