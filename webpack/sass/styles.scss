@@ -88,6 +88,11 @@ a, a:hover {
   .button.is-delete {
     margin-top: 0;
   }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 // Override link card styles
@@ -104,6 +109,10 @@ a, a:hover {
     &:hover.has-background-forest-green {
       background-color: $color-brighter-forest-green !important;
     }
+  }
+
+  @media (max-width: 786px) {
+    max-width: unset;
   }
 }
 
@@ -139,6 +148,17 @@ a, a:hover {
     float: right;
     max-width: 380px;
     margin-right: 1.9rem;
+    margin-left: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    &-card {
+      float: none;
+      width: 100%;
+      margin: 1rem 0 0 0;
+      max-width: unset;
+      padding: 0 2rem;
+    }
   }
 }
 
