@@ -2,6 +2,55 @@
 {% load static %}
 
 {% block body_content %}
+<style>
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .pagination-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pagination-link {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin: 0 2px;
+    background-color: #f8f9fa;
+    color: #555;
+    border: 2px solid orangered;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .pagination-link:hover {
+    background-color: orangered;
+    color: white;
+    border: 2px solid orangered;
+  }
+
+  .pagination-link.is-current {
+    background-color: orangered;
+    color: #fff;
+    border-radius: 15px;
+    border-color: orangered;
+  }
+
+  .pagination-link.is-rounded {
+    border-radius: 15px;
+  }
+  
+  .pagination-link:disabled {
+    pointer-events: none;
+    color: #ccc;
+    background-color: #f0f0f0;
+  }
+</style>
 <section class="hero case">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
@@ -45,10 +94,49 @@
       <table class="table is-bordered is-striped is-fullwidth">
         <thead>
           <tr>
-            <th>Country</th>
-            <th>Case name</th>
+            <th>
+              <a href="?sort=country&direction={% if current_sort == 'country' and direction == 'asc' %}desc{% else %}asc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
+                Country 
+                {% if current_sort == 'country' %}
+                  <span class="icon">
+                    {% if direction == 'asc' %}
+                      ↑
+                    {% else %}
+                      ↓
+                    {% endif %}
+                  </span>
+                {% endif %}
+              </a>
+            </th>
+            <th>
+              <a href="?sort=name&direction={% if current_sort == 'name' and direction == 'asc' %}desc{% else %}asc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
+                Case Name 
+                {% if current_sort == 'name' %}
+                  <span class="icon">
+                    {% if direction == 'asc' %}
+                      ↑
+                    {% else %}
+                      ↓
+                    {% endif %}
+                  </span>
+                {% endif %}
+              </a>
+            </th>
             <th>License</th>
-            <th>Year of resolution</th>
+            <th>
+              <a href="?sort=decision_year&direction={% if current_sort == 'decision_year' and direction == 'asc' %}desc{% else %}asc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
+                Year of Resolution 
+                {% if current_sort == 'decision_year' %}
+                  <span class="icon">
+                    {% if direction == 'asc' %}
+                      ↑
+                    {% else %}
+                      ↓
+                    {% endif %}
+                  </span>
+                {% endif %}
+              </a>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -68,6 +156,29 @@
         </tbody>
       </table>
     </div>
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+      <ul class="pagination-list">
+        {% if page_obj.has_previous %}
+          {% if page_obj.number > 1 %}
+            <li><a class="pagination-link is-rounded" href="?page=1&sort={{ current_sort }}&direction={{ direction }}&keywords={{ request.GET.keywords|urlencode }}">First</a></li>
+            <li><a class="pagination-link is-rounded" href="?page={{ page_obj.previous_page_number }}&sort={{ current_sort }}&direction={{ direction }}&keywords={{ request.GET.keywords|urlencode }}">Previous</a></li>
+          {% endif %}
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+          {% if num == page_obj.number %}
+            <li><a class="pagination-link is-current">{{ num }}</a></li>
+          {% else %}
+            <li><a class="pagination-link is-rounded" href="?page={{ num }}&sort={{ current_sort }}&direction={{ direction }}&keywords={{ request.GET.keywords|urlencode }}">{{ num }}</a></li>
+          {% endif %}
+        {% endfor %}
+        
+        {% if page_obj.has_next %}
+          <li><a class="pagination-link is-rounded" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}&keywords={{ request.GET.keywords|urlencode }}">Next</a></li>
+          <li><a class="pagination-link is-rounded" href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}&keywords={{ request.GET.keywords|urlencode }}">Last</a></li>
+        {% endif %}
+      </ul>
+    </nav>
   </div>
 </section>
 {% endblock %}
