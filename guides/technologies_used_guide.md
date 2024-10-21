@@ -14,11 +14,15 @@ Django is a python framework for building scalable applications. LegalDB uses Dj
 
 To learn more about Django, refer to the [Django Documentation](https://docs.djangoproject.com/en/5.1/)
 
-
 ## HTML and CSS
 LegalDB utilizes semantic HTML for their page, which means that HTML elements are used according to their intended purpose and this helps to improve accessibilty. As a beginner, the format of the HTML file might seem strange to you, that's because this project uses Django templates, which helps to combine both django and HTML for dynamic content rendering.  CSS is used for the styling and ensures responsiveness for all browsers. 
 
-### Lektor
-Lektor is a static Content Management System(CMS) that allows developers to create websites efficiently. In LegalDB, Lektor is used to generate static content. It runs offline and utilizes Python, making it a flexible option.
+## SCSS
+Referred to as css with superpowers, scss is a css extension that allows you to do much more like nesting styles, extending css styles, adding varaiables and mixins. All these features and more that come with scss helps to help your stylesheet maintainable, dry and readable.
 
-Learn more about Letkor on the offical [Lektor Documentation Page](https://www.getlektor.com/docs/what/)
+Read the [official sass documentation](https://sass-lang.com/documentation/)
+
+## Webpack
+Webpack is a bundler that takes different assets like JavaScript, CSS, and images and then compiles them into a single, optimized output file. This allows for a streamlined development process by handling dependencies and improving load times. With webpack, it is easier to mange large projects. In this project, webpack helps manage JavaScript and SCSS files, ensuring an optimized build.
+
+Learn more from the offical [webpack documentation](https://webpack.js.org/concepts/)
