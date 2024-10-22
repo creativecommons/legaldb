@@ -5,11 +5,11 @@
     <div class="hero-body has-text-centered">
       <p class="body-big">Thank you for your submission.<br/> It will be reviewed by Creative Commons staff, and you may be contacted for more information.</p>
       <br/>
-      <a href="{% url 'home' %}" class="button margin-normal">Return Home</a>
+      <a href="{% url 'home' %}" class="button margin-normal" aria-label="Return to Home page">Return Home</a>
       {% if "scholarship" in action %}
-        <a href="{% url 'scholarship_submit' %}" class="button button-scholarship margin-normal">Submit another article</a>
+        <a href="{% url 'scholarship_submit' %}" class="button button-scholarship margin-normal" aria-label="Submit another article">Submit another article</a>
       {% else %}
-        <a href="{% url 'case_submit' %}" class="button button-case margin-normal">Submit another case</a>
+        <a href="{% url 'case_submit' %}" class="button button-case margin-normal" aria-label="Submit another case">Submit another case</a>
       {% endif %}
     </div>
   </main>

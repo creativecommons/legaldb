@@ -14,7 +14,7 @@
       <form class="form scholarship" action="{% url 'scholarship_submit' %}" method="post">
       {% csrf_token %}
       {% if scho_form.non_field_errors %}
-        <div class="notification warning">
+        <div class="notification warning" role="alert" aria-live="assertive">
           <strong class="notification-container">{{ scho_form.non_field_errors }}</strong>
         </div>
       {% endif %}
@@ -36,7 +36,7 @@
 
         <div class="field">
           <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
-          <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox">
+          <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox"  aria-required="true">
             {% render_field scho_form.agreement %}
             I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
           </label>
@@ -44,7 +44,7 @@
         </div>
         <br/>
 
-        <h4 class="b-header">Article information</h4>
+        <h4 class="b-header" aria-label="Article information section">Article information</h4>
 
         <div class="field">
           <label class="has-text-weight-bold" for="{{ scho_form.title.id_for_label }}">Title of article</label>
@@ -106,7 +106,7 @@
         </div>
       {% endwith %}
 
-      <button type="submit" class="button scholarship">submit scholarship</button>
+      <button type="submit" class="button scholarship" aria-label="Submit scholarship form">submit scholarship</button>
     </form>
     </div>
   </div>
