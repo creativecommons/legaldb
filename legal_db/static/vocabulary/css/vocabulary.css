@@ -43,9 +43,9 @@ EX:
 /* typography */
 
 body {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 5% 3% 6% 6% 15% 30% 15% 6% 6% 3% 5%;
-    overflow-x: hidden;
+    overflow-x: hidden; */
 
     font-weight: 400;
     -moz-osx-font-smoothing: grayscale;
@@ -1210,14 +1210,14 @@ body > .attention.high-importance {
 
 /* global footer component */
 body > footer {
-    grid-column: 1 / 12;
+    /* grid-column: 1 / 12;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "logo nav nav nav"
     "contact subscribe subscribe donate"
     "contact license license donate";
-    gap: 40px;
+    gap: 40px; */
     padding: 40px var(--vocabulary-page-edges-space);
 
     font-family: 'Source Sans Pro';
