@@ -8,6 +8,16 @@ a, a:hover {
   color: $color-dark-slate-blue;
 }
 
+footer {
+  h2 {
+    color: white;
+  }
+
+  .button {
+    height: unset;
+  }
+}
+
 .breadcrumb {
   a, a:hover {
     color: $color-dark-slate-blue;
