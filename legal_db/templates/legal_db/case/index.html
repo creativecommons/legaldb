@@ -6,18 +6,20 @@
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
     <h1 class="hero-title title is-2">Cases</h1>
-    <div class="contribute-card">
-      <article class="card entry-post link no-border is-hidden-touch">
-        <a href="{% url 'case_submit' %}" class="has-background-tomato">
-          <span class="card-content has-bottom-link">
-            <h2 class="card-title">Contribute</h2>
-            <span class="content">Do you want to submit a legal dispute to the database?</span>
-            <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
-          </span>
-        </a>
-      </article>
+    <div class="case-holder">
+      <div class="contribute-card">
+        <article class="card entry-post link no-border">
+          <a href="{% url 'case_submit' %}" class="has-background-tomato">
+            <span class="card-content has-bottom-link">
+              <h2 class="card-title">Contribute</h2>
+              <span class="content">Do you want to submit a legal dispute to the database?</span>
+              <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
+            </span>
+          </a>
+        </article>
+      </div>
+      <p class="hero-description body-big">Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.</p>
     </div>
-    <p class="hero-description body-big">Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.</p>
   </div>
 </section>
 
