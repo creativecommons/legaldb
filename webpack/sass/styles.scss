@@ -128,7 +128,15 @@ a, a:hover {
 }
 
 .container>.navbar .navbar-brand {
-    margin-left: 0; // Reset logo margin
+  margin-left: 0; // Reset logo margin
+}
+
+.case-holder {
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: $space-normal;
+  }
 }
 
 .contribute { // Home page section
@@ -139,6 +147,20 @@ a, a:hover {
     float: right;
     max-width: 380px;
     margin-right: 1.9rem;
+
+    @media (max-width: 1023px) {
+      & {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      & {
+        float: none;
+        margin: 0 $space-bigger;
+        max-width: unset;
+      }
+    }
   }
 }
 
@@ -210,7 +232,6 @@ a, a:hover {
 }
 
 .form {
-
   &.case, &.scholarship {
     margin: $space-big $space-bigger;
 
@@ -292,8 +313,13 @@ a, a:hover {
   color: $color-dark-slate-blue;
   cursor: pointer;
   user-select: none;
-}
 
+  #tags-hide,
+  #tags-show {
+    white-space: nowrap;
+    gap: $space-smaller;
+  }
+}
 
 /* Vocabulary overrides */
 
