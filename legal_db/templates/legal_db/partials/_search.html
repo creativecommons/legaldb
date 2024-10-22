@@ -3,6 +3,7 @@
 <section class="columns is-gapless is-vcentered margin-top-big margin-bottom-small" aria-label="Search and Filters">
   <div class="column is-8">
     <div role="search" method="get" class="field has-addons" aria-label="Search form">
+    <div class="field has-addons">
       <div class="control has-icons-left search-input">
         <label for="{{ form.keywords.id_for_label }}" class="is-sr-only">Search: </label>
         {% render_field form.keywords|add_class:"input" placeholder="Search for..." %}
