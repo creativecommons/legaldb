@@ -9,10 +9,10 @@ Django is a python framework for building scalable applications. Legal DB uses D
 
 To learn more about Django, refer to the [Django Documentation | Django](https://docs.djangoproject.com/en/4.2/)
 
-## Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS)
+### Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS)
 Legal DB utilizes semantic HTML for their page, which means that HTML elements are used according to their intended purpose and this helps to improve accessibilty. As a beginner, the format of the HTML file might seem strange to you, that's because this project uses Django templates, which helps to combine both Django and HTML for dynamic content rendering.  CSS is used for the styling and ensures responsiveness for all browsers. 
 
-## Sassy Cascading Style Sheets (SCSS)
+### Sassy Cascading Style Sheets (SCSS)
 Referred to as CSS with superpowers, SCSS is a css extension that allows you to do much more like nesting styles, extending CSS styles, adding varaiables and mixins. All these features and more that come with SCSS helps to help your stylesheet maintainable, dry and readable.
 
 Read the [Sass: Documentation](https://sass-lang.com/documentation/) to learn more.
@@ -22,7 +22,7 @@ Creative Commons has their own internal design system, Vocabulary which helps al
 
 To learn more about Vocabulary, you can check out the [Vocabulary - Docs](https://vocabulary-docs.netlify.app/)
 
-## Webpack
+### Webpack
 Webpack is a bundler that takes different assets like JavaScript, CSS, and images and then compiles them into a single, optimized output file. This allows for a streamlined development process by handling dependencies and improving load times. With webpack, it is easier to mange large projects. In this project, webpack helps manage JavaScript and SCSS files, ensuring an optimized build.
 
 Learn more from the offical webpack documentation: [Concepts | webpack](https://webpack.js.org/concepts/)
