@@ -26,7 +26,7 @@ class HomeView(TemplateView):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
-    paginate_by = 10  # Number of cases per page
+    paginate_by = 5
 
     def get_queryset(self):
         """

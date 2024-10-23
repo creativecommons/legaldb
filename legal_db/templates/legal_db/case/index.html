@@ -2,31 +2,7 @@
 {% load static %}
 
 {% block body_content %}
-<style>
-  .pagination-link {
-    color: #333; 
-    background-color: #fff; 
-    border-color: #ddd; 
-  }
-  
-  .pagination-link:hover {
-    color: #fff; 
-    background-color: #333; 
-    border-color: #333; 
-  }
-  
-  .pagination-link.is-current {
-    color: #fff; 
-    background-color: #333; 
-    border-color: #333; 
-  }
-  
-  .pagination-link.is-current:hover {
-    color: #fff; 
-    background-color: #333; 
-    border-color: #333; 
-  }
-</style>
+
 <section class="hero case">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
@@ -53,16 +29,16 @@
 
       <div id="tags" aria-expanded="true">
         {% for tag in tags %}
-          <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
-                 class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
-            {{ tag.name }}
-            <input type="checkbox" class="tag__check" name="tags[]"
-                   id="tag-check-{{ forloop.counter }}"
-                   value="{{ tag.name }}"
-                   {% if tag.checked %} checked{% endif %}
-                   hidden>
-          </label>
-        {% endfor %}
+        <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
+               class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
+          {{ tag.name }}
+          <input type="checkbox" class="tag__check" name="tags[]"
+                 id="tag-check-{{ forloop.counter }}"
+                 value="{{ tag.name }}"
+                 {% if tag.checked %} checked{% endif %}
+                 hidden>
+        </label>
+      {% endfor %}
       </div>
     </form>
 
@@ -106,24 +82,24 @@
       </table>
     </div>
 
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <nav class="pagination  is-centered" role="navigation" aria-label="pagination">
       <ul class="pagination-list">
         {% if page_obj.has_previous %}
-          <li><a class="pagination-link" href="?page=1&sort={{ current_sort }}&direction={{ direction }}">&laquo; First</a></li>
-          <li><a class="pagination-link" href="?page={{ page_obj.previous_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Previous</a></li>
+          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page=1&sort={{ current_sort }}&direction={{ direction }}">&laquo; First</a></li>
+          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page={{ page_obj.previous_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Previous</a></li>
         {% endif %}
 
         {% for num in page_obj.paginator.page_range %}
           {% if num == page_obj.number %}
-            <li><a class="pagination-link is-current">{{ num }}</a></li>
+            <li><a class="pagination-link is-current button tag   margin-right-small margin-vertical-smaller ">{{ num }}</a></li>
           {% else %}
-            <li><a class="pagination-link" href="?page={{ num }}&sort={{ current_sort }}&direction={{ direction }}">{{ num }}</a></li>
+            <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller " href="?page={{ num }}&sort={{ current_sort }}&direction={{ direction }}">{{ num }}</a></li>
           {% endif %}
         {% endfor %}
 
         {% if page_obj.has_next %}
-          <li><a class="pagination-link" style="background-color: primary;" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a></li>
-          <li><a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}">Last &raquo;</a></li>
+          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller " style="background-color: primary;" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a></li>
+          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller " href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}">Last &raquo;</a></li>
         {% endif %}
       </ul>
     </nav>
