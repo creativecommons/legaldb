@@ -28,7 +28,7 @@
       {% include "legal_db/partials/_search.html" %}
 
       <div id="tags" aria-expanded="true">
-        {% for tag in tags %}
+      {% for tag in tags %}
         <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
                class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
           {{ tag.name }}
