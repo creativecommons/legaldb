@@ -112,9 +112,7 @@ class Case(LegalResource):
         ),
     )
     decision_year = models.PositiveSmallIntegerField(
-        blank=True,
-        null=True,
-        help_text=_("Year of case resolution.")
+        blank=True, null=True, help_text=_("Year of case resolution.")
     )
     is_pending = models.BooleanField(
         blank=True,
@@ -136,20 +134,11 @@ class Case(LegalResource):
 
 class Scholarship(LegalResource):
     title = models.CharField(max_length=255, blank=True, null=True)
-    publication_name = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True
-    )
-    publication_year = models.PositiveSmallIntegerField(
-        blank=True,
-        null=True
-    )
+    publication_name = models.CharField(max_length=255, blank=True, null=True)
+    publication_year = models.PositiveSmallIntegerField(blank=True, null=True)
     authors = models.CharField(max_length=255, blank=True, null=True)
     link = models.ForeignKey(
-        Link,
-        on_delete=models.CASCADE,
-        help_text=_("The link to the article.")
+        Link, on_delete=models.CASCADE, help_text=_("The link to the article.")
     )
 
     def __str__(self):

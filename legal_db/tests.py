@@ -3,8 +3,8 @@ from http import HTTPStatus
 
 # Third-party
 from django.test import TestCase
-from django.utils.translation import get_language
 from django.urls import reverse
+from django.utils.translation import get_language
 from django.utils.translation import gettext as _
 
 from .factories import CaseFactory, ScholarshipFactory
@@ -88,7 +88,9 @@ class CaseSubmitViewTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertEqual(response["Location"], f"/{get_language()}/submission-result/")
+        self.assertEqual(
+            response["Location"], f"/{get_language()}/submission-result/"
+        )
 
     def test_post_error(self):
         """
@@ -184,7 +186,9 @@ class ScholarshipSubmitViewTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertEqual(response["location"], f"/{get_language()}/submission-result/")
+        self.assertEqual(
+            response["location"], f"/{get_language()}/submission-result/"
+        )
 
     def test_post_error(self):
         """
