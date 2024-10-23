@@ -1,12 +1,13 @@
 {% extends 'legal_db/base.html' %}
+{% load i18n %}
 
 {% block body_content %}
   <main class="hero">
     <div class="hero-body has-text-centered">
       <h1 class="hero-title-big">404</h1>
-      <h2 class="b-header">Page Not Found!</h2>
-      <p class="margin-vertical-normal">The page you are looking for doesn't exist.</p>
-      <a href="{% url 'home' %}" class="button">Return Home</a>
+      <h2 class="b-header">{% trans "Page Not Found!" %}</h2>
+      <p class="margin-vertical-normal">{% trans "The page you are looking for doesn't exist." %}</p>
+      <a href="{% url 'home' %}" class="button">{% trans "Return Home" %}</a>
     </div>
   </main>
 {% endblock %}

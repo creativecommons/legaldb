@@ -1,24 +1,25 @@
+{% load i18n %}
 {% with current_path=request.resolver_match.url_name %}
 <nav class="breadcrumb caption bold" aria-label="breadcrumbs">
   <ul>
-    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
 
     {% if current_path == 'case_index' %}
-      <li class="is-active"><a>Cases</a></li>
+      <li class="is-active"><a>{% trans "Cases" %}</a></li>
 
     {% elif current_path == 'case_detail' %}
-      <li><a href="{% url 'case_index' %}">Cases</a></li>
-      <li class="is-active"><a>Case Detail</a></li>
+      <li><a href="{% url 'case_index' %}">{% trans "Cases" %}</a></li>
+      <li class="is-active"><a>{% trans "Case Detail" %}</a></li>
 
     {% elif current_path == 'scholarship_index' %}
-      <li class="is-active"><a>Scholarship</a></li>
+      <li class="is-active"><a>{% trans "Scholarship" %}</a></li>
 
     {% elif current_path == 'scholarship_detail' %}
-      <li><a href="{% url 'scholarship_index' %}">Scholarship</a></li>
-      <li class="is-active"><a>Scholarship Detail</a></li>
+      <li><a href="{% url 'scholarship_index' %}">{% trans "Scholarship" %}</a></li>
+      <li class="is-active"><a>{% trans "Scholarship Detail" %}</a></li>
 
     {% elif current_path == 'faq' %}
-      <li class="is-active"><a>FAQ</a></li>
+      <li class="is-active"><a>{% trans "FAQ" %}</a></li>
 
     {% endif %}
   </ul>
