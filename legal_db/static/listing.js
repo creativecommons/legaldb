@@ -21,3 +21,21 @@ tags.forEach(tag => {
         form.submit();
     });
 });
+
+let scrollToPagination = false;
+document.addEventListener('DOMContentLoaded', function() {
+  const paginationLinks = document.querySelectorAll('.pagination-link');
+
+  paginationLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      scrollToPagination = true;
+    });
+  });
+  
+  if (scrollToPagination) {
+    const paginationList = document.querySelector('.pagination-link');
+    if (paginationList) {
+      paginationList.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+});

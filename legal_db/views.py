@@ -1,5 +1,6 @@
 # Third-party
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
@@ -24,6 +25,7 @@ class HomeView(TemplateView):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
+    paginate_by = 10
 
     def get_queryset(self):
         """
@@ -33,6 +35,16 @@ class CaseListView(ListView):
         qs = Case.objects.filter(status=Case.Status.PUBLISHED).only(
             "country", "name", "license", "decision_year"
         )
+
+        # Sorting
+        sort_by = self.request.GET.get('sort', 'name')  # Default sorting by name
+        direction = self.request.GET.get('direction', 'asc')  # Default direction is ascending
+
+        # Apply sorting
+        if direction == 'desc':
+            qs = qs.order_by(f'-{sort_by}')
+        else:
+            qs = qs.order_by(sort_by)
 
         keywords = self.request.GET.get("keywords")
         if keywords:
@@ -53,7 +65,7 @@ class CaseListView(ListView):
         if tags:
             qs = qs.filter(tags__name__in=tags)
 
-        return qs.order_by("country", "name")
+        return qs
 
     def get_context_data(self, **kwargs):
         """
@@ -65,8 +77,15 @@ class CaseListView(ListView):
         for tag in Tag.objects.exclude(case=None).order_by("name"):
             checked = True if tag.name in selected_tags else False
             tags.append({"name": tag, "checked": checked})
+
+        # Get current sorting parameters
+        current_sort = self.request.GET.get('sort', 'name')  # Default sorting by name
+        direction = self.request.GET.get('direction', 'asc')  # Default direction is ascending
+
         context["tags"] = tags
         context["form"] = SearchForm(self.request.GET)
+        context["current_sort"] = current_sort
+        context["direction"] = direction
         return context
 
 
