@@ -1,4 +1,4 @@
-{% load static i18n %}
+{% load i18n static %}
 
 <footer class="main-footer">
   <div class="container">
@@ -61,14 +61,14 @@
             </div>
             <div class="attribution margin-top-bigger">
               <p class="caption">
-                {% blocktrans %}
-                Except where otherwise
-                <a href="https://creativecommons.org/policies#license" target="_blank" rel="noopener">noted</a>,
-                content on this site is licensed under a
-                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International license</a>.
-                <a href="https://creativecommons.org/website-icons" target="_blank" rel="noopener">Icons</a>
-                by
-                <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>.
+                {% blocktrans trimmed %}
+                  Except where otherwise
+                  <a href="https://creativecommons.org/policies#license" target="_blank" rel="noopener">noted</a>,
+                  content on this site is licensed under a
+                  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International license</a>.
+                  <a href="https://creativecommons.org/website-icons" target="_blank" rel="noopener">Icons</a>
+                  by
+                  <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>.
                 {% endblocktrans %}
               </p>
               <div class="margin-top-smaller">

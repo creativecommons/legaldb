@@ -1,5 +1,5 @@
 {% extends 'legal_db/base.html' %}
-{% load static i18n %}
+{% load i18n static %}
 
 {% block body_content %}
 <section class="hero case">
@@ -17,7 +17,11 @@
         </a>
       </article>
     </div>
-    <p class="hero-description body-big">{% trans "Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute." %}</p>
+    <p class="hero-description body-big">
+      {% blocktrans trimmed %}
+        Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.
+      {% endblocktrans %}
+    </p>
   </div>
 </section>
 

@@ -1,11 +1,13 @@
 {% extends 'legal_db/base.html' %}
-{% load widget_tweaks i18n %}
+{% load i18n widget_tweaks %}
 
 {% block body_content %}
 <section class="hero submit">
   <div class="container">
     <h1 class="hero-title title is-2">{% trans "Scholarship Submission" %}</h1>
-    <p class="hero-description body-normal">{% trans "Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database." %}&nbsp;&nbsp;<span class="required">*</span> {% trans "Required" %}.</p>
+    <p class="hero-description body-normal">
+      {% trans "Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database." %}&nbsp;&nbsp;<span class="required">*</span> {% trans "Required" %}.
+    </p>
   </div>
 </section>
 <section class="columns submit is-centered">
@@ -38,7 +40,7 @@
           <strong>{% trans "Agreement and Consent" %}</strong> <span class="required">*</span><br/>
           <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox">
             {% render_field scho_form.agreement %}
-            {% blocktrans with privacy_url="https://creativecommons.org/privacy/" %}
+            {% blocktrans trimmed with privacy_url="https://creativecommons.org/privacy/" %}
               I have read and agree to the <a href="{{ privacy_url }}" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
             {% endblocktrans %}
           </label>

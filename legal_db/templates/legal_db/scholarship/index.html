@@ -1,5 +1,5 @@
 {% extends 'legal_db/base.html' %}
-{% load static i18n %}
+{% load i18n static %}
 
 {% block body_content %}
 <section class="hero scholarship">
@@ -17,7 +17,11 @@
         </a>
       </article>
     </div>
-    <p class="hero-description body-big">{% trans "Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details." %}</p>
+    <p class="hero-description body-big">
+      {% blocktrans  trimmed %}
+        Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.
+      {% endblocktrans  %}
+    </p>
   </div>
 </section>
 
@@ -64,7 +68,11 @@
             </td>
           </tr>
         {% empty %}
-          <tr><td class="has-text-centered" colspan="4">{% trans "No scholarships are available. Try different filters or search terms." %}</td></tr>
+          <tr>
+            <td class="has-text-centered" colspan="4">
+              {% trans "No scholarships are available. Try different filters or search terms." %}
+            </td>
+          </tr>
         {% endfor %}
         </tbody>
       </table>

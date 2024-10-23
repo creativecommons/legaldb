@@ -8,7 +8,7 @@
       <p class="hero-description body-bigger column is-9">
         {% url 'case_index' as case_index_url %}
         {% url 'scholarship_index' as scholarship_index_url %}
-        {% blocktrans with case_url=case_index_url scholarship_url=scholarship_index_url %}
+        {% blocktrans trimmed with case_url=case_index_url scholarship_url=scholarship_index_url %}
           This database includes <a href="{{ case_index_url }}" class="has-text-weight-bold">case law</a> and <a href="{{ scholarship_index_url }}" class="has-text-weight-bold">legal scholarship</a> that relates to Creative Commons legal tools.<br/>
           Please note that the database is not comprehensive, and CC does not necessarily endorse the views of the courts or scholars whose decisions and writings are referenced. The content provided is purely informational, designed for those seeking to better understand the legal ecosystem in which the CC legal tools operate.
         {% endblocktrans %}
@@ -67,17 +67,21 @@
       <div class="columns is-paddingless">
         <div class="column is-half">
           <h2 class="title is-3">{% trans "Contribute" %}</h2>
-          <p class="padding-vertical-normal">{% trans "The information presented here has been contributed by many dedicated members of the CC Global Network and CC staff. You can contribute too using our forms linked to on this page." %}</p>
+          <p class="padding-vertical-normal">
+            {% blocktrans trimmed %}
+              The information presented here has been contributed by many dedicated members of the CC Global Network and CC staff. You can contribute too using our forms linked to on this page.
+            {% endblocktrans %}
+          </p>
           <a href="{% url 'case_submit' %}" class="button case small margin-right-bigger margin-bottom-normal">{% trans "Submit a case" %}</a>
           <a href="{% url 'scholarship_submit' %}" class="button scholarship small">{% trans "Submit an article" %}</a>
         </div>
         <div class="column is-half">
           <article class="card entry-post link">
             <a href="{% url 'faq' %}">
-              {% blocktrans %}
-              <span class="card-eyebrow">Check the</span>
-              <h2 class="card-title">Frequently asked questions</h2>
-              {% endblocktrans %}            
+              {% blocktrans trimmed %}
+                <span class="card-eyebrow">Check the</span>
+                <h2 class="card-title">Frequently asked questions</h2>
+              {% endblocktrans %}
             </a>
           </article>
         </div>
