@@ -43,8 +43,8 @@ EX:
 /* typography */
 
 body {
-    display: grid;
-    grid-template-columns: 5% 3% 6% 6% 15% 30% 15% 6% 6% 3% 5%;
+    /* display: grid;
+    grid-template-columns: 5% 3% 6% 6% 15% 30% 15% 6% 6% 3% 5%; */
     overflow-x: hidden;
 
     font-weight: 400;
@@ -1228,10 +1228,13 @@ body > footer {
 }
 
 body > footer h2 {
+    margin: revert;
+
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
     font-size: 1.25em;
+    color:white;
 }
 
 body > footer a {
@@ -1241,6 +1244,7 @@ body > footer a {
 
 body > footer p {
     line-height: 1.5;
+    margin: revert;
 }
 
 /* needs to be moved to be broader in general specificity scope */
@@ -1365,10 +1369,15 @@ body > footer .subscribe form input {
 body > footer .subscribe form input.input {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding: .5em;
     width: 100%;
+   
 }
-
+body > footer .subscribe form input::placeholder{
+    color:rgb(118, 118, 118);
+}
 body > footer .subscribe form input.input:focus {
     color: white;
 }
@@ -1376,6 +1385,7 @@ body > footer .subscribe form input.input:focus {
 body > footer .subscribe form input.button {
     justify-content: center;
     padding: 1.1em;
+    height:0;
 
     cursor: pointer;
     font-family: "Roboto Condensed", sans-serif;
@@ -1387,6 +1397,8 @@ body > footer .subscribe form input.button {
     white-space: nowrap;
     background-color: rgb(118, 118, 118);
     border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     color: rgb(255, 255, 255);
