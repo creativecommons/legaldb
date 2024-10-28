@@ -68,6 +68,40 @@
         </tbody>
       </table>
     </div>
+
+    
+<!-- Pagination Controls -->
+{% if is_paginated %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page=1" class="page-link">1</a>
+        {% if page_obj.number > 3 %}
+            <span class="ellipsis">...</span>
+        {% endif %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">«</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+        {% if num == page_obj.number %}
+            <span class="current-page">{{ num }}</span>
+        {% elif num == 1 or num == page_obj.paginator.num_pages %}
+            <!-- Skip rendering the first and last page here; they are rendered separately -->
+        {% elif num >= page_obj.number|add:'-2' and num <= page_obj.number|add:'2' %}
+            <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">»</a>
+        {% if page_obj.number < page_obj.paginator.num_pages|add:'-2' %}
+            <span class="ellipsis">...</span>
+        {% endif %}
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">{{ page_obj.paginator.num_pages }}</a>
+    {% endif %}
+</div>
+{% endif %}
+
+
   </div>
 </section>
 {% endblock %}
