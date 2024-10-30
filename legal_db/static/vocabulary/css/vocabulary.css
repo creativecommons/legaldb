@@ -1228,12 +1228,13 @@ body > footer {
 }
 
 body > footer h2 {
-    margin: revert;
+    margin: revert; /* Reverting <h2> margin to prevent local styles from affecting footer design */
 
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
     font-size: 1.25em;
+    text-transform: none;  
     color:white;
 }
 
@@ -1244,7 +1245,7 @@ body > footer a {
 
 body > footer p {
     line-height: 1.5;
-    margin: revert;
+    margin: revert;  /* Reverting <p> margin to prevent local styles from affecting footer design */
 }
 
 /* needs to be moved to be broader in general specificity scope */
