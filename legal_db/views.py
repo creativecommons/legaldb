@@ -150,6 +150,8 @@ def case_submit_view(request):
             for link in links:
                 case.links.add(link)
 
+            # TODO: Check if this message requires translation
+            # If so, check also the get_request_message function
             messages.success(request, "case created")
             return redirect("submission_result")
     else:

@@ -1,23 +1,64 @@
-{% load static %}
+{% load i18n static %}
 
-<header class="container">
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <a class="has-text-black" href="{% url 'home' %}">
-        <img src="{% static 'logo.svg' %}" alt="CC legal database logo">
-      </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="{% url 'case_index' %}">Cases</a>
-        <a class="navbar-item" href="{% url 'scholarship_index' %}">Scholarship</a>
-        <a class="navbar-item" href="{% url 'faq' %}">FAQ</a>
-      </div>
-    </div>
+<header>
+  <div class="masthead">
+    <h1><a class="identity-logo product" href="/">Legal Database</a></h1>
+      <button class="expand-menu">Menu</button>
+      <nav class="primary-menu">
+          <ul>
+              <li><a href="{% url 'case_index' %}">Case</a></li>
+              <li><a href="{% url 'scholarship_index' %}">Scholarship</a></li>
+              <li><a href="{% url 'faq' %}">FAQ</a></li>
+          </ul>
+      </nav>
+
+      <nav class="ancillary-menu">
+          <ul>
+              <!-- uncomment below line, if translation functionality is present on site -->
+              <!-- <li><button class="locale icon-attach fa-globe">English</button></li> -->
+              <!-- uncomment below line, if search functionality is present on site -->
+              <!-- <li><a class="search icon-attach fa-search" href="#">Search</a></li> -->
+              <li><a class="donate icon-attach fa-heart" href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&amp;c_src2=top-of-page-banner" target="_blank">Donate</a></li>
+              <li><button class="explore">Explore CC</button></li>
+          </ul>
+      </nav>
+  </div>
+
+
+
+  <div class="explore-panel">
+
+  <!-- (optional main CC logo, p, link on non-home site back to main site) -->
+  <aside>
+      <a class="identity-logo" href="https://creativecommons.org">Creative Commons</a>
+      <h2>Our Work Relies On You!</h2>
+      <p>Help us keep the internet free and open.</p>
+  </aside>
+
+  <nav class="explore-menu">
+      <ul>
+          <li>
+              <a href="https://network.creativecommons.org/" target="_blank">Global Network</a>
+              <p>Join a  global community working to strengthen the Commons</p>
+          </li>
+          <li>
+              <a href="https://certificate.creativecommons.org/" target="_blank">Certificate</a>
+              <p>Become an expert in creating and engaging with openly licensed materials</p>
+          </li>
+          <li>
+              <a href="/choose" target="_blank">Chooser</a>
+              <p>Get help choosing the appropriate license for your work</p>
+          </li>
+          <li>
+              <a href="https://search.creativecommons.org/" target="_blank">Search Portal</a>
+              <p>Find engines to search openly licensed material for creative and educational reuse</p>
+          </li>
+          <li>
+              <a href="https://opensource.creativecommons.org/" target="_blank">Open Source</a>
+              <p>Help us build products that maximize creativity and innovation</p>
+          </li>
+
+      </ul>
   </nav>
+  </div>
 </header>

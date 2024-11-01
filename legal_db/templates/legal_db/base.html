@@ -1,20 +1,22 @@
 {% load compress %}
-{% load static %}
+{% load i18n static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta name="author" content="Creative Commons"/>
-    <meta name="description" content="This database contains case law and legal scholarship about CC licenses and the issues that relate to their enforceability and interpretation."/>
+    <meta name="description" content="{% trans 'This database contains case law and legal scholarship about CC licenses and the issues that relate to their enforceability and interpretation.' %}"/>
+    <!-- TODO: Decide whether the keywords in the meta tag need to be translated -->
     <meta name="keywords" content="Creative Commons, legal database, case law, CC licenses, legal scholarship, enforceability, legal tools, open access, intellectual property"/>
-    <title>CC Legal Database</title>
+    <title>{% trans "CC Legal Database" %}</title>
     <link rel="icon" href="{% static 'favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static 'webpack_files/css/index.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'vocabulary/css/vocabulary.css' %}" type="text/css" media="all">
   </head>
   <body>
+    <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
     {% include 'legal_db/partials/_header.html' %}
     {% block body_content %}
       {% if msg %}<p><strong>{{ msg }}</strong></p>{% endif %}

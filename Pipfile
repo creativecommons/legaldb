@@ -10,6 +10,7 @@ flake8 = "*"
 isort = "*"
 
 [packages]
+Babel = "*"
 Django = ">=4.2.16,<4.3"
 certifi = ">=2023.7.22"  # Ensure dependency is secure
 django-countries = "*"
@@ -21,7 +22,9 @@ django-taggit = "4.0.0"  # https://github.com/jazzband/django-taggit/issues/875
 django-widget-tweaks = "*"
 django_compressor = "*"
 gunicorn = "*"
+polib = "*"
 psycopg2 = "*"
+transifex-python = "*"
 urllib3 = ">=2.2.2"  # Ensure dependency is secure
 whitenoise = "*"
 
