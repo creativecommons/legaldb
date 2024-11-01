@@ -158,10 +158,10 @@
 
 /* establish svg sprite icon defaults */
 .icon {
-    /* display: inline-block; */
+    display: inline-block;
     /* min-width: 30px;
     min-height: 30px; */
-    /* height: 1em;
+    height: 1em;
     width: 1em;
 
     font-size: var(--icon-sprite-size);
@@ -173,7 +173,7 @@
     mask-image: var(--icon-sprite);
 
     -webkit-mask-size: contain;
-    mask-size: contain; */
+    mask-size: contain;
 }
 
 /* customize a specific sprite via matching class on <span>
