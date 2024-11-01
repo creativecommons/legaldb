@@ -1,5 +1,5 @@
 {% extends 'legal_db/base.html' %}
-{% load static %}
+{% load i18n static %}
 
 {% block body_content %}
 <section class="hero scholarship">
@@ -20,6 +20,23 @@
       </div>
       <p class="hero-description body-big">Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.</p>
     </div>
+    <h1 class="hero-title title is-2">{% trans "Scholarship" %}</h1>
+    <div class="contribute-card">
+      <article class="card entry-post link no-border is-hidden-touch">
+        <a href="{% url 'scholarship_submit' %}" class="has-background-forest-green">
+          <span class="card-content has-bottom-link">
+            <h2 class="card-title">{% trans "Contribute" %}</h2>
+            <span class="content">{% trans "Do you want to submit a scholarly article to the database?" %}</span>
+            <strong class="link-arrow">{% trans "Submit an article" %} <i class="icon chevron-right"></i></strong>
+          </span>
+        </a>
+      </article>
+    </div>
+    <p class="hero-description body-big">
+      {% blocktrans  trimmed %}
+        Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.
+      {% endblocktrans  %}
+    </p>
   </div>
 </section>
 
@@ -47,10 +64,11 @@
       <table class="table is-bordered is-striped is-fullwidth">
         <thead>
           <tr>
-            <th>Year of publication</th>
-            <th>Title</th>
-            <th>Author(s)</th>
-            <th>License</th>
+            <th>{% trans "Year of publication" %}</th>
+            <th>{% trans "Title" %}</th>
+            {# TODO: Revise pluralization handling for "Author(s)" #}
+            <th>{% trans "Author(s)" %}</th>
+            <th>{% trans "License" %}</th>
           </tr>
         </thead>
         <tbody>
@@ -60,12 +78,16 @@
             <td><a href="{% url 'scholarship_detail' scho.id %}" class="has-text-dark-slate-blue">{{ scho.title }}</a></td>
             <td>{{ scho.authors }}</td>
             <td class="is-narrow">
-              {% if not scho.license %} <span class="has-text-grey">Unknown</span>
+              {% if not scho.license %} <span class="has-text-grey">{% trans "Unknown" %}</span>
               {% else %} {{ scho.license }} {% endif %}
             </td>
           </tr>
         {% empty %}
-          <tr><td class="has-text-centered" colspan="4">No scholarships are available. Try different filters or search terms.</td></tr>
+          <tr>
+            <td class="has-text-centered" colspan="4">
+              {% trans "No scholarships are available. Try different filters or search terms." %}
+            </td>
+          </tr>
         {% endfor %}
         </tbody>
       </table>
