@@ -43,10 +43,6 @@ EX:
 /* typography */
 
 body {
-    display: grid;
-    grid-template-columns: 5% 3% 6% 6% 15% 30% 15% 6% 6% 3% 5%;
-    overflow-x: hidden;
-
     font-weight: 400;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
