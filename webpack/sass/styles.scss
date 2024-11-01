@@ -326,3 +326,29 @@ a, a:hover {
 .navbar .navbar-burger {
   height: 40px;
 }
+
+footer h2 , footer p{
+  color:white;
+  margin:revert;
+  text-transform: none;
+}
+footer .button{
+  height: 0;
+  border-radius: 0px;
+}
+footer .input{
+  border-radius: 0px;
+}
+.icon {
+  display: inline-block !important; // or whatever display property you need
+  height: auto !important; // Reset height
+  width: auto !important; // Reset width
+  font-size: inherit !important; // Reset font size
+  background-color: transparent !important; // Reset background color
+  -webkit-mask-repeat: no-repeat !important; // Reset mask repeat
+  mask-repeat: no-repeat !important; // Reset mask repeat
+  -webkit-mask-image: none !important; // Remove mask image
+  mask-image: none !important; // Remove mask image
+  -webkit-mask-size: auto !important; // Reset mask size
+  mask-size: auto !important; // Reset mask size
+}
