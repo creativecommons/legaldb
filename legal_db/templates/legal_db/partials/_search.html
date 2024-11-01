@@ -1,23 +1,24 @@
-{% load widget_tweaks %}
+{% load i18n widget_tweaks %}
 
 <section class="columns is-gapless is-vcentered margin-top-big margin-bottom-small">
   <div class="column is-8">
-    <div role="search" method="get" class="field has-addons">
+    <div class="field has-addons">
       <div class="control has-icons-left search-input">
-        <label for="{{ form.keywords.id_for_label }}" class="is-sr-only">Search: </label>
-        {% render_field form.keywords|add_class:"input" placeholder="Search for..." %}
+        <label for="{{ form.keywords.id_for_label }}" class="is-sr-only">{% trans "Search:" %} </label>
+          {% trans "Search for..." as placeholder_text %}
+          {% render_field form.keywords|add_class:"input" placeholder=placeholder_text %}
         <span class="icon is-left"><i class="icon search"></i></span>
       </div>
       <div class="control is-4">
-        <button type="submit" class="button small">Search</button>
+        <button type="submit" class="button small">{% trans "Search" %}</button>
       </div>
     </div>
     {{ form.keywords.errors }}
   </div>
   <div class="column">
     <strong id="tags-filter" class="tags-filter margin-left-normal">
-      <span id="tags-hide">Hide topic filters <i class="icon chevron-up"></i></span>
-      <span id="tags-show" class="is-hidden">Show topic filters <i class="icon chevron-down"></i></span>
+      <span id="tags-hide">{% trans "Hide topic filters" %} <i class="icon chevron-up"></i></span>
+      <span id="tags-show" class="is-hidden">{% trans "Show topic filters" %} <i class="icon chevron-down"></i></span>
     </strong>
   </div>
 </section>
