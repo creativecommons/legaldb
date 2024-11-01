@@ -1,4 +1,5 @@
 {% extends 'legal_db/base.html' %}
+{% load i18n %}
 
 {% block body_content %}
 <section class="hero case">
@@ -12,23 +13,24 @@
     <div class="columns">
       <aside class="column is-one-third">
         <div class="margin-bottom-bigger">
-          <h4 class="b-header margin-bottom-small">Country</h4>
+          <h4 class="b-header margin-bottom-small">{% trans "Country" %}</h4>
           <p>{{ case.country.name }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header margin-bottom-small">Court(s)</h4>
+          {# TODO: Revise pluralization handling for "Court(s)" #}
+          <h4 class="b-header margin-bottom-small">{% trans "Court(s)" %}</h4>
           <p>{{ case.courts }}</p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header margin-bottom-small">Year of resolution</h4>
-          <p>{{ case.decision_year|default:'<span class="has-text-grey">Unknown</span>' }}
+          <h4 class="b-header margin-bottom-small">{% trans "Year of resolution" %}</h4>
+          <p>{{ case.decision_year|default:'<span class="has-text-grey">{% trans "Unknown" %}</span>' }}
           </p>
         </div>
 
         <div class="margin-bottom-bigger">
-          <h4 class="b-header margin-bottom-small">Relevant materials</h4>
+          <h4 class="b-header margin-bottom-small">{% trans "Relevant materials" %}</h4>
           <ul class="links-list">
           {% for link in case.link_list %}
             <li class="margin-vertical-small">
@@ -44,10 +46,10 @@
         </div>
       </aside>
       <article class="column is-two-thirds">
-        <h3 class="b-header margin-bottom-small">Background information</h3>
+        <h3 class="b-header margin-bottom-small">{% trans "Background information" %}</h3>
         <p>{{ case.background }}</p>
         <br/>
-        <h3 class="b-header margin-bottom-small">Case summary</h3>
+        <h3 class="b-header margin-bottom-small">{% trans "Case summary" %}</h3>
         <p>{{ case.summary }}</p>
         <hr/>
         {% for tag in case.tags %}
