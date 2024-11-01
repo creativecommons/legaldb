@@ -4,6 +4,8 @@ from http import HTTPStatus
 # Third-party
 from django.test import TestCase
 from django.urls import reverse
+from django.utils.translation import get_language
+from django.utils.translation import gettext as _
 
 from .factories import CaseFactory, ScholarshipFactory
 from .models import LegalResource
@@ -18,8 +20,8 @@ class CaseListViewTests(TestCase):
         loads.
         """
         response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "No cases are available.")
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertContains(response, _("No cases are available."))
 
     def test_show_only_published(self):
         """
@@ -30,7 +32,7 @@ class CaseListViewTests(TestCase):
         CaseFactory.create_batch(2, status=LegalResource.Status.PUBLISHED)
 
         response = self.client.get(self.url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertEqual(len(response.context["cases"]), 2)
         for row in response.context["cases"]:
             self.assertEqual(row.status, LegalResource.Status.PUBLISHED)
@@ -64,7 +66,7 @@ class CaseSubmitViewTests(TestCase):
         """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, HTTPStatus.OK)
-        self.assertContains(response, "Case Submission")
+        self.assertContains(response, _("Case Submission"))
 
     def test_post_success(self):
         """
@@ -86,7 +88,9 @@ class CaseSubmitViewTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertEqual(response["Location"], "/submission-result/")
+        self.assertEqual(
+            response["Location"], f"/{get_language()}/submission-result/"
+        )
 
     def test_post_error(self):
         """
@@ -105,7 +109,7 @@ class CaseSubmitViewTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)
-        self.assertContains(response, "This field is required")
+        self.assertContains(response, _("This field is required"))
 
 
 class ScholarshipListViewTests(TestCase):
@@ -118,7 +122,7 @@ class ScholarshipListViewTests(TestCase):
         """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, HTTPStatus.OK)
-        self.assertContains(response, "No scholarships are available.")
+        self.assertContains(response, _("No scholarships are available."))
 
     def test_show_only_published(self):
         """
@@ -165,7 +169,7 @@ class ScholarshipSubmitViewTests(TestCase):
         """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, HTTPStatus.OK)
-        self.assertContains(response, "Scholarship Submission")
+        self.assertContains(response, _("Scholarship Submission"))
 
     def test_post_success(self):
         """
@@ -182,7 +186,9 @@ class ScholarshipSubmitViewTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertEqual(response["location"], "/submission-result/")
+        self.assertEqual(
+            response["location"], f"/{get_language()}/submission-result/"
+        )
 
     def test_post_error(self):
         """
@@ -197,7 +203,7 @@ class ScholarshipSubmitViewTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)
-        self.assertContains(response, "This field is required")
+        self.assertContains(response, _("This field is required"))
 
 
 class FaqViewTests(TestCase):

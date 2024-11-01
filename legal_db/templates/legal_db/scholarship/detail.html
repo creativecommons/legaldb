@@ -1,4 +1,5 @@
 {% extends 'legal_db/base.html' %}
+{% load i18n %}
 
 {% block body_content %}
 <div class="hero scholarship">
@@ -12,29 +13,29 @@
     <div class="columns">
       <aside class="column is-one-third">
           <div class="margin-bottom-bigger">
-            <h4 class="b-header margin-bottom-small">License on article</h4>
-            {% if not scholarship.license %} <p class="has-text-grey">Unknown</p>
+            <h4 class="b-header margin-bottom-small">{% trans "License on article" %}</h4>
+            {% if not scholarship.license %} <p class="has-text-grey">{% trans "Unknown" %}</p>
             {% else %} <p>{{ scholarship.license }}</p> {% endif %}
           </div>
 
           <div class="margin-bottom-bigger">
-            <h4 class="b-header margin-bottom-small">Name of publication</h4>
+            <h4 class="b-header margin-bottom-small">{% trans "Name of publication" %}</h4>
             <p>{{ scholarship.publication_name }}</p>
           </div>
 
           <div class="margin-bottom-bigger">
-            <h4 class="b-header margin-bottom-small">Year of publication</h4>
+            <h4 class="b-header margin-bottom-small">{% trans "Year of publication" %}</h4>
             <p>{{ scholarship.publication_year }}</p>
           </div>
 
           <div class="margin-bottom-bigger">
-            <h4 class="b-header margin-bottom-small">Link</h4>
+            <h4 class="b-header margin-bottom-small">{% trans "Link" %}</h4>
             {% if scholarship.link.label %} <b>{{ scholarship.link.label }}</b>: {% endif %}
             <a href="{{ scholarship.link.url }}" class="has-text-dark-slate-blue">{{ scholarship.link.title }}</a>
           </div>
       </aside>
       <article class="column is-two-thirds">
-        <h3 class="b-header margin-bottom-small">Summary</h3>
+        <h3 class="b-header margin-bottom-small">{% trans "Summary" %}</h3>
         <p>{{ scholarship.summary }}</p>
         <hr/>
         {% for tag in scholarship.tags %}
