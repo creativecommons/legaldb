@@ -1,5 +1,5 @@
 {% extends 'legal_db/base.html' %}
-{% load static %}
+{% load i18n static %}
 
 {% block body_content %}
 <style>
@@ -54,19 +54,25 @@
 <section class="hero case">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
-    <h1 class="hero-title title is-2">Cases</h1>
-    <div class="contribute-card">
-      <article class="card entry-post link no-border is-hidden-touch">
-        <a href="{% url 'case_submit' %}" class="has-background-tomato">
-          <span class="card-content has-bottom-link">
-            <h2 class="card-title">Contribute</h2>
-            <span class="content">Do you want to submit a legal dispute to the database?</span>
-            <strong class="link-arrow">Submit a case <i class="icon chevron-right"></i></strong>
-          </span>
-        </a>
-      </article>
+    <h1 class="hero-title title is-2">{% trans "Cases" %}</h1>
+    <div class="case-holder">
+      <div class="contribute-card">
+        <article class="card entry-post link no-border">
+          <a href="{% url 'case_submit' %}" class="has-background-tomato">
+            <span class="card-content has-bottom-link">
+              <h2 class="card-title">{% trans "Contribute" %}</h2>
+              <span class="content">{% trans "Do you want to submit a legal dispute to the database?" %}</span>
+              <strong class="link-arrow">{% trans "Submit a case" %} <i class="icon chevron-right"></i></strong>
+            </span>
+          </a>
+        </article>
+      </div>
+      <p class="hero-description body-big">
+        {% blocktrans trimmed %}
+          Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.
+        {% endblocktrans %}
+      </p>
     </div>
-    <p class="hero-description body-big">Here you will find information on litigation that involves or directly affects Creative Commons legal tools. Click on the link to each case name for more details on the dispute.</p>
   </div>
 </section>
 
@@ -96,7 +102,7 @@
           <tr>
             <th>
               <a href="?sort=country&direction={% if current_sort == 'country' and direction == 'asc' %}desc{% else %}asc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
-                Country 
+                {% trans "Country" %} 
                 {% if current_sort == 'country' %}
                   <span class="icon">
                     {% if direction == 'asc' %}
@@ -110,7 +116,7 @@
             </th>
             <th>
               <a href="?sort=name&direction={% if current_sort == 'name' and direction == 'asc' %}desc{% else %}asc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
-                Case Name 
+                {% trans "Case name" %} 
                 {% if current_sort == 'name' %}
                   <span class="icon">
                     {% if direction == 'asc' %}
@@ -122,10 +128,10 @@
                 {% endif %}
               </a>
             </th>
-            <th>License</th>
+            <th>{% trans "License" %}</th>
             <th>
               <a href="?sort=decision_year&direction={% if current_sort == 'decision_year' and direction == 'asc' %}desc{% else %}asc{% endif %}{% if request.GET.keywords %}&keywords={{ request.GET.keywords }}{% endif %}">
-                Year of Resolution 
+                {% trans "Year of resolution" %} 
                 {% if current_sort == 'decision_year' %}
                   <span class="icon">
                     {% if direction == 'asc' %}
@@ -145,13 +151,13 @@
             <td>{{ case.country.name }}</td>
             <td><a href="{% url 'case_detail' case.id %}" class="has-text-dark-slate-blue">{{ case.name }}</a> </td>
             <td class="is-narrow">
-              {% if not case.license %} <span class="has-text-grey">Unknown</span>
+              {% if not case.license %} <span class="has-text-grey">{% trans "Unknown" %}</span>
               {% else %} {{ case.license }} {% endif %}
             </td>
             <td class="number-cell">{{ case.decision_year|default:"" }}</td>
           </tr>
         {% empty %}
-          <tr><td class="has-text-centered" colspan="4">No cases are available. Try different filters or search terms.</td></tr>
+          <tr><td class="has-text-centered" colspan="4">{% trans "No cases are available. Try different filters or search terms." %}</td></tr>
         {% endfor %}
         </tbody>
       </table>

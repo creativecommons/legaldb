@@ -169,6 +169,8 @@ def case_submit_view(request):
             for link in links:
                 case.links.add(link)
 
+            # TODO: Check if this message requires translation
+            # If so, check also the get_request_message function
             messages.success(request, "case created")
             return redirect("submission_result")
     else:
@@ -223,10 +225,15 @@ def result_view(request):
 
 
 def get_request_message(request):
-    storage = messages.get_messages(request)
-    for list in storage:
-        if ("scholarship" in list.message) or ("case" in list.message):
-            return list.message
+    messages_list = messages.get_messages(request)
+    return next(
+        (
+            msg.message
+            for msg in messages_list
+            if "scholarship" in msg.message or "case" in msg.message
+        ),
+        None,
+    )
 
 
 def build_filters(attributes, keywords):
