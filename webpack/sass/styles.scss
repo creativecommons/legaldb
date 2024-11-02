@@ -326,3 +326,52 @@ a, a:hover {
 .navbar .navbar-burger {
   height: 40px;
 }
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+
+  &-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-link {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin: 0 2px;
+    background-color: white;
+    color: $color-dark-gray;
+    border: 2px solid $color-tomato;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: $color-tomato;
+      color: white;
+      border: 2px solid $color-tomato;
+    }
+
+    &.is-current {
+      background-color: $color-tomato;
+      color: white;
+      border-radius: 15px;
+      border-color: $color-tomato;
+    }
+
+    &.is-rounded {
+      border-radius: 15px;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      color: #ccc;
+      background-color: #f0f0f0;
+    }
+  }
+}

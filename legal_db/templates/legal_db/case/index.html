@@ -2,55 +2,6 @@
 {% load i18n static %}
 
 {% block body_content %}
-<style>
-  .pagination {
-    display: flex;
-    justify-content: center;
-    padding: 8px 0;
-  }
-
-  .pagination-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .pagination-link {
-    font-size: 12px;
-    padding: 4px 8px;
-    margin: 0 2px;
-    background-color: #f8f9fa;
-    color: #555;
-    border: 2px solid orangered;
-    border-radius: 3px;
-    text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
-  }
-
-  .pagination-link:hover {
-    background-color: orangered;
-    color: white;
-    border: 2px solid orangered;
-  }
-
-  .pagination-link.is-current {
-    background-color: orangered;
-    color: #fff;
-    border-radius: 15px;
-    border-color: orangered;
-  }
-
-  .pagination-link.is-rounded {
-    border-radius: 15px;
-  }
-  
-  .pagination-link:disabled {
-    pointer-events: none;
-    color: #ccc;
-    background-color: #f0f0f0;
-  }
-</style>
 <section class="hero case">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
