@@ -340,10 +340,6 @@ footer .input{
   border-radius: 0px;
 }
 .icon {
-  display: inline-block !important; // or whatever display property you need
-  height: auto !important; // Reset height
-  width: auto !important; // Reset width
-  font-size: inherit !important; // Reset font size
   background-color: transparent !important; // Reset background color
   -webkit-mask-repeat: no-repeat !important; // Reset mask repeat
   mask-repeat: no-repeat !important; // Reset mask repeat
