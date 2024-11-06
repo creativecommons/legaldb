@@ -10,6 +10,7 @@ around the world in a Django based website.
 
 **[legaldb.creativecommons.org](https://legaldb.creativecommons.org/)**
 
+
 ## Code of conduct
 
 [`CODE_OF_CONDUCT.md`][org-coc]:
@@ -47,7 +48,9 @@ Please read the comments in the `.env` file for specific instructions to get it 
 cp .env.template .env
 ```
 
+
 ### Using docker compose
+
 
 #### Start (and Build) the Servers
 
