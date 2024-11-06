@@ -10,6 +10,7 @@ around the world in a Django based website.
 
 **[legaldb.creativecommons.org](https://legaldb.creativecommons.org/)**
 
+
 ## Code of conduct
 
 [`CODE_OF_CONDUCT.md`][org-coc]:
@@ -40,11 +41,16 @@ For information on learning and installing the prerequisite technologies for thi
 Copy `.env.template` and set environment variables (like
 `DJANGO_DEBUG_ENABLED=True` for local development and testing) and secret keys
 in a `.env` file.
+
+Please read the comments in the `.env` file for specific instructions to get it to work locally.
+
 ```shell
 cp .env.template .env
 ```
 
+
 ### Using docker compose
+
 
 #### Start (and Build) the Servers
 

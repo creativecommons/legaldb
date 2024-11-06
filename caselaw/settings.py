@@ -14,6 +14,7 @@ from distutils.util import strtobool
 
 # Third-party
 import django_heroku
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     # SecurityMiddleware must be listed before other middleware
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    # Check if this is necessary, not in cc-legal-tools-app
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -170,7 +173,8 @@ LOGGING = {
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+# This matches the language code on Transifex ("en")
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = os.environ.get("DJANGO_TIME_ZONE", "UTC")
 
@@ -180,6 +184,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
+
+LANGUAGES = [
+    ("en", _("English")),
+    ("es", _("Spanish")),
+    # Add other languages here
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
