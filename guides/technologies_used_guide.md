@@ -1,4 +1,4 @@
-# About this Guide
+# About this guide
 
 This guide provides a simple, comprehensive overview of the technologies used
 in the Creative Commons Legal Database (Legal DB) repository. It provides
@@ -39,7 +39,7 @@ Read the [Sass: Documentation](https://sass-lang.com/documentation/) to learn
 more.
 
 
-### Vocabulary Design System
+### Vocabulary design system
 
 Creative Commons has their own internal design system, Vocabulary which helps
 all the websites have the same look and aesthetics. It ensures uniformity
