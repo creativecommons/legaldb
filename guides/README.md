@@ -1,4 +1,4 @@
-# About Guides
+# About guides
 
 These Guides are meant to serve as an expansion to existing documentation for
 beginners of this project, that means Guides should be directly and uniquely
@@ -7,7 +7,7 @@ topics like Github, Git, Command-line basics, etc. may be better served in the
 Open Source documentation as a part of our new overall general beginner guides.
 
 
-## Some Appropriate Guides Topic Examples
+## Some appropriate guides topic examples
 
 - Overview of technologies used
 - Setting up this project with Docker on Windows
@@ -16,7 +16,7 @@ Open Source documentation as a part of our new overall general beginner guides.
 - Troubleshooting known Windows Issues with Docker and VS Code
 
 
-## Guide Conventions to Follow
+## Guide conventions to follow
 
 - be written in Markdown format
 - exist as a sibling to this `README.md` file in the `guides/` directory
@@ -31,7 +31,7 @@ Open Source documentation as a part of our new overall general beginner guides.
 - have a clear and focused need they are addressing
 
 
-## Process for creating a new Guide
+## Process for creating a new guide
 
 1. Create a Feature Issue outlining:
    - The name of the Guide
@@ -43,3 +43,17 @@ Open Source documentation as a part of our new overall general beginner guides.
 3. Wait for Issue to reach a status of `status: ready for work`, once reached a
    PR can now be generated for adding the approved Guide to this project
    following the conventions listed in this `README.md`.
+
+
+## Creative Commons Open Source (CCOS) guides
+
+The following CCOS guides may be helpful for this project:
+- [Foundational technologies][ccos-found]
+- [Contribution Guidelines][ccos-contrib]
+- [Documentation Guidelines][ccos-docs]
+- [Python Guidelines][ccos-python]
+
+[ccos-found]: https://opensource.creativecommons.org/contributing-code/foundational-tech/
+[cos-contrib]: https://opensource.creativecommons.org/contributing-code/
+[ccos-docs]: https://opensource.creativecommons.org/contributing-code/documentation-guidelines/
+[ccos-python]: https://opensource.creativecommons.org/contributing-code/python-guidelines/
