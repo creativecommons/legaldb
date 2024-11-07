@@ -326,3 +326,19 @@ a, a:hover {
 .navbar .navbar-burger {
   height: 40px;
 }
+
+body > header .explore-panel aside h2{
+  margin: revert;
+  
+  color: white;
+  font-size: 1.5em;
+  text-transform: none;
+}
+
+body > header .explore-panel aside p{
+  margin: revert;
+}
+
+body > header .explore-panel nav ul li p{
+  margin:revert;
+}
