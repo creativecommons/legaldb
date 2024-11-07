@@ -178,9 +178,12 @@ pipenv run flake8 .
 [blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
 
 
-## Deploy to Heroku
+## Guides
 
-See [`deploy_to_heroku.md`](deploy_to_heroku.md).
+The [`guides/`](guides/) folder includes:
+- **[`README.md`](guides/README.md)**
+- [`deploy_to_heroku.md`](guides/deploy_to_heroku.md)
+- [`technologies_used_guide.md`](guides/technologies_used_guide.md)
 
 
 ## License
