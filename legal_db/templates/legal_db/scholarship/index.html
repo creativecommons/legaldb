@@ -5,24 +5,10 @@
 <section class="hero scholarship">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
-    <h1 class="hero-title title is-2">Scholarship</h1>
-    <div class="case-holder">
-      <div class="contribute-card">
-        <article class="card entry-post link no-border">
-          <a href="{% url 'scholarship_submit' %}" class="has-background-forest-green">
-            <span class="card-content has-bottom-link">
-              <h2 class="card-title">Contribute</h2>
-              <span class="content">Do you want to submit a scholarly article to the database?</span>
-              <strong class="link-arrow">Submit an article <i class="icon chevron-right"></i></strong>
-            </span>
-          </a>
-        </article>
-      </div>
-      <p class="hero-description body-big">Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.</p>
-    </div>
     <h1 class="hero-title title is-2">{% trans "Scholarship" %}</h1>
+   <div class="case-holder">
     <div class="contribute-card">
-      <article class="card entry-post link no-border is-hidden-touch">
+      <article class="card entry-post link no-border">
         <a href="{% url 'scholarship_submit' %}" class="has-background-forest-green">
           <span class="card-content has-bottom-link">
             <h2 class="card-title">{% trans "Contribute" %}</h2>
@@ -37,6 +23,7 @@
         Here you will find information on academic scholarship that addresses Creative Commons legal tools or the legal issues that affect them. Click on the link to the article for more details.
       {% endblocktrans  %}
     </p>
+   </div>
   </div>
 </section>
 
