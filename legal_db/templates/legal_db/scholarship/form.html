@@ -1,11 +1,13 @@
 {% extends 'legal_db/base.html' %}
-{% load widget_tweaks %}
+{% load i18n widget_tweaks %}
 
 {% block body_content %}
 <section class="hero submit">
   <div class="container">
-    <h1 class="hero-title title is-2">Scholarship Submission</h1>
-    <p class="hero-description body-normal">Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database. &nbsp;&nbsp;<span class="required">*</span> Required.</p>
+    <h1 class="hero-title title is-2">{% trans "Scholarship Submission" %}</h1>
+    <p class="hero-description body-normal">
+      {% trans "Please add any article related to Creative Commons licenses and other legal tools that you think should be included in the database." %}&nbsp;&nbsp;<span class="required">*</span> {% trans "Required" %}.
+    </p>
   </div>
 </section>
 <section class="columns submit is-centered">
@@ -19,94 +21,99 @@
         </div>
       {% endif %}
 
-      <h4 class="b-header">Contact</h4>
+      <h4 class="b-header">{% trans "Contact" %}</h4>
 
       {% with WIDGET_ERROR_CLASS='is-danger' %}
         <div class="field">
-          <label class="has-text-weight-bold" for="{{ scho_form.contributor_name.id_for_label }}">Your Name <span class="required">*</span></label>
+          <label class="has-text-weight-bold" for="{{ scho_form.contributor_name.id_for_label }}">{% trans "Your Name" %} <span class="required">*</span></label>
           {% render_field scho_form.contributor_name|add_class:"input" %}
           {{ scho_form.contributor_name.errors }}
         </div>
 
         <div class="field">
-          <label class="has-text-weight-bold" for="{{ scho_form.contributor_email.id_for_label }}">Email <span class="required">*</span></label>
+          <label class="has-text-weight-bold" for="{{ scho_form.contributor_email.id_for_label }}">{% trans "Email" %} <span class="required">*</span></label>
           {% render_field scho_form.contributor_email|add_class:"input" %}
           {{ scho_form.contributor_email.errors }}
         </div>
 
         <div class="field">
-          <strong>Agreement and Consent</strong> <span class="required">*</span><br/>
-          <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox"  aria-required="true">
+          <strong>{% trans "Agreement and Consent" %}</strong> <span class="required">*</span><br/>
+          <label for="{{ scho_form.agreement.id_for_label }}" class="checkbox">
             {% render_field scho_form.agreement %}
-            I have read and agree to the <a href="https://creativecommons.org/privacy/" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
+            {% blocktrans trimmed with privacy_url="https://creativecommons.org/privacy/" %}
+              I have read and agree to the <a href="{{ privacy_url }}" class="has-text-dark-slate-blue">Creative Commons Privacy Policy</a>.
+            {% endblocktrans %}
           </label>
           {{ scho_form.agreement.errors }}
         </div>
         <br/>
 
-        <h4 class="b-header" aria-label="Article information section">Article information</h4>
+        <h4 class="b-header">{% trans "Article information" %}</h4>
 
         <div class="field">
-          <label class="has-text-weight-bold" for="{{ scho_form.title.id_for_label }}">Title of article</label>
+          <label class="has-text-weight-bold" for="{{ scho_form.title.id_for_label }}">{% trans "Title of article" %}</label>
           {% render_field scho_form.title|add_class:"input" %}
           {{ scho_form.title.errors }}
         </div>
 
         <div class="columns">
           <div class="column is-three-fifths">
-            <label class="has-text-weight-bold" for="{{ scho_form.license.id_for_label }}">License on article</label>
+            <label class="has-text-weight-bold" for="{{ scho_form.license.id_for_label }}">{% trans "License on article" %}</label>
             {% render_field scho_form.license|add_class:"input" %}
             {{ scho_form.license.errors }}
           </div>
           <div class="column is-two-fifth">
-            <label class="has-text-weight-bold" for="{{ scho_form.publication_year.id_for_label }}">Year of publication</label>
+            <label class="has-text-weight-bold" for="{{ scho_form.publication_year.id_for_label }}">{% trans "Year of publication" %}</label>
             {% render_field scho_form.publication_year|add_class:"input" type="text" inputmode="numeric" placeholder="YYYY" %}
             {{ scho_form.publication_year.errors }}
           </div>
         </div>
 
         <div class="field">
-          <label class="has-text-weight-bold" for="{{ scho_form.publication_name.id_for_label }}">Name of publication</label>
+          <label class="has-text-weight-bold" for="{{ scho_form.publication_name.id_for_label }}">{% trans "Name of publication" %}</label>
           {% render_field scho_form.publication_name|add_class:"input" %}
           {{ scho_form.publication_name.errors }}
         </div>
 
         <div class="field">
-          <label class="has-text-weight-bold" for="{{ scho_form.authors.id_for_label }}">Author(s)</label>
+          {# TODO: Revise pluralization handling for "Author(s)" #}
+          <label class="has-text-weight-bold" for="{{ scho_form.authors.id_for_label }}">{% trans "Author(s)" %}</label>
           {% render_field scho_form.authors|add_class:"input" %}
           {{ scho_form.authors.errors }}
         </div>
 
         <div class="field">
-          <label class="has-text-weight-bold" for="{{ scho_form.summary.id_for_label }}">Summary of article</label>
-          {% render_field scho_form.summary|add_class:"input textarea" placeholder="Abstract or summary of the article" %}
+          <label class="has-text-weight-bold" for="{{ scho_form.summary.id_for_label }}">{% trans "Summary of article" %}</label>
+          {% trans "Abstract or summary of the article" as summary_placeholder %}
+          {% render_field scho_form.summary|add_class:"input textarea" placeholder=summary_placeholder %}
           {{ scho_form.summary.errors }}
         </div>
         <br/>
 
-        <h4 class="b-header">Link to article</h4>
+        <h4 class="b-header">{% trans "Link to article" %}</h4>
 
         <div class="field">
-          <label class="has-text-weight-bold"  for="{{ link_form.url.id_for_label }}">URL <span class="required">*</span></label>
+          <label class="has-text-weight-bold" for="{{ link_form.url.id_for_label }}">{% trans "URL" %} <span class="required">*</span></label>
           {% render_field link_form.url|add_class:"input" type="text" inputmode="url" placeholder="https://example.com" %}
           {{ link_form.url.errors }}
         </div>
 
         <div class="columns">
           <div class="column is-three-quarters">
-            <label class="has-text-weight-bold"  for="{{ link_form.title.id_for_label }}">Title of link</label>
-            {% render_field link_form.title|add_class:"input" placeholder="Title of the page being linked to" %}
+            <label class="has-text-weight-bold" for="{{ link_form.title.id_for_label }}">{% trans "Title of link" %}</label>
+            {% trans "Title of the page being linked to" as title_placeholder %}
+            {% render_field link_form.title|add_class:"input" placeholder=title_placeholder %}
             {{ link_form.title.errors }}
           </div>
           <div class="column is-one-quarter">
-            <label class="has-text-weight-bold"  for="{{ link_form.label.id_for_label }}">Label of link</label>
+            <label class="has-text-weight-bold" for="{{ link_form.label.id_for_label }}">{% trans "Label of link" %}</label>
             {% render_field link_form.label|add_class:"input" %}
             {{ link_form.label.errors }}
           </div>
         </div>
       {% endwith %}
 
-      <button type="submit" class="button scholarship" aria-label="Submit scholarship form">submit scholarship</button>
+      <button type="submit" class="button scholarship">{% trans "submit scholarship" %}</button>
     </form>
     </div>
   </div>

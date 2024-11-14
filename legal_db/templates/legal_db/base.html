@@ -1,17 +1,24 @@
 {% load compress %}
-{% load static %}
+{% load i18n static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta name="author" content="Creative Commons"/>
-    <meta name="description" content="This database contains case law and legal scholarship about CC licenses and the issues that relate to their enforceability and interpretation."/>
+    <meta name="description" content="{% trans 'This database contains case law and legal scholarship about CC licenses and the issues that relate to their enforceability and interpretation.' %}"/>
+    <!-- TODO: Decide whether the keywords in the meta tag need to be translated -->
     <meta name="keywords" content="Creative Commons, legal database, case law, CC licenses, legal scholarship, enforceability, legal tools, open access, intellectual property"/>
-    <title>CC Legal Database</title>
+    <title>{% trans "CC Legal Database" %}</title>
     <link rel="icon" href="{% static 'favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static 'webpack_files/css/index.css' %}" type="text/css" media="all">
+    <meta property="og:url" content="https://legaldb.creativecommons.org/" />
+    <meta property="og:title" content="Creative Commons Legal Database" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Explore the Creative Commons Legal Database, a comprehensive resource on legal cases and disputes related to Creative Commons tools and licenses. This database includes case law and legal scholarship that relates to Creative Commons legal tools." />
+    <meta property="og:image" content="{% static 'cc_legal_db.png' %}" />
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}" />
   </head>
   <body>
     {% include 'legal_db/partials/_header.html' %}

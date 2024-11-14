@@ -1,11 +1,11 @@
 {% extends 'legal_db/base.html' %}
-{% load markdown_extras %}
+{% load i18n markdown_extras %}
 
 {% block body_content %}
 <div class="hero faq">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
-    <h1 class="hero-title title is-2">Frequently Asked Questions</h1>
+    <h1 class="hero-title title is-2">{% trans "Frequently Asked Questions" %}</h1>
   </div>
 </div>
 <section class="faqs">
@@ -13,8 +13,8 @@
     <div class="columns">
       <div class="column is-9">
         <div class="control has-icons-left">
-          <label for="search" class="is-sr-only">Search:</label>
-          <input id="search" class="input column is-8 margin-bottom-big" type="text" onkeyup="search()" placeholder="Search for..." aria-label="Search through FAQs"/>
+          <label for="search" class="is-sr-only">{% trans "Search:" %}</label>
+          <input id="search" class="input column is-8 margin-bottom-big" type="text" onkeyup="search()" placeholder="{% trans 'Search for...' %}" />
           <span class="icon is-left"><i class="icon search"></i></span>
         </div>
         <div>
@@ -31,8 +31,8 @@
         </div>
       </div>
       <aside class="column is-3">
-        <h4>Still have questions?</h4>
-        <b><a href="mailto:legal@creativecommons.org" class="has-text-dark-slate-blue">Contact us</a></b>
+        <h4>{% trans "Still have questions?" %}</h4>
+        <b><a href="mailto:legal@creativecommons.org" class="has-text-dark-slate-blue">{% trans "Contact us" %}</a></b>
       </aside>
     </div>
   </div>
@@ -74,9 +74,9 @@
     for (let i = 0; i < faqContent.length; i++) {
       const textValue = faqContent[i].textContent.toLowerCase();
       if (textValue.includes(terms)) {
-	faqContent[i].style.display = "";
+        faqContent[i].style.display = "";
       } else {
-       faqContent[i].style.display = "none";
+        faqContent[i].style.display = "none";
       }
     }
   };
