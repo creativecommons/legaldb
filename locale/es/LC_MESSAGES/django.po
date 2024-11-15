@@ -167,6 +167,22 @@ msgstr ""
 msgid "CC Legal Database"
 msgstr "Base de Datos Legal de CC"
 
+#: legal_db/templates/legal_db/index.html:8
+msgid ""
+"This database includes <a href=\"%(case_url)s\" class=\"has-text-weight-bold\">case law</a> and "
+"<a href=\"%(scholarship_url)s\" class=\"has-text-weight-bold\">legal scholarship</a> that relates "
+"to Creative Commons legal tools.<br/> Please note that the database is not comprehensive, and CC "
+"does not necessarily endorse the views of the courts or scholars whose decisions and writings are "
+"referenced. The content provided is purely informational, designed for those seeking to better understand "
+"the legal ecosystem in which the CC legal tools operate."
+msgstr ""
+"Esta base de datos incluye <a href=\"%(case_url)s\" class=\"has-text-weight-bold\">jurisprudencia</a> y "
+"<a href=\"%(scholarship_url)s\" class=\"has-text-weight-bold\">trabajos jurídicos</a> relacionados con las "
+"herramientas legales de Creative Commons.<br/> Tenga en cuenta que la base de datos no es exhaustiva y que CC "
+"no necesariamente respalda las opiniones de los tribunales o los académicos cuyas decisiones y escritos "
+"se citan. El contenido proporcionado es puramente informativo, diseñado para quienes buscan comprender "
+"mejor el ecosistema legal en el que operan las herramientas legales de CC."
+
 #: legal_db/templates/legal_db/case/detail.html:16
 #: legal_db/templates/legal_db/case/form.html:80
 #: legal_db/templates/legal_db/case/index.html:48
@@ -524,17 +540,14 @@ msgstr ""
 msgid "Submit an article"
 msgstr "Enviar un artículo"
 
-#: legal_db/templates/legal_db/index.html:77
-msgid ""
-"\n"
-"              <span class=\"card-eyebrow\">Check the</span>\n"
-"              <h2 class=\"card-title\">Frequently asked questions</h2>\n"
-"              "
-msgstr ""
-"\n"
-"              <span class=\"card-eyebrow\">Consulta las</span>\n"
-"              <h2 class=\"card-title\">Preguntas Frecuentes</h2>\n"
-"              "
+#: legal_db/templates/legal_db/index.html:86
+msgid "Check the"
+msgstr "Consulta las"
+
+#: legal_db/templates/legal_db/index.html:87
+msgid "Frequently asked questions"
+msgstr "Preguntas Frecuentes"
+
 
 #: legal_db/templates/legal_db/partials/_breadcrumb.html:5
 #: legal_db/templates/legal_db/partials/_footer.html:39
