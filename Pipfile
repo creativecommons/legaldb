@@ -24,6 +24,7 @@ django_compressor = "*"
 gunicorn = "*"
 polib = "*"
 psycopg2 = "*"
+Pygments = "*"
 PyYAML = "*"
 transifex-python = "*"
 urllib3 = ">=2.2.2"  # Ensure dependency is secure
