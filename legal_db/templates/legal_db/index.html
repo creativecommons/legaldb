@@ -30,8 +30,8 @@
           </div>
         </div>
         <div class="column is-half">
-          <article class="card entry-post link no-border" aria-label="Navigate to Caselaw Database">
-            <a href="{% url 'case_index' %}" class="has-background-tomato">
+          <article class="card entry-post link no-border">
+            <a href="{% url 'case_index' %}" class="has-background-tomato" aria-label="{% trans 'Go to Caselaw Database' %}">
               <span class="card-content has-bottom-link">
                 <h3 class="b-header has-text-white">{% trans "Caselaw Database" %}</h3>
                 <span class="content">{% trans "The Case Law Database includes court decisions from around the globe concerning Creative Commons." %}</span>
@@ -49,8 +49,8 @@
           {% endfor %}
         </div>
         <div class="column is-half">
-          <article class="card entry-post link no-border" aria-label="Navigate to Legal Scholarship Database">
-            <a href="{% url 'scholarship_index' %}" class="has-background-forest-green">
+          <article class="card entry-post link no-border">
+            <a href="{% url 'scholarship_index' %}" class="has-background-forest-green" aria-label="{% trans 'Navigate to Legal Scholarship Database' %}">
               <span class="card-content has-bottom-link">
                 <h3 class="b-header has-text-white">{% trans "Legal Scholarship Database" %}</h3>
                 <span class="content">{% trans "The Scholarship Database aims to provide users with resources concerning the use, interpretation, and enforceability of Creative Commons licenses." %}</span>
@@ -76,8 +76,8 @@
           <a href="{% url 'scholarship_submit' %}" class="button scholarship small">{% trans "Submit an article" %}</a>
         </div>
         <div class="column is-half">
-          <article class="card entry-post link" aria-label="Navigate to Frequently Asked Questions">
-            <a href="{% url 'faq' %}">
+          <article class="card entry-post link">
+            <a href="{% url 'faq' %}" aria-label="{% trans 'Navigate to Frequently Asked Questions' %}">
               {% blocktrans trimmed %}
                 <span class="card-eyebrow">Check the</span>
                 <h2 class="card-title">Frequently asked questions</h2>
