@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Perform static analysis checks and reformat Python code
+# Dump Django data with processing to remove PII and unapproved entries
 #
 #### SETUP ####################################################################
 

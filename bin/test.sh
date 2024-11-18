@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Perform static analysis checks and reformat Python code
+# Run Django collectstatic, check, and test (unit tests)
 #
 #### SETUP ####################################################################
 
