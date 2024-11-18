@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Run Django collectstatic, check, and test (unit tests)
+# Run Django collectstatic and test (check and unit tests)
 #
 #### SETUP ####################################################################
 
@@ -51,10 +51,6 @@ check_docker
 
 print_header 'Django collectstatic'
 docker compose exec app ./manage.py collectstatic --noinput
-echo
-
-print_header 'Django check'
-docker compose exec app ./manage.py check
 echo
 
 print_header 'Django test'
