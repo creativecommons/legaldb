@@ -1,0 +1,3486 @@
+- fields:
+    created_at: 2020-06-22 14:40:24.489564+00:00
+    label: null
+    notes: ''
+    title: The Creative Commons licences through moral rights provisions in French
+      law
+    updated_at: 2020-06-22 14:40:24.489590+00:00
+    url: https://www.tandfonline.com/doi/full/10.1080/13600869.2013.869923#.VJO-LsCsA
+  model: legal_db.link
+  pk: 1
+- fields:
+    created_at: 2020-06-22 14:42:02.176927+00:00
+    label: null
+    notes: ''
+    title: 'Not for Designers: On the Inadequacies of EU Design Law and How to Fix
+      It'
+    updated_at: 2020-06-22 14:42:02.176954+00:00
+    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2361682
+  model: legal_db.link
+  pk: 2
+- fields:
+    created_at: 2020-06-22 14:44:25.439120+00:00
+    label: null
+    notes: ''
+    title: Creative Commons licences and design Are the two compatible?
+    updated_at: 2020-06-22 14:44:25.439147+00:00
+    url: http://www.jipitec.eu/issues/jipitec-2-2-2011/3085
+  model: legal_db.link
+  pk: 3
+- fields:
+    created_at: 2020-06-26 19:55:41.042049+00:00
+    label: Decision
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:04:13.133519+00:00
+    url: https://wiki.creativecommons.org/images/f/f6/2010-10-26_A%27cision-trib.-Nivelles-Lichodmapwa.pdf
+  model: legal_db.link
+  pk: 4
+- fields:
+    created_at: 2020-06-26 20:01:08.532401+00:00
+    label: District Court opinion
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:03:34.677518+00:00
+    url: https://law.justia.com/cases/federal/district-courts/texas/txndce/3:2007cv01767/171558/68/
+  model: legal_db.link
+  pk: 5
+- fields:
+    created_at: 2020-06-29 19:30:53.457669+00:00
+    label: null
+    notes: ''
+    title: Open licensing and databases
+    updated_at: 2020-06-29 19:30:53.457695+00:00
+    url: http://www.ifosslr.org/ifosslr/article/view/62
+  model: legal_db.link
+  pk: 6
+- fields:
+    created_at: 2020-06-29 19:33:06.278626+00:00
+    label: null
+    notes: ''
+    title: 'Safe to Be Open: Study on the Protection of Research Data and Recommendations
+      for Access and Usage'
+    updated_at: 2020-06-29 19:33:06.278650+00:00
+    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2391280
+  model: legal_db.link
+  pk: 7
+- fields:
+    created_at: 2020-06-29 20:32:11.445404+00:00
+    label: Court opinion
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:03:01.830214+00:00
+    url: https://wiki.creativecommons.org/wiki/File:Curry-Audax-English.pdf
+  model: legal_db.link
+  pk: 8
+- fields:
+    created_at: 2020-06-29 20:38:30.039167+00:00
+    label: District Court opinion
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:02:34.583310+00:00
+    url: https://cases.justia.com/federal/district-courts/district-of-columbia/dcdce/1:2014cv01043/166825/39/0.pdf?ts=1439987006
+  model: legal_db.link
+  pk: 9
+- fields:
+    created_at: 2020-06-29 20:46:03.015498+00:00
+    label: Blog post
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:01:45.542537+00:00
+    url: https://creativecommons.org/2011/09/15/creative-commons-attribution-sharealike-license-enforced-in-germany/
+  model: legal_db.link
+  pk: 10
+- fields:
+    created_at: 2020-06-29 20:48:02.001053+00:00
+    label: Court order
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:01:19.161607+00:00
+    url: https://upload.wikimedia.org/wikipedia/foundation/f/ff/2012-11-19_D18_Order_re_Special_Mtn_to_Strike_and_Mtn_to_Dismiss.pdf
+  model: legal_db.link
+  pk: 11
+- fields:
+    created_at: 2020-06-29 20:50:37.255650+00:00
+    label: Complaint
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 16:00:19.993727+00:00
+    url: https://wikimediafoundation.org/wiki/File:WMF_complaint_for_declaratory_judgement_September_2012.pdf
+  model: legal_db.link
+  pk: 12
+- fields:
+    created_at: 2020-06-29 20:52:40.130385+00:00
+    label: Federal Circuit decision
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 15:59:53.445451+00:00
+    url: https://wiki.creativecommons.org/images/9/98/Jacobson_v_katzer_fed_cir_ct_of_appeals_decision.pdf
+  model: legal_db.link
+  pk: 13
+- fields:
+    created_at: 2020-06-29 20:54:23.255925+00:00
+    label: Decision
+    notes: (no English translation available)
+    title: null
+    updated_at: 2020-11-18 15:59:40.894547+00:00
+    url: https://wiki.creativecommons.org/images/3/3f/Psak_Din.pdf
+  model: legal_db.link
+  pk: 14
+- fields:
+    created_at: 2020-07-22 20:30:46.494001+00:00
+    label: Decision
+    notes: No English translation available.
+    title: null
+    updated_at: 2020-11-18 15:59:21.671894+00:00
+    url: http://www.internautas.org/archivos/sentencia_metropoli.pdf
+  model: legal_db.link
+  pk: 15
+- fields:
+    created_at: 2020-07-23 00:01:35.652529+00:00
+    label: null
+    notes: No English translation available.
+    title: null
+    updated_at: 2020-07-23 00:01:35.652554+00:00
+    url: http://www.interiuris.com/blog/wp-content/uploads/Creative_Commons_APPO.pdf
+  model: legal_db.link
+  pk: 16
+- fields:
+    created_at: 2020-07-23 00:07:19.561429+00:00
+    label: null
+    notes: No English translation available.
+    title: null
+    updated_at: 2020-07-23 00:07:19.561461+00:00
+    url: https://www.spiritlegal.com/files/userdata_global/downloads/LG%20Hamburg,%20Beschluss%20vom%2018.11.2016,%20310%20O%2040216.pdf
+  model: legal_db.link
+  pk: 17
+- fields:
+    created_at: 2020-07-23 00:12:24.161124+00:00
+    label: News article
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 15:58:28.863345+00:00
+    url: https://www.law.co.il/en/news/2011/01/18/israeli-court-enforces-a-creative-commons-license/
+  model: legal_db.link
+  pk: 18
+- fields:
+    created_at: 2020-07-23 00:12:28.753480+00:00
+    label: Decision
+    notes: ''
+    title: null
+    updated_at: 2020-11-18 15:59:03.529213+00:00
+    url: https://www.law.co.il/media/computer-law/reuveni_rivlin_d8IXJol.pdf
+  model: legal_db.link
+  pk: 19
+- fields:
+    created_at: 2020-07-23 00:38:06.986973+00:00
+    label: District Court decision
+    notes: ''
+    title: null
+    updated_at: 2020-07-23 00:38:06.987008+00:00
+    url: https://creativecommons.org/wp-content/uploads/2018/03/2018-01-18-40-Decision-granting-dismissal-of-infringement-claim.pdf
+  model: legal_db.link
+  pk: 20
+- fields:
+    created_at: 2020-07-23 00:39:21.372192+00:00
+    label: 9th Circuit decision
+    notes: ''
+    title: Great Minds v. Office Depot, Inc., No. 18-55331 (9th Cir. 2019)
+    updated_at: 2020-07-23 00:39:21.372223+00:00
+    url: https://law.justia.com/cases/federal/appellate-courts/ca9/18-55331/18-55331-2019-12-27.html
+  model: legal_db.link
+  pk: 21
+- fields:
+    created_at: 2020-07-23 00:42:36.224020+00:00
+    label: District Court decision
+    notes: ''
+    title: Order Granting Motion to Dismiss
+    updated_at: 2020-07-23 00:42:36.224043+00:00
+    url: https://creativecommons.org/wp-content/uploads/2018/04/2017-02-24-Order-Granting-Motion-to-Dismiss.pdf
+  model: legal_db.link
+  pk: 22
+- fields:
+    created_at: 2020-07-23 00:43:12.410575+00:00
+    label: 2nd Circuit decision
+    notes: ''
+    title: Great Minds v. FedEx Office & Print Services, Inc., No. 17-808 (2d Cir.
+      2018)
+    updated_at: 2020-07-23 00:43:12.410599+00:00
+    url: https://law.justia.com/cases/federal/appellate-courts/ca2/17-808/17-808-2018-03-21.html
+  model: legal_db.link
+  pk: 23
+- fields:
+    created_at: 2020-07-23 00:49:21.270609+00:00
+    label: Complaint
+    notes: ''
+    title: Philpot-MRC-Complaint.pdf
+    updated_at: 2020-07-23 00:49:21.270633+00:00
+    url: https://creativecommons.org/wp-content/uploads/2018/03/Philpot-MRC-Complaint.pdf
+  model: legal_db.link
+  pk: 24
+- fields:
+    created_at: 2020-07-23 00:50:04.873746+00:00
+    label: Motion for Summary Judgment
+    notes: ''
+    title: Philpot-MRC-Defendants-Memo-ISO-MSJ-1.pdf
+    updated_at: 2020-07-23 00:50:04.873773+00:00
+    url: https://creativecommons.org/wp-content/uploads/2018/03/Philpot-MRC-Defendants-Memo-ISO-MSJ-1.pdf
+  model: legal_db.link
+  pk: 25
+- fields:
+    created_at: 2020-07-23 00:50:41.634157+00:00
+    label: Decision
+    notes: ''
+    title: Philpot-v.-Media-Research-Ctr-decision.pdf
+    updated_at: 2020-11-18 15:57:38.634465+00:00
+    url: https://creativecommons.org/wp-content/uploads/2018/03/Philpot-v.-Media-Research-Ctr-decision.pdf
+  model: legal_db.link
+  pk: 26
+- fields:
+    created_at: 2020-07-23 00:58:30.610422+00:00
+    label: District Court decision
+    notes: ''
+    title: Philpot v. LM Communications II of South Carolina, Inc., No. 5:2017cv00173
+      - Document 80 (E.D. Ky. 2018)
+    updated_at: 2020-11-18 15:57:05.612131+00:00
+    url: https://law.justia.com/cases/federal/district-courts/kentucky/kyedce/5:2017cv00173/82876/80/
+  model: legal_db.link
+  pk: 27
+- fields:
+    created_at: 2020-12-17 14:12:29.166080+00:00
+    label: Certiorari
+    notes: null
+    title: ELDRED V. ASHCROFT (01-618) 537 U.S. 186 (2003) 239 F.3d 372, affirmed
+    updated_at: 2020-12-17 14:12:29.166136+00:00
+    url: https://www.law.cornell.edu/supct/html/01-618.ZS.html
+  model: legal_db.link
+  pk: 30
+- fields:
+    created_at: 2020-12-17 14:12:29.216129+00:00
+    label: Brief
+    notes: null
+    title: ELDRED V. ASHCROFT - OPPOSITION
+    updated_at: 2020-12-17 14:12:29.216171+00:00
+    url: https://www.justice.gov/osg/brief/eldred-v-ashcroft-opposition
+  model: legal_db.link
+  pk: 31
+- fields:
+    created_at: 2020-12-17 14:41:24.973429+00:00
+    label: Case summary
+    notes: null
+    title: Is  Violation of Creative Commons License a Breach of Contract or Copyright
+      Infringement?
+    updated_at: 2020-12-17 14:41:24.973484+00:00
+    url: https://www.vondranlegal.com/is-violation-of-creative-commons-license-a-breach-of-contract-or-copyright-infringement
+  model: legal_db.link
+  pk: 34
+- fields:
+    created_at: 2020-12-17 14:41:24.977520+00:00
+    label: Memorandum and Order
+    notes: null
+    title: Sowers v. Gatehouse Media Missouri Holdings, Inc.
+    updated_at: 2020-12-17 14:41:24.977563+00:00
+    url: https://casetext.com/case/sowers-v-gatehouse-media-missouri-holdings-2/?PHONE_NUMBER_GROUP=P
+  model: legal_db.link
+  pk: 35
+- fields:
+    created_at: 2020-12-17 14:41:24.984870+00:00
+    label: Case summary
+    notes: null
+    title: GateHouse Media v. That's Great News
+    updated_at: 2020-12-17 14:41:24.984922+00:00
+    url: https://www.dmlp.org/threats/gatehouse-media-v-thats-great-news#node-legal-threat-full-group-description
+  model: legal_db.link
+  pk: 36
+- fields:
+    created_at: 2020-12-17 15:53:17.707000+00:00
+    label: Opinion
+    notes: null
+    title: Philpot v. Music Times, LLC
+    updated_at: 2020-12-17 15:53:17.707059+00:00
+    url: https://casetext.com/case/philpot-v-music-times-llc
+  model: legal_db.link
+  pk: 45
+- fields:
+    created_at: 2020-12-17 15:53:17.710783+00:00
+    label: Opinion and Order
+    notes: null
+    title: Philpot v. Music Times LLC, No. 1:2016cv01277 - Document 34 (S.D.N.Y. 2017)
+    updated_at: 2020-12-17 15:53:17.710831+00:00
+    url: https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2016cv01277/453791/34/
+  model: legal_db.link
+  pk: 46
+- fields:
+    created_at: 2020-12-17 15:53:17.714107+00:00
+    label: Case summary
+    notes: null
+    title: 14-1978 - PHILPOT v. MUSIC TIMES, LLC
+    updated_at: 2020-12-17 15:53:17.714157+00:00
+    url: https://www.govinfo.gov/app/details/USCOURTS-insd-1_14-cv-01978/summary
+  model: legal_db.link
+  pk: 47
+- fields:
+    created_at: 2020-12-17 15:59:09.470348+00:00
+    label: Docket
+    notes: null
+    title: Philpot v. Alternet Media, Inc
+    updated_at: 2020-12-17 15:59:09.470387+00:00
+    url: https://www.pacermonitor.com/public/case/25150381/Philpot_v_Alternet_Media,_Inc
+  model: legal_db.link
+  pk: 50
+- fields:
+    created_at: 2020-12-17 16:03:10.502465+00:00
+    label: Opinion
+    notes: null
+    title: Philpot v. WOS, Inc.
+    updated_at: 2020-12-17 16:03:10.502517+00:00
+    url: https://casetext.com/case/philpot-v-wos-inc-1
+  model: legal_db.link
+  pk: 51
+- fields:
+    created_at: 2020-12-17 16:11:07.172450+00:00
+    label: Opinion
+    notes: null
+    title: Philpot v. New Orleans Tourism Mktg. Corp.
+    updated_at: 2020-12-17 16:11:07.172503+00:00
+    url: https://casetext.com/case/philpot-v-new-orleans-tourism-mktg-corp?resultsNav=false
+  model: legal_db.link
+  pk: 52
+- fields:
+    created_at: 2020-12-17 16:11:07.177140+00:00
+    label: Docket
+    notes: null
+    title: Philpot v. New Orleans Tourism Marketing Corporation (E.D. La. 2018)
+    updated_at: 2020-12-17 16:11:07.177190+00:00
+    url: https://www.courtlistener.com/?type=r&q=docket_id%3A7965353
+  model: legal_db.link
+  pk: 53
+- fields:
+    created_at: 2021-01-06 21:10:59.765556+00:00
+    label: null
+    notes: null
+    title: "Securing the Future of Copyright Users\u2019 Rights in Canada by Saleh\
+      \ Al-Sharieh"
+    updated_at: 2021-01-06 21:10:59.765618+00:00
+    url: https://www.canlii.org/en/commentary/doc/2018CanLIIDocs149?zoupio-debug#!fragment/zoupio-_Toc3Page4/(hash:(chunk:(anchorText:zoupio-_Toc3Page4),notesQuery:'',scrollChunk:!n,searchQuery:'%22creative%20commons%22',searchSortBy:RELEVANCE,tab:search))
+  model: legal_db.link
+  pk: 64
+- fields:
+    created_at: 2021-11-09 21:15:58.996143+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 21:15:58.996173+00:00
+    url: https://dockets.justia.com/docket/california/cacdce/2:2015cv04230/619994
+  model: legal_db.link
+  pk: 174
+- fields:
+    created_at: 2021-11-09 21:22:55.859708+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 21:22:55.859737+00:00
+    url: https://casetext.com/case/lisa-coppola-llc-v-higbee
+  model: legal_db.link
+  pk: 175
+- fields:
+    created_at: 2021-11-09 22:01:38.058203+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 22:01:38.058219+00:00
+    url: https://casetext.com/case/philpot-v-420-magazine-inc
+  model: legal_db.link
+  pk: 177
+- fields:
+    created_at: 2021-11-09 22:50:15.928414+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 22:50:15.928434+00:00
+    url: https://dockets.justia.com/docket/california/casdce/3:2020cv00872/675284
+  model: legal_db.link
+  pk: 178
+- fields:
+    created_at: 2021-11-09 22:52:17.201302+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 22:52:17.201319+00:00
+    url: https://casetext.com/case/philpot-v-emmis-operating-co
+  model: legal_db.link
+  pk: 179
+- fields:
+    created_at: 2021-11-09 22:54:14.242853+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 22:54:14.242881+00:00
+    url: https://dockets.justia.com/docket/california/candce/3:2018cv04100/328978
+  model: legal_db.link
+  pk: 180
+- fields:
+    created_at: 2021-11-09 23:00:53.555566+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:00:53.555591+00:00
+    url: https://dockets.justia.com/docket/florida/flmdce/8:2020cv01239/377691
+  model: legal_db.link
+  pk: 181
+- fields:
+    created_at: 2021-11-09 23:03:20.821309+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:03:20.821333+00:00
+    url: https://casetext.com/case/philpot-v-rural-media-grp-inc
+  model: legal_db.link
+  pk: 182
+- fields:
+    created_at: 2021-11-09 23:05:04.922480+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:05:04.922500+00:00
+    url: https://dockets.justia.com/docket/louisiana/laedce/2:2018cv09085/222192
+  model: legal_db.link
+  pk: 183
+- fields:
+    created_at: 2021-11-09 23:06:24.195357+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:06:24.195376+00:00
+    url: https://casetext.com/case/philpot-v-toledo-radio-llc-2
+  model: legal_db.link
+  pk: 184
+- fields:
+    created_at: 2021-11-09 23:07:55.457529+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:07:55.457548+00:00
+    url: https://casetext.com/case/philpot-v-wkmsmurray-state-univ
+  model: legal_db.link
+  pk: 185
+- fields:
+    created_at: 2021-11-09 23:09:23.433978+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:09:23.434003+00:00
+    url: https://law.justia.com/cases/federal/district-courts/hawaii/hidce/1:2018cv00057/138329/41/
+  model: legal_db.link
+  pk: 186
+- fields:
+    created_at: 2021-11-09 23:11:07.751525+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2021-11-09 23:11:07.751543+00:00
+    url: https://dockets.justia.com/docket/district-of-columbia/dcdce/1:2020cv00693/216047
+  model: legal_db.link
+  pk: 187
+- fields:
+    created_at: 2022-01-12 17:33:13.438610+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:33:13.438642+00:00
+    url: https://dockets.justia.com/docket/oregon/ordce/3:2020cv00717/152324
+  model: legal_db.link
+  pk: 226
+- fields:
+    created_at: 2022-01-12 17:37:27.317772+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:37:27.317800+00:00
+    url: https://dockets.justia.com/docket/new-york/nysdce/1:2020cv04121/537816
+  model: legal_db.link
+  pk: 227
+- fields:
+    created_at: 2022-01-12 17:40:31.567820+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:40:31.567845+00:00
+    url: https://dockets.justia.com/docket/california/cacdce/2:2020cv04220/782174
+  model: legal_db.link
+  pk: 228
+- fields:
+    created_at: 2022-01-12 17:41:47.756660+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:41:47.756687+00:00
+    url: https://dockets.justia.com/docket/california/cacdce/2:2020cv04824/783970
+  model: legal_db.link
+  pk: 229
+- fields:
+    created_at: 2022-01-12 17:44:45.406706+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:44:45.406730+00:00
+    url: https://dockets.justia.com/docket/nevada/nvdce/2:2020cv00824/143211
+  model: legal_db.link
+  pk: 230
+- fields:
+    created_at: 2022-01-12 17:46:11.599761+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:46:11.599785+00:00
+    url: https://dockets.justia.com/docket/tennessee/tnwdce/2:2020cv02370/88485
+  model: legal_db.link
+  pk: 231
+- fields:
+    created_at: 2022-01-12 17:47:01.127485+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:47:01.127509+00:00
+    url: https://dockets.justia.com/docket/texas/txndce/3:2020cv01182/332024
+  model: legal_db.link
+  pk: 232
+- fields:
+    created_at: 2022-01-12 17:49:03.422598+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:49:03.422622+00:00
+    url: https://dockets.justia.com/docket/colorado/codce/1:2020cv01538/197932
+  model: legal_db.link
+  pk: 233
+- fields:
+    created_at: 2022-01-12 17:50:22.761915+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:50:22.761940+00:00
+    url: https://www.courtlistener.com/docket/17206528/philpot-v-funny-or-die-media-inc/
+  model: legal_db.link
+  pk: 234
+- fields:
+    created_at: 2022-01-12 17:52:10.885220+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 17:52:10.885244+00:00
+    url: https://dockets.justia.com/docket/pennsylvania/paedce/2:2020cv02459/571354
+  model: legal_db.link
+  pk: 235
+- fields:
+    created_at: 2022-01-12 18:02:23.941232+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:02:23.941255+00:00
+    url: https://dockets.justia.com/docket/virginia/vaedce/1:2020cv00590/476523
+  model: legal_db.link
+  pk: 236
+- fields:
+    created_at: 2022-01-12 18:04:09.807305+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:04:09.807322+00:00
+    url: https://dockets.justia.com/browse/state-north_carolina/noscat-10/nos-820
+  model: legal_db.link
+  pk: 237
+- fields:
+    created_at: 2022-01-12 18:05:01.789095+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:05:01.789112+00:00
+    url: https://dockets.justia.com/docket/california/cacdce/2:2020cv04802/783924
+  model: legal_db.link
+  pk: 238
+- fields:
+    created_at: 2022-01-12 18:06:15.496087+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:06:15.496106+00:00
+    url: https://www.courtlistener.com/docket/17138844/philpot-v-rocking-m-media-llc/
+  model: legal_db.link
+  pk: 239
+- fields:
+    created_at: 2022-01-12 18:07:39.771341+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:07:39.771359+00:00
+    url: https://dockets.justia.com/docket/rhode-island/ridce/1:2020cv00238/49040
+  model: legal_db.link
+  pk: 240
+- fields:
+    created_at: 2022-01-12 18:08:53.225818+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:08:53.225843+00:00
+    url: https://www.courtlistener.com/docket/17208982/philpot-v-scripps-media-inc/
+  model: legal_db.link
+  pk: 241
+- fields:
+    created_at: 2022-01-12 18:09:59.774952+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:09:59.774977+00:00
+    url: https://www.courtlistener.com/docket/17207183/philpot-v-snopes-media-group-inc/
+  model: legal_db.link
+  pk: 242
+- fields:
+    created_at: 2022-01-12 18:10:38.202200+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:10:38.202216+00:00
+    url: https://dockets.justia.com/docket/north-carolina/ncwdce/1:2020cv00126/100390
+  model: legal_db.link
+  pk: 243
+- fields:
+    created_at: 2022-01-12 18:12:03.927178+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:12:03.927201+00:00
+    url: https://dockets.justia.com/docket/illinois/ilndce/1:2020cv03198/376420
+  model: legal_db.link
+  pk: 244
+- fields:
+    created_at: 2022-01-12 18:15:03.305889+00:00
+    label: null
+    notes: ''
+    title: null
+    updated_at: 2022-01-12 18:15:03.305915+00:00
+    url: https://unicourt.com/case/pc-db5-simon-j-burchett-photography-inc-v-infoway-llc-466132
+  model: legal_db.link
+  pk: 245
+- fields:
+    created_at: 2022-01-31 09:11:51.473398+00:00
+    label: Decision
+    notes: null
+    title: Court decision
+    updated_at: 2022-01-31 09:11:51.473423+00:00
+    url: https://uitspraken.rechtspraak.nl/inziendocument?id=ECLI:NL:RBMNE:2021:5887
+  model: legal_db.link
+  pk: 254
+- fields:
+    background: "In 2004, the Belgian band Lich\xF4dmapwa released the song \u201C\
+      Abatchouck\u201D under CC BY-NC-ND 2.5 Belgium license. Several years later,\
+      \ one of the band members heard a portion of the song in an advertisement for\
+      \ a theater festival run by a nonprofit organization. Lich\xF4dmapwa contacted\
+      \ the organization to see if they could negotiate a deal. The negotiations failed,\
+      \ and Lich\xF4dmapwa sued the organization for copyright infringement in September\
+      \ 2009."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: BE
+    courts: Le Tribunal de Premiere Instance (court of first instance)
+    created_at: 2020-06-26 19:58:23.435066+00:00
+    decision_year: 2010
+    is_pending: null
+    license: CC BY-NC-ND
+    links:
+    - 4
+    name: "Linch\xF4dmapwa v L'asbl Festival de Theatre de Spa"
+    notes: 'Case # 09-1684-A'
+    related_cases: null
+    status: 3
+    summary: "Lich\xF4dmapwa claimed the defendant violated all three conditions of\
+      \ the applicable CC license. The defendant had modified the original work, used\
+      \ the work for commercial purposes, and failed to provide attribution. The defendant\
+      \ claimed it had acted in good faith, arguing that it was unaware of the terms\
+      \ of the CC license. The defendant also argued that since the plaintiff was\
+      \ not a member of the Belgian collecting society, SABAM, they had no rights\
+      \ to collect payments for use of the music.\L The court recognized the validity\
+      \ of the Creative Commons license applied to the music, and held that the plaintiff\u2019\
+      s decision not to join SABAM and instead to release their music more openly\
+      \ should not prevent them from enforcing their copyright. The court held that\
+      \ the good faith of the defendant was not an excuse for violating the license.\
+      \ As a festival organizer regularly involved in licensing, the court said the\
+      \ defendant should have known to look for and follow the terms of the license.\
+      \ In addition, the court noted that the website from which the theater downloaded\
+      \ the music, http://www.dogmazic.net, clearly mentions the CC license.\r\n\r\
+      \nOn October 28, 2010, the court awarded the plaintiff 1,500 Euros per license\
+      \ condition violated, 4,500 Euros in total."
+    updated_at: 2020-11-18 15:40:42.925901+00:00
+  model: legal_db.case
+  pk: 1
+- fields:
+    background: "Virgin Mobile, an Australian mobile device company, used a Flickr\
+      \ photo of a minor licensed under a CC BY 2.0 license as part of an advertising\
+      \ campaign it launched in 2007. \LThe plaintiff alleged that Virgin violated\
+      \ the attribution requirements of the license, and that CC had not sufficiently\
+      \ warned licensors that publicity rights were not included under the license."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: Northern Distict of Texas
+    created_at: 2020-06-26 20:02:57.777520+00:00
+    decision_year: 2009
+    is_pending: null
+    license: CC BY-NC-ND
+    links:
+    - 5
+    name: Chang v Virgin Mobile and Creative Commons
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "In September of 2007, the plaintiffs brought suit in U.S. District Court\
+      \ in the Northern District of Texas against the mobile company under a number\
+      \ of causes of action, including invasion of privacy, copyright infringement,\
+      \ and breach of contract. They also made a claim against Creative Commons alleging\
+      \ that Creative Commons had failed to sufficiently warn creators that the do\
+      \ not cover privacy and publicity rights.\r\n\r\nPlaintiffs voluntarily dismissed\
+      \ Creative Commons from the lawsuit in November 2007. In January 2009, the federal\
+      \ district court in Texas dismissed the case against the mobile company for\
+      \ lack of personal jurisdiction."
+    updated_at: 2020-11-18 15:40:09.930219+00:00
+  model: legal_db.case
+  pk: 2
+- fields:
+    background: Adam Curry, a former MTV VJ and one of the pioneers of podcasting,
+      published photos onto his Flickr account under a BY-NC-SA 2.0 license. A Dutch
+      tabloid reprinted four of the photos in a story about the Curry family. Curry
+      sued the tabloid for violating his privacy rights and for copyright infringement.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: NL
+    courts: Netherlands
+    created_at: 2020-06-29 20:36:30.973362+00:00
+    decision_year: 2006
+    is_pending: null
+    license: CC BY-NC-SA
+    links:
+    - 8
+    name: Curry v Audax
+    notes: "Case # 334492/KG 06-176 SR.\r\n\r\nCase File needs to be more visible\
+      \ and aptly named."
+    related_cases: null
+    status: 3
+    summary: "Curry argued that the tabloid violated the BY-NC-SA license by using\
+      \ the photos in a commercial magazine and by not including proper attribution\
+      \ to the CC license. The tabloid argued that it thought the photos could be\
+      \ taken and used because they were marked as \"public\" on Flickr. It also argued\
+      \ that in terms of compensation, the photos had no value because they were available\
+      \ for anyone to view online.\r\n\r\nOn March 9, 2006, the Dutch court held that\
+      \ the tabloid had violated the CC license on the images by failing to attach\
+      \ a notice about the license and for using the images in a commercial magazine.\
+      \ However, the court did not award damages to the plaintiff because they could\
+      \ not prove harm. The court held that defendant could not use any of the photos\
+      \ from Flickr in the future unless they comply with the terms of the CC license\
+      \ or with permission from the plaintiff."
+    updated_at: 2020-11-18 15:39:50.800630+00:00
+  model: legal_db.case
+  pk: 3
+- fields:
+    background: "A map publisher used plaintiff\u2019s CC-licensed Flickr photo on\
+      \ the cover of its commercially available atlas. The attribution and license\
+      \ information for the photo were included on the back cover of the atlas. Plaintiff\
+      \ sued for copyright infringement and asserted a DMCA Section 1202 claim for\
+      \ distribution of false copyright management information."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US (DC)
+    created_at: 2020-06-29 20:39:10.172865+00:00
+    decision_year: 2015
+    is_pending: null
+    license: CC BY-SA
+    links:
+    - 9
+    name: Drauglis v Kappa Map Group
+    notes: No case files here (cite to Jacobsen
+    related_cases: null
+    status: 3
+    summary: "Plaintiff alleged copyright infringement based on three different factors:\
+      \ (1) failure to comply with the ShareAlike condition, (2) failure to provide\
+      \ proper notice of the CC license, and (3) failure to give proper attribution.\r\
+      \n\r\nOn August 18, 2015, the district court of D.C. granted summary judgment\
+      \ to defendant holding that: (1) the ShareAlike condition was not violated because\
+      \ the atlas was not a derivative work of the plaintiff\u2019s photograph; (2)\
+      \ providing the license name was sufficient to satisfy the obligation to provide\
+      \ the URI of the license; and (3) attribution that was comparable in prominence\
+      \ to the attribution given to individual maps in the atlas was sufficient for\
+      \ purposes of fulfilling CC license attribution requirements. The court also\
+      \ dismissed the Section 1202 claim on summary judgment."
+    updated_at: 2020-11-18 15:45:25.681984+00:00
+  model: legal_db.case
+  pk: 4
+- fields:
+    background: In the summer of 2010, the plaintiff took a picture of the German
+      politician Thilo Sarrazin at a public event and published it online under a
+      Creative Commons ShareAlike license. Later the DVU, a German political party,
+      used the picture on their website without the plaintiff's name, the license
+      notice, or a link to the original work.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: DE
+    courts: District Court of Berlin
+    created_at: 2020-06-29 20:46:54.876073+00:00
+    decision_year: 2010
+    is_pending: null
+    license: CC BY-SA
+    links:
+    - 10
+    name: Gerlachs v DVU
+    notes: "Case # 16 O 458/10.\r\n\r\nEnglish translation needs to be fixed, the\
+      \ link is broken, files need to be clearer, and more descriptive.\r\n\r\n[CC\
+      \ note: This summary was not verified through an official English translation.]"
+    related_cases: null
+    status: 3
+    summary: "The photographer sent a takedown notice to the political party, which\
+      \ was ignored. Subsequently, the photographer sought an injunction preventing\
+      \ the DVU from continuing to use the photograph.\r\n\r\nThe court ruled that\
+      \ the DVU\u2019s use was not in compliance with the CC license and granted the\
+      \ injunction."
+    updated_at: 2020-11-18 15:38:57.624282+00:00
+  model: legal_db.case
+  pk: 5
+- fields:
+    background: Wikitravel was a wiki founded in 2003, allowing volunteer authors
+      to add and edit content related to worldwide travel and tourism. All content
+      on the site was published under a Creative Commons ShareAlike license. In 2005,
+      the domain name was purchased by Internet Brands, a for-profit company. In 2012,
+      a group of volunteer site administrators and authors approached the Wikimedia
+      Foundation about making a new travel-oriented wiki, which would incorporate
+      some of the content from Wikitravel owned by contributors.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court of the Central Disctrict of California
+    created_at: 2020-06-29 20:49:14.881710+00:00
+    decision_year: 2012
+    is_pending: null
+    license: CC BY-SA
+    links:
+    - 11
+    name: Internet Brands v Holliday
+    notes: This case does not actually involve CC licensing.
+    related_cases: null
+    status: 3
+    summary: Internet Brands filed a lawsuit against two of those Wikitravel editors,
+      asserting trademark infringement, unfair competition, and civil conspiracy.
+      Internet Brands dismissed their claims.
+    updated_at: 2021-11-09 21:40:27.970784+00:00
+  model: legal_db.case
+  pk: 6
+- fields:
+    background: Wikitravel was a wiki founded in 2003, allowing volunteer authors
+      to add and edit content related to worldwide travel and tourism. All content
+      on the site was published under a Creative Commons ShareAlike license. In 2005,
+      the domain name was purchased by Internet Brands, a for-profit company. In 2012,
+      a group of volunteer site administrators and authors approached the Wikimedia
+      Foundation about making a new travel-oriented wiki, which would incorporate
+      some of the content from Wikitravel owned by contributors.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: Superior Court of California
+    created_at: 2020-06-29 20:51:03.046041+00:00
+    decision_year: 2012
+    is_pending: null
+    license: CC BY-SA
+    links:
+    - 12
+    name: Wikimedia Foundation v Internet Brands
+    notes: "Case # CGC-12-523971.\r\n\r\nNeeds to link back to internet brands v holliday\
+      \ somehow, the two are closely related/associated lawsuits."
+    related_cases: null
+    status: 3
+    summary: "Internet Brands filed a lawsuit against two of those Wikitravel editors,\
+      \ asserting trademark infringement, unfair competition, and civil conspiracy.\
+      \ The Wikimedia Foundation then filed this declaratory judgment action against\
+      \ Internet Brands in California state court, requesting a judicial determination\
+      \ that they have the right to start the proposed new travel wiki and incorporate\
+      \ content from Wikitravel under the terms of the CC license.\r\n\r\nAfter Internet\
+      \ Brands agreed to dismiss their unfair competition claim, the U.S. District\
+      \ Court for the Central District of California dismissed the remainder of Internet\
+      \ Brand\u2019s claims for lack of subject matter jurisdiction. Wikimedia and\
+      \ Internet Brands settled their state court dispute."
+    updated_at: 2020-11-18 15:36:58.541934+00:00
+  model: legal_db.case
+  pk: 7
+- fields:
+    background: The plaintiff created software code and published it under an open
+      source license called the Artistic license. Defendant incorporated the code
+      into its commercial software without complying with the terms of the Artistic
+      license. Plaintiff sued for copyright infringement.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: United States Court of Appeals for the Federal Cicuirt
+    created_at: 2020-06-29 20:53:06.178610+00:00
+    decision_year: 2010
+    is_pending: null
+    license: null
+    links:
+    - 13
+    name: Jacobsen v Katzer
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "The district court held that the license was \u201Cintentionally broad\u201D\
+      \ and unlimited in scope and therefore did not create liability for copyright\
+      \ infringement. On that basis, they denied the motion for preliminary injunction.\
+      \ Plaintiff appealed to the Federal Circuit Court of Appeals.\r\n\r\nThe Federal\
+      \ Circuit Court of Appeals vacated the district court decision and remanded\
+      \ the case. The court held that the restrictions in the license were conditions\
+      \ rather than contractual covenants, meaning that violating them constituted\
+      \ copyright infringement."
+    updated_at: 2020-11-18 15:36:20.881082+00:00
+  model: legal_db.case
+  pk: 8
+- fields:
+    background: A newspaper used several CC-licensed photos in an issue of the newspaper
+      without proper attribution. The photographer contacted the newspaper about the
+      omission, and the newspaper offered the photographer 400 Sheqels, which was
+      the price they said they would have paid a photographer to take a similar photo.
+      The photographer did not accept the offer and brought suit for copyright infringement.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: IL
+    courts: Jerusalem Court (private tribunal)
+    created_at: 2020-06-29 20:55:56.964181+00:00
+    decision_year: 2011
+    is_pending: null
+    license: CC BY-SA
+    links:
+    - 14
+    name: No. 71036 v Newspaper
+    notes: "Case # 71036.\r\n\r\nLicense version is unclear. Link wiht the google\
+      \ translation is a downloadable word file only.\r\n\r\n[CC note: this summary\
+      \ is based on a google translation of the original Hebrew text]."
+    related_cases: null
+    status: 3
+    summary: "This case was decided by a private Rabbinical Tribunal. Thus, it is\
+      \ not an official Israeli court opinion. The court first asked the parties to\
+      \ come to an agreement, which they were not able to do. As a Rabbinical court,\
+      \ the court analyzed the case under both the Torah and the Israel Copyright\
+      \ Act. The court held that there is a religious or moral obligation to comply\
+      \ with the attribution terms of the CC licenses. The court found the Newspaper's\
+      \ settlement offer to be below the value of the benefit the Newspaper had received\
+      \ from using the photo and noted that the Israel copyright act provides for\
+      \ damages up to 100,000 Sheqel.\r\n\r\nThe court found for the photographer\
+      \ and awarded a sum of 3,500 Sheqel."
+    updated_at: 2020-11-18 15:35:53.647878+00:00
+  model: legal_db.case
+  pk: 9
+- fields:
+    background: A Spanish collecting society, the Sociedad General de Autores y Editores
+      (SGAE), sued a disco bar owner, alleging that he had failed to pay SGAE the
+      license fee required for public performances of music managed by the collecting
+      society during the period between November 2002 and August 2005. The bar owner
+      claimed the music being played in his bar was not managed by the society.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: ES
+    courts: Lower Court of number siz of Badajoz (trial court)
+    created_at: 2020-06-29 21:03:32.384038+00:00
+    decision_year: 2006
+    is_pending: null
+    license: null
+    links:
+    - 15
+    name: SGAE v Fernandez
+    notes: "Case # 15/2.006.\r\n\r\nUnclear what type of license and version, files\
+      \ needs to be labelled more clearly.\r\n\r\nThis is derived from a submission\
+      \ to Creative Commons, but not verified through an official English translation."
+    related_cases: null
+    status: 3
+    summary: "The collecting society relied on past precedent in Spain, which had\
+      \ ruled in their favor in similar contexts under the assumption that the collecting\
+      \ society effectively managed the rights of all musicians.\r\n\r\nIn 2006, the\
+      \ court rejected SGAE's claims because the defendant had successfully shown\
+      \ that the music he had been playing in his bar was not managed by the collecting\
+      \ society, but was licensed by musicians under CC licenses."
+    updated_at: 2020-11-18 15:35:17.187512+00:00
+  model: legal_db.case
+  pk: 10
+- fields:
+    background: A Spanish collecting society, the Sociedad General de Autores y Editores
+      (SGAE), sued a coffee bar owner, alleging that he had failed to pay SGAE the
+      license fee required for public performances of music managed by the collecting
+      society during the period between June 2003 and November 2004.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: ES
+    courts: Provincial Court of Pontevedra (1st Section) (appeal court)
+    created_at: 2020-07-23 00:04:08.552188+00:00
+    decision_year: 2005
+    is_pending: null
+    license: null
+    links:
+    - 16
+    name: SGAE v Luis
+    notes: "Case # 3008/2005.\r\n\r\nUnclear what type of license and version, files\
+      \ needs to be labelled more clearly: No English Translation.\r\n\r\nThis is\
+      \ derived from a submission to Creative Commons, but not verified through an\
+      \ official English translation."
+    related_cases: null
+    status: 3
+    summary: "The coffee bar owner claimed that the music it played was CC licensed.\
+      \ The collecting society provided evidence that the bar owner played music from\
+      \ its catalogue.\r\n\r\nThe court held that the defendant was liable because\
+      \ it played music from the collecting society catalogue."
+    updated_at: 2020-11-18 15:34:47.573216+00:00
+  model: legal_db.case
+  pk: 11
+- fields:
+    background: A German website posted a hyperlink to image on another website. That
+      image was available under a CC license, but the website where the image was
+      posted had not complied with the CC license terms and was therefore in violation
+      of the copyright. The photographer who had taken the image filed a lawsuit requesting
+      that the German website take down the link.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: DE
+    courts: Regional Court of Hamburg (first court of instance)
+    created_at: 2020-07-23 00:09:59.509760+00:00
+    decision_year: 2016
+    is_pending: null
+    license: null
+    links:
+    - 17
+    name: Spirit Legal LLP v Redacted Parties
+    notes: "Case # 310 O 402/16.\r\n\r\nUnlcear what type of license and version,\
+      \ file needs to be labelled and presented more clearly; No English Translation."
+    related_cases: null
+    status: 3
+    summary: "In 2016, the court granted an injunction requiring that the link be\
+      \ removed from the German website.\r\n\r\nThis case was an interpretation of\
+      \ an earlier European Court of Justice ruling that held that a website could\
+      \ be held liable for copyright infringement when it posted links to infringing\
+      \ material intending to make a profit. The court in this case broadly interpreted\
+      \ what it means for a link to be posted \"for profit,\" stating that the determination\
+      \ is made based on whether the website is intended to make money."
+    updated_at: 2020-11-18 15:42:59.420472+00:00
+  model: legal_db.case
+  pk: 12
+- fields:
+    background: The plaintiffs, Avi Reuveni and Amir Rivlin, uploaded photographs
+      they had taken during a journey to Jerusalem to Flickr.com. The photographs
+      were published under a Creative Commons BY-NC-ND license. The defendant, Mapa
+      Publishing, copied and used the photographs in a book, but, according to the
+      plaintiff, without proper attribution. One of the photographs was also published
+      on the defendant's website.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: IL
+    courts: District Court I-D (first court of instance)
+    created_at: 2020-07-23 00:34:42.088885+00:00
+    decision_year: null
+    is_pending: null
+    license: CC BY-NC-ND
+    links:
+    - 18
+    - 19
+    name: Avi Re'uveni v Mapa Inc.
+    notes: "Case # TA 3560/09, 3561/09.\r\n\r\nThere is no English translation available\
+      \ at this time. The information provided here is drawn from information provided\
+      \ <a href=\"https://www.law.co.il/en/news/2011/01/18/israeli-court-enforces-a-creative-commons-license/\"\
+      >here</a>."
+    related_cases: null
+    status: 3
+    summary: "[CC note: There is no English translation available at this time. The\
+      \ information provided here is drawn from information provided www.law.co.il/en/news/2011/01/18/israeli-court-enforces-a-creative-commons-license.]\r\
+      \n\r\nThe main question was the sum of damages to be awarded and how it should\
+      \ be calculated. The court sided with the plaintiffs and ruled that the defendant\
+      \ violated the attribution requirements of the CC license. The court also ruled\
+      \ that a separate act of infringement is committed for each photo. The court\
+      \ stated that there is no justification for regarding all 15 photographs as\
+      \ one work of art, seeing as each photograph describes a different object, was\
+      \ taken at a different time, and by a different person (either of the two plaintiffs).\
+      \ The judge considered the fact that the plaintiffs are not professional photographers\
+      \ who earn their living from photography, and that the defendant removed the\
+      \ infringing books from circulation. However, the court did weigh against the\
+      \ defendants the fact that they are book publishers that are expected to comply\
+      \ with copyright laws more stringently than others."
+    updated_at: 2020-11-18 15:44:09.261718+00:00
+  model: legal_db.case
+  pk: 13
+- fields:
+    background: Great Minds is a nonprofit organization that publishes educational
+      materials, including a copyrighted math curriculum available under a CC license
+      allowing noncommercial use only. Office Depot made copies of the math curriculum
+      on behalf of schools and school districts. The parties initially entered into
+      a licensing agreement, but Office Depot terminated the agreement after the Great
+      Minds v. FedEx Office district court decision, which held that FedEx could make
+      copies of the materials at the request of school districts exercising their
+      rights under the CC license. Great Minds then filed suit for copyright infringement
+      and breach of contract in federal court in California.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: U.S. Ninth Circuit Court of Appeals
+    created_at: 2020-07-23 00:40:20.240050+00:00
+    decision_year: 2019
+    is_pending: null
+    license: CC BY-NC-SA
+    links:
+    - 20
+    - 21
+    name: Great Minds v Office Depot
+    notes: 'Case # CV 17-7435-JFW.'
+    related_cases: null
+    status: 3
+    summary: "Office Depot filed a motion to dismiss the case in district court, arguing\
+      \ that Great Minds failed to state a valid copyright infringement claim and\
+      \ that the Great Minds case in New York supported this. Great Minds argued that\
+      \ there were significant facts differentiating the two cases, most notably that\
+      \ Office Depot engaged in active solicitation of the printing business.\r\n\r\
+      \nThe district court in the Central District of California dismissed the copyright\
+      \ infringement claim, holding that the CC license permitted the school districts\
+      \ to use contractors to exercise their rights under the license. Great Minds\
+      \ appealed to the Ninth Circuit Court of Appeals, which affirmed the lower court\
+      \ decision. Creative Commons intervened as amicus curiae, arguing that CC licenses\
+      \ are designed to allow licensees to use contractors to exercise their rights\
+      \ under the license."
+    updated_at: 2020-11-18 15:18:27.044525+00:00
+  model: legal_db.case
+  pk: 14
+- fields:
+    background: Great Minds is a nonprofit organization that publishes educational
+      materials, including a copyrighted math curriculum available under a CC license
+      allowing noncommercial use only. FedEx Office made copies of the math curriculum
+      on behalf of schools and school districts. Great Minds filed suit for copyright
+      infringement in federal court in New York.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: U.S. Second Circuit Court of Appeals
+    created_at: 2020-07-23 00:44:27.177238+00:00
+    decision_year: 2018
+    is_pending: null
+    license: CC BY-NC-SA
+    links:
+    - 22
+    - 23
+    name: Great Minds v FedEx Office
+    notes: 'Case # 2:16-cv-01462-DRH-ARL.'
+    related_cases: null
+    status: 3
+    summary: "FedEx Office filed a motion to dismiss, arguing that Great Minds did\
+      \ not state a valid copyright infringement claim because FedEx Office was acting\
+      \ on behalf of a bona fide licensee under the relevant CC license. Great Minds\
+      \ asserted that FedEx Office itself was a licensee under the CC license and\
+      \ thereby violated the NonCommercial restriction by charging for reproduction\
+      \ of the material.\r\n\r\nThe district court granted the motion to dismiss,\
+      \ holding that the school districts were permitted to use third parties like\
+      \ the defendant to exercise their rights under the CC license. The Second Circuit\
+      \ Court of Appeals affirmed the lower court decision."
+    updated_at: 2020-11-18 15:18:01.801088+00:00
+  model: legal_db.case
+  pk: 15
+- fields:
+    background: A professional photographer posted CC BY-licensed images on Wikimedia
+      Commons. Two of those images were reused without attribution by the Media Research
+      Center. The photographer sued for copyright infringement in district court in
+      Virginia.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: U.S. District Court for the Eastern District of Virginia
+    created_at: 2020-07-23 00:55:03.035667+00:00
+    decision_year: 2018
+    is_pending: false
+    license: CC BY 3.0
+    links:
+    - 24
+    - 25
+    - 26
+    name: Philpot v Media Research Center
+    notes: 'Case # 1:17-cv-822.'
+    related_cases: null
+    status: 3
+    summary: "The defendant filed a motion for summary judgment, arguing (1) that\
+      \ the photographer waived his right to sue for infringement by applying a CC\
+      \ license to the images; (2) their usage qualified as fair use under copyright\
+      \ law, and (3) their usage was protected by the First Amendment.\r\n\r\nIn 2018,\
+      \ the district court granted the defendant\u2019s motion for summary judgment\
+      \ on the basis of fair use. Notably, the court did not accept the defendant\u2019\
+      s argument that the photographer waived his right to sue for copyright infringement\
+      \ by applying the license."
+    updated_at: 2021-11-09 22:59:27.103421+00:00
+  model: legal_db.case
+  pk: 16
+- fields:
+    background: Plaintiff is a professional photographer who posted photos online
+      under a Creative Commons Attribution license. Upon discovery that the defendant
+      used one of his photographs without attribution, plaintiff sent a cease and
+      desist letter. Defendant removed the image from its site. Three years later,
+      defendant used a copy of the photograph on its website without attribution and
+      plaintiff sued in federal court for infringement and improper removal of copyright
+      management information.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: District Court Eastern District of Kentucky Central Division, Sixth Circuit
+      Court of Appeals
+    created_at: 2020-07-23 00:58:52.675001+00:00
+    decision_year: 2020
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 27
+    name: Philpot v LM Communications
+    notes: 'Case # 5:17-CV-173-CHB.'
+    related_cases: null
+    status: 3
+    summary: The district court found that LM Communications had infringed Philpot's
+      copyright, but rejected Philpot's other claims. In a subsequent decision, the
+      court found that LM Communications' infringement was not willful and awarded
+      Philpot $3500 in statutory damages, with no attorneys fees awarded. Philpot
+      appealed the attorneys fees decision to the Sixth Circuit, which reversed and
+      remanded after finding that the district court abused its discretion in awarding
+      attorneys fees given that Philpot was the prevailing party. The district court
+      ultimately awarded $1889.80 in attorneys fees to Philpot.
+    updated_at: 2021-11-09 22:57:22.746854+00:00
+  model: legal_db.case
+  pk: 17
+- fields:
+    background: The Copyright Term Extension Act prevented works from entering the
+      public domain by extending the copyright term an additional 20 years. This affected
+      works that plaintiffs were planning on republishing once the copyright expired.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: U.S. District Court for the District of Columbia, U.S. Court of Appeals
+      for the District of Columbia Circuit, and U.S. Supreme Court
+    created_at: 2020-12-17 14:12:29.225038+00:00
+    decision_year: 2003
+    is_pending: false
+    license: null
+    links:
+    - 30
+    - 31
+    name: Eldred v. Ashcroft
+    notes: ''
+    related_cases: Kahle v. Gonzales
+    status: 3
+    summary: "Case brought by plaintiff Eric Eldred (and others) challenging the constitutionality\
+      \ of the Sonny Bono Copyright Term Extension Act (CTEA), which the U.S. Supreme\
+      \ Court upheld in 2003. Lawrence Lessig represented Eldred and an Internet publisher\
+      \ before the Court. The Court upheld the law.The Court\u2019s decision ultimately\
+      \ led Lessig to launch Creative Commons."
+    updated_at: 2021-11-09 21:32:45.475298+00:00
+  model: legal_db.case
+  pk: 18
+- fields:
+    background: Defendant sued a company that sold reprints of newspaper articles
+      printed on plaques.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: U.S. District Court for the Northern District of Illinois, Western Division
+    created_at: 2020-12-17 14:41:24.993132+00:00
+    decision_year: 2010
+    is_pending: false
+    license: CC-BY-NC-ND 3.0
+    links:
+    - 34
+    - 35
+    - 36
+    name: "GateHouse Media, Inc. v. That\u2019s Great News, LLC"
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "Plaintiff GateHouse Media filed suit against That\u2019s Great News,\
+      \ claiming that defendant violated the noncommercial portion of the CC license\
+      \ applied to its online articles when it produced commercial products based\
+      \ on plaintiff\u2019s proprietary content. The parties settled and the case\
+      \ was dismissed in October 2010."
+    updated_at: 2021-11-09 21:51:26.201878+00:00
+  model: legal_db.case
+  pk: 21
+- fields:
+    background: Larry Philpot is a freelance photographer who photographed musicians
+      John Mellencamp and Norah Jones and made the photographs available under a Creative
+      Commons License. Philpot alleged that Music Times infringed his copyright by
+      publishing, copying, and displaying the photograph on their website, www.musictimes.com,
+      without proper attribution to Philpot and his website. Philpot sought statutory
+      damages in the amount of $150,000 per infringement of the copyright (but no
+      less than $30,000 per infringement), attorneys' fees and costs, as well as actual
+      damages "if Plaintiff so elects." Music Times failed to appear through counsel.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: United States District Court Southern District of New York
+    created_at: 2020-12-17 15:53:17.717580+00:00
+    decision_year: 2017
+    is_pending: false
+    license: CC-BY-SA 3.0 unported
+    links:
+    - 45
+    - 46
+    - 47
+    name: Philpot v. Music Times LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: A default judgment was entered against Music Times for failing to appear.
+      The Magistrate Judge provided a recommendation and report for a $5000 statutory
+      damages award given that Philpot did not pay any licensing fees (the stautory
+      damages award is normally decided in relation to the costs of the licensing
+      fees) and Music Times infringed Philpot's copyrights only twice. The Magistrate
+      Judge suggested no attorneys fees award was warrranted given that Philpot did
+      not provide any documentation to support his claim for fees, but recommended
+      that he be compensated $400 in costs (which would cover the filing fee in this
+      action). The District Court Judge adopted the recommendation.
+    updated_at: 2021-11-09 21:57:25.226915+00:00
+  model: legal_db.case
+  pk: 25
+- fields:
+    background: Larry Philpot is a freelance photographer who photographs musicians.
+      Alternet Media operates an alternative news website and Facebook page publishing
+      its own content as well as contents from other sources. Alternet posted one
+      of Philpot's copyrighted photos of Willie Nelson with a superimposed quote on
+      the Alternet Facebook page. Alternet did not provide attribution to Philpot
+      on the post. Philpot sent a cease and desist letter to which Alternet did not
+      respond. Philpot filed a complaint against Alternet, alleging that Alternet
+      infringed his copyright and violated the Digital Millennium Copyright Act. Alternet
+      moved to dismiss, arguing that fair use bars Philpot's copyright claim.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: United States District Court, Northern District California
+    created_at: 2020-12-17 15:59:09.473729+00:00
+    decision_year: 2018
+    is_pending: null
+    license: CC-BY 2.0
+    links:
+    - 50
+    name: Philpot v. Alternet Media
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court reviewed the four fair use factors and concluded there were
+      insufficient facts in the record to make a fair use determination at this stage
+      in the litigation. The court did grant (with leave to amend) Alternet's motion
+      to dismiss the Digital Millennium Copyright Act claim, finding that Philpot
+      made conclusory arguments without enough facts to show Alternet had the required
+      mental state.
+    updated_at: 2021-11-09 21:44:09.928083+00:00
+  model: legal_db.case
+  pk: 26
+- fields:
+    background: "\"Larry Philpot is a freelance photographer who photographed musicians\
+      \ Willie Nelson and Kenny Chesney and made the photographs available under a\
+      \ Creative Commons license. WOS is a media company that operates a website called\
+      \ \"\"Wide Open Country\"\" and published two articles using Philpot's photographs\
+      \ of Nelson and Chesney. Philpot's counsel sent WOS a cease and desist letter,\
+      \ and WOS subsequently changed the attribution line for the photo to include\
+      \ just Philpot's username instead of \"\"Wikimedia Commons\"\" as it was currently\
+      \ displayed. Philpot then sued WOS, alleging that 1) WOS published the photos\
+      \ without proper attribution and 2) WOS removed copyright management information\
+      \ (CMI) from the photos before publishing by scrubbing the photograph metadata.\
+      \ Philpot sought $150,000 in damages for each photo.\r\n\r\nSome discovery disputes\
+      \ came before the court, and ultimately the court granted a motion to compel\
+      \ Philpot to produce certain tax records and bank statements. WOS then moved\
+      \ for summary judgment on each of Philpot's claims, claiming that WOS's use\
+      \ constituted fair use. Philpot also moved for partial summary judgment regarding\
+      \ WOS's defenses.\""
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: United States District Court for the Western District of Texas Austin
+      Division
+    created_at: 2020-12-17 16:03:10.515127+00:00
+    decision_year: 2019
+    is_pending: false
+    license: BY-SA 3.0 unported
+    links:
+    - 51
+    name: Philpot v. WOS, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court evaluated the fair use factors and found three in favor of
+      Philpot but the last and most important factor, effect on the potential market/value
+      of the work, in favor of WOS, ultimately deciding that this issue is not appropriate
+      for summary judgment. The court did grant summary judgment in favor of Philpot's
+      CMI-removal claims, finding that Philpot could not prove that WOS knew to download
+      the metadata and therefore could not prove the intent elements needed to succeed
+      on the claims. Finally, the court held that Philpot was not entitled to summary
+      judgment on WOS's fair use or licensing defenses (WOS argued that it fulfilled
+      attribution "in any reasonable manner" as required by the Creative Commons license),
+      but did grant Philpot summary judgment regarding WOS's unclean hands and copyright
+      misuse and invalid copyright defenses.
+    updated_at: 2021-11-09 21:50:31.820353+00:00
+  model: legal_db.case
+  pk: 27
+- fields:
+    background: Larry Philpot is a freelance photographer who photographed musician
+      Willie Nelson and made the photograph available under a Creative Commons License.  Philpot
+      alleged that NOTMC infringed his copyright by publishing, copying, and displaying
+      the photograph on their website without proper attribution to Philpot and violated
+      17 U.S.C. 1202 by improperly removing and altering the photo's metadata. Philpot
+      reportedly discovered the copyright infringement on October 1, 2015, and filed
+      this suit on October 1, 2018. NOTMC moved to dismiss Philpot's complaint, arguing
+      that 1) both of his claims were time-barred as the discovery rule might not
+      apply to copyright actions under Petrella v. MGM and 2) Philpot doesn't hold
+      a valid copyright registration for the photo and therefore has no claim for
+      relief. Specifically, NOTMC alleged that Philpot sought registration for his
+      photographs as unpublished works, when in fact the photo in question was previously
+      published under a Creative Commons license.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: United States District Court Eastern District of Louisiana
+    created_at: 2020-12-17 16:11:07.184950+00:00
+    decision_year: 2019
+    is_pending: false
+    license: CC-BY 2.0
+    links:
+    - 52
+    - 53
+    name: Philpot v. New Orleans Tourism Mktg. Corp.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: Motion to dismiss denied. The court held that it will apply the discovery
+      rule in line with Fifth Circuit precedent, which allows for cases to proceed
+      if filed within three years of discovery. Additionally, since Philpot alleged
+      that his certificate of registration incorporates the photo in question and
+      the court must assume the facts alleged in the complaint are true at this stage,
+      the court held that the complaint facts were sufficient to overcome a motion
+      to dismiss challenge.
+    updated_at: 2021-11-09 21:48:46.013416+00:00
+  model: legal_db.case
+  pk: 28
+- fields:
+    background: "Lasica is a photographer who took a photo of the CEO of Yahoo.com,\
+      \ Marissa Mayer, and published it on Flickr.com. The photo was available for\
+      \ public use pursuant to a Creative Commons attribution license, which prohibits\
+      \ the photo\u2019s use for commercial purposes. Defendant (\u201CAOL\u201D)\
+      \ is a corporation that runs AOL.com; AOL published the photo in an article\
+      \ on its employment website and attributed the photo to Flickr.com and Lasica.\
+      \ Lasica claimed that AOL used the photo for commercial purposes by advertising\
+      \ the article, and sued AOL for copyright infringement and declaratory relief.\
+      \ AOL moved to dismiss for failure to state a claim upon which relief can be\
+      \ granted."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Central District of California
+    created_at: 2021-11-09 21:16:29.248181+00:00
+    decision_year: 2016
+    is_pending: false
+    license: CC BY-NC 2.0
+    links:
+    - 174
+    name: Lasica v. America Online, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "The motion to dismiss was denied. The court held that California law\
+      \ should be applied to interpret the license because California had the most\
+      \ significant relationship to the parties and transaction. The court also held\
+      \ that the breach of the commercial use restriction supports an infringement\
+      \ claim because, in such a case, the user exceeds the scope of the granted license.\
+      \ Although AOL raised a license as an affirmative defense, the court ruled against\
+      \ the motion to dismiss because Lasica stated a claim for copyright infringement\
+      \ and dismissal at the pleading stage would be improper. The court also denied\
+      \ AOL\u2019s motion to dismiss with respect to Lasica\u2019s request for declaratory\
+      \ relief."
+    updated_at: 2021-11-09 21:16:29.248201+00:00
+  model: legal_db.case
+  pk: 89
+- fields:
+    background: "Coppola LLC is a law firm that publishes educational blog plots about\
+      \ changes in the law. In their blog, they posted five images that were allegedly\
+      \ made available online free of charge by defendants. Coppola LLC received a\
+      \ letter from defendants demanding a $9200 payment for use of the images. Coppola\
+      \ took the images down and attempted to reach a settlement, but defendants threatened\
+      \ litigation, seeking up to $150,000 in damages. Coppola filed this complaint\
+      \ seeking declaratory judgment that their use of the images was not copyright\
+      \ infringement. The complaint also claimed RICO violations and asserted that\
+      \ defendants were using unfair and deceptive business practices to make a profit\
+      \ off of trying to enforce copyright over photographs made freely available\
+      \ for use.\r\n\r\nSome of the defendants moved to dismiss for a variety of claims,\
+      \ including failure to state claims upon which relief can be granted, failure\
+      \ to file a RICO case statement, insufficient service of process, and lack of\
+      \ personal jurisdiction."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Western District of New York
+    created_at: 2021-11-09 21:23:10.473893+00:00
+    decision_year: 2020
+    is_pending: false
+    license: CC BY-SA
+    links:
+    - 175
+    name: Lisa Coppola, LLC v. Higbee
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "The personal jurisdiction arguments were unavailing given that the company\
+      \ was British but sufficiently availed itself of contacts in New York (where\
+      \ this case was filed). The court dismissed Coppola's RICO claims because Coppola\
+      \ failed to file the requisite supporting documents (RCS). After reviewing the\
+      \ plausibility of claims alleged, the court found that because the defendant\
+      \ website had displayed \"clear, prominent, and unambiguous language of the\
+      \ license requiring attribution,\" Coppola has not plausibly alleged that the\
+      \ defendants' conduct was materially misleading. The court subsequently dismissed\
+      \ the deceptive acts claim and the declaratory judgment claim against the defendants\
+      \ who challenged it. \r\n\r\nThe court denied defendants motion to for attorneys\
+      \ fees."
+    updated_at: 2021-11-09 21:23:10.473948+00:00
+  model: legal_db.case
+  pk: 90
+- fields:
+    background: Larry Philpot is a freelance photographer who photographed musician
+      Willie Nelson, registered the photograph with the US Copyright Office, and made
+      the photograph available under a Creative Commons license. Philpot allegedly
+      found that 420 Magazine had published the Nelson photograph on their website
+      without proper attribution or permission. Philpot contacted 420, and the magazine
+      took the photo down, but refused to pay for its allegedly unauthorized use of
+      the photo. Philpot sued 420, alleging that the magazine directly infringed his
+      copyright and is liable for vicarious or contributory copyright infringement
+      for allowing others to copy the photograph. Philpot appeared to send the complaint
+      to 420's old address, so 420 did not file a response before their deadline.
+      Philpot then filed a motion for entry of default and when 420 belatedly filed
+      their motion to dismiss, Philpot filed a motion for Rule 11 sanctions.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Southern District of Indiana, Indianapolis Division
+    created_at: 2021-11-09 22:01:40.940264+00:00
+    decision_year: 2015
+    is_pending: false
+    license: null
+    links:
+    - 177
+    name: Philpot v. 420 Magazine, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The magistrate judge recommended that the court grant 420's motion to
+      dismiss, finding that the court lacked both specific and general personal jurisdiction
+      over 420. Additionally, the magistrate judge recommended that Philpot's motion
+      for entry of default and motion for Rule 11 sanctions be denied. The district
+      court judge adopted the magistrate judge's recommendations and the case was
+      dismissed.
+    updated_at: 2021-11-09 22:01:40.940284+00:00
+  model: legal_db.case
+  pk: 91
+- fields:
+    background: Larry Philpot is a freelance photographer who photographed Ted Nugent.
+      Baltimore Post-Examiner is an LLC that operates news websites "BaltimorePostExaminer.com"
+      and "LAPostExaminer.com." Philpot made the photo available through Wikimedia
+      for distribution, public display, and public digital performance under a Creative
+      Commons license, and alleged that Baltimore infirnged his copyright by publishing
+      the photo on its websites without attribution. Baltimore moved to dismiss for
+      lack of personal jurisdiction.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Southern District of California
+    created_at: 2021-11-09 22:50:25.585993+00:00
+    decision_year: null
+    is_pending: true
+    license: BY-SA 3.0 unported
+    links:
+    - 178
+    name: Philpot v. Baltimore Post-Examiner
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court denied the motion to dismiss for lack of personal jurisdiction.
+      The court found that it had specific personal jurisdiction over Baltimore using
+      a three part test. Philpot established that there was purposeful direction and
+      the claims arose out of Baltimore's forum-related activities because Baltimore
+      intentionally published the photo on its websites that were aimed at California
+      residents, and Baltimore did not show that exercising jurisdiction would be
+      unreasonable.
+    updated_at: 2021-11-09 22:50:25.586026+00:00
+  model: legal_db.case
+  pk: 92
+- fields:
+    background: "Larry Philpot is a freelance photographer who photographed musician\
+      \ Willie Nelson and made the photograph available under a Creative Commons License.\
+      \ Philpot alleged that Emmis infringed his copyright by publishing, copying,\
+      \ and displaying the photograph in an article on their website, www.TexasMonthly.com,\
+      \ without proper attribution to Philpot and his website. Emmis later sold the\
+      \ website and the article with the Philpot photo to a third party.\r\n\r\nEmmis\
+      \ moved to dismiss Philpot's claims, arguing that (1) the claims are time-barred,\
+      \ (2) Philpot's copyright registration was defective and Emmis properly attributed\
+      \ the phot to him, and (3) the one-satisfaction rule and rule against claim\
+      \ splitting prevent the suit."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Western District of Texas, Austin Division
+    created_at: 2021-11-09 22:52:27.780990+00:00
+    decision_year: 2019
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 179
+    name: Philpot v. Emmis Operating Co.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "\"The motion to dismiss was denied. It was unclear at this stage in\
+      \ the litigation whether Philpot's copyright registration was defective and\
+      \ whether Emmis properly attributed the photo (the court declined to dismiss\
+      \ the claim based on this affirmative defense). Additionally, the one-satisfaction\
+      \ rule only applies to Texas state tort law, not federal law. While Philpot\
+      \ also filed a similar lawsuit with similar claims against a different defendant,\
+      \ because Emmis is not named in that other litigation, Philpot's case against\
+      \ Emmis is not barred under claim splitting.\r\n\r\nAround the same time, Emmis\
+      \ defaulted on a responsive pleading by mistake and sought to vacate the technical\
+      \ default, which the court granted in part while also denying in part Philpot's\
+      \ motion for default judgment. Philpot then moved to recover attorney's fees\
+      \ for seeking entry of default and default judgment. The court emphatically\
+      \ denied the request, concluding that Philpot's counsel was \"\"overly zealous\"\
+      \" and \"\"overly combative\"\" in its legal actions regarding default judgment.\""
+    updated_at: 2021-11-09 22:52:27.781020+00:00
+  model: legal_db.case
+  pk: 93
+- fields:
+    background: Larry Philpot is a freelance photographer who photographs musicians.
+      Philpot sued Kos Media after they reportedly posted Philpot's copyrighted photographs
+      of Willie Nelson, Tom Petty, and Ted Nugent without attributing the photos to
+      Philpot. Philpot charged that Kos violated the Copyright Act and the Digital
+      Millennium Cpoyright Act. Kos moved to dismiss on the grounds that some of the
+      claims were untimely and therefore barred by the statute of limitations, and
+      that the use of the Nugent image was not infringing as a matter of law. Kos
+      also requested judicial notice of a copy of an image from the Internet Archive
+      that showed that Kos provided attribution information when using the Petty image.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Northern District of California
+    created_at: 2021-11-09 22:54:25.729362+00:00
+    decision_year: 2019
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 180
+    name: Philpot v. Kos Media LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court denied Kos's motion to dismiss, finding that Philpot is allowed
+      to make conclusory allegations regarding an affirmative statute of limitations
+      defense and that Kos does not substantively address the infringement claims.
+      The court declined to grant judicial notice on the Petty image, holding that
+      this kind of factual dispute should not be resolved on a motion to dismiss.
+    updated_at: 2021-11-09 22:54:25.729384+00:00
+  model: legal_db.case
+  pk: 94
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Willie Nelson and Carlos Santana and made them available under Creative\
+      \ Commons Licenses. MyArea Network is a social media platform that allows users\
+      \ to post on its platform, and also hires independent contractors to post. The\
+      \ Nelson and Santana photographs appeared in articles on MyArea\u2019s websites,\
+      \ www.512area.com and www.727area.com. Philpot asserted a claim for copyright\
+      \ infringement, alleging that the photos had been used without proper attribution.\
+      \ MyArea filed its answer and affirmative defenses. MyArea moved for summary\
+      \ judgment on its defense of fair use, and Philpot moved for summary judgment\
+      \ because none of the affirmative defenses apply and there was no fair use."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: District Court for the Middle District of Florida
+    created_at: 2021-11-09 23:01:03.631459+00:00
+    decision_year: null
+    is_pending: true
+    license: CC BY 2.0, CC BY-SA 3.0
+    links:
+    - 181
+    name: Philpot v. MyArea Network, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "The court held that MyArea is not entitled to summary judgment on its\
+      \ fair use defense because, weighing the factors, a reasonable jury could find\
+      \ that fair use does not apply (although three factors tiled towards Philpot,\
+      \ the most important one tilted towards MyArea). The court also held that Philpot\
+      \ is not entitled to summary judgment because, weighing the factors, a reasonable\
+      \ jury could find that fair use applies. The court denied Philpot\u2019s motion\
+      \ for summary judgment as to the innocent infringer defense because a jury could\
+      \ believe testimony that MyArea did not intend to infringe. The court denied\
+      \ summary judgment for various other affirmative defenses, but granted Philpot\u2019\
+      s summary judgment for acquiescence, laches, estoppel, and statute of limitation,\
+      \ and de minimis use."
+    updated_at: 2021-11-09 23:01:03.631478+00:00
+  model: legal_db.case
+  pk: 95
+- fields:
+    background: Larry Philpot is a photographer who took a photo of Willie Nelson
+      and published it on Wikimedia under a Creative Commons license, which requires
+      a licensee of the photo to reference the license and provide a specific photographer
+      attribution. Philpot claims that Rural Media published the photo on its website,
+      myruralty.com, and took it down after Philpot sent a cease and desist letter.
+      Philpot then brought this suit for copyright infringement. Rural moved to dismiss
+      under Rule 12(b)(2) for lack of personal jurisdiction.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Southern District of Indiana, Indianapolis Division
+    created_at: 2021-11-09 23:03:35.046212+00:00
+    decision_year: 2015
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 182
+    name: Philpot v. Rural Media Grp., Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court held that there was no specific personal jurisdiction because
+      there was no evidence that the infringing acts were committed intentionally,
+      and no evidence of harm to Philpot in Indiana, and the court similarly held
+      that there were not sufficient contacts with Indiana to establish general personal
+      jurisdiction.
+    updated_at: 2021-11-09 23:03:35.046235+00:00
+  model: legal_db.case
+  pk: 96
+- fields:
+    background: Larry Philpot is a freelance photographer who photographs musicians.
+      Philpot sued Scene Entertainment after they reportedly reproduced Philpot's
+      copyrighted photograph of Macy Gray on their website without properly attributing
+      it to Philpot. Philpot charged that Scene Entertainment violated the Copyright
+      Act and the Digital Millennium Copyright Act. Scene Entertainment failed to
+      appear before the court, so Philpot moved for default judgment. Philpot sought
+      $150,000 in statutory damages for infringement, plus attorneys fees and costs.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Eastern District of Louisiana
+    created_at: 2021-11-09 23:05:16.285230+00:00
+    decision_year: 2019
+    is_pending: false
+    license: CC BY-SA
+    links:
+    - 183
+    name: Philpot v. Scene Entertainment, LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "The court granted Philpot's motion for default judgment with regards\
+      \ to his claim that Scene Entertainment infringed his copyright. The court denied\
+      \ Philpot's motion with regards to his second claim that the infringement was\
+      \ willful or that Scene Entertainment unlawfully removed copyright infromation,\
+      \ finding that Philpot did not sufficiently show that Scene Entertainment had\
+      \ knowingly facilitated infringement. \r\n\r\nThe court subsequently held an\
+      \ evidentiary hearing for damages, and granted Philpot $10,500 in statutory\
+      \ damages as Philpot testified that he would normally charge Scene Entertainment\
+      \ $3500 for the use of the photograph. The court also ordered that Philpot submit\
+      \ a written motion for fees and include time sheets in his request."
+    updated_at: 2021-11-09 23:05:16.285252+00:00
+  model: legal_db.case
+  pk: 97
+- fields:
+    background: Larry Philpot is a photographer who took a photo of Willie Nelson
+      and made it available under a Creative Commons License which requires users
+      to provide a link to the license, credit the photographer, and specify and changes
+      made to the photo. Philpot brought an infringement suit against Toledo Radio,
+      alleging that Toledo removed identifying metadata and displayed the photo on
+      its website, www.1077wolf.com, without referencing the license and photographer.
+      Toledo filed a motion to dismiss, and then both parties moved for summary judgment.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Northern District of Ohio, Western Division
+    created_at: 2021-11-09 23:06:35.330513+00:00
+    decision_year: 2017
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 184
+    name: Philpot v. Toledo Radio, LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "Toledo moved to dismiss the claims that Toledo materially contributed\
+      \ to the copyright infringement and engaged in vicarious copyright infringement.\
+      \ The court denied Toledo\u2019s motion to dismiss because the complaint was\
+      \ sufficient to state a plausible claim for relief. Subsequently, the court\
+      \ denied both motions for summary judgment as to copyright infringement because\
+      \ a genuine issue of material fact remained as to whether the fair use and innocent\
+      \ infringer defenses applied."
+    updated_at: 2021-11-09 23:06:35.330535+00:00
+  model: legal_db.case
+  pk: 98
+- fields:
+    background: "Larry Philpot is a photographer who took a photo of Willie Nelson\
+      \ and published it on Wikimedia under a Creative Commons license, which requires\
+      \ a licensee of the photo to reference the license and provide a photographer\
+      \ attribution (\"Photo by Larry Philpot, www.soundstagephotography.com\u201D\
+      ). Philpot claimed that WKMS/Murray State University used the photo on its Facebook\
+      \ page and website, wkms.com, without proper attribution or authorization and\
+      \ filed a complaint for copyright infringement. WKMS is a radio station owned\
+      \ and operated by the University. After filings on both sides, Philpot amended\
+      \ his complaint to only seek relief against WKMS. WKMS filed a motion to dismiss."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Southern District of Indiana, Indianapolis Division
+    created_at: 2021-11-09 23:08:06.450583+00:00
+    decision_year: 2016
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 185
+    name: Philpot v. WKMS/Murray State University
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court dismissed the case on Eleventh Amendment grounds, holding that
+      Murray University is a state agency entitled to sovereign immunity and that
+      WKMS is financially and operationally dependent on the University, so the court
+      lacks subject matter jurisdiction over the case.
+    updated_at: 2021-11-09 23:08:06.450609+00:00
+  model: legal_db.case
+  pk: 99
+- fields:
+    background: Larry Philpot filed a complaint against World Public Library Association
+      asserting claims for copyright infringement, contributory copyright infringement,
+      and Digital Millennium Copyright Act violations related to Philpot's photographs.
+      Philpot then filed to strike World Public Library Association's affirmative
+      defenses of waiver and fair use.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for District of Hawaii
+    created_at: 2021-11-09 23:09:33.512657+00:00
+    decision_year: 2019
+    is_pending: false
+    license: null
+    links:
+    - 186
+    name: Philpot v. World Public Library Association
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: World Public Library Association alleged that they used Philpot's works
+      in line with his Creative Commons license, so the court denied the motion to
+      dismiss the waiver defense. The court also found that World Public Library Association's
+      fair use defense was sufficient for the purposes of surviving a motion to dismiss.
+      The motion to dismiss both defenses was denied.
+    updated_at: 2021-11-09 23:09:33.512679+00:00
+  model: legal_db.case
+  pk: 100
+- fields:
+    background: "Tim Pierce is a photographer who uploaded a photo to Flickr, which\
+      \ was available under a Creative Commons license that requires users to give\
+      \ the photographer credit and indicate if any changes were made to the photo.\
+      \ Lifezette owns and operates the website \u201Cwww.lifezette.com\u201D and\
+      \ used Pierce\u2019s photos without attribution or permission and altered the\
+      \ photos on multiple occasions. Pierce filed a copyright infringement complaint\
+      \ against and served Lifezette, but Lifezette never responded. Pierce filed\
+      \ a motion for default judgment and requested \u201Cat least $75,000 in statutory\
+      \ damages under 17 U.S.C. \xA7 504,\" \"at least $200,000 in statutory damages\
+      \ under 17 U.S.C. \xA7 1203,\" and (3) \"full costs, including reasonable attorneys'\
+      \ fees . . . under 17 U.S.C. \xA7\xA7 505 and 1203.\""
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the District of Columbia
+    created_at: 2021-11-09 23:11:19.276248+00:00
+    decision_year: 2021
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 187
+    name: Pierce v. Lifezette, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "The court granted default judgment for copyright infringement because\
+      \ Pierce\u2019s complaint established that he owned a valid copyright to the\
+      \ photo and Lifezette copied original aspects of the photo; the court also granted\
+      \ default judgment for the Digital Millennium Copyright Act claim because Pierce\
+      \ established that there was copyright management information in the photo and\
+      \ Lifezette removed the information from the photo. The court awarded Pierce\
+      \ $139,000 in statutory damages and held that Lifezette is permanently enjoined\
+      \ from using the photo without abiding by the terms of the license."
+    updated_at: 2021-11-09 23:11:19.276278+00:00
+  model: legal_db.case
+  pk: 101
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Randy Travis, Willie Nelson, Kid Rock, and Ted Nugent, and made\
+      \ these photographs available under Creative Commons Licenses. Philpot alleged\
+      \ that Alpha Media USA LLC infringed his copyright by publishing, copying, and\
+      \ displaying the photographs on their websites, www.countrylegends1069.com,\
+      \ www.kwhl.com, www.kxl.com, www.931hankfm.com and www.larslarson.com, without\
+      \ proper attribution to Philpot and his website. Philpot sought actual damages,\
+      \ interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the District of Oregon
+    created_at: 2022-01-12 17:33:44.080849+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0, BY 2.0
+    links:
+    - 226
+    name: Philpot v. Alpha Media USA, LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The complaint in this case was filed on 04/30/2020. On 07/27/2020, Philpot
+      filed a notice of settlement, and on 08/11/2020 he voluntarily dismissed the
+      case.
+    updated_at: 2022-01-12 17:33:44.080870+00:00
+  model: legal_db.case
+  pk: 136
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Jeff Tweedy and made these photographs available under a Creative\
+      \ Commons License. Philpot alleged that Blackbird Production infringed his copyright\
+      \ by publishing, copying, and displaying the photographs on their website, https://blackbirdpresents.com,\
+      \ without proper attribution to Philpot and his website. Philpot sought actual\
+      \ damages, interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Southern District of New York
+    created_at: 2022-01-12 17:37:36.226801+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 227
+    name: Philpot v. Blackbird Production Partners LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: After the court issued a show casue order that Plaintiff show cause why
+      the action should not be dismissed for failure to serve or prosecute filed on
+      10/13/2020, Philpot voluntarily dismissed the case with prejudice the same day.
+    updated_at: 2022-01-12 17:37:36.226849+00:00
+  model: legal_db.case
+  pk: 137
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Willie Nelson, and made these photographs available under a Creative\
+      \ Commons License. Philpot alleged that Scott Brown and Scott Brennan infringed\
+      \ his copyright by publishing, copying, and displaying the photographs on their\
+      \ website https://pasoroblesdailynews.com and https://atowndailynews.com without\
+      \ proper attribution to Philpot and his website. Philpot sought actual damages,\
+      \ interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Central District of California
+    created_at: 2022-01-12 17:40:38.457305+00:00
+    decision_year: 2021
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 228
+    name: Philpot v. Brown
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: After multiple filings and a set date for jury trail, Philpot voluntarily
+      dismissed the case on 07/06/2021.
+    updated_at: 2022-01-12 17:40:49.635300+00:00
+  model: legal_db.case
+  pk: 138
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Kenny Chesney and Willie Nelson, and made these photographs available\
+      \ under Creative Commons Licenses. Philpot alleged that CalNews, Inc. infringed\
+      \ his copyright by publishing, copying, and displaying the photographs on their\
+      \ website https://mynewsla.com without proper attribution to Philpot and his\
+      \ website. Philpot sought actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for  Central District of California
+    created_at: 2022-01-12 17:42:26.726650+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0, BY 2.0
+    links:
+    - 229
+    name: Philpot v. CalNews, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: After multiple filings (complaint, answer, amended answer), defendant
+      filed the parties' stipulation of dismissal with prejudice on 11/12/2020, and
+      the judge dismissed the case the following day.
+    updated_at: 2022-01-12 17:42:26.726678+00:00
+  model: legal_db.case
+  pk: 139
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Ted Nugent, and made these photographs available under a Creative\
+      \ Commons License. Philpot alleges that Citizen Outreach Foundation, Inc. infringed\
+      \ his copyright by publishing, copying, and displaying the photographs on their\
+      \ website http://nevadanewsandviews.com without proper attribution to Philpot\
+      \ and his website. Philpot is seeking actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the District of Nevada
+    created_at: 2022-01-12 17:44:54.527879+00:00
+    decision_year: null
+    is_pending: true
+    license: BY-SA 3.0
+    links:
+    - 230
+    name: Philpot v. Citizen Outreach Foundation, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: This case is currently pending. The judge issued an order denying the
+      motion to dismiss on 03/03/2021. On 06/30/2021, the judge issued a scheduling
+      order granting the discovery plan and scheduling order.
+    updated_at: 2022-01-12 17:44:54.528370+00:00
+  model: legal_db.case
+  pk: 140
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician REO Speedwagon and made these photographs available under a Creative\
+      \ Commons License. Philpot alleged that Contemporary Media Inc. infringed his\
+      \ copyright by publishing, copying, and displaying the photographs on their\
+      \ website www.memphismagazine.com without proper attribution to Philpot and\
+      \ his website. Philpot sought actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Western District of Tennessee
+    created_at: 2022-01-12 17:46:15.581268+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 231
+    name: Philpot v. Contemporary Media, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: This case was filed in May 2020, and in the same month there was a notice
+      to comply with plan for alternative dispute resolution filed by all parties.
+      After multiple filings and conferences, Philpot accepted the offer of judgment
+      on 09/15/2020, and on the same date the judge signed a permanent injunction
+      and judgment.
+    updated_at: 2022-01-12 17:46:15.581287+00:00
+  model: legal_db.case
+  pk: 141
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Kid Rock, Willie Nelson, and Ted Nugent, and made these photographs\
+      \ available under Creative Commons Licenses. Philpot alleged that Cumulus Media\
+      \ Inc. infringed his copyright by publishing, copying, and displaying the photographs\
+      \ on their websites,  www.963wdvd.com, www.nashfm931.com, www.klif.com, www.wbap.com\
+      \ and www.kvor.com, without proper attribution to Philpot and his website. Philpot\
+      \ sought actual damages, interest, reasonable attorney\u2019s fees, and statutory\
+      \ damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Northern District of Texas
+    created_at: 2022-01-12 17:47:38.654391+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0, BY 2.0
+    links:
+    - 232
+    name: Philpot v. Cumulus Media Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: Philpot filed a notice of dismissal on 06/26/2020.
+    updated_at: 2022-01-12 17:47:38.654412+00:00
+  model: legal_db.case
+  pk: 142
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Willie Nelson and made these photographs available under a Creative\
+      \ Commons License. Philpot alleged that Denver Dispensary infringed his copyright\
+      \ by publishing, copying, and displaying the photographs on their website, https://marijuanaediblesdenver.com,\
+      \ without proper attribution to Philpot and his website. Philpot sought actual\
+      \ damages, interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for District of Colorado
+    created_at: 2022-01-12 17:49:08.315900+00:00
+    decision_year: 2020
+    is_pending: false
+    license: CC BY 2.0
+    links:
+    - 233
+    name: Philpot v. Denver Dispensary LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: In August 2020, the parties settled and filed a notice of settlement.
+      The stipulation of dismissal by plaintiff was filed on 08/31/2020 and the case
+      was terminated on the same date.
+    updated_at: 2022-01-12 18:02:42.547047+00:00
+  model: legal_db.case
+  pk: 143
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Chris Daughtry and Kid Rock and made these photographs available\
+      \ under Creative Commons Licenses. Philpot alleged that Funny or Die Media Inc.\
+      \ infringed his copyright by publishing, copying, and displaying the photographs\
+      \ on their website www.funnyordie.com without proper attribution to Philpot\
+      \ and his website. Philpot sought actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Central District of California
+    created_at: 2022-01-12 17:50:28.380791+00:00
+    decision_year: 2021
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 234
+    name: Philpot v. Funny or Die Media, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: After the complaint was filed, defendant obtained seven extensions to
+      reply to the complaint. On 04/28/2021, Philpot filed a stipulation to dismiss
+      the case.
+    updated_at: 2022-01-12 17:50:28.380810+00:00
+  model: legal_db.case
+  pk: 144
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Tom Petty, and made these photographs available under a Creative\
+      \ Commons License. Philpot alleged that Future Health, Inc. and Robert Kall,\
+      \ infringed his copyright by publishing, copying, and displaying the photographs\
+      \ on their website www.opednews.com without proper attribution to Philpot and\
+      \ his website. Philpot sought actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Eastern District of Pennsylvania
+    created_at: 2022-01-12 17:52:52.518139+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 2.0
+    links:
+    - 235
+    name: Philpot v. Future Health, Inc. et al
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: On 12/11/2020, Philpot voluntarily dismissed the case as to all defendants.
+    updated_at: 2022-01-12 17:52:52.518158+00:00
+  model: legal_db.case
+  pk: 145
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Ted Nugent and made these photographs available under a Creative\
+      \ Commons License. Philpot alleges that Independent Journal Review infringed\
+      \ his copyright by publishing, copying, and displaying the photographs on their\
+      \ website, www.ijr.org, without proper attribution to Philpot and his website.\
+      \ Philpot is seeking actual damages, interest, reasonable attorney\u2019s fees,\
+      \ and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: District Court for Eastern District of Virginia
+    created_at: 2022-01-12 18:02:31.587081+00:00
+    decision_year: null
+    is_pending: true
+    license: BY-SA 3.0
+    links:
+    - 236
+    name: Philpot v. Independent Journal Review
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: This case is currently pending.
+    updated_at: 2022-01-12 18:02:31.587102+00:00
+  model: legal_db.case
+  pk: 146
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Willie Nelson, and made these photographs available under a Creative\
+      \ Commons License. Philpot alleges that LendingTree, LLC infringed his copyright\
+      \ by publishing, copying, and displaying the photographs on their website www.lendingtree.com\
+      \ without proper attribution to Philpot and his website. Philpot is seeking\
+      \ actual damages, interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Western District of North Carolina
+    created_at: 2022-01-12 18:04:16.482988+00:00
+    decision_year: null
+    is_pending: true
+    license: CC BY 2.0
+    links:
+    - 237
+    name: Philpot v. Lending Tree, LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: This case is currently pending. The case was filed on 05/08/2020; the
+      court issued an order denying the motion to dismiss for failure to state a claim
+      on 07/02/2021, and on 07/16/2021 the defendant filed an answer to the complaint
+      with a jury demand.
+    updated_at: 2022-01-12 18:04:16.483015+00:00
+  model: legal_db.case
+  pk: 147
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Randy Travis, Carlos Santana, and Jerry Lee Lewis, and made these\
+      \ photographs available under Creative Commons Licenses. Philpot alleged that\
+      \ Paul Nerger infringed his copyright by publishing, copying, and displaying\
+      \ the photographs on their website http://www.hwof.com/ without proper attribution\
+      \ to Philpot and his website. Philpot sought actual damages, interest, reasonable\
+      \ attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Central District of California
+    created_at: 2022-01-12 18:05:24.145911+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 238
+    name: Philpot v. Nerger
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: On 08/12/2020 Philpot voluntarily dismissed the case without prejudice.
+    updated_at: 2022-01-12 18:05:24.145937+00:00
+  model: legal_db.case
+  pk: 148
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Ted Nugent, and made these photographs available under a Creative\
+      \ Commons License. Philpot alleged that Rocking M Media, LLC and Meridian Media,\
+      \ LLC. infringed his copyright by publishing, copying, and displaying the photographs\
+      \ on their website http://www.ksal.com/ without proper attribution to Philpot\
+      \ and his website. Philpot sought actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the District of Kansas
+    created_at: 2022-01-12 18:06:29.902647+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 239
+    name: Philpot v. Rocking M Media, LLC et al
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: On 07/30/2020, the court filed a notice of cancelled hearing because
+      the parties notified the court that they resolved this matter. On 08/05/2020,
+      Philpot filed a stipulation of dismissal.
+    updated_at: 2022-01-12 18:06:29.902668+00:00
+  model: legal_db.case
+  pk: 149
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Kenny Chesney, Ted Nugent, Willie Nelson, Tom Petty, and Kid Rock\
+      \ made these photographs available under Creative Commons Licenses. Philpot\
+      \ alleges that Reality TV World infringed his copyright by publishing, copying,\
+      \ and displaying the photographs on their website, www.realitytvworld.com, without\
+      \ proper attribution to Philpot and his website. Philpot is seeking actual damages,\
+      \ interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: UM
+    courts: US District Court for District of Rhode Island
+    created_at: 2022-01-12 18:07:45.598589+00:00
+    decision_year: null
+    is_pending: true
+    license: BY-SA 3.0, BY 2.0
+    links:
+    - 240
+    name: Philpot v. Santos
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: This case is currently pending.
+    updated_at: 2022-01-12 18:07:45.598619+00:00
+  model: legal_db.case
+  pk: 150
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Ted Nugent and Jerry Lee Lewis and made these photographs available\
+      \ under Creative Commons Licenses. Philpot alleged that Scripps Media Inc. and\
+      \ Literally Media Ltd. infringed his copyright by publishing, copying, and displaying\
+      \ the photographs on their websites, www.cracked.com and www.ebaumsworld.com,\
+      \ without proper attribution to Philpot and his website. Philpot sought actual\
+      \ damages, interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Western District of Washington
+    created_at: 2022-01-12 18:09:00.911119+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 241
+    name: Philpot v. Scripps Media, Inc. et al
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The case was terminated on 12/02/2020 after the parties stipulated to
+      the voluntary dismissal of the case with prejudice.
+    updated_at: 2022-01-12 18:09:00.911148+00:00
+  model: legal_db.case
+  pk: 151
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Kid Rock, and made these photographs available under a Creative Commons\
+      \ License. Philpot alleged that Snopes Media Group, Inc. infringed his copyright\
+      \ by publishing, copying, and displaying the photographs on their website https://www.snopes.com/\
+      \ without proper attribution to Philpot and his website. Philpot sought actual\
+      \ damages, interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Western District of Washington
+    created_at: 2022-01-12 18:10:06.863537+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 242
+    name: Philpot v. Snopes Media Group Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: The court granted the stipulated motion for dismissal with prejudice
+      on 10/29/2020.
+    updated_at: 2022-01-12 18:10:06.863558+00:00
+  model: legal_db.case
+  pk: 152
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musician Kid Rock, and made these photographs available under a Creative Commons\
+      \ License. Philpot alleged that Snopes Media Group, Inc. infringed his copyright\
+      \ by publishing, copying, and displaying the photographs on their website https://www.snopes.com/\
+      \ without proper attribution to Philpot and his website. Philpot sought actual\
+      \ damages, interest, reasonable attorney\u2019s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Western District of North Carolina
+    created_at: 2022-01-12 18:11:10.186401+00:00
+    decision_year: 2020
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 243
+    name: Philpot v. Universal Media, Inc.
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: On 09/03/2020, Philpot filed a notice of voluntary dismissal.
+    updated_at: 2022-01-12 18:11:10.186421+00:00
+  model: legal_db.case
+  pk: 153
+- fields:
+    background: "Larry Philpot is a freelance concert photographer who photographed\
+      \ musicians Ted Nugent, and REO Speedwagon, and made these photographs available\
+      \ under Creative Commons Licenses. Philpot alleged that Vivid Seats LLC infringed\
+      \ his copyright by publishing, copying, and displaying the photographs on their\
+      \ website, https://www.vividseats.com, without proper attribution to Philpot\
+      \ and his website. Philpot sought actual damages, interest, reasonable attorney\u2019\
+      s fees, and statutory damages."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for Northern District of Illinois
+    created_at: 2022-01-12 18:12:09.809829+00:00
+    decision_year: 2021
+    is_pending: false
+    license: BY-SA 3.0
+    links:
+    - 244
+    name: Philpot v. Vivid Seats LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: After filings on both sides, there is a stipulation of dismissal with
+      prejudice filed on 01/11/2021, and the judge dismissed and terminated the case
+      the following day.
+    updated_at: 2022-01-12 18:12:09.809860+00:00
+  model: legal_db.case
+  pk: 154
+- fields:
+    background: "Simon J Burchett is a professional photographer who is the beneficial\
+      \ owner, by assignment, of a copyright image of a container ship. Infoway LLC\
+      \ is a web design company. Burchett sued Infoway for copyright infringement,\
+      \ contributory copyright infringement, and under the DMCA for their failure\
+      \ to include copyright management information. Infoway posted Burchett\u2019\
+      s copyrighted picture of the container ship on Flickr under a Creative Commons\
+      \ License, with Infoway\u2019s trade name, website, and logo, without license\
+      \ or authority. Plaintiff is seeking actual damages, statutory damages for copyright\
+      \ infringement and breach of the DMCA, and reasonable attorney\u2019s fees and\
+      \ costs."
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: US
+    courts: US District Court for the Southern District of New York
+    created_at: 2022-01-12 18:15:05.585779+00:00
+    decision_year: 2020
+    is_pending: null
+    license: null
+    links:
+    - 245
+    name: Simon J. Burchett Photography, Inc. v. Infoway LLC
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: On 07/06/2020 the plaintiff voluntarily dismissed the case without prejudice
+      or costs.
+    updated_at: 2022-01-12 18:15:05.585798+00:00
+  model: legal_db.case
+  pk: 155
+- fields:
+    background: Defendant used an image from Wikimedia Commons without properly following
+      the license.
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    country: NL
+    courts: Rechtbank Midden-Nederland (kantonrechter)
+    created_at: 2022-01-31 09:11:51.477617+00:00
+    decision_year: 2021
+    is_pending: false
+    license: CC BY-SA 4.0
+    links:
+    - 254
+    name: ECLI:NL:RBMNE:2021:5887
+    notes: ''
+    related_cases: null
+    status: 3
+    summary: "Copyright owner sued and was awarded \u20AC 450,00 in damages. Additionally\
+      \ defendant had to pay the court fees and the costs of the legal representation\
+      \ of the copyright owner (\u20AC 2.036,30).\r\n\r\nDecision was reached on 8th\
+      \ of december 2021."
+    updated_at: 2022-01-31 19:27:15.536101+00:00
+  model: legal_db.case
+  pk: 159
+- fields:
+    authors: Alexandra Giannopoulou
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    created_at: 2020-06-22 14:41:10.018856+00:00
+    license: null
+    link: 1
+    notes: 'Country: France'
+    publication_name: International Review of Law, Computers, Technology
+    publication_year: 2014
+    status: 3
+    summary: "Since 2002, Creative Commons has been continuously evolving in order\
+      \ to create a licensing scheme that not only fulfils the needs of the author\
+      \ but also stays compatible with already existing national copyright laws. The\
+      \ extent of the respect of moral rights provisions has always been highlighted\
+      \ during the licences\u2019 evolution. This Article first examines whether moral\
+      \ rights are expressly mentioned in the licences and if so, what their treatment\
+      \ is. Each element of the moral rights in the French system will be considered\
+      \ in order to verify their compatibility with the Creative Commons licences.\
+      \ In this context, it will be also asserted whether some existing clauses in\
+      \ the licence contradict with the moral rights of authors. The Article will\
+      \ conclude that although a more flexible interpretation of moral rights provisions\
+      \ is needed when dealing with open content licences, it is essential that Creative\
+      \ Commons addresses the aspects of the licences that are identified as problematic\
+      \ in relation to moral rights. Finally, it will be demonstrated that regardless\
+      \ of the legal status of the licences, the authors' responsibility towards their\
+      \ rights is what will ultimately be the safeguard of their creations' path."
+    title: The Creative Commone Licences through moral rights provisions in French
+      law
+    updated_at: 2020-11-17 20:10:27.197861+00:00
+  model: legal_db.scholarship
+  pk: 1
+- fields:
+    authors: Margoni, Thomas
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    created_at: 2020-06-22 14:43:29.691187+00:00
+    license: null
+    link: 2
+    notes: 'Country: United Kingdom'
+    publication_name: Journal of Intellectual Property, Information Technology and
+      E-Commerce Law 4(3)
+    publication_year: 2013
+    status: 3
+    summary: "Design rights represent an interesting example of how the EU legislature\
+      \ has successfully regulated an otherwise heterogeneous field of law. Yet this\
+      \ type of protection is not for all. The tools created by EU intervention have\
+      \ been drafted paying much more attention to the industry sector rather than\
+      \ to designers themselves. In particular, modern, digitally based, individual\
+      \ or small-sized, 3D printing, open designers and their needs are largely neglected\
+      \ by such legislation. The use of printing machinery to manufacture physical\
+      \ objects created digitally thanks to computer programs such as Computer-Aided\
+      \ Design (CAD) software has been in place for quite a few years, and it is actually\
+      \ the standard in many industrial fields, from aeronautics to home furniture.\
+      \ The change in recent years that has the potential to be a paradigm-shifting\
+      \ factor is a combination between the popularization of such technologies (price,\
+      \ size, usability, quality) and the diffusion of a culture based on access to\
+      \ and reuse of knowledge. We will call this blendOpen Design. It is probably\
+      \ still too early, however, to say whether 3D printing will be used in the future\
+      \ to refer to a major event in human history, or instead will be relegated to\
+      \ a lonely Wikipedia entry similarly to \u201CBetamax\u201D (copyright scholars\
+      \ are familiar with it for other reasons). It is not too early, however, to\
+      \ develop a legal analysis that will hopefully contribute to clarifying the\
+      \ major issues found in current EU design law structure, why many modern open\
+      \ designers will probably find better protection in copyright, and whether they\
+      \ can successfully rely on open licenses to achieve their goals. With regard\
+      \ to the latter point, we will use Creative Commons (CC) licenses to test our\
+      \ hypothesis due to their unique characteristic to be modular, i.e. to have\
+      \ different license elements (clauses) that licensors can choose in order to\
+      \ adapt the license to their own needs."
+    title: 'Not for Designers: On the Inadequacides of EU Design Law and How to Fix
+      It'
+    updated_at: 2020-11-17 19:31:38.778105+00:00
+  model: legal_db.scholarship
+  pk: 2
+- fields:
+    authors: Catherin Jasserand
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    created_at: 2020-06-22 14:45:46.889621+00:00
+    license: null
+    link: 3
+    notes: 'Country: Germany'
+    publication_name: kipitec, Vol.2
+    publication_year: 2011
+    status: 3
+    summary: This article analyses whether Creative Commons licences are applicable
+      to and compatible with design. The first part focuses on the peculiar and complex
+      nature of a design, which can benefit from a copyright and a design protection.
+      This shows how it can affect the use of Creative Commons licences. The second
+      and third parts deal with a specific case study. Some Internet platforms have
+      recently emerged that offer users the possibility to download blueprints of
+      design products in order to build them. Designers and creative users are invited
+      to share their blueprints and creations under Creative Commons licences. The
+      second part of the article assesses whether digital blueprints can be copyrightable
+      and serve as the subject matter of Creative Commons licences, while the last
+      part assesses whether the right to reproduce the digital blueprint, as provided
+      by Creative Commons licences, extends to the right to build the product.
+    title: Creative Commons licences and design are the two compatible?
+    updated_at: 2020-11-17 19:31:08.778885+00:00
+  model: legal_db.scholarship
+  pk: 3
+- fields:
+    authors: Simone Aliprandi
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    created_at: 2020-06-29 19:31:48.005945+00:00
+    license: null
+    link: 6
+    notes: 'Country: Italy'
+    publication_name: null
+    publication_year: 2012
+    status: 3
+    summary: "\"Data and databases are a complex, nuanced area within intellectual\
+      \ property law.\r\nIn the European Union databases have a special legal treatment\
+      \ that provides two levels of protection. A database is protected by copyright\
+      \ in the classical sense when it can be considered an intellectual work with\
+      \ a creative nature. Where databases represent mere collections of data without\
+      \ sufficient creativity to trigger copyright, EU jurisdictions protect the database\
+      \ under sui generis rights when substantial investment has been made in obtaining,\
+      \ verifying, or presenting the database contents according to Directive 96/9/EC.\r\
+      \nThis system creates a substantial discrepancy between the situation of European\
+      \ countries and the rest of the world, and also affects those databases that\
+      \ have been released under open licenses.\r\nNot all of the currently available\
+      \ open licenses take account of the legal and practical implications of this\
+      \ discrepancy, and we should examine the consequences and options.\r\nThe paper\
+      \ aims to provide a high-level analysis on the protection of databases under\
+      \ European law and identify the main legal problems arising from it in an open\
+      \ data scenario. Then it will focus on the solutions tried so far to implement\
+      \ a proper open licensing framework for the database (with an introduction to\
+      \ the licenses offered by Creative Commons and the Open Data Commons project).\
+      \ Finally, some of the most prominent use cases of open licensing for data will\
+      \ be analysed (such as those of geo-data and linked-data), with some observations\
+      \ on the modus operandi of the various promoters of projects.\""
+    title: Open licensing and databases
+    updated_at: 2020-11-17 19:29:34.463300+00:00
+  model: legal_db.scholarship
+  pk: 4
+- fields:
+    authors: Dietr, Nil and Guibault, Lucie and Margoni, Thomas and Siewicz, Krzysztof
+      and Spindler, Gerald and Wiebe, Andreas
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    created_at: 2020-06-29 19:34:23.968120+00:00
+    license: null
+    link: 7
+    notes: 'Country: Germany'
+    publication_name: Open Aire Plus
+    publication_year: 2013
+    status: 3
+    summary: "\"Openness has become a common concept in a growing number of scientific\
+      \ and academic fields. Expressions such as Open Access (OA) or Open Content\
+      \ (OC) are often employed for publications of papers and research results, or\
+      \ are contained as conditions in tenders issued by a number of funding agencies.\
+      \ More recently the concept of Open Data (OD) is of growing interest in some\
+      \ fields, particularly those that produce large amounts of data \u2013 which\
+      \ are not usually protected by standard legal tools such as copyright. However,\
+      \ a thorough understanding of the meaning of Openness \u2013 especially its\
+      \ legal implications \u2013 is usually lacking. \r\n\r\nOpen Access, Public\
+      \ Access, Open Content, Open Data, Public Domain. All these terms are often\
+      \ employed to indicate that a given paper, repository or database does not fall\
+      \ under the traditional \u201Cclosed\u201D scheme of default copyright rules.\
+      \ However, the differences between all these terms are often largely ignored\
+      \ or misrepresented, especially when the scientist in question is not familiar\
+      \ with the law generally and copyright in particular \u2013 a very common situation\
+      \ in all scientific fields. \r\n\r\nOn 17 July 2012 the European Commission\
+      \ published its Communication to the European Parliament and the Council entitled\
+      \ \u201CTowards better access to scientific information: Boosting the benefits\
+      \ of public investments in research\u201D. As the Commission observes, \u201C\
+      discussions of the scientific dissemination system have traditionally focused\
+      \ on access to scientific publications \u2013 journals and monographs. However,\
+      \ it is becoming increasingly important to improve access to research data (experimental\
+      \ results, observations and computer-generated information), which forms the\
+      \ basis for the quantitative analysis underpinning many scientific publications\u201D\
+      . The Commission believes that through more complete and wider access to scientific\
+      \ publications and data, the pace of innovation will accelerate and researchers\
+      \ will collaborate so that duplication of efforts will be avoided. Moreover,\
+      \ open research data will allow other researchers to build on previous research\
+      \ results, as it will allow involvement of citizens and society in the scientific\
+      \ process. \r\n\r\nIn the Communication the Commission makes explicit reference\
+      \ to open access models of publications and dissemination of research results,\
+      \ and the reference is not only to access and use but most significantly to\
+      \ reuse of publications as well as research data. \r\n\r\nThe Communication\
+      \ marks an official new step on the road to open access to publicly funded research\
+      \ results in science and the humanities in Europe. Scientific publications are\
+      \ no longer the only elements of its open access policy: research data upon\
+      \ which publications are based should now also be made available to the public.\
+      \ \r\n\r\nAs noble as the open access goal is, however, the expansion of the\
+      \ open access policy to publicly funded research data raises a number of legal\
+      \ and policy issues that are often distinct from those concerning the publication\
+      \ of scientific articles and monographs. Since open access to research data\
+      \ \u2013 rather than publications \u2013 is a relatively new policy objective,\
+      \ less attention has been paid to the specific features of research data. An\
+      \ analysis of the legal status of such data, and on how to make it available\
+      \ under the correct licence terms, is therefore the subject of the following\
+      \ sections.\""
+    title: 'Safe to be Open: Study on the Protection of Research Data and Recommendatiosn
+      for Access and Usage'
+    updated_at: 2020-11-17 19:30:17.178291+00:00
+  model: legal_db.scholarship
+  pk: 5
+- fields:
+    authors: Saleh Al-Sharieh
+    contributor_email: REDACTED--public-dev-data
+    contributor_name: REDACTED--public-dev-data
+    created_at: 2021-01-06 21:10:59.771256+00:00
+    license: Creative Commons BY-NC-ND 4.0
+    link: 64
+    notes: ''
+    publication_name: Windsor Yearbook on Access to Justice 11, 2018 CanLIIDocs 149
+    publication_year: 2018
+    status: 3
+    summary: Saleh Al-Sharieh discusses how The Copyright Act 1985 in Canada allows
+      exemptions for the usage of copyrighted works but would be better served by
+      a human rights approach to copyright as seen within new copyright regimes including
+      Creative Commons.
+    title: "Securing the Future of Copyright Users\u2019 Rights in Canada by Saleh\
+      \ Al-Sharieh"
+    updated_at: 2021-11-09 21:34:30.804151+00:00
+  model: legal_db.scholarship
+  pk: 12
+- fields:
+    answer: This website is managed by Creative Commons, but we depend on our global
+      community of open advocates and legal experts to help us identify cases and
+      articles that are appropriate for inclusion. Please note that we strive to limit
+      the scope of the database to issues that directly affect CC legal tools and
+      the open ecosystem.
+    created_at: 2020-06-22 18:27:06.493064+00:00
+    notes: ''
+    order: 0
+    question: Who and how decides what is included in the CC Legal Database?
+    updated_at: 2020-08-05 05:21:16.076359+00:00
+  model: legal_db.faq
+  pk: 1
+- fields:
+    answer: "We encourage anyone to submit information about cases or scholarly articles\
+      \ from around the world that relate to or affect CC legal tools using the following\
+      \ forms:\r\n\r\n- Submit a [case here](/cases/submit/)\r\n- Submit an [academic\
+      \ article here](/scholarship/submit/)\r\n\r\nStaff at Creative Commons will\
+      \ review your submission for relevance, editing as necessary to conform with\
+      \ other entries on the site, and then add it to the database."
+    created_at: 2020-06-22 18:27:44.978091+00:00
+    notes: ''
+    order: 1
+    question: How do I submit a case or article for inclusion in the CC Legal Database?
+    updated_at: 2020-08-05 05:22:12.366645+00:00
+  model: legal_db.faq
+  pk: 2
+- fields:
+    name: Technology
+    slug: technology
+  model: taggit.tag
+  pk: 2
+- fields:
+    name: Provisions
+    slug: provisions
+  model: taggit.tag
+  pk: 3
+- fields:
+    name: Morality
+    slug: morality
+  model: taggit.tag
+  pk: 4
+- fields:
+    name: Moral Rights
+    slug: moral-rights
+  model: taggit.tag
+  pk: 5
+- fields:
+    name: Copyright law
+    slug: copyright-law
+  model: taggit.tag
+  pk: 6
+- fields:
+    name: EU law
+    slug: eu-law
+  model: taggit.tag
+  pk: 7
+- fields:
+    name: 3D printing
+    slug: 3d-printing
+  model: taggit.tag
+  pk: 8
+- fields:
+    name: Compatibility
+    slug: compatibility
+  model: taggit.tag
+  pk: 9
+- fields:
+    name: Design law
+    slug: design-law
+  model: taggit.tag
+  pk: 10
+- fields:
+    name: Intellectual Property
+    slug: intellectual-property
+  model: taggit.tag
+  pk: 11
+- fields:
+    name: Inadequacies
+    slug: inadequacies
+  model: taggit.tag
+  pk: 12
+- fields:
+    name: open design
+    slug: open-design
+  model: taggit.tag
+  pk: 13
+- fields:
+    name: Creative Commons
+    slug: creative-commons
+  model: taggit.tag
+  pk: 14
+- fields:
+    name: right of reproduction
+    slug: right-of-reproduction
+  model: taggit.tag
+  pk: 15
+- fields:
+    name: Digital blueprints
+    slug: digital-blueprints
+  model: taggit.tag
+  pk: 16
+- fields:
+    name: open content
+    slug: open-content
+  model: taggit.tag
+  pk: 18
+- fields:
+    name: copyright
+    slug: copyright
+  model: taggit.tag
+  pk: 19
+- fields:
+    name: derivative works approach
+    slug: derivative-works-approach
+  model: taggit.tag
+  pk: 20
+- fields:
+    name: right of adaptation
+    slug: right-of-adaptation
+  model: taggit.tag
+  pk: 21
+- fields:
+    name: Design
+    slug: design
+  model: taggit.tag
+  pk: 22
+- fields:
+    name: design law
+    slug: design-law_1
+  model: taggit.tag
+  pk: 24
+- fields:
+    name: Musical work
+    slug: musical-work
+  model: taggit.tag
+  pk: 25
+- fields:
+    name: Photograph
+    slug: photograph
+  model: taggit.tag
+  pk: 27
+- fields:
+    name: Database Right
+    slug: database-right
+  model: taggit.tag
+  pk: 28
+- fields:
+    name: open data
+    slug: open-data
+  model: taggit.tag
+  pk: 29
+- fields:
+    name: public domain
+    slug: public-domain
+  model: taggit.tag
+  pk: 32
+- fields:
+    name: Research Data
+    slug: research-data
+  model: taggit.tag
+  pk: 33
+- fields:
+    name: research data
+    slug: research-data_1
+  model: taggit.tag
+  pk: 35
+- fields:
+    name: Protection
+    slug: protection
+  model: taggit.tag
+  pk: 36
+- fields:
+    name: sui generis
+    slug: sui-generis
+  model: taggit.tag
+  pk: 37
+- fields:
+    name: open acess
+    slug: open-acess
+  model: taggit.tag
+  pk: 39
+- fields:
+    name: Database Rights
+    slug: database-rights
+  model: taggit.tag
+  pk: 40
+- fields:
+    name: Attribution
+    slug: attribution
+  model: taggit.tag
+  pk: 41
+- fields:
+    name: Ownership
+    slug: ownership
+  model: taggit.tag
+  pk: 42
+- fields:
+    name: Rights to content
+    slug: rights-to-content
+  model: taggit.tag
+  pk: 43
+- fields:
+    name: Computer Software
+    slug: computer-software
+  model: taggit.tag
+  pk: 44
+- fields:
+    name: Music performances
+    slug: music-performances
+  model: taggit.tag
+  pk: 45
+- fields:
+    name: Open educational resources
+    slug: open-educational-resources
+  model: taggit.tag
+  pk: 46
+- fields:
+    name: Open Design
+    slug: open-design_1
+  model: taggit.tag
+  pk: 49
+- fields:
+    name: Open data
+    slug: open-data_1
+  model: taggit.tag
+  pk: 51
+- fields:
+    name: Open access
+    slug: open-access
+  model: taggit.tag
+  pk: 52
+- fields:
+    name: Open design
+    slug: open-design_2
+  model: taggit.tag
+  pk: 54
+- fields:
+    name: Moral rights
+    slug: moral-rights_1
+  model: taggit.tag
+  pk: 56
+- fields:
+    name: NonCommercial
+    slug: noncommercial
+  model: taggit.tag
+  pk: 57
+- fields:
+    name: License enforceability
+    slug: license-enforceability
+  model: taggit.tag
+  pk: 58
+- fields:
+    name: ShareAlike
+    slug: sharealike
+  model: taggit.tag
+  pk: 59
+- fields:
+    name: NoDerivatives
+    slug: noderivatives
+  model: taggit.tag
+  pk: 60
+- fields:
+    name: Music
+    slug: music
+  model: taggit.tag
+  pk: 61
+- fields:
+    name: Education
+    slug: education
+  model: taggit.tag
+  pk: 62
+- fields:
+    content_type: 9
+    object_id: 2
+    tag: 8
+  model: taggit.taggeditem
+  pk: 8
+- fields:
+    content_type: 9
+    object_id: 3
+    tag: 8
+  model: taggit.taggeditem
+  pk: 15
+- fields:
+    content_type: 10
+    object_id: 3
+    tag: 41
+  model: taggit.taggeditem
+  pk: 42
+- fields:
+    content_type: 10
+    object_id: 2
+    tag: 41
+  model: taggit.taggeditem
+  pk: 45
+- fields:
+    content_type: 10
+    object_id: 5
+    tag: 41
+  model: taggit.taggeditem
+  pk: 46
+- fields:
+    content_type: 10
+    object_id: 9
+    tag: 41
+  model: taggit.taggeditem
+  pk: 51
+- fields:
+    content_type: 9
+    object_id: 4
+    tag: 51
+  model: taggit.taggeditem
+  pk: 66
+- fields:
+    content_type: 9
+    object_id: 5
+    tag: 51
+  model: taggit.taggeditem
+  pk: 67
+- fields:
+    content_type: 9
+    object_id: 5
+    tag: 52
+  model: taggit.taggeditem
+  pk: 68
+- fields:
+    content_type: 9
+    object_id: 3
+    tag: 54
+  model: taggit.taggeditem
+  pk: 69
+- fields:
+    content_type: 9
+    object_id: 2
+    tag: 54
+  model: taggit.taggeditem
+  pk: 70
+- fields:
+    content_type: 9
+    object_id: 1
+    tag: 56
+  model: taggit.taggeditem
+  pk: 71
+- fields:
+    content_type: 10
+    object_id: 1
+    tag: 41
+  model: taggit.taggeditem
+  pk: 72
+- fields:
+    content_type: 10
+    object_id: 1
+    tag: 57
+  model: taggit.taggeditem
+  pk: 74
+- fields:
+    content_type: 10
+    object_id: 17
+    tag: 41
+  model: taggit.taggeditem
+  pk: 81
+- fields:
+    content_type: 10
+    object_id: 16
+    tag: 41
+  model: taggit.taggeditem
+  pk: 82
+- fields:
+    content_type: 10
+    object_id: 15
+    tag: 57
+  model: taggit.taggeditem
+  pk: 83
+- fields:
+    content_type: 10
+    object_id: 14
+    tag: 57
+  model: taggit.taggeditem
+  pk: 84
+- fields:
+    content_type: 10
+    object_id: 13
+    tag: 41
+  model: taggit.taggeditem
+  pk: 85
+- fields:
+    content_type: 10
+    object_id: 13
+    tag: 57
+  model: taggit.taggeditem
+  pk: 86
+- fields:
+    content_type: 10
+    object_id: 12
+    tag: 41
+  model: taggit.taggeditem
+  pk: 87
+- fields:
+    content_type: 10
+    object_id: 4
+    tag: 59
+  model: taggit.taggeditem
+  pk: 88
+- fields:
+    content_type: 10
+    object_id: 1
+    tag: 60
+  model: taggit.taggeditem
+  pk: 89
+- fields:
+    content_type: 10
+    object_id: 1
+    tag: 61
+  model: taggit.taggeditem
+  pk: 90
+- fields:
+    content_type: 10
+    object_id: 2
+    tag: 27
+  model: taggit.taggeditem
+  pk: 91
+- fields:
+    content_type: 10
+    object_id: 3
+    tag: 27
+  model: taggit.taggeditem
+  pk: 92
+- fields:
+    content_type: 10
+    object_id: 4
+    tag: 27
+  model: taggit.taggeditem
+  pk: 93
+- fields:
+    content_type: 10
+    object_id: 5
+    tag: 27
+  model: taggit.taggeditem
+  pk: 94
+- fields:
+    content_type: 10
+    object_id: 9
+    tag: 27
+  model: taggit.taggeditem
+  pk: 95
+- fields:
+    content_type: 10
+    object_id: 11
+    tag: 61
+  model: taggit.taggeditem
+  pk: 96
+- fields:
+    content_type: 10
+    object_id: 10
+    tag: 61
+  model: taggit.taggeditem
+  pk: 97
+- fields:
+    content_type: 10
+    object_id: 12
+    tag: 27
+  model: taggit.taggeditem
+  pk: 98
+- fields:
+    content_type: 10
+    object_id: 13
+    tag: 27
+  model: taggit.taggeditem
+  pk: 99
+- fields:
+    content_type: 10
+    object_id: 15
+    tag: 62
+  model: taggit.taggeditem
+  pk: 100
+- fields:
+    content_type: 10
+    object_id: 14
+    tag: 62
+  model: taggit.taggeditem
+  pk: 101
+- fields:
+    content_type: 10
+    object_id: 17
+    tag: 27
+  model: taggit.taggeditem
+  pk: 102
+- fields:
+    content_type: 10
+    object_id: 16
+    tag: 27
+  model: taggit.taggeditem
+  pk: 103
+- fields:
+    content_type: 10
+    object_id: 4
+    tag: 41
+  model: taggit.taggeditem
+  pk: 104
+- fields:
+    content_type: 10
+    object_id: 89
+    tag: 57
+  model: taggit.taggeditem
+  pk: 105
+- fields:
+    content_type: 10
+    object_id: 90
+    tag: 59
+  model: taggit.taggeditem
+  pk: 106
+- fields:
+    content_type: 10
+    object_id: 27
+    tag: 59
+  model: taggit.taggeditem
+  pk: 107
+- fields:
+    content_type: 10
+    object_id: 25
+    tag: 59
+  model: taggit.taggeditem
+  pk: 108
+- fields:
+    content_type: 10
+    object_id: 101
+    tag: 41
+  model: taggit.taggeditem
+  pk: 109
+- fields:
+    content_type: 10
+    object_id: 136
+    tag: 41
+  model: taggit.taggeditem
+  pk: 110
+- fields:
+    content_type: 10
+    object_id: 136
+    tag: 27
+  model: taggit.taggeditem
+  pk: 111
+- fields:
+    content_type: 10
+    object_id: 137
+    tag: 41
+  model: taggit.taggeditem
+  pk: 112
+- fields:
+    content_type: 10
+    object_id: 137
+    tag: 27
+  model: taggit.taggeditem
+  pk: 113
+- fields:
+    content_type: 10
+    object_id: 138
+    tag: 41
+  model: taggit.taggeditem
+  pk: 114
+- fields:
+    content_type: 10
+    object_id: 138
+    tag: 27
+  model: taggit.taggeditem
+  pk: 115
+- fields:
+    content_type: 10
+    object_id: 139
+    tag: 41
+  model: taggit.taggeditem
+  pk: 116
+- fields:
+    content_type: 10
+    object_id: 139
+    tag: 27
+  model: taggit.taggeditem
+  pk: 117
+- fields:
+    content_type: 10
+    object_id: 140
+    tag: 41
+  model: taggit.taggeditem
+  pk: 118
+- fields:
+    content_type: 10
+    object_id: 140
+    tag: 27
+  model: taggit.taggeditem
+  pk: 119
+- fields:
+    content_type: 10
+    object_id: 141
+    tag: 41
+  model: taggit.taggeditem
+  pk: 120
+- fields:
+    content_type: 10
+    object_id: 141
+    tag: 27
+  model: taggit.taggeditem
+  pk: 121
+- fields:
+    content_type: 10
+    object_id: 142
+    tag: 41
+  model: taggit.taggeditem
+  pk: 122
+- fields:
+    content_type: 10
+    object_id: 142
+    tag: 27
+  model: taggit.taggeditem
+  pk: 123
+- fields:
+    content_type: 10
+    object_id: 143
+    tag: 41
+  model: taggit.taggeditem
+  pk: 124
+- fields:
+    content_type: 10
+    object_id: 143
+    tag: 27
+  model: taggit.taggeditem
+  pk: 125
+- fields:
+    content_type: 10
+    object_id: 144
+    tag: 41
+  model: taggit.taggeditem
+  pk: 126
+- fields:
+    content_type: 10
+    object_id: 144
+    tag: 27
+  model: taggit.taggeditem
+  pk: 127
+- fields:
+    content_type: 10
+    object_id: 145
+    tag: 41
+  model: taggit.taggeditem
+  pk: 128
+- fields:
+    content_type: 10
+    object_id: 145
+    tag: 27
+  model: taggit.taggeditem
+  pk: 129
+- fields:
+    content_type: 10
+    object_id: 146
+    tag: 41
+  model: taggit.taggeditem
+  pk: 130
+- fields:
+    content_type: 10
+    object_id: 146
+    tag: 27
+  model: taggit.taggeditem
+  pk: 131
+- fields:
+    content_type: 10
+    object_id: 147
+    tag: 41
+  model: taggit.taggeditem
+  pk: 132
+- fields:
+    content_type: 10
+    object_id: 147
+    tag: 27
+  model: taggit.taggeditem
+  pk: 133
+- fields:
+    content_type: 10
+    object_id: 148
+    tag: 41
+  model: taggit.taggeditem
+  pk: 134
+- fields:
+    content_type: 10
+    object_id: 148
+    tag: 27
+  model: taggit.taggeditem
+  pk: 135
+- fields:
+    content_type: 10
+    object_id: 149
+    tag: 41
+  model: taggit.taggeditem
+  pk: 136
+- fields:
+    content_type: 10
+    object_id: 149
+    tag: 27
+  model: taggit.taggeditem
+  pk: 137
+- fields:
+    content_type: 10
+    object_id: 150
+    tag: 41
+  model: taggit.taggeditem
+  pk: 138
+- fields:
+    content_type: 10
+    object_id: 150
+    tag: 27
+  model: taggit.taggeditem
+  pk: 139
+- fields:
+    content_type: 10
+    object_id: 151
+    tag: 41
+  model: taggit.taggeditem
+  pk: 140
+- fields:
+    content_type: 10
+    object_id: 151
+    tag: 27
+  model: taggit.taggeditem
+  pk: 141
+- fields:
+    content_type: 10
+    object_id: 152
+    tag: 41
+  model: taggit.taggeditem
+  pk: 142
+- fields:
+    content_type: 10
+    object_id: 152
+    tag: 27
+  model: taggit.taggeditem
+  pk: 143
+- fields:
+    content_type: 10
+    object_id: 153
+    tag: 41
+  model: taggit.taggeditem
+  pk: 144
+- fields:
+    content_type: 10
+    object_id: 153
+    tag: 27
+  model: taggit.taggeditem
+  pk: 145
+- fields:
+    content_type: 10
+    object_id: 154
+    tag: 41
+  model: taggit.taggeditem
+  pk: 146
+- fields:
+    content_type: 10
+    object_id: 154
+    tag: 27
+  model: taggit.taggeditem
+  pk: 147
+- fields:
+    content_type: 10
+    object_id: 155
+    tag: 41
+  model: taggit.taggeditem
+  pk: 148
+- fields:
+    content_type: 10
+    object_id: 155
+    tag: 27
+  model: taggit.taggeditem
+  pk: 149
+- fields:
+    content_type: 10
+    object_id: 159
+    tag: 41
+  model: taggit.taggeditem
+  pk: 150
+- fields:
+    content_type: 10
+    object_id: 159
+    tag: 27
+  model: taggit.taggeditem
+  pk: 151
