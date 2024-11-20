@@ -88,27 +88,42 @@
       </table>
     </div>
 
-    <nav class="pagination  is-centered" role="navigation" aria-label="pagination">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
       <ul class="pagination-list">
         {% if page_obj.has_previous %}
-          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page=1&sort={{ current_sort }}&direction={{ direction }}">&laquo; First</a></li>
-          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page={{ page_obj.previous_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Previous</a></li>
+          <li>
+            <a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page=1&sort={{ current_sort }}&direction={{ direction }}">&laquo; First</a>
+          </li>
+          <li>
+            <a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page={{ page_obj.previous_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Previous</a>
+          </li>
         {% endif %}
-
-        {% for num in page_obj.paginator.page_range %}
-          {% if num == page_obj.number %}
-            <li><a class="pagination-link is-current button tag   margin-right-small margin-vertical-smaller ">{{ num }}</a></li>
+    
+        {% for page in custom_page_range %}
+          {% if page == "..." %}
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+          {% elif page == page_obj.number %}
+            <li>
+              <a class="pagination-link is-current button tag margin-right-small margin-vertical-smaller">{{ page }}</a>
+            </li>
           {% else %}
-            <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller " href="?page={{ num }}&sort={{ current_sort }}&direction={{ direction }}">{{ num }}</a></li>
+            <li>
+              <a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page={{ page }}&sort={{ current_sort }}&direction={{ direction }}">{{ page }}</a>
+            </li>
           {% endif %}
         {% endfor %}
-
+    
         {% if page_obj.has_next %}
-          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller " style="background-color: primary;" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a></li>
-          <li><a class="pagination-link button tag case margin-right-small margin-vertical-smaller " href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}">Last &raquo;</a></li>
+          <li>
+            <a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page={{ page_obj.next_page_number }}&sort={{ current_sort }}&direction={{ direction }}">Next</a>
+          </li>
+          <li>
+            <a class="pagination-link button tag case margin-right-small margin-vertical-smaller" href="?page={{ page_obj.paginator.num_pages }}&sort={{ current_sort }}&direction={{ direction }}">Last &raquo;</a>
+          </li>
         {% endif %}
       </ul>
     </nav>
+    
   </div>
 </section>
 {% endblock %}
