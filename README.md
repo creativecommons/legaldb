@@ -61,13 +61,41 @@ docker compose up
 ```
 
 
-#### Run Migrations
+#### Initialize database with development data
 
-Run the migrations to create database schema (we use Postgresql in this case):
-```shell
-docker compose exec app ./manage.py migrate
-```
-**(Required after initial build)**
+The following utility will reset the database, run migrations, configure an
+admin user, and load the developiment data:
+1. In a terminal window / command line:
+    ```shell
+    docker compose up
+    ```
+2. In a second terminal window /command line:
+    ```shell
+    ./bin/init_data.sh
+    ```
+
+#### Helper commands
+
+All of the following helper commands assume the App and DB services are
+running:
+- [`bin/check.sh`](bin/check.sh)
+  - _Perform static analysis checks and reformat Python code_
+- ~~[`bin/dump_data.sh`](bin/check.sh)~~
+  - ~~_Dump Django data with processing to remove PII and unapproved
+    entries_~~
+  - Not normally invoked during development
+- [`bin/init_data.sh`](bin/init_data.sh)
+  - _Initialize Django application data (!!DANGER!!)_
+- ~~[`process_data.py`](bin/process_data.py)~~
+  - ~~_Process YAML data from Django dumpdata to remove PII and unapproved
+    entries._~~
+  - ~~called by `bin/dump_data`~~
+  - Not normally invoked during development
+- ~~[`bin/release_tasks`](bin/release_tasks)~~
+  - ~~Heroku release script~~
+  - Not normally invoked during development
+- [`bin/test.sh`](bin/check.sh)
+  - _Run Django collectstatic, check, and test (unit tests)_
 
 
 #### Execute Commands
@@ -87,6 +115,7 @@ Examples:
     ```shell
     docker compose exec app ./manage.py createsuperuser
     ```
+  - (better to use `bin/init_data.sh`)
 - Collect static files:
     ```shell
     docker compose exec app ./manage.py collectstatic
@@ -99,37 +128,14 @@ Examples:
     ```shell
     docker compose exec app ./manage.py test
     ```
+  - (better to use `bin/test.sh`)
 
 
-### Using Pipenv
+### Pipenv
 
-NOTE: The prefered method is [Using docker compose](#using-docker-compose).
-
-To follow these instructions, Python 3 and
-[Pipenv](https://pipenv.pypa.io/en/latest/) are required.
-
-Install dependencies with pipenv.
-```shell
-pipenv install --dev
-```
-
-Run the migrations to create the database (we use
-Postgresql in this case).
-```shell
-pipenv run ./manage.py migrate
-```
-
-The next step is to create an admin account for Django admin.
-```shell
-pipenv run ./manage.py createsuperuser
-```
-
-Finally you can start a development server with:
-```shell
-pipenv run ./manage.py runserver
-```
-and see a local version of the website at
-[127.0.0.1:8000](http://127.0.0.1:8000/).
+The Python modules are managed by [Pipenv](https://pipenv.pypa.io/en/latest/).
+If development requires new Python modules, remember to also rebuild your
+Docker containters.
 
 
 ### Webpack
@@ -163,11 +169,9 @@ After made code changes and before commit, check code style from main directory 
 
 ### Code Style
 
-After making changes in code and before commit, check code style.
+After making changes in code and before commit, check code style:
 ```shell
-pipenv run isort .
-pipenv run black .
-pipenv run flake8 .
+./bin/check.sh
 ```
 
 
@@ -178,9 +182,12 @@ pipenv run flake8 .
 [blogseries]: https://opensource.creativecommons.org/blog/entries/legal-database-a-new-beginning/#series
 
 
-## Deploy to Heroku
+## Guides
 
-See [`deploy_to_heroku.md`](deploy_to_heroku.md).
+The [`guides/`](guides/) folder includes:
+- **[`README.md`](guides/README.md)**
+- [`deploy_to_heroku.md`](guides/deploy_to_heroku.md)
+- [`technologies_used_guide.md`](guides/technologies_used_guide.md)
 
 
 ## License

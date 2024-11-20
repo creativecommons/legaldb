@@ -11,8 +11,8 @@ isort = "*"
 
 [packages]
 Babel = "*"
-Django = ">=4.2.16,<4.3"
 certifi = ">=2023.7.22"  # Ensure dependency is secure
+Django = ">=4.2.16,<4.3"
 django-countries = "*"
 django-heroku = "*"
 django-libsass = "*"
@@ -24,6 +24,8 @@ django_compressor = "*"
 gunicorn = "*"
 polib = "*"
 psycopg2 = "*"
+Pygments = "*"
+PyYAML = "*"
 transifex-python = "*"
 urllib3 = ">=2.2.2"  # Ensure dependency is secure
 whitenoise = "*"
