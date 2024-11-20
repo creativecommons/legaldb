@@ -19,7 +19,7 @@
         </div>
         <div>
           {% for faq in faqs %}
-          <article class="faq__content" aria-label="Frequently Asked Questions">
+          <article class="faq__content" aria-label="{% trans 'Delete this link form' %}">
             <div id="faq-head-{{ forloop.counter }}" class="faq__head" aria-expanded="false">
               <h5 class="faq__title">{{ faq.question }}</h5>
             </div>

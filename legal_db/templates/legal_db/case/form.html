@@ -167,7 +167,7 @@
                     {{ link_form.url.errors }}
                   </div>
                   <div class="column is-1">
-                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')" aria-label="Delete this link form">
+                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')" aria-label="{% trans 'Delete this link form' %}">
                       <i class="icon cross"></i>
                     </button>
                   </div>
