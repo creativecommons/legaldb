@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block body_content %}
-<div class="hero scholarship">
+<div class="hero scholarship" role="banner" aria-label="{% trans 'Hero title' %}">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
     <h2 class="hero-title b-header">{{ scholarship.title }}</h2>
@@ -11,7 +11,7 @@
 <div class="details">
   <div class="container">
     <div class="columns">
-      <aside class="column is-one-third">
+      <aside class="column is-one-third" aria-label="{% trans 'Scholarship detials' %}">
           <div class="margin-bottom-bigger">
             <h4 class="b-header margin-bottom-small">{% trans "License on article" %}</h4>
             {% if not scholarship.license %} <p class="has-text-grey">{% trans "Unknown" %}</p>

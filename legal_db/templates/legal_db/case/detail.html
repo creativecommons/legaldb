@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block body_content %}
-<section class="hero case">
+<section class="hero case" aria-label="{{ case.name}}">
   <div class="container">
     {% include "legal_db/partials/_breadcrumb.html" %}
     <h2 class="hero-title b-header">{{ case.name }}</h2>
@@ -11,7 +11,7 @@
 <section class="details">
   <div class="container">
     <div class="columns">
-      <aside class="column is-one-third">
+      <aside class="column is-one-third" aria-label="{% trans 'Case Details' %}">
         <div class="margin-bottom-bigger">
           <h4 class="b-header margin-bottom-small">{% trans "Country" %}</h4>
           <p>{{ case.country.name }}</p>
@@ -45,7 +45,7 @@
           </ul>
         </div>
       </aside>
-      <article class="column is-two-thirds">
+      <article class="column is-two-thirds" aria-label="{% trans 'Case Information' %}">
         <h3 class="b-header margin-bottom-small">{% trans "Background information" %}</h3>
         <p>{{ case.background }}</p>
         <br/>
