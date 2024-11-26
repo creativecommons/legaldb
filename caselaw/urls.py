@@ -15,6 +15,7 @@ Including another URLconf
 """
 
 # Third-party
+import debug_toolbar
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import include, path, re_path
@@ -30,4 +31,5 @@ urlpatterns = [
 # URLs with language code prefixes
 urlpatterns += i18n_patterns(
     path("", include("legal_db.urls")),
+    path("__debug__/", include(debug_toolbar.urls)),
 )
