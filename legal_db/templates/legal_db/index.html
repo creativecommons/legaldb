@@ -9,10 +9,15 @@
         {% url 'case_index' as case_index_url %}
         {% url 'scholarship_index' as scholarship_index_url %}
         {% blocktrans trimmed with case_url=case_index_url scholarship_url=scholarship_index_url %}
-          This database includes <a href="{{ case_index_url }}" class="has-text-weight-bold">case law</a> and <a href="{{ scholarship_index_url }}" class="has-text-weight-bold">legal scholarship</a> that relates to Creative Commons legal tools.<br/>
-          Please note that the database is not comprehensive, and CC does not necessarily endorse the views of the courts or scholars whose decisions and writings are referenced. The content provided is purely informational, designed for those seeking to better understand the legal ecosystem in which the CC legal tools operate.
+            This database includes <a href="{{ case_url }}" class="has-text-weight-bold">case law</a> 
+            and <a href="{{ scholarship_url }}" class="has-text-weight-bold">legal scholarship</a> 
+            that relates to Creative Commons legal tools.<br/> 
+            Please note that the database is not comprehensive, and CC does not necessarily endorse 
+            the views of the courts or scholars whose decisions and writings are referenced. 
+            The content provided is purely informational, designed for those seeking to better understand 
+            the legal ecosystem in which the CC legal tools operate.
         {% endblocktrans %}
-      </p>
+    </p>
     </div>
   </section>
   <section class="explore">
@@ -78,10 +83,8 @@
         <div class="column is-half">
           <article class="card entry-post link">
             <a href="{% url 'faq' %}">
-              {% blocktrans trimmed %}
-                <span class="card-eyebrow">Check the</span>
-                <h2 class="card-title">Frequently asked questions</h2>
-              {% endblocktrans %}
+              <span class="card-eyebrow">{% blocktrans %}Check the{% endblocktrans %}</span>
+              <h2 class="card-title">{% blocktrans %}Frequently asked questions{% endblocktrans %}</h2>
             </a>
           </article>
         </div>
