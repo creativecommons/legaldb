@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-26 15:13+0000\n"
+"POT-Creation-Date: 2024-11-26 15:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -683,6 +683,10 @@ msgstr ""
 #: legal_db/templates/legal_db/result.html:16
 msgid "Submit another case"
 msgstr "Enviar otro artículo"
+
+#: legal_db/templates/legal_db/scholarship/detail.html:5
+msgid "Hero title"
+msgstr ""
 
 #: legal_db/templates/legal_db/scholarship/detail.html:14
 #, fuzzy
