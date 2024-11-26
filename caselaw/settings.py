@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 # Standard library
 import os
+import sys
 from distutils.util import strtobool
 
 # Third-party
@@ -27,9 +28,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(
-    strtobool(str(os.environ.get("DJANGO_DEBUG_ENABLED", default=False)))
-)
+# 1) "dumpdata": avoid the Django Debug Toolbar when dumping data
+# 2) "loaddata": avoid the Django Debug Toolbar when loading data
+# 3) "publish": avoid debug output in published files
+# 4) "test": the Django Debug Toolbar can't be used with tests:
+#      HINT: Django changes the DEBUG setting to False when running tests.  By
+#      default the Django Debug Toolbar is installed because DEBUG is set to
+#      True. For most cases, you need to avoid installing the toolbar when
+#      running tests. If you feel this check is in error, you can set
+#      DEBUG_TOOLBAR_CONFIG['IS_RUNNING_TESTS'] = False to bypass this check.
+DEBUG = False
+if (
+    "dumpdata" not in sys.argv
+    and "loaddata" not in sys.argv
+    and "publish" not in sys.argv
+    and "test" not in sys.argv
+):
+    DEBUG = bool(
+        strtobool(str(os.environ.get("DJANGO_DEBUG_ENABLED", default=False)))
+    )
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -51,29 +68,40 @@ INSTALLED_APPS = [
     "taggit",
     "widget_tweaks",
 ]
-# Debug toolbar
-if DEBUG:
-    INSTALLED_APPS += [
-        "debug_toolbar",
-    ]
+if DEBUG:  # Debug toolbar
+    INSTALLED_APPS.append("debug_toolbar")
 
-MIDDLEWARE = [
-    # SecurityMiddleware must be listed before other middleware
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    # Check if this is necessary, not in cc-legal-tools-app
-    "django.middleware.locale.LocaleMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-]
-# Debug toolbar
 if DEBUG:
-    MIDDLEWARE += [
+    # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+    #   The order of MIDDLEWARE is important. You should include the Debug
+    #   Toolbar middleware as early as possible in the list. However, it must
+    #   come after any other middleware that encodes the response’s content,
+    #   such as GZipMiddleware.
+    MIDDLEWARE = [
+        # SecurityMiddleware must be listed before other middleware
+        "django.middleware.security.SecurityMiddleware",
         "debug_toolbar.middleware.DebugToolbarMiddleware",
+        "django.contrib.sessions.middleware.SessionMiddleware",
+        "django.middleware.locale.LocaleMiddleware",
+        "django.middleware.common.CommonMiddleware",
+        "django.middleware.csrf.CsrfViewMiddleware",
+        "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "django.contrib.messages.middleware.MessageMiddleware",
+        "django.middleware.clickjacking.XFrameOptionsMiddleware",
+        "whitenoise.middleware.WhiteNoiseMiddleware",
+    ]
+else:
+    MIDDLEWARE = [
+        # SecurityMiddleware must be listed before other middleware
+        "django.middleware.security.SecurityMiddleware",
+        "django.contrib.sessions.middleware.SessionMiddleware",
+        "django.middleware.locale.LocaleMiddleware",
+        "django.middleware.common.CommonMiddleware",
+        "django.middleware.csrf.CsrfViewMiddleware",
+        "django.contrib.auth.middleware.AuthenticationMiddleware",
+        "django.contrib.messages.middleware.MessageMiddleware",
+        "django.middleware.clickjacking.XFrameOptionsMiddleware",
+        "whitenoise.middleware.WhiteNoiseMiddleware",
     ]
 
 ROOT_URLCONF = "caselaw.urls"
@@ -85,7 +113,6 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
-                "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
@@ -93,6 +120,10 @@ TEMPLATES = [
         },
     },
 ]
+if DEBUG:  # Debug toolbar
+    TEMPLATES[0]["OPTIONS"]["context_processors"].append(
+        "django.template.context_processors.debug",
+    )
 
 WSGI_APPLICATION = "caselaw.wsgi.application"
 
@@ -237,10 +268,9 @@ SECURE_SSL_REDIRECT = bool(
 if SECURE_SSL_REDIRECT:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-
-# See https://devcenter.heroku.com/articles/deploying-python
-django_heroku.settings(locals(), logging=False)
-
 # Debug toolbar
 if DEBUG:
     DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
+
+# See https://devcenter.heroku.com/articles/deploying-python
+django_heroku.settings(locals(), logging=False)
