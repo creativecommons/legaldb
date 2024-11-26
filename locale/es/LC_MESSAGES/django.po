@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-19 23:40+0000\n"
+"POT-Creation-Date: 2024-11-26 15:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: caselaw/settings.py:190
 msgid "English"
 msgstr "Inglés"
@@ -24,38 +25,6 @@ msgstr "Inglés"
 #: caselaw/settings.py:191
 msgid "Spanish"
 msgstr "Español"
-
-#: ignore/ignore.html:2
-msgid ""
-"\n"
-"  Except where otherwise\n"
-"  <a href=\"https://creativecommons.org/policies#license\" target=\"_blank\" "
-"rel=\"noopener\">noted</a>,\n"
-"  content on this site is licensed under a\n"
-"  <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" "
-"rel=\"noopener\">Creative Commons Attribution 4.0 International license</"
-"a>.\n"
-"  <a href=\"https://creativecommons.org/website-icons\" target=\"_blank\" "
-"rel=\"noopener\">Icons</a>\n"
-"  by\n"
-"  <a href=\"https://fontawesome.com/\" target=\"_blank\" "
-"rel=\"noopener\">Font Awesome</a>.\n"
-"  "
-msgstr ""
-"\n"
-"  Excepto donde se indique lo\n"
-"  <a href=\"https://creativecommons.org/policies#license\" target=\"_blank\" "
-"rel=\"noopener\">contrario</a>,\n"
-"  el contenido de este sitio está licenciado bajo una\n"
-"  <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" "
-"rel=\"noopener\">Licencia Internacional Creative Commons Attribution 4.0</"
-"a>.\n"
-"  <a href=\"https://creativecommons.org/website-icons\" target=\"_blank\" "
-"rel=\"noopener\">Iconos</a>\n"
-"  por\n"
-"  <a href=\"https://fontawesome.com/\" target=\"_blank\" "
-"rel=\"noopener\">Font Awesome</a>.\n"
-"  "
 
 #: legal_db/models.py:12
 msgid "Internal notes or description."
@@ -65,57 +34,57 @@ msgstr "Notas internas o descripción."
 msgid "A timestamp of when the object is first created."
 msgstr "Una marca de tiempo de la primera vez que se creó el objeto."
 
-#: legal_db/models.py:20
+#: legal_db/models.py:21
 msgid "A timestamp of the last time when the object was modified."
 msgstr "Una marca de tiempo de la última vez que se modificó el objeto."
 
-#: legal_db/models.py:37
+#: legal_db/models.py:40
 msgid "The Creative Commons license associated with the legal resource."
 msgstr "La licencia Creative Commons asociada al recurso legal."
 
-#: legal_db/models.py:46
+#: legal_db/models.py:49
 msgid "Unreviewed"
 msgstr "Sin revisar"
 
-#: legal_db/models.py:47
+#: legal_db/models.py:50
 msgid "Review in Progress"
 msgstr "Revisión en curso"
 
-#: legal_db/models.py:48
+#: legal_db/models.py:51
 msgid "Published"
 msgstr "Publicado"
 
-#: legal_db/models.py:49
+#: legal_db/models.py:52
 msgid "Rejected"
 msgstr "Rechazado"
 
-#: legal_db/models.py:54
+#: legal_db/models.py:57
 msgid "The stage of the review process where the resource is."
 msgstr "Etapa del proceso de revisión en la que se encuentra el recurso."
 
-#: legal_db/models.py:76 legal_db/templates/legal_db/case/form.html:61
+#: legal_db/models.py:79 legal_db/templates/legal_db/case/form.html:64
 msgid ""
 "If there are multiple lawsuits between the parties, please just include one "
 "here and note the others in the related cases field."
 msgstr ""
-"Si hay varios pleitos entre las partes, incluya sólo uno aquí "
-"y anote los demás en el campo de casos relacionados."
+"Si hay varios pleitos entre las partes, incluya sólo uno aquí y anote los "
+"demás en el campo de casos relacionados."
 
-#: legal_db/models.py:88
+#: legal_db/models.py:92
 msgid "Select a country"
 msgstr "Selecciona un país"
 
-#: legal_db/models.py:95
+#: legal_db/models.py:99
 msgid ""
 "The original court name and/or English translation. If the lawsuit was filed "
 "in one court and then went to another court on appeal, please note all "
 "relevant courts here."
 msgstr ""
-"El nombre original del tribunal y/o su traducción al inglés. Si la demanda fue "
-"presentada en un tribunal y luego fue llevada a otro tribunal en apelación, "
-"por favor mencione todos los tribunales relevantes aquí."
+"El nombre original del tribunal y/o su traducción al inglés. Si la demanda "
+"fue presentada en un tribunal y luego fue llevada a otro tribunal en "
+"apelación, por favor mencione todos los tribunales relevantes aquí."
 
-#: legal_db/models.py:104
+#: legal_db/models.py:109
 msgid ""
 "Describe the factual information that led to the lawsuit being filed, and "
 "explain what claims were filed in the lawsuit."
@@ -123,23 +92,24 @@ msgstr ""
 "Describa la información fáctica que llevó a la presentación de la demanda y "
 "explique qué reclamos se presentaron en la demanda."
 
-#: legal_db/models.py:109
+#: legal_db/models.py:115
 msgid "Year of case resolution."
 msgstr "Año de resolución del caso."
 
-#: legal_db/models.py:114
+#: legal_db/models.py:120
 msgid "Indicate if it is an ongoing case or not."
 msgstr "Indique si es un caso en curso o no."
 
-#: legal_db/models.py:119
+#: legal_db/models.py:125
 msgid ""
 "Include any links to pleadings, briefs, and opinions in the lawsuit, as well "
 "as blog posts, academic articles, or other relevant materials."
 msgstr ""
 "Incluya cualquier enlace a alegatos, informes y opiniones en la demanda, así "
-"como publicaciones de blogs, artículos académicos u otros materiales relevantes."
+"como publicaciones de blogs, artículos académicos u otros materiales "
+"relevantes."
 
-#: legal_db/models.py:134
+#: legal_db/models.py:141
 msgid "The link to the article."
 msgstr "El enlace al artículo."
 
@@ -155,53 +125,50 @@ msgstr "La página que está buscando no existe."
 msgid "Return Home"
 msgstr "Volver al inicio"
 
-#: legal_db/templates/legal_db/base.html:9
+#: legal_db/templates/legal_db/base.html:10
 msgid ""
 "This database contains case law and legal scholarship about CC licenses and "
 "the issues that relate to their enforceability and interpretation."
 msgstr ""
 "Esta base de datos contiene jurisprudencia y estudios legales sobre las "
-"licencias de CC y los problemas relacionados con su aplicabilidad e interpretación."
+"licencias de CC y los problemas relacionados con su aplicabilidad e "
+"interpretación."
 
-#: legal_db/templates/legal_db/base.html:10
+#: legal_db/templates/legal_db/base.html:13
 msgid "CC Legal Database"
 msgstr "Base de Datos Legal de CC"
 
-#: legal_db/templates/legal_db/index.html:8
-msgid ""
-"This database includes <a href=\"%(case_url)s\" class=\"has-text-weight-bold\">case law</a> and "
-"<a href=\"%(scholarship_url)s\" class=\"has-text-weight-bold\">legal scholarship</a> that relates "
-"to Creative Commons legal tools.<br/> Please note that the database is not comprehensive, and CC "
-"does not necessarily endorse the views of the courts or scholars whose decisions and writings are "
-"referenced. The content provided is purely informational, designed for those seeking to better understand "
-"the legal ecosystem in which the CC legal tools operate."
-msgstr ""
-"Esta base de datos incluye <a href=\"%(case_url)s\" class=\"has-text-weight-bold\">jurisprudencia</a> y "
-"<a href=\"%(scholarship_url)s\" class=\"has-text-weight-bold\">trabajos jurídicos</a> relacionados con las "
-"herramientas legales de Creative Commons.<br/> Tenga en cuenta que la base de datos no es exhaustiva y que CC "
-"no necesariamente respalda las opiniones de los tribunales o los académicos cuyas decisiones y escritos "
-"se citan. El contenido proporcionado es puramente informativo, diseñado para quienes buscan comprender "
-"mejor el ecosistema legal en el que operan las herramientas legales de CC."
+#: legal_db/templates/legal_db/case/detail.html:14
+#, fuzzy
+#| msgid "Case Detail"
+msgid "Case Details"
+msgstr "Detalle del Caso"
 
 #: legal_db/templates/legal_db/case/detail.html:16
-#: legal_db/templates/legal_db/case/form.html:80
-#: legal_db/templates/legal_db/case/index.html:48
+#: legal_db/templates/legal_db/case/form.html:91
+#: legal_db/templates/legal_db/case/index.html:56
 msgid "Country"
 msgstr "País"
 
 #: legal_db/templates/legal_db/case/detail.html:22
-#: legal_db/templates/legal_db/case/form.html:87
+#: legal_db/templates/legal_db/case/form.html:98
 msgid "Court(s)"
 msgstr "Tribunal(es)"
 
 #: legal_db/templates/legal_db/case/detail.html:27
-#: legal_db/templates/legal_db/case/index.html:51
+#: legal_db/templates/legal_db/case/index.html:59
 msgid "Year of resolution"
 msgstr "Año de resolución"
 
 #: legal_db/templates/legal_db/case/detail.html:33
 msgid "Relevant materials"
 msgstr "Materiales relevantes"
+
+#: legal_db/templates/legal_db/case/detail.html:48
+#, fuzzy
+#| msgid "Case information"
+msgid "Case Information"
+msgstr "Información del caso"
 
 #: legal_db/templates/legal_db/case/detail.html:49
 msgid "Background information"
@@ -211,7 +178,7 @@ msgstr "Información de antecedentes"
 msgid "Case summary"
 msgstr "Resumen del caso"
 
-#: legal_db/templates/legal_db/case/form.html:7 legal_db/tests.py:68
+#: legal_db/templates/legal_db/case/form.html:7 legal_db/tests.py:69
 msgid "Case Submission"
 msgstr "Envío de caso"
 
@@ -220,165 +187,174 @@ msgid ""
 "Please add any cases related to Creative Commons licenses and other legal "
 "tools that you think should be included in the database."
 msgstr ""
-"Por favor, agregue cualquier caso relacionado con las licencias de "
-"Creative Commons y otras herramientas legales que considere que deben "
-"estar incluidas en la base de datos."
+"Por favor, agregue cualquier caso relacionado con las licencias de Creative "
+"Commons y otras herramientas legales que considere que deben estar incluidas "
+"en la base de datos."
 
-#: legal_db/templates/legal_db/case/form.html:11
-#: legal_db/templates/legal_db/scholarship/form.html:8
+#: legal_db/templates/legal_db/case/form.html:13
+#: legal_db/templates/legal_db/scholarship/form.html:9
 msgid "Required"
 msgstr "Requerido"
 
-#: legal_db/templates/legal_db/case/form.html:26
-#: legal_db/templates/legal_db/scholarship/form.html:22
+#: legal_db/templates/legal_db/case/form.html:28
+#: legal_db/templates/legal_db/scholarship/form.html:24
 msgid "Contact"
 msgstr "Contacto"
 
-#: legal_db/templates/legal_db/case/form.html:31
-#: legal_db/templates/legal_db/scholarship/form.html:26
+#: legal_db/templates/legal_db/case/form.html:33
+#: legal_db/templates/legal_db/scholarship/form.html:28
 msgid "Your Name"
 msgstr "Su nombre"
 
-#: legal_db/templates/legal_db/case/form.html:39
+#: legal_db/templates/legal_db/case/form.html:41
 #: legal_db/templates/legal_db/partials/_footer.html:57
-#: legal_db/templates/legal_db/scholarship/form.html:32
+#: legal_db/templates/legal_db/scholarship/form.html:34
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: legal_db/templates/legal_db/case/form.html:46
-#: legal_db/templates/legal_db/scholarship/form.html:38
+#: legal_db/templates/legal_db/case/form.html:48
+#: legal_db/templates/legal_db/scholarship/form.html:40
 msgid "Agreement and Consent"
 msgstr "Acuerdo y Consentimiento"
 
-#: legal_db/templates/legal_db/case/form.html:49
-#, python-format
+#: legal_db/templates/legal_db/case/form.html:51
+#: legal_db/templates/legal_db/scholarship/form.html:43
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "              I have read and agree to the <a href=\"%(privacy_url)s\" "
+#| "class=\"has-text-dark-slate-blue\">Creative Commons Privacy Policy</a>.\n"
+#| "            "
 msgid ""
-"\n"
-"                I have read and agree to the <a href=\"%(privacy_url)s\" "
-"class=\"has-text-dark-slate-blue\">Creative Commons Privacy Policy</a>.\n"
-"              "
+"I have read and agree to the <a href=\"%(privacy_url)s\" class=\"has-text-"
+"dark-slate-blue\">Creative Commons Privacy Policy</a>."
 msgstr ""
 "\n"
-"                He leído y acepto la <a href=\"%(privacy_url)s\" "
-"class=\"has-text-dark-slate-blue\">Política de Privacidad de Creative Commons</a>.\n"
-"              "
+"              He leído y acepto la <a href=\"%(privacy_url)s\" class=\"has-"
+"text-dark-slate-blue\">Política de privacidad de Creative Commons</a>.\n"
+"            "
 
-#: legal_db/templates/legal_db/case/form.html:57
+#: legal_db/templates/legal_db/case/form.html:59
 msgid "Case information"
 msgstr "Información del caso"
 
-#: legal_db/templates/legal_db/case/form.html:60
-#: legal_db/templates/legal_db/case/index.html:49
+#: legal_db/templates/legal_db/case/form.html:62
+#: legal_db/templates/legal_db/case/index.html:57
 msgid "Case name"
 msgstr "Nombre del caso"
 
-#: legal_db/templates/legal_db/case/form.html:67
+#: legal_db/templates/legal_db/case/form.html:73
 msgid "Related cases"
 msgstr "Casos relacionados"
 
-#: legal_db/templates/legal_db/case/form.html:68
+#: legal_db/templates/legal_db/case/form.html:76
 msgid ""
 "If there are multiple lawsuits between the parties in this dispute, please "
 "note additional cases here."
 msgstr ""
-"Si hay múltiples demandas entre las partes en esta disputa, por favor "
-"anote los casos adicionales aquí."
+"Si hay múltiples demandas entre las partes en esta disputa, por favor anote "
+"los casos adicionales aquí."
 
-#: legal_db/templates/legal_db/case/form.html:74
+#: legal_db/templates/legal_db/case/form.html:85
 msgid "License on case"
 msgstr "Licencia en el caso"
 
-#: legal_db/templates/legal_db/case/form.html:88
+#: legal_db/templates/legal_db/case/form.html:100
 msgid ""
 "If the lawsuit was filed in one court and then went to another court on "
 "appeal, please note all relevant courts here."
 msgstr ""
-"Si la demanda fue presentada en un tribunal y luego fue apelada a otro, por favor "
-"anote todos los tribunales relevantes aquí."
+"Si la demanda fue presentada en un tribunal y luego fue apelada a otro, por "
+"favor anote todos los tribunales relevantes aquí."
 
-#: legal_db/templates/legal_db/case/form.html:94
+#: legal_db/templates/legal_db/case/form.html:109
 msgid "Background Information"
 msgstr "Información de antecedentes"
 
-#: legal_db/templates/legal_db/case/form.html:95
+#: legal_db/templates/legal_db/case/form.html:112
 msgid ""
 "Please describe the factual information that led to the lawsuit being filed, "
 "and explain what claims were filed in the lawsuit."
 msgstr ""
-"Por favor describa la información factual que llevó a la presentación de la demanda, "
-"y explique qué reclamaciones se presentaron en la demanda."
+"Por favor describa la información factual que llevó a la presentación de la "
+"demanda, y explique qué reclamaciones se presentaron en la demanda."
 
-#: legal_db/templates/legal_db/case/form.html:101
+#: legal_db/templates/legal_db/case/form.html:121
 msgid "Case Summary"
 msgstr "Resumen del caso"
 
-#: legal_db/templates/legal_db/case/form.html:102
+#: legal_db/templates/legal_db/case/form.html:123
 msgid ""
 "Please describe what happened after the lawsuit was filed. If there were "
 "judicial decisions, please include the dates."
 msgstr ""
-"Por favor describa lo que sucedió después de que se presentó la demanda. Si hubo "
-"decisiones judiciales, incluya las fechas."
+"Por favor describa lo que sucedió después de que se presentó la demanda. Si "
+"hubo decisiones judiciales, incluya las fechas."
 
-#: legal_db/templates/legal_db/case/form.html:109
+#: legal_db/templates/legal_db/case/form.html:133
 msgid "Year of case resolution"
 msgstr "Año de resolución del caso"
 
-#: legal_db/templates/legal_db/case/form.html:114
+#: legal_db/templates/legal_db/case/form.html:138
 msgid "Is pending?"
 msgstr "¿Está pendiente?"
 
-#: legal_db/templates/legal_db/case/form.html:119
+#: legal_db/templates/legal_db/case/form.html:143
 msgid "Links to relevant materials"
 msgstr "Enlaces a materiales relevantes"
 
-#: legal_db/templates/legal_db/case/form.html:121
+#: legal_db/templates/legal_db/case/form.html:146
 msgid ""
 "Please include any links to pleadings, briefs, and opinions in the lawsuit, "
 "as well as blog posts, academic articles, or other relevant materials. At "
 "least one URL is required."
 msgstr ""
-"Por favor incluya cualquier enlace a alegatos, informes y opiniones en la demanda, "
-"así como publicaciones en blogs, artículos académicos u otros materiales relevantes. "
-"Se requiere al menos una URL."
+"Por favor incluya cualquier enlace a alegatos, informes y opiniones en la "
+"demanda, así como publicaciones en blogs, artículos académicos u otros "
+"materiales relevantes. Se requiere al menos una URL."
 
-#: legal_db/templates/legal_db/case/form.html:130
-#: legal_db/templates/legal_db/case/form.html:137
-#: legal_db/templates/legal_db/scholarship/form.html:94
+#: legal_db/templates/legal_db/case/form.html:158
+#: legal_db/templates/legal_db/case/form.html:165
+#: legal_db/templates/legal_db/scholarship/form.html:96
 msgid "URL"
 msgstr "URL"
 
-#: legal_db/templates/legal_db/case/form.html:150
-#: legal_db/templates/legal_db/scholarship/form.html:101
+#: legal_db/templates/legal_db/case/form.html:170
+#: legal_db/templates/legal_db/faq.html:22
+msgid "Delete this link form"
+msgstr ""
+
+#: legal_db/templates/legal_db/case/form.html:179
+#: legal_db/templates/legal_db/scholarship/form.html:103
 msgid "Title of link"
 msgstr "Título del enlace"
 
-#: legal_db/templates/legal_db/case/form.html:151
-#: legal_db/templates/legal_db/case/form.html:168
-#: legal_db/templates/legal_db/scholarship/form.html:102
+#: legal_db/templates/legal_db/case/form.html:181
+#: legal_db/templates/legal_db/case/form.html:198
+#: legal_db/templates/legal_db/scholarship/form.html:104
 msgid "Title of the page being linked to"
 msgstr "Título de la página enlazada"
 
-#: legal_db/templates/legal_db/case/form.html:156
-#: legal_db/templates/legal_db/scholarship/form.html:107
+#: legal_db/templates/legal_db/case/form.html:186
+#: legal_db/templates/legal_db/scholarship/form.html:109
 msgid "Label of link"
 msgstr "Etiqueta del enlace"
 
-#: legal_db/templates/legal_db/case/form.html:157
-#: legal_db/templates/legal_db/case/form.html:169
+#: legal_db/templates/legal_db/case/form.html:187
+#: legal_db/templates/legal_db/case/form.html:199
 msgid "e.g. Pleading, Brief..."
 msgstr "Ej. Alegato, Informe..."
 
-#: legal_db/templates/legal_db/case/form.html:176
+#: legal_db/templates/legal_db/case/form.html:206
 msgid "Add link"
 msgstr "Agregar enlace"
 
-#: legal_db/templates/legal_db/case/form.html:181
+#: legal_db/templates/legal_db/case/form.html:211
 msgid "submit case"
 msgstr "enviar caso"
 
 #: legal_db/templates/legal_db/case/index.html:8
-#: legal_db/templates/legal_db/index.html:24
+#: legal_db/templates/legal_db/index.html:29
 #: legal_db/templates/legal_db/partials/_breadcrumb.html:8
 #: legal_db/templates/legal_db/partials/_breadcrumb.html:11
 #: legal_db/templates/legal_db/partials/_footer.html:40
@@ -386,22 +362,22 @@ msgstr "enviar caso"
 msgid "Cases"
 msgstr "Casos"
 
-#: legal_db/templates/legal_db/case/index.html:13
-#: legal_db/templates/legal_db/index.html:69
-#: legal_db/templates/legal_db/scholarship/index.html:13
+#: legal_db/templates/legal_db/case/index.html:14
+#: legal_db/templates/legal_db/index.html:74
+#: legal_db/templates/legal_db/scholarship/index.html:14
 msgid "Contribute"
 msgstr "Contribuir"
 
-#: legal_db/templates/legal_db/case/index.html:14
+#: legal_db/templates/legal_db/case/index.html:15
 msgid "Do you want to submit a legal dispute to the database?"
 msgstr "¿Deseas agregar una disputa legal a la base de datos?"
 
-#: legal_db/templates/legal_db/case/index.html:15
-#: legal_db/templates/legal_db/index.html:71
+#: legal_db/templates/legal_db/case/index.html:16
+#: legal_db/templates/legal_db/index.html:80
 msgid "Submit a case"
 msgstr "Enviar un caso"
 
-#: legal_db/templates/legal_db/case/index.html:20
+#: legal_db/templates/legal_db/case/index.html:22
 msgid ""
 "Here you will find information on litigation that involves or directly "
 "affects Creative Commons legal tools. Click on the link to each case name "
@@ -411,32 +387,33 @@ msgstr ""
 "directamente las herramientas legales de Creative Commons. Haz clic en el "
 "enlace del nombre de cada caso para obtener más detalles sobre la disputa."
 
-#: legal_db/templates/legal_db/case/index.html:50
-#: legal_db/templates/legal_db/scholarship/index.html:52
+#: legal_db/templates/legal_db/case/index.html:58
+#: legal_db/templates/legal_db/scholarship/index.html:58
 msgid "License"
 msgstr "Licencia"
 
-#: legal_db/templates/legal_db/case/index.html:60
+#: legal_db/templates/legal_db/case/index.html:68
 #: legal_db/templates/legal_db/scholarship/detail.html:17
-#: legal_db/templates/legal_db/scholarship/index.html:62
+#: legal_db/templates/legal_db/scholarship/index.html:68
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: legal_db/templates/legal_db/case/index.html:66
+#: legal_db/templates/legal_db/case/index.html:74
 msgid "No cases are available. Try different filters or search terms."
-msgstr "No hay casos disponibles. Prueba con otros filtros o términos de búsqueda."
+msgstr ""
+"No hay casos disponibles. Prueba con otros filtros o términos de búsqueda."
 
 #: legal_db/templates/legal_db/faq.html:8
 msgid "Frequently Asked Questions"
 msgstr "Preguntas Frecuentes"
 
 #: legal_db/templates/legal_db/faq.html:16
-#: legal_db/templates/legal_db/partials/_search.html:7
+#: legal_db/templates/legal_db/partials/_search.html:8
 msgid "Search:"
 msgstr "Buscar:"
 
 #: legal_db/templates/legal_db/faq.html:17
-#: legal_db/templates/legal_db/partials/_search.html:8
+#: legal_db/templates/legal_db/partials/_search.html:9
 msgid "Search for..."
 msgstr "Buscar..."
 
@@ -455,51 +432,52 @@ msgstr "Base de Datos Legal de Creative Commons"
 #: legal_db/templates/legal_db/index.html:11
 #, python-format
 msgid ""
-"\n"
-"          This database includes <a href=\"%(case_index_url)s\" class=\"has-"
-"text-weight-bold\">case law</a> and <a href=\"%(scholarship_index_url)s\" "
-"class=\"has-text-weight-bold\">legal scholarship</a> that relates to "
-"Creative Commons legal tools.<br/>\n"
-"          Please note that the database is not comprehensive, and CC does "
+"This database includes <a href=\"%(case_url)s\" class=\"has-text-weight-"
+"bold\">case law</a> and <a href=\"%(scholarship_url)s\" class=\"has-text-"
+"weight-bold\">legal scholarship</a> that relates to Creative Commons legal "
+"tools.<br/> Please note that the database is not comprehensive, and CC does "
 "not necessarily endorse the views of the courts or scholars whose decisions "
 "and writings are referenced. The content provided is purely informational, "
 "designed for those seeking to better understand the legal ecosystem in which "
-"the CC legal tools operate.\n"
-"        "
+"the CC legal tools operate."
 msgstr ""
-"\n"
-"          Esta base de datos incluye <a href=\"%(case_index_url)s\" class=\"has-"
-"text-weight-bold\">jurisprudencia</a> y <a href=\"%(scholarship_index_url)s\" "
-"class=\"has-text-weight-bold\">trabajos académicos</a> relacionados con las "
-"herramientas legales de Creative Commons.<br/>\n"
-"          Ten en cuenta que la base de datos no es exhaustiva, y que CC no "
-"necesariamente respalda las opiniones de los tribunales o académicos cuyas "
-"decisiones y escritos son referenciados. El contenido proporcionado es "
-"puramente informativo, diseñado para aquellos que buscan comprender mejor el "
-"ecosistema legal en el que operan las herramientas legales de CC.\n"
-"        "
+"Esta base de datos incluye <a href=\"%(case_url)s\" class=\"has-text-weight-"
+"bold\">jurisprudencia</a> y <a href=\"%(scholarship_url)s\" class=\"has-text-"
+"weight-bold\">trabajos jurídicos</a> relacionados con las herramientas "
+"legales de Creative Commons.<br/> Tenga en cuenta que la base de datos no es "
+"exhaustiva y que CC no necesariamente respalda las opiniones de los "
+"tribunales o los académicos cuyas decisiones y escritos se citan. El "
+"contenido proporcionado es puramente informativo, diseñado para quienes "
+"buscan comprender mejor el ecosistema legal en el que operan las "
+"herramientas legales de CC."
 
-#: legal_db/templates/legal_db/index.html:22
+#: legal_db/templates/legal_db/index.html:27
 msgid "Explore by content"
 msgstr "Explorar por contenido"
 
-#: legal_db/templates/legal_db/index.html:36
+#: legal_db/templates/legal_db/index.html:39
+#, fuzzy
+#| msgid "Caselaw Database"
+msgid "Go to Caselaw Database"
+msgstr "Base de Datos de Jurisprudencia"
+
+#: legal_db/templates/legal_db/index.html:41
 msgid "Caselaw Database"
 msgstr "Base de Datos de Jurisprudencia"
 
-#: legal_db/templates/legal_db/index.html:37
+#: legal_db/templates/legal_db/index.html:42
 msgid ""
 "The Case Law Database includes court decisions from around the globe "
 "concerning Creative Commons."
 msgstr ""
-"La Base de Datos de Jurisprudencia incluye decisiones judiciales de todo el mundo "
-"relacionadas con Creative Commons."
+"La Base de Datos de Jurisprudencia incluye decisiones judiciales de todo el "
+"mundo relacionadas con Creative Commons."
 
-#: legal_db/templates/legal_db/index.html:38
+#: legal_db/templates/legal_db/index.html:43
 msgid "Go to Cases"
 msgstr "Ir a los Casos"
 
-#: legal_db/templates/legal_db/index.html:44
+#: legal_db/templates/legal_db/index.html:49
 #: legal_db/templates/legal_db/partials/_breadcrumb.html:15
 #: legal_db/templates/legal_db/partials/_breadcrumb.html:18
 #: legal_db/templates/legal_db/partials/_footer.html:41
@@ -508,24 +486,30 @@ msgstr "Ir a los Casos"
 msgid "Scholarship"
 msgstr "Trabajos Académicos"
 
-#: legal_db/templates/legal_db/index.html:55
+#: legal_db/templates/legal_db/index.html:58
+#, fuzzy
+#| msgid "Legal Scholarship Database"
+msgid "Navigate to Legal Scholarship Database"
+msgstr "Base de Datos de Trabajos Académicos Legales"
+
+#: legal_db/templates/legal_db/index.html:60
 msgid "Legal Scholarship Database"
 msgstr "Base de Datos de Trabajos Académicos Legales"
 
-#: legal_db/templates/legal_db/index.html:56
+#: legal_db/templates/legal_db/index.html:61
 msgid ""
 "The Scholarship Database aims to provide users with resources concerning the "
 "use, interpretation, and enforceability of Creative Commons licenses."
 msgstr ""
-"La Base de Datos de Trabajos Académicos tiene como objetivo proporcionar "
-"a los usuarios recursos sobre el uso, la interpretación "
-"y la aplicabilidad de las licencias de Creative Commons."
+"La Base de Datos de Trabajos Académicos tiene como objetivo proporcionar a "
+"los usuarios recursos sobre el uso, la interpretación y la aplicabilidad de "
+"las licencias de Creative Commons."
 
-#: legal_db/templates/legal_db/index.html:57
+#: legal_db/templates/legal_db/index.html:62
 msgid "Go to Scholarship"
 msgstr "Ir a Trabajos Académicos"
 
-#: legal_db/templates/legal_db/index.html:70
+#: legal_db/templates/legal_db/index.html:76
 msgid ""
 "The information presented here has been contributed by many dedicated "
 "members of the CC Global Network and CC staff. You can contribute too using "
@@ -535,10 +519,16 @@ msgstr ""
 "dedicados de la Red Global de CC y del personal de CC. Tú también puedes "
 "contribuir utilizando nuestros formularios vinculados en esta página."
 
-#: legal_db/templates/legal_db/index.html:72
-#: legal_db/templates/legal_db/scholarship/index.html:15
+#: legal_db/templates/legal_db/index.html:81
+#: legal_db/templates/legal_db/scholarship/index.html:16
 msgid "Submit an article"
 msgstr "Enviar un artículo"
+
+#: legal_db/templates/legal_db/index.html:85
+#, fuzzy
+#| msgid "Frequently Asked Questions"
+msgid "Navigate to Frequently Asked Questions"
+msgstr "Preguntas Frecuentes"
 
 #: legal_db/templates/legal_db/index.html:86
 msgid "Check the"
@@ -548,6 +538,9 @@ msgstr "Consulta las"
 msgid "Frequently asked questions"
 msgstr "Preguntas Frecuentes"
 
+#: legal_db/templates/legal_db/partials/_breadcrumb.html:3
+msgid "breadcrumbs"
+msgstr ""
 
 #: legal_db/templates/legal_db/partials/_breadcrumb.html:5
 #: legal_db/templates/legal_db/partials/_footer.html:39
@@ -589,36 +582,45 @@ msgid "subscribe"
 msgstr "suscribirse"
 
 #: legal_db/templates/legal_db/partials/_footer.html:64
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "  Except where otherwise\n"
+#| "  <a href=\"https://creativecommons.org/policies#license\" "
+#| "target=\"_blank\" rel=\"noopener\">noted</a>,\n"
+#| "  content on this site is licensed under a\n"
+#| "  <a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+#| "target=\"_blank\" rel=\"noopener\">Creative Commons Attribution 4.0 "
+#| "International license</a>.\n"
+#| "  <a href=\"https://creativecommons.org/website-icons\" target=\"_blank\" "
+#| "rel=\"noopener\">Icons</a>\n"
+#| "  by\n"
+#| "  <a href=\"https://fontawesome.com/\" target=\"_blank\" "
+#| "rel=\"noopener\">Font Awesome</a>.\n"
+#| "  "
 msgid ""
-"\n"
-"                Except where otherwise\n"
-"                <a href=\"https://creativecommons.org/policies#license\" "
-"target=\"_blank\" rel=\"noopener\">noted</a>,\n"
-"                content on this site is licensed under a\n"
-"                <a href=\"https://creativecommons.org/licenses/by/4.0/\" "
-"target=\"_blank\" rel=\"noopener\">Creative Commons Attribution 4.0 "
-"International license</a>.\n"
-"                <a href=\"https://creativecommons.org/website-icons\" "
-"target=\"_blank\" rel=\"noopener\">Icons</a>\n"
-"                by\n"
-"                <a href=\"https://fontawesome.com/\" target=\"_blank\" "
-"rel=\"noopener\">Font Awesome</a>.\n"
-"                "
+"Except where otherwise <a href=\"https://creativecommons.org/"
+"policies#license\" target=\"_blank\" rel=\"noopener\">noted</a>, content on "
+"this site is licensed under a <a href=\"https://creativecommons.org/licenses/"
+"by/4.0/\" target=\"_blank\" rel=\"noopener\">Creative Commons Attribution "
+"4.0 International license</a>. <a href=\"https://creativecommons.org/website-"
+"icons\" target=\"_blank\" rel=\"noopener\">Icons</a> by <a href=\"https://"
+"fontawesome.com/\" target=\"_blank\" rel=\"noopener\">Font Awesome</a>."
 msgstr ""
 "\n"
-"                Excepto donde se indique lo contrario\n"
-"                <a href=\"https://creativecommons.org/policies#license\" "
-"target=\"_blank\" rel=\"noopener\">indicado</a>,\n"
-"                el contenido de este sitio está bajo una\n"
-"                <a href=\"https://creativecommons.org/licenses/by/4.0/\" "
-"target=\"_blank\" rel=\"noopener\">Licencia Internacional Creative Commons "
-"Atribución 4.0</a>.\n"
-"                <a href=\"https://creativecommons.org/website-icons\" "
-"target=\"_blank\" rel=\"noopener\">Íconos</a>\n"
-"                por\n"
-"                <a href=\"https://fontawesome.com/\" target=\"_blank\" "
+"  Excepto donde se indique lo\n"
+"  <a href=\"https://creativecommons.org/policies#license\" target=\"_blank\" "
+"rel=\"noopener\">contrario</a>,\n"
+"  el contenido de este sitio está licenciado bajo una\n"
+"  <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" "
+"rel=\"noopener\">Licencia Internacional Creative Commons Attribution 4.0</"
+"a>.\n"
+"  <a href=\"https://creativecommons.org/website-icons\" target=\"_blank\" "
+"rel=\"noopener\">Iconos</a>\n"
+"  por\n"
+"  <a href=\"https://fontawesome.com/\" target=\"_blank\" "
 "rel=\"noopener\">Font Awesome</a>.\n"
-"                "
+"  "
 
 #: legal_db/templates/legal_db/partials/_footer.html:82
 msgid "Our work relies on you!"
@@ -632,19 +634,33 @@ msgstr "Ayúdanos a mantener internet libre y abierto."
 msgid "Donate now"
 msgstr "Dona ahora"
 
+#: legal_db/templates/legal_db/partials/_header.html:26
+msgid "Select language"
+msgstr ""
+
 #: legal_db/templates/legal_db/partials/_header.html:27
 msgid "Languages available"
 msgstr "Idiomas disponibles"
 
-#: legal_db/templates/legal_db/partials/_search.html:13
+#: legal_db/templates/legal_db/partials/_search.html:3
+msgid "Search and Filters"
+msgstr ""
+
+#: legal_db/templates/legal_db/partials/_search.html:5
+#, fuzzy
+#| msgid "Search for..."
+msgid "Search form"
+msgstr "Buscar..."
+
+#: legal_db/templates/legal_db/partials/_search.html:14
 msgid "Search"
 msgstr "Buscar"
 
-#: legal_db/templates/legal_db/partials/_search.html:20
+#: legal_db/templates/legal_db/partials/_search.html:21
 msgid "Hide topic filters"
 msgstr "Ocultar filtros de temas"
 
-#: legal_db/templates/legal_db/partials/_search.html:21
+#: legal_db/templates/legal_db/partials/_search.html:22
 msgid "Show topic filters"
 msgstr "Mostrar filtros de temas"
 
@@ -668,19 +684,25 @@ msgstr ""
 msgid "Submit another case"
 msgstr "Enviar otro artículo"
 
+#: legal_db/templates/legal_db/scholarship/detail.html:14
+#, fuzzy
+#| msgid "Scholarship Detail"
+msgid "Scholarship detials"
+msgstr "Detalle del Trabajo Académico"
+
 #: legal_db/templates/legal_db/scholarship/detail.html:16
-#: legal_db/templates/legal_db/scholarship/form.html:59
+#: legal_db/templates/legal_db/scholarship/form.html:61
 msgid "License on article"
 msgstr "Licencia en el artículo"
 
 #: legal_db/templates/legal_db/scholarship/detail.html:22
-#: legal_db/templates/legal_db/scholarship/form.html:71
+#: legal_db/templates/legal_db/scholarship/form.html:73
 msgid "Name of publication"
 msgstr "Nombre de la publicación"
 
 #: legal_db/templates/legal_db/scholarship/detail.html:27
-#: legal_db/templates/legal_db/scholarship/form.html:64
-#: legal_db/templates/legal_db/scholarship/index.html:48
+#: legal_db/templates/legal_db/scholarship/form.html:66
+#: legal_db/templates/legal_db/scholarship/index.html:54
 msgid "Year of publication"
 msgstr "Año de publicación"
 
@@ -692,11 +714,11 @@ msgstr "Enlace"
 msgid "Summary"
 msgstr "Resumen"
 
-#: legal_db/templates/legal_db/scholarship/form.html:7 legal_db/tests.py:169
+#: legal_db/templates/legal_db/scholarship/form.html:7 legal_db/tests.py:172
 msgid "Scholarship Submission"
 msgstr "Envío de artículo académico"
 
-#: legal_db/templates/legal_db/scholarship/form.html:8
+#: legal_db/templates/legal_db/scholarship/form.html:9
 msgid ""
 "Please add any article related to Creative Commons licenses and other legal "
 "tools that you think should be included in the database."
@@ -705,53 +727,40 @@ msgstr ""
 "Commons y otras herramientas legales que creas que debería estar en la base "
 "de datos."
 
-#: legal_db/templates/legal_db/scholarship/form.html:41
-#, python-format
-msgid ""
-"\n"
-"              I have read and agree to the <a href=\"%(privacy_url)s\" "
-"class=\"has-text-dark-slate-blue\">Creative Commons Privacy Policy</a>.\n"
-"            "
-msgstr ""
-"\n"
-"              He leído y acepto la <a href=\"%(privacy_url)s\" "
-"class=\"has-text-dark-slate-blue\">Política de privacidad de Creative Commons</a>.\n"
-"            "
-
-#: legal_db/templates/legal_db/scholarship/form.html:49
+#: legal_db/templates/legal_db/scholarship/form.html:51
 msgid "Article information"
 msgstr "Información del artículo"
 
-#: legal_db/templates/legal_db/scholarship/form.html:52
+#: legal_db/templates/legal_db/scholarship/form.html:54
 msgid "Title of article"
 msgstr "Título del artículo"
 
-#: legal_db/templates/legal_db/scholarship/form.html:78
-#: legal_db/templates/legal_db/scholarship/index.html:51
+#: legal_db/templates/legal_db/scholarship/form.html:80
+#: legal_db/templates/legal_db/scholarship/index.html:57
 msgid "Author(s)"
 msgstr "Autor(es)"
 
-#: legal_db/templates/legal_db/scholarship/form.html:84
+#: legal_db/templates/legal_db/scholarship/form.html:86
 msgid "Summary of article"
 msgstr "Resumen del artículo"
 
-#: legal_db/templates/legal_db/scholarship/form.html:85
+#: legal_db/templates/legal_db/scholarship/form.html:87
 msgid "Abstract or summary of the article"
 msgstr "Resumen del artículo"
 
-#: legal_db/templates/legal_db/scholarship/form.html:91
+#: legal_db/templates/legal_db/scholarship/form.html:93
 msgid "Link to article"
 msgstr "Enlace al artículo"
 
-#: legal_db/templates/legal_db/scholarship/form.html:114
+#: legal_db/templates/legal_db/scholarship/form.html:116
 msgid "submit scholarship"
 msgstr "enviar artículo académico"
 
-#: legal_db/templates/legal_db/scholarship/index.html:14
+#: legal_db/templates/legal_db/scholarship/index.html:15
 msgid "Do you want to submit a scholarly article to the database?"
 msgstr "¿Quieres enviar un artículo académico a la base de datos?"
 
-#: legal_db/templates/legal_db/scholarship/index.html:20
+#: legal_db/templates/legal_db/scholarship/index.html:22
 msgid ""
 "Here you will find information on academic scholarship that addresses "
 "Creative Commons legal tools or the legal issues that affect them. Click on "
@@ -761,22 +770,96 @@ msgstr ""
 "herramientas legales de Creative Commons o los problemas legales que las "
 "afectan. Haz clic en el enlace al artículo para más detalles."
 
-#: legal_db/templates/legal_db/scholarship/index.html:49
+#: legal_db/templates/legal_db/scholarship/index.html:55
 msgid "Title"
 msgstr "Título"
 
-#: legal_db/templates/legal_db/scholarship/index.html:67
+#: legal_db/templates/legal_db/scholarship/index.html:75
 msgid "No scholarships are available. Try different filters or search terms."
-msgstr "No hay artículos académicos disponibles. Prueba con diferentes filtros o términos de búsqueda."
+msgstr ""
+"No hay artículos académicos disponibles. Prueba con diferentes filtros o "
+"términos de búsqueda."
 
-#: legal_db/tests.py:23
+#: legal_db/tests.py:24
 msgid "No cases are available."
 msgstr "No hay casos disponibles."
 
-#: legal_db/tests.py:109 legal_db/tests.py:201
+#: legal_db/tests.py:112 legal_db/tests.py:206
 msgid "This field is required"
 msgstr "Este campo es obligatorio"
 
-#: legal_db/tests.py:122
+#: legal_db/tests.py:125
 msgid "No scholarships are available."
 msgstr "No hay artículos académicos disponibles."
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "                I have read and agree to the <a href=\"%(privacy_url)s\" "
+#~ "class=\"has-text-dark-slate-blue\">Creative Commons Privacy Policy</a>.\n"
+#~ "              "
+#~ msgstr ""
+#~ "\n"
+#~ "                He leído y acepto la <a href=\"%(privacy_url)s\" "
+#~ "class=\"has-text-dark-slate-blue\">Política de Privacidad de Creative "
+#~ "Commons</a>.\n"
+#~ "              "
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "          This database includes <a href=\"%(case_index_url)s\" "
+#~ "class=\"has-text-weight-bold\">case law</a> and <a "
+#~ "href=\"%(scholarship_index_url)s\" class=\"has-text-weight-bold\">legal "
+#~ "scholarship</a> that relates to Creative Commons legal tools.<br/>\n"
+#~ "          Please note that the database is not comprehensive, and CC does "
+#~ "not necessarily endorse the views of the courts or scholars whose "
+#~ "decisions and writings are referenced. The content provided is purely "
+#~ "informational, designed for those seeking to better understand the legal "
+#~ "ecosystem in which the CC legal tools operate.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "          Esta base de datos incluye <a href=\"%(case_index_url)s\" "
+#~ "class=\"has-text-weight-bold\">jurisprudencia</a> y <a "
+#~ "href=\"%(scholarship_index_url)s\" class=\"has-text-weight-"
+#~ "bold\">trabajos académicos</a> relacionados con las herramientas legales "
+#~ "de Creative Commons.<br/>\n"
+#~ "          Ten en cuenta que la base de datos no es exhaustiva, y que CC "
+#~ "no necesariamente respalda las opiniones de los tribunales o académicos "
+#~ "cuyas decisiones y escritos son referenciados. El contenido proporcionado "
+#~ "es puramente informativo, diseñado para aquellos que buscan comprender "
+#~ "mejor el ecosistema legal en el que operan las herramientas legales de "
+#~ "CC.\n"
+#~ "        "
+
+#~ msgid ""
+#~ "\n"
+#~ "                Except where otherwise\n"
+#~ "                <a href=\"https://creativecommons.org/policies#license\" "
+#~ "target=\"_blank\" rel=\"noopener\">noted</a>,\n"
+#~ "                content on this site is licensed under a\n"
+#~ "                <a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+#~ "target=\"_blank\" rel=\"noopener\">Creative Commons Attribution 4.0 "
+#~ "International license</a>.\n"
+#~ "                <a href=\"https://creativecommons.org/website-icons\" "
+#~ "target=\"_blank\" rel=\"noopener\">Icons</a>\n"
+#~ "                by\n"
+#~ "                <a href=\"https://fontawesome.com/\" target=\"_blank\" "
+#~ "rel=\"noopener\">Font Awesome</a>.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "                Excepto donde se indique lo contrario\n"
+#~ "                <a href=\"https://creativecommons.org/policies#license\" "
+#~ "target=\"_blank\" rel=\"noopener\">indicado</a>,\n"
+#~ "                el contenido de este sitio está bajo una\n"
+#~ "                <a href=\"https://creativecommons.org/licenses/by/4.0/\" "
+#~ "target=\"_blank\" rel=\"noopener\">Licencia Internacional Creative "
+#~ "Commons Atribución 4.0</a>.\n"
+#~ "                <a href=\"https://creativecommons.org/website-icons\" "
+#~ "target=\"_blank\" rel=\"noopener\">Íconos</a>\n"
+#~ "                por\n"
+#~ "                <a href=\"https://fontawesome.com/\" target=\"_blank\" "
+#~ "rel=\"noopener\">Font Awesome</a>.\n"
+#~ "                "

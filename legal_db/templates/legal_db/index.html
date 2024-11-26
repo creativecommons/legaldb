@@ -36,7 +36,7 @@
         </div>
         <div class="column is-half">
           <article class="card entry-post link no-border">
-            <a href="{% url 'case_index' %}" class="has-background-tomato">
+            <a href="{% url 'case_index' %}" class="has-background-tomato" aria-label="{% trans 'Go to Caselaw Database' %}">
               <span class="card-content has-bottom-link">
                 <h3 class="b-header has-text-white">{% trans "Caselaw Database" %}</h3>
                 <span class="content">{% trans "The Case Law Database includes court decisions from around the globe concerning Creative Commons." %}</span>
@@ -55,7 +55,7 @@
         </div>
         <div class="column is-half">
           <article class="card entry-post link no-border">
-            <a href="{% url 'scholarship_index' %}" class="has-background-forest-green">
+            <a href="{% url 'scholarship_index' %}" class="has-background-forest-green" aria-label="{% trans 'Navigate to Legal Scholarship Database' %}">
               <span class="card-content has-bottom-link">
                 <h3 class="b-header has-text-white">{% trans "Legal Scholarship Database" %}</h3>
                 <span class="content">{% trans "The Scholarship Database aims to provide users with resources concerning the use, interpretation, and enforceability of Creative Commons licenses." %}</span>
@@ -82,7 +82,7 @@
         </div>
         <div class="column is-half">
           <article class="card entry-post link">
-            <a href="{% url 'faq' %}">
+            <a href="{% url 'faq' %}" aria-label="{% trans 'Navigate to Frequently Asked Questions' %}">
               <span class="card-eyebrow">{% blocktrans %}Check the{% endblocktrans %}</span>
               <h2 class="card-title">{% blocktrans %}Frequently asked questions{% endblocktrans %}</h2>
             </a>

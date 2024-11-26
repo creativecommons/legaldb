@@ -16,7 +16,7 @@
       <form class="form scholarship" action="{% url 'scholarship_submit' %}" method="post">
       {% csrf_token %}
       {% if scho_form.non_field_errors %}
-        <div class="notification warning">
+        <div class="notification warning" role="alert" aria-live="assertive">
           <strong class="notification-container">{{ scho_form.non_field_errors }}</strong>
         </div>
       {% endif %}
