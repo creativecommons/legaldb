@@ -24,6 +24,8 @@ class HomeView(TemplateView):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
+    paginate_by = 4 # number of record per page 
+    
 
     def get_queryset(self):
         """
@@ -85,6 +87,7 @@ class CaseDetailView(DetailView):
 class ScholarshipListView(ListView):
     template_name = "legal_db/scholarship/index.html"
     context_object_name = "scholarships"
+    paginate_by = 4 # number of record per page 
 
     def get_queryset(self):
         """

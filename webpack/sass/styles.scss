@@ -326,3 +326,51 @@ a, a:hover {
 .navbar .navbar-burger {
   height: 40px;
 }
+
+
+// Pagination styles
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  
+  .page-link,
+  .current-page,
+  .ellipsis {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #444;
+      background-color: white;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      font-weight: bold;
+  }
+
+  .page-link {
+      &:hover {
+          background-color: gray;
+          color: #fff;
+      }
+  }
+
+  .current-page {
+      background-color: gray; // Highlighted color for the current page
+      border-color: grey;
+      font-weight: bold;
+      pointer-events: none;
+  }
+
+  .ellipsis {
+      color: #888;
+      background-color: transparent;
+      border: none;
+  }
+}
