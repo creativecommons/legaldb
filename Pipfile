@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 black = "*"
+django-debug-toolbar = "*"
 factory-boy = "*"
 flake8 = "*"
 isort = "*"

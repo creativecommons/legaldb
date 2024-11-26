@@ -51,6 +51,11 @@ INSTALLED_APPS = [
     "taggit",
     "widget_tweaks",
 ]
+# Debug toolbar
+if DEBUG:
+    INSTALLED_APPS += [
+        "debug_toolbar",
+    ]
 
 MIDDLEWARE = [
     # SecurityMiddleware must be listed before other middleware
@@ -65,6 +70,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+# Debug toolbar
+if DEBUG:
+    MIDDLEWARE += [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ]
 
 ROOT_URLCONF = "caselaw.urls"
 
@@ -230,3 +240,7 @@ if SECURE_SSL_REDIRECT:
 
 # See https://devcenter.heroku.com/articles/deploying-python
 django_heroku.settings(locals(), logging=False)
+
+# Debug toolbar
+if DEBUG:
+    DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
