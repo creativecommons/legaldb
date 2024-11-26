@@ -15,11 +15,15 @@ Including another URLconf
 """
 
 # Third-party
-import debug_toolbar
+from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.i18n import set_language
+
+if settings.DEBUG:
+    # Third-party
+    import debug_toolbar
 
 # Non-translated URLs (admin and markdownx)
 urlpatterns = [
@@ -31,5 +35,8 @@ urlpatterns = [
 # URLs with language code prefixes
 urlpatterns += i18n_patterns(
     path("", include("legal_db.urls")),
-    path("__debug__/", include(debug_toolbar.urls)),
 )
+if settings.DEBUG:
+    urlpatterns += i18n_patterns(
+        path("__debug__/", include(debug_toolbar.urls)),
+    )
