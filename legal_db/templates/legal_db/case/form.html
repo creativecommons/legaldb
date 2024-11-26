@@ -17,10 +17,10 @@
 <section class="columns submit is-centered">
   <div class="column is-9">
     <div class="container">
-      <form class="form case" action="{% url 'case_submit' %}" method="post">
+      <form class="form case" action="{% url 'case_submit' %}" method="post" aria-label="Case Submission Form">
         {% csrf_token %}
         {% if case_form.non_field_errors %}
-          <div class="notification warning">
+          <div class="notification warning" role="alert">
             <strong class="notification-container">{{ case_form.non_field_errors }}</strong>
           </div>
         {% endif %}
@@ -147,7 +147,7 @@
               Please include any links to pleadings, briefs, and opinions in the lawsuit, as well as blog posts, academic articles, or other relevant materials. At least one URL is required.
             {% endblocktrans %}
           </p>
-          <div id="link-formset">
+          <div id="link-formset" aria-live="polite">
             {{ link_formset.management_form }}
             {% for link_form in link_formset %}
               <div id="link-form-{{ forloop.counter0 }}">
@@ -167,7 +167,7 @@
                     {{ link_form.url.errors }}
                   </div>
                   <div class="column is-1">
-                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')">
+                    <button type="button" class="button is-delete" onclick="deleteLinkForm('link-form-{{ forloop.counter0 }}')" aria-label="{% trans 'Delete this link form' %}">
                       <i class="icon cross"></i>
                     </button>
                   </div>

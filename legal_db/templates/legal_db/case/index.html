@@ -36,7 +36,9 @@
       <div id="tags" aria-expanded="true">
       {% for tag in tags %}
         <label for="tag-check-{{ forloop.counter }}" id="tag-label-{{ forloop.counter }}"
-               class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}">
+               class="button tag case margin-right-small margin-vertical-smaller{% if tag.checked %} selected{% endif %}"
+               role="checkbox" aria-checked="{% if tag.checked %}true{% else %}false{% endif %}"
+               >
           {{ tag.name }}
           <input type="checkbox" class="tag__check" name="tags[]"
                  id="tag-check-{{ forloop.counter }}"
