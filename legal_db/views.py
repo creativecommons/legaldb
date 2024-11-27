@@ -4,6 +4,8 @@ from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, TemplateView
 from taggit.models import Tag
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 from .forms import CaseForm, LinkForm, LinkFormset, ScholarshipForm, SearchForm
 from .models import FAQ, Case, Link, Scholarship
@@ -24,11 +26,11 @@ class HomeView(TemplateView):
 class CaseListView(ListView):
     template_name = "legal_db/case/index.html"
     context_object_name = "cases"
+    paginate_by = 8
 
     def get_queryset(self):
         """
-        Get only rows with PUBLISHED status and filtered by user input and
-        tags.
+        Get only rows with PUBLISHED status and filtered by user input and tags.
         """
         qs = Case.objects.filter(status=Case.Status.PUBLISHED).only(
             "country", "name", "license", "decision_year"
@@ -53,20 +55,52 @@ class CaseListView(ListView):
         if tags:
             qs = qs.filter(tags__name__in=tags)
 
-        return qs.order_by("country", "name")
+        sort_by = self.request.GET.get('sort', 'name')
+        direction = self.request.GET.get('direction', 'asc')
+        if direction == 'desc':
+            sort_by = '-' + sort_by
+
+        return qs.order_by(sort_by)
 
     def get_context_data(self, **kwargs):
         """
-        Append search form and tags marking the selected ones.
+        Append search form, tags marking the selected ones, and customized pagination range.
         """
         context = super().get_context_data(**kwargs)
         selected_tags = self.request.GET.getlist("tags[]")
         tags = []
         for tag in Tag.objects.exclude(case=None).order_by("name"):
-            checked = True if tag.name in selected_tags else False
+            checked = tag.name in selected_tags
             tags.append({"name": tag, "checked": checked})
         context["tags"] = tags
         context["form"] = SearchForm(self.request.GET)
+
+        context["current_sort"] = self.request.GET.get('sort', 'name')
+        context["direction"] = self.request.GET.get('direction', 'asc')
+
+        page_obj = context["page_obj"]
+        paginator = page_obj.paginator
+        current_page = page_obj.number
+        total_pages = paginator.num_pages
+
+        start_page = max(current_page - 2, 1)
+        end_page = min(current_page + 2, total_pages)
+
+        page_range = []
+        if start_page > 1:
+            page_range.append(1)
+            if start_page > 2:
+                page_range.append("...")
+
+        page_range.extend(range(start_page, end_page + 1))
+
+        if end_page < total_pages:
+            if end_page < total_pages - 1:
+                page_range.append("...")
+            page_range.append(total_pages)
+
+        context["custom_page_range"] = page_range
+
         return context
 
 
