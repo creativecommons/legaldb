@@ -33,7 +33,7 @@ def string_to_bool(string_value):
         return False
     else:
         raise ValueError(
-            "invalid string representation of boolean value {string_value}"
+            f"invalid string representation of boolean value: '{string_value}'"
         )
 
 
