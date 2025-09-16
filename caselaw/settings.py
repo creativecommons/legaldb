@@ -11,11 +11,31 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 # Standard library
 import os
 import sys
-from distutils.util import strtobool
 
 # Third-party
 import django_heroku
 from django.utils.translation import gettext_lazy as _
+
+
+# Based on Python 3.11.2 distutils.util.strtobool
+def string_to_bool(string_value):
+    """Convert a string to boolean.
+
+    True values are  'y', 'yes', 't', 'true',  'on',  and '1'
+    False values are 'n', 'no',  'f', 'false', 'off', and '0'.
+
+    Raises ValueError if 'string_value' is anything else.
+    """
+    string_value = str(string_value).lower()
+    if string_value in ("y", "yes", "t", "true", "on", "1"):
+        return True
+    elif string_value in ("n", "no", "f", "false", "off", "0"):
+        return False
+    else:
+        raise ValueError(
+            "invalid string representation of boolean value {string_value}"
+        )
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,8 +64,8 @@ if (
     and "publish" not in sys.argv
     and "test" not in sys.argv
 ):
-    DEBUG = bool(
-        strtobool(str(os.environ.get("DJANGO_DEBUG_ENABLED", default=False)))
+    DEBUG = string_to_bool(
+        os.environ.get("DJANGO_DEBUG_ENABLED", default=False)
     )
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
@@ -250,21 +270,22 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
-COMPRESS_ENABLED = bool(
-    strtobool(str(os.environ.get("DJANGO_COMPRESS_ENABLED", True)))
+COMPRESS_ENABLED = string_to_bool(
+    os.environ.get("DJANGO_COMPRESS_ENABLED", True)
 )
 
-COMPRESS_OFFLINE = bool(
-    strtobool(str(os.environ.get("DJANGO_COMPRESS_OFFLINE", True)))
+COMPRESS_OFFLINE = string_to_bool(
+    os.environ.get("DJANGO_COMPRESS_OFFLINE", True)
 )
 
 LIBSASS_OUTPUT_STYLE = os.environ.get("DJANGO_LIBSASS_STYLE", "compressed")
 
 
 # TLS/SSL (HTTPS)
-SECURE_SSL_REDIRECT = bool(
-    strtobool(str(os.environ.get("DJANGO_SECURE_SSL_REDIRECT", True)))
+SECURE_SSL_REDIRECT = string_to_bool(
+    os.environ.get("DJANGO_SECURE_SSL_REDIRECT", True)
 )
+
 if SECURE_SSL_REDIRECT:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
