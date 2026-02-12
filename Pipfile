@@ -23,6 +23,7 @@ django-taggit = "4.0.0"  # https://github.com/jazzband/django-taggit/issues/875
 django-widget-tweaks = "*"
 django_compressor = "*"
 gunicorn = "*"
+pillow = ">=12.1.1"  # Ensure dependency is secure
 polib = "*"
 psycopg2 = "*"
 Pygments = "*"
